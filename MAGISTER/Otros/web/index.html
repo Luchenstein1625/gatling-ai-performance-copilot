@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Ley - Desiertos | Sitio Oficial</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts para tipografía premium -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;0,900;1,700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Iconos Lucide (como SVG o clases mediante FontAwesome como alternativa robusta de iconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Fuentes especiales para el logo y secciones retro */
+        .logo-font-ley {
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Animaciones personalizadas */
+        .neon-glow-red {
+            box-shadow: 0 0 20px rgba(255, 0, 60, 0.6);
+        }
+        .neon-glow-blue {
+            box-shadow: 0 0 25px rgba(0, 85, 255, 0.7);
+        }
+        .text-neon-blue {
+            text-shadow: 0 0 10px rgba(0, 85, 255, 0.8), 0 0 20px rgba(0, 85, 255, 0.4);
+        }
+        .text-neon-red {
+            text-shadow: 0 0 10px rgba(255, 0, 60, 0.8), 0 0 20px rgba(255, 0, 60, 0.4);
+        }
+
+        /* Estilo para simular el revelado duotono de la portada en la cabecera */
+        .duotone-red {
+            mix-blend-mode: screen;
+            background: linear-gradient(to right, rgba(255, 0, 60, 0.95) 40%, rgba(0, 85, 255, 0.4) 100%);
+        }
+
+        .duotone-blue {
+            mix-blend-mode: screen;
+            background: linear-gradient(to left, rgba(0, 85, 255, 0.95) 50%, rgba(255, 0, 60, 0.2) 100%);
+        }
+
+        /* Transición de colores y suavizado de elementos */
+        .smooth-transition {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Barra de desplazamiento estética */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050a18;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ff003c;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0055ff;
+        }
+    </style>
+</head>
+<body class="smooth-transition">
+
+    <!-- ========== MENÚ LATERAL DEL CARRITO (SIDEBAR) ========== -->
+    <div id="cart-sidebar" class="fixed top-0 right-0 w-full sm:w-96 h-full bg-[#050a18] text-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col border-l border-blue-900/30">
+        <div class="p-6 border-b border-gray-800 flex justify-between items-center">
+            <h3 class="text-xl font-bold tracking-wider text-neon-blue">CARRITO DE COMPRAS</h3>
+            <button onclick="toggleCart()" class="text-gray-400 hover:text-red-500 transition-colors p-2 text-2xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div id="cart-items" class="flex-grow overflow-y-auto p-6 space-y-4">
+            <!-- Items de compra se renderizan aquí dinámicamente -->
+            <p class="text-gray-400 text-center py-8" id="empty-cart-msg">Tu carrito está vacío</p>
+        </div>
+        <div class="p-6 border-t border-gray-800 bg-[#02050d] space-y-4">
+            <div class="flex justify-between font-bold text-lg">
+                <span>TOTAL:</span>
+                <span id="cart-total" class="text-neon-red">$0 CLP</span>
+            </div>
+            <button onclick="checkout()" class="w-full bg-gradient-to-r from-blue-600 to-[#ff003c] py-3 rounded-lg font-bold tracking-widest hover:brightness-125 transition-all text-sm uppercase">
+                Proceder al Pago
+            </button>
+        </div>
+    </div>
+
+    <!-- ========== NOTIFICACIÓN PERSONALIZADA ========== -->
+    <div id="custom-notification" class="fixed top-24 left-1/2 transform -translate-x-1/2 z-50 bg-gradient-to-r from-[#0055ff] to-[#ff003c] text-white py-3 px-6 rounded-full shadow-lg font-bold text-sm tracking-wide opacity-0 pointer-events-none transition-all duration-300 flex items-center space-x-2">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="notification-text">Producto añadido con éxito</span>
+    </div>
+
+    <!-- ========== ENCABEZADO (HEADER & NAVIGATION) ========== -->
+    <header class="relative z-40 bg-gradient-to-b from-[#030611] to-[#060c1f] border-b border-blue-950/40 text-white">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            
+            <!-- Logo oficial estilizado de LA LEY -->
+            <a href="#" class="flex items-center space-x-2 group">
+                <div class="bg-[#ff003c] border-2 border-white text-black font-black text-xl px-2.5 py-0.5 transform -skew-x-6 tracking-tighter shadow-[0_0_10px_rgba(255,0,60,0.5)] group-hover:scale-105 transition-transform" style="font-family: 'Arial Black', sans-serif;">
+                    LA
+                </div>
+                <div class="logo-font-ley text-white text-3xl font-light tracking-[0.25em] pl-1 group-hover:text-blue-400 transition-colors">
+                    LEY
+                </div>
+            </a>
+
+            <!-- Navegación de escritorio -->
+            <nav class="hidden md:flex space-x-8 text-xs tracking-[0.2em] font-medium text-gray-300">
+                <a href="#hero" class="hover:text-red-500 transition-colors py-2 border-b-2 border-transparent hover:border-red-500">INICIO</a>
+                <a href="#albums" class="hover:text-blue-400 transition-colors py-2 border-b-2 border-transparent hover:border-blue-400">ÁLBUMES</a>
+                <a href="#player-section" class="hover:text-red-500 transition-colors py-2 border-b-2 border-transparent hover:border-red-500">SINTETIZADOR</a>
+                <a href="#noticias" class="hover:text-blue-400 transition-colors py-2 border-b-2 border-transparent hover:border-blue-400">NOTICIAS</a>
+                <a href="#tour" class="hover:text-red-500 transition-colors py-2 border-b-2 border-transparent hover:border-red-500">TOUR</a>
+            </nav>
+
+            <!-- Controles derecho (Carrito e Icono móvil) -->
+            <div class="flex items-center space-x-4">
+                <button onclick="toggleCart()" class="relative p-2.5 text-gray-300 hover:text-white hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-bag-shopping text-xl"></i>
+                    <span id="cart-count" class="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center border-2 border-[#060c1f]">0</span>
+                </button>
+                <button onclick="toggleMobileMenu()" class="md:hidden text-gray-300 hover:text-white text-2xl p-1">
+                    <i id="menu-icon" class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#050a18] border-t border-blue-900/40 px-6 py-4 space-y-4 text-sm tracking-widest text-gray-300">
+            <a href="#hero" onclick="toggleMobileMenu()" class="block hover:text-red-500 py-1">INICIO</a>
+            <a href="#albums" onclick="toggleMobileMenu()" class="block hover:text-blue-400 py-1">ÁLBUMES</a>
+            <a href="#player-section" onclick="toggleMobileMenu()" class="block hover:text-red-500 py-1">SINTETIZADOR</a>
+            <a href="#noticias" onclick="toggleMobileMenu()" class="block hover:text-blue-400 py-1">NOTICIAS</a>
+            <a href="#tour" onclick="toggleMobileMenu()" class="block hover:text-red-500 py-1">TOUR</a>
+        </div>
+    </header>
+
+    <!-- ========== SECCIÓN HERO (ESTÉTICA "DESIERTOS" DE LA PORTADA) ========== -->
+    <section id="hero" class="relative bg-gradient-to-b from-[#060c1f] via-[#040815] to-[#01030a] overflow-hidden text-white flex flex-col justify-between" style="min-height: 85vh;">
+        
+        <!-- Canvas de Montañas Alámbricas de Fondo (Interactiva 3D con Mouse) -->
+        <canvas id="topographic-canvas" class="absolute inset-0 w-full h-full opacity-65 pointer-events-auto z-0"></canvas>
+        
+        <!-- Contenido Artístico del Banner -->
+        <div class="max-w-7xl mx-auto px-6 py-8 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center flex-grow w-full">
+            
+            <!-- LADO IZQUIERDO: Retrato Beto Cuevas Duotono Rojo de Neón -->
+            <div class="col-span-1 lg:col-span-5 flex justify-center items-center relative group">
+                <div class="relative w-72 h-72 md:w-96 md:h-96 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(255,0,60,0.35)] border border-red-500/20">
+                    <!-- Imagen de fondo de músico estilizada con filtro artístico -->
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800&q=80'); filter: grayscale(100%) contrast(120%);"></div>
+                    <!-- Capa Duotono Rojo/Azul de neón -->
+                    <div class="absolute inset-0 duotone-red"></div>
+                    <!-- Marco decorativo retro futurista -->
+                    <div class="absolute inset-2 border border-white/10 rounded-xl pointer-events-none"></div>
+                </div>
+                <!-- Aura de Luz de Neón Roja -->
+                <div class="absolute -inset-4 bg-gradient-to-tr from-red-600 to-transparent rounded-full filter blur-3xl opacity-20 -z-10 group-hover:opacity-30 transition-opacity"></div>
+            </div>
+
+            <!-- CENTRO: Título de Álbum Clásico Spaced -->
+            <div class="col-span-1 lg:col-span-2 text-center py-6 flex flex-col justify-center items-center z-20">
+                <h2 class="text-xs tracking-[0.8em] text-blue-400 font-bold uppercase mb-4 animate-pulse">ÁLBUM REVOLUCIONARIO</h2>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-black italic tracking-[0.4em] text-white pl-[0.4em] drop-shadow-[0_2px_15px_rgba(255,255,255,0.2)]">
+                    DESIERTOS
+                </h1>
+                <p class="text-[10px] tracking-[0.5em] text-gray-400 font-light mt-4 uppercase">SANTIAGO DE CHILE • 1990</p>
+                
+                <div class="mt-8 flex flex-col space-y-3 w-full max-w-xs">
+                    <a href="#player-section" class="bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-500 hover:to-blue-700 text-white font-bold text-xs tracking-widest py-3 px-6 rounded-lg shadow-lg shadow-blue-900/40 hover:scale-105 transition-all uppercase">
+                        <i class="fa-solid fa-play mr-2"></i> Escuchar Sintetizador
+                    </a>
+                    <button onclick="addToCart('Vinilo Desiertos Edición 1990', 28990, 'https://images.unsplash.com/photo-1539628390353-30b99988e13d?auto=format&fit=crop&w=400&q=80')" class="bg-transparent border border-red-600 hover:bg-red-950/40 text-red-400 hover:text-white font-bold text-xs tracking-widest py-3 px-6 rounded-lg transition-all uppercase">
+                        Adquirir Edición Coleccionista
+                    </button>
+                </div>
+            </div>
+
+            <!-- LADO DERECHO: Retrato Andrés Bobe Duotono Azul de Neón -->
+            <div class="col-span-1 lg:col-span-5 flex justify-center items-center relative group">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden shadow-[0_0_50px_rgba(0,85,255,0.35)] border border-blue-500/20">
+                    <!-- Imagen de fondo de músico estilizada con filtro artístico -->
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80'); filter: grayscale(100%) contrast(110%);"></div>
+                    <!-- Capa Duotono Azul/Rojo de neón -->
+                    <div class="absolute inset-0 duotone-blue"></div>
+                    <!-- Marco decorativo retro futurista -->
+                    <div class="absolute inset-2 border border-white/10 rounded-xl pointer-events-none"></div>
+                </div>
+                <!-- Aura de Luz de Neón Azul -->
+                <div class="absolute -inset-4 bg-gradient-to-bl from-blue-600 to-transparent rounded-full filter blur-3xl opacity-20 -z-10 group-hover:opacity-30 transition-opacity"></div>
+            </div>
+
+        </div>
+
+        <!-- Indicador de Desplazamiento Sutil -->
+        <div class="text-center pb-6 z-10">
+            <a href="#albums" class="inline-block animate-bounce p-3 text-gray-400 hover:text-white transition-colors">
+                <p class="text-[9px] tracking-[0.3em] uppercase mb-1">Explorar Catálogo</p>
+                <i class="fa-solid fa-chevron-down text-sm"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ========== GRID PRINCIPAL: SECCIÓN INFERIOR EN FONDO BLANCO (ESTILO RETRO-MODERNO) ========== -->
+    <main class="bg-white text-gray-900 py-16 px-6 relative z-20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            <!-- ================= IZQUIERDA: ÁLBUMES DESTACADOS (7 Columnas) ================= -->
+            <section id="albums" class="lg:col-span-7 space-y-8">
+                <div class="border-b-2 border-gray-900 pb-3">
+                    <h2 class="text-2xl font-black tracking-widest text-gray-950 uppercase flex items-center">
+                        <span class="w-3 h-6 bg-[#ff003c] mr-3 inline-block"></span>
+                        Álbumes Destacados
+                    </h2>
+                </div>
+
+                <!-- Tarjeta Principal: "DESIERTOS" (1990) -->
+                <div class="bg-gradient-to-r from-[#0a122c] to-[#040816] text-white rounded-2xl p-6 md:p-8 shadow-xl relative overflow-hidden group">
+                    <!-- Patrón abstracto de neón de fondo decorativo -->
+                    <div class="absolute -right-20 -bottom-20 w-60 h-60 bg-red-600/10 rounded-full filter blur-3xl pointer-events-none group-hover:bg-red-600/25 transition-all"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center relative z-10">
+                        <!-- Portada Miniatura -->
+                        <div class="md:col-span-4 flex justify-center">
+                            <div class="relative w-40 h-40 rounded-lg overflow-hidden border border-blue-500/20 shadow-lg">
+                                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=400&q=80'); filter: grayscale(100%);"></div>
+                                <div class="absolute inset-0 bg-gradient-to-r from-red-600/90 to-blue-600/60 mix-blend-screen"></div>
+                                <div class="absolute bottom-2 left-2 right-2 text-center">
+                                    <p class="text-[8px] tracking-[0.4em] text-white font-bold italic">D E S I E R T O S</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Información -->
+                        <div class="md:col-span-8 space-y-4">
+                            <div class="flex flex-wrap items-center gap-2">
+                                <span class="bg-[#ff003c] text-white text-[9px] font-black tracking-widest px-2.5 py-1 rounded">ÁLBUM DEBUT</span>
+                                <span class="bg-blue-600 text-white text-[9px] font-black tracking-widest px-2.5 py-1 rounded">OBRA DE CULTO</span>
+                            </div>
+                            <h3 class="text-2xl font-extrabold tracking-wider text-white">DESIERTOS (1990)</h3>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                El mítico álbum debut que definió los cimientos del pop-rock y synth-pop chileno de los 90. Con la magistral guitarra y composición de Andrés Bobe junto al carisma vocal de Beto Cuevas. Una pieza invaluable que explora los paisajes sonoros de la soledad y el deseo.
+                            </p>
+                            <div class="flex items-center space-x-4 pt-2">
+                                <button onclick="addToCart('Vinilo Desiertos Edición 1990', 28990, 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=400&q=80')" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold tracking-widest py-2.5 px-5 rounded-lg shadow-md hover:shadow-blue-500/30 transition-all flex items-center">
+                                    <i class="fa-solid fa-cart-plus mr-2"></i> COMPRAR $28.990
+                                </button>
+                                <a href="#player-section" class="text-xs font-bold tracking-widest text-red-400 hover:text-red-300 transition-colors">
+                                    <i class="fa-solid fa-wave-square mr-1"></i> OIR DEMO SINTETIZADO
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lista de Otros Álbumes Importantes -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    
+                    <!-- Álbum 2: Doble Opuesto -->
+                    <div class="bg-gray-50 border border-gray-100 rounded-xl p-5 hover:shadow-lg hover:scale-[1.02] transition-all flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="w-full h-32 rounded-lg bg-gray-200 overflow-hidden relative">
+                                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=400&q=80'); filter: contrast(120%) grayscale(50%);"></div>
+                                <div class="absolute inset-0 bg-gradient-to-tr from-gray-900 to-transparent"></div>
+                                <span class="absolute top-2 left-2 bg-black text-white text-[8px] font-bold tracking-widest px-2 py-0.5 rounded">1991</span>
+                            </div>
+                            <h4 class="font-black text-gray-950 text-base tracking-wide">DOBLE OPUESTO</h4>
+                            <p class="text-xs text-gray-600">Incluye los himnos generacionales "Doble Opuesto", "Prisioneros de la Piel" y el cover "Angie".</p>
+                        </div>
+                        <div class="pt-4 flex justify-between items-center border-t border-gray-100 mt-3">
+                            <span class="font-bold text-gray-900 text-sm">$24.990 CLP</span>
+                            <button onclick="addToCart('Vinilo Doble Opuesto', 24990, 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=400&q=80')" class="bg-gray-900 hover:bg-[#ff003c] text-white text-[10px] font-black tracking-widest py-2 px-3 rounded transition-colors uppercase">
+                                <i class="fa-solid fa-cart-plus mr-1"></i> Comprar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Álbum 3: Invisible -->
+                    <div class="bg-gray-50 border border-gray-100 rounded-xl p-5 hover:shadow-lg hover:scale-[1.02] transition-all flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="w-full h-32 rounded-lg bg-gray-200 overflow-hidden relative">
+                                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=400&q=80'); filter: grayscale(100%) brightness(80%);"></div>
+                                <div class="absolute inset-0 bg-gradient-to-tr from-blue-900/60 to-transparent"></div>
+                                <span class="absolute top-2 left-2 bg-black text-white text-[8px] font-bold tracking-widest px-2 py-0.5 rounded">1995</span>
+                            </div>
+                            <h4 class="font-black text-gray-950 text-base tracking-wide">INVISIBLE</h4>
+                            <p class="text-xs text-gray-600">El disco más vendido e internacional de la banda con "El Duelo", "Día Cero" y "Hombre".</p>
+                        </div>
+                        <div class="pt-4 flex justify-between items-center border-t border-gray-100 mt-3">
+                            <span class="font-bold text-gray-900 text-sm">$26.990 CLP</span>
+                            <button onclick="addToCart('CD Especial Invisible', 26990, 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=400&q=80')" class="bg-gray-900 hover:bg-blue-600 text-white text-[10px] font-black tracking-widest py-2 px-3 rounded transition-colors uppercase">
+                                <i class="fa-solid fa-cart-plus mr-1"></i> Comprar
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ================= DERECHA: ÚLTIMAS NOTICIAS Y TOUR (5 Columnas) ================= -->
+            <aside class="lg:col-span-5 space-y-12">
+                
+                <!-- Sección de Noticias -->
+                <div class="space-y-6" id="noticias">
+                    <div class="border-b-2 border-gray-900 pb-3">
+                        <h2 class="text-2xl font-black tracking-widest text-gray-950 uppercase flex items-center">
+                            <span class="w-3 h-6 bg-blue-600 mr-3 inline-block"></span>
+                            Últimas Noticias
+                        </h2>
+                    </div>
+
+                    <!-- Noticia 1 -->
+                    <article class="bg-gray-50 rounded-xl p-4 border border-gray-100 flex flex-col sm:flex-row gap-4 hover:shadow-md transition-shadow">
+                        <div class="w-full sm:w-28 h-28 rounded-lg bg-cover bg-center flex-shrink-0" style="background-image: url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=300&q=80'); filter: grayscale(100%);"></div>
+                        <div class="space-y-1.5">
+                            <p class="text-[9px] font-bold text-red-600 uppercase tracking-widest">Entrevista Especial</p>
+                            <h4 class="font-bold text-gray-950 leading-tight hover:text-blue-600 transition-colors">
+                                Beto Cuevas reflexiona sobre el legado musical de Andrés Bobe y el álbum "Desiertos"
+                            </h4>
+                            <p class="text-[11px] text-gray-600 line-clamp-2">
+                                En una reciente íntima charla radial, el vocalista analizó cómo las atmósferas vanguardistas de "Desiertos" abrieron el camino para el sonido de culto.
+                            </p>
+                            <p class="text-[9px] text-gray-400 font-medium">Hace 3 días</p>
+                        </div>
+                    </article>
+
+                    <!-- Noticia 2 -->
+                    <article class="bg-gray-50 rounded-xl p-4 border border-gray-100 flex flex-col sm:flex-row gap-4 hover:shadow-md transition-shadow">
+                        <div class="w-full sm:w-28 h-28 rounded-lg bg-cover bg-center flex-shrink-0" style="background-image: url('https://images.unsplash.com/photo-1487180142328-0c4e37023af5?auto=format&fit=crop&w=300&q=80'); filter: grayscale(100%);"></div>
+                        <div class="space-y-1.5">
+                            <p class="text-[9px] font-bold text-blue-600 uppercase tracking-widest">Edición de Colección</p>
+                            <h4 class="font-bold text-gray-950 leading-tight hover:text-red-500 transition-colors">
+                                Se anuncia reedición oficial de la maqueta original remasterizada de 1989
+                            </h4>
+                            <p class="text-[11px] text-gray-600 line-clamp-2">
+                                Fanáticos celebran la noticia: las cintas de cassette originales grabadas en estudios santiaguinos vuelven con un sonido limpio y purificado.
+                            </p>
+                            <p class="text-[9px] text-gray-400 font-medium">Hace 5 días</p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Sección del Tour / Conciertos -->
+                <div class="space-y-6" id="tour">
+                    <div class="border-b-2 border-gray-900 pb-3">
+                        <h2 class="text-2xl font-black tracking-widest text-gray-950 uppercase flex items-center">
+                            <span class="w-3 h-6 bg-[#ff003c] mr-3 inline-block"></span>
+                            Tour Legado 2026
+                        </h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Fecha 1 -->
+                        <div class="flex items-center justify-between p-4 bg-gray-900 text-white rounded-xl border border-gray-800 shadow-sm hover:border-[#ff003c] transition-colors">
+                            <div class="flex items-center space-x-4">
+                                <div class="text-center bg-blue-600 text-white px-3 py-2 rounded-lg">
+                                    <p class="text-sm font-black leading-none">24</p>
+                                    <p class="text-[9px] font-bold uppercase tracking-wider">OCT</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-sm tracking-wide">MOVISTAR ARENA</h5>
+                                    <p class="text-xs text-gray-400">Santiago, Chile</p>
+                                </div>
+                            </div>
+                            <button onclick="comprarTicket('Santiago, Movistar Arena - 24 Oct')" class="bg-white hover:bg-[#ff003c] hover:text-white text-gray-950 text-[10px] font-black tracking-widest py-2.5 px-4 rounded-lg transition-all uppercase">
+                                ENTRADAS
+                            </button>
+                        </div>
+
+                        <!-- Fecha 2 -->
+                        <div class="flex items-center justify-between p-4 bg-gray-950 text-white rounded-xl border border-gray-800 shadow-sm hover:border-blue-500 transition-colors">
+                            <div class="flex items-center space-x-4">
+                                <div class="text-center bg-gray-800 text-white px-3 py-2 rounded-lg">
+                                    <p class="text-sm font-black leading-none">05</p>
+                                    <p class="text-[9px] font-bold uppercase tracking-wider">NOV</p>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-sm tracking-wide">TEATRO METROPOLITAN</h5>
+                                    <p class="text-xs text-gray-400">CDMX, México</p>
+                                </div>
+                            </div>
+                            <button onclick="comprarTicket('CDMX, Teatro Metropolitan - 05 Nov')" class="bg-white hover:bg-blue-600 hover:text-white text-gray-950 text-[10px] font-black tracking-widest py-2.5 px-4 rounded-lg transition-all uppercase">
+                                ENTRADAS
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- ========== REPRODUCTOR Y SINTETIZADOR DINÁMICO (AUDIO SINTETIZADO INTERACTIVO) ========== -->
+    <section id="player-section" class="bg-gradient-to-t from-[#030611] to-[#070e24] text-white py-16 px-6 relative z-30 border-t border-blue-900/30">
+        <div class="max-w-4xl mx-auto space-y-8">
+            <div class="text-center space-y-3">
+                <span class="text-xs font-bold text-[#ff003c] tracking-[0.4em] uppercase">EXPERIENCIA INMERSIVA</span>
+                <h2 class="text-3xl md:text-4xl font-black tracking-widest text-white uppercase">
+                    SINTETIZADOR "DESIERTOS"
+                </h2>
+                <p class="text-xs text-gray-400 max-w-lg mx-auto leading-relaxed">
+                    Experimenta la música interactiva de los 90. Presiona play para sintetizar una base de arpegios de ondas de sierra, un sintetizador de bajo y rítmica procedural, construidos directamente con código de la <strong>Web Audio API</strong> de tu navegador.
+                </p>
+            </div>
+
+            <div class="bg-[#050a18] rounded-2xl p-6 md:p-8 border border-blue-950 shadow-[0_0_35px_rgba(0,85,255,0.15)] space-y-8">
+                
+                <!-- Consola del Sintetizador -->
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                    
+                    <!-- Botones principales -->
+                    <div class="flex items-center space-x-4">
+                        <button id="synth-play-btn" onclick="toggleSynth()" class="w-16 h-16 bg-[#ff003c] hover:bg-red-500 rounded-full flex items-center justify-center text-white text-2xl transition-all shadow-[0_0_15px_rgba(255,0,60,0.4)] hover:scale-105">
+                            <i id="play-icon" class="fa-solid fa-play ml-1"></i>
+                        </button>
+                        <div>
+                            <p class="font-bold text-sm tracking-wider" id="synth-status">SINTETIZADOR DESCONECTADO</p>
+                            <p class="text-[10px] text-gray-400 tracking-widest uppercase mt-0.5">Sintetizador Procedural de 90s Synth Wave</p>
+                        </div>
+                    </div>
+
+                    <!-- Perillas de Filtro Interactivas -->
+                    <div class="flex items-center space-x-8">
+                        <!-- Perilla 1: Frecuencia de corte -->
+                        <div class="text-center space-y-1">
+                            <p class="text-[10px] tracking-widest text-gray-400 uppercase font-bold">Filtro de Frecuencia</p>
+                            <input id="synth-filter-slider" type="range" min="100" max="2500" value="800" class="accent-red-600 bg-gray-800 rounded-lg cursor-pointer w-32 md:w-40" oninput="updateSynthFilter(this.value)">
+                            <p id="filter-val" class="text-xs font-mono text-blue-400">800 Hz</p>
+                        </div>
+                        <!-- Perilla 2: Tempo / BPM -->
+                        <div class="text-center space-y-1">
+                            <p class="text-[10px] tracking-widest text-gray-400 uppercase font-bold">Tempo (BPM)</p>
+                            <input id="synth-bpm-slider" type="range" min="90" max="150" value="120" class="accent-blue-600 bg-gray-800 rounded-lg cursor-pointer w-32 md:w-40" oninput="updateSynthBPM(this.value)">
+                            <p id="bpm-val" class="text-xs font-mono text-red-400">120 BPM</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Ecualizador / Osciloscopio Digital Reactivo de Barras -->
+                <div class="space-y-2">
+                    <p class="text-[10px] tracking-widest text-gray-400 font-bold uppercase">Espectro de Onda de Audio Remasterizado</p>
+                    <div class="h-24 bg-[#02050d] rounded-xl overflow-hidden flex items-end justify-between p-2 relative border border-gray-900">
+                        <!-- Líneas decorativas de fondo -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-transparent via-blue-900/10 to-transparent flex flex-col justify-between p-2 pointer-events-none">
+                            <div class="border-b border-gray-900 w-full h-0"></div>
+                            <div class="border-b border-gray-900 w-full h-0"></div>
+                            <div class="border-b border-gray-900 w-full h-0"></div>
+                        </div>
+
+                        <!-- Canvas del osciloscopio de barras dinámico -->
+                        <canvas id="audio-visualizer" class="w-full h-full relative z-10"></canvas>
+                    </div>
+                </div>
+
+                <!-- Instrucciones -->
+                <div class="flex justify-between items-center text-[10px] text-gray-500 tracking-wider">
+                    <span><i class="fa-solid fa-triangle-exclamation mr-1 text-yellow-600"></i> Usa audífonos para experimentar los graves análogos de 8-bits.</span>
+                    <span class="font-mono">VERSIÓN 1.0.9 (EMULADOR DSP)</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECCIÓN DEL NEWSLETTER ========== -->
+    <section class="bg-black text-white py-16 px-6 border-t border-gray-950 relative overflow-hidden">
+        <!-- Detalle de luz roja difuminada -->
+        <div class="absolute left-1/3 bottom-0 w-80 h-40 bg-[#ff003c]/20 rounded-full filter blur-3xl pointer-events-none"></div>
+        <div class="max-w-md mx-auto text-center space-y-6 relative z-10">
+            <h3 class="text-2xl font-black tracking-widest uppercase">Únete a la Cofradía</h3>
+            <p class="text-xs text-gray-400 leading-relaxed">
+                Suscríbete para recibir anuncios exclusivos de prensados de vinilo limitados, descargas de demos inéditos y preventas exclusivas para shows en vivo.
+            </p>
+            <form onsubmit="subscribeNewsletter(event)" class="flex flex-col sm:flex-row gap-3">
+                <input required type="email" placeholder="Ingresa tu correo" class="bg-[#0c1224] border border-blue-900/40 rounded-lg py-3 px-4 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#ff003c] flex-grow transition-colors">
+                <button type="submit" class="bg-[#ff003c] hover:bg-red-500 text-white font-bold text-xs tracking-widest py-3 px-6 rounded-lg transition-colors uppercase shadow-[0_0_10px_rgba(255,0,60,0.3)]">
+                    SUSCRIBIRME
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER (PIE DE PÁGINA) ========== -->
+    <footer class="bg-[#030611] text-gray-500 py-12 px-6 border-t border-blue-950/20 text-xs">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            
+            <!-- Logotipo mini -->
+            <div class="flex items-center space-x-2">
+                <div class="bg-gray-800 text-black font-black text-xs px-1.5 py-0.5 transform -skew-x-6 tracking-tighter" style="font-family: 'Arial Black', sans-serif;">LA</div>
+                <div class="logo-font-ley text-white text-base tracking-[0.2em] pl-1">LEY</div>
+            </div>
+
+            <!-- Redes Sociales Oficiales -->
+            <div class="flex space-x-6 text-lg">
+                <a href="#" class="hover:text-red-500 transition-colors"><i class="fa-brands fa-spotify"></i></a>
+                <a href="#" class="hover:text-blue-400 transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" class="hover:text-red-500 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-blue-400 transition-colors"><i class="fa-brands fa-apple"></i></a>
+            </div>
+
+            <!-- Derechos y Crédito -->
+            <div class="text-center md:text-right space-y-1">
+                <p>&copy; 2026 La Ley Records. Todos los derechos reservados.</p>
+                <p class="text-[10px] text-gray-600">Recreación estética inspirada en el álbum original "Desiertos" de 1990.</p>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT: MOTOR LÓGICO Y SINTETIZADOR ================= -->
+    <script>
+        // --- 1. CONFIGURACIÓN DEL CANVAS TOPOGRÁFICO INTERACTIVO (ALÁMBRICO 3D) ---
+        const canvas = document.getElementById('topographic-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        // Variables de interacción del ratón
+        let mouseX = 0;
+        let mouseY = 0;
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            // Mapeamos las coordenadas a valores normalizados entre -0.5 y 0.5
+            mouseX = (e.clientX / width) - 0.5;
+            mouseY = (e.clientY / height) - 0.5;
+        });
+
+        // Loop de Renderizado de la Red Topográfica de Montañas
+        let animationTime = 0;
+        function renderTopography() {
+            ctx.clearRect(0, 0, width, height);
+            
+            // Color de fondo profundo
+            ctx.fillStyle = 'rgba(6, 12, 31, 0.15)'; // rastro sutil
+            ctx.fillRect(0, 0, width, height);
+
+            animationTime += 0.003;
+            
+            // Parámetros de la malla (wireframe)
+            const rows = 28;
+            const cols = 28;
+            const spacingX = width / cols;
+            const spacingY = height / (rows * 0.8);
+            
+            ctx.lineWidth = 1.2;
+            
+            // Dibujamos líneas horizontales que ondulan en 3D simulado
+            for (let r = 3; r < rows; r++) {
+                ctx.beginPath();
+                const progressY = r / rows;
+                
+                // Color degradado de azul profundo a cian neón según la distancia vertical
+                ctx.strokeStyle = `rgba(0, 85, 255, ${0.1 + (progressY * 0.35)})`;
+
+                for (let c = 0; c <= cols; c++) {
+                    const progressX = c / cols;
+                    
+                    // Coordenada base en pantalla
+                    const baseX = progressX * width;
+                    const baseY = height * 0.2 + (progressY * height * 0.7);
+
+                    // Ecuación de onda con ruido trigonométrico para formar valles y dunas
+                    // Modificamos basándonos en el movimiento del ratón
+                    const wave1 = Math.sin(progressX * 6 + animationTime * 2) * Math.cos(progressY * 4 + animationTime) * 35;
+                    const wave2 = Math.cos(progressX * 12 - animationTime) * Math.sin(progressY * 8 + animationTime * 1.5) * 15;
+                    
+                    // Elevación topográfica base (más alta a los costados, emulando la carátula)
+                    const sideHills = Math.pow(Math.abs(progressX - 0.5) * 2, 2.5) * 160;
+                    
+                    // Influencia interactiva del puntero del mouse
+                    const mouseInteraction = (mouseY * (1 - progressY) * 60) + (mouseX * (progressX - 0.5) * 80);
+
+                    const finalY = baseY - wave1 - wave2 - sideHills + mouseInteraction;
+
+                    if (c === 0) {
+                        ctx.moveTo(baseX, finalY);
+                    } else {
+                        ctx.lineTo(baseX, finalY);
+                    }
+                }
+                ctx.stroke();
+            }
+
+            // Añadir rayos o focos de luz neón de fondo (spotlights del álbum)
+            // Lente de luz de neón roja en el lado izquierdo de la carátula
+            const redGlow = ctx.createRadialGradient(width * 0.25, height * 0.4, 20, width * 0.25, height * 0.4, width * 0.35);
+            redGlow.addColorStop(0, 'rgba(255, 0, 60, 0.15)');
+            redGlow.addColorStop(1, 'rgba(0,0,0,0)');
+            ctx.fillStyle = redGlow;
+            ctx.fillRect(0, 0, width, height);
+
+            // Lente de luz de neón azul en el lado derecho de la carátula
+            const blueGlow = ctx.createRadialGradient(width * 0.75, height * 0.5, 20, width * 0.75, height * 0.5, width * 0.35);
+            blueGlow.addColorStop(0, 'rgba(0, 85, 255, 0.15)');
+            blueGlow.addColorStop(1, 'rgba(0,0,0,0)');
+            ctx.fillStyle = blueGlow;
+            ctx.fillRect(0, 0, width, height);
+
+            requestAnimationFrame(renderTopography);
+        }
+
+        // --- 2. SINTETIZADOR DE AUDIO EN TIEMPO REAL (WEB AUDIO API) ---
+        let audioCtx = null;
+        let isSynthPlaying = false;
+        let synthIntervalId = null;
+        
+        let filterNode = null;
+        let mainVolumeNode = null;
+        let currentBPM = 120;
+        let currentFilterFreq = 800;
+
+        // Estructura de notas para la melodía procedural inspirada en el synthwave de "Desiertos"
+        // Escala menor de La (A minor: A, B, C, D, E, F, G)
+        const bassLine = [55.00, 55.00, 48.99, 48.99, 43.65, 43.65, 48.99, 48.99]; // Notas A1, G1, F1, G1
+        const leadArpeggio = [
+            220.00, 329.63, 440.00, 523.25, // A3, E4, A4, C5
+            196.00, 293.66, 392.00, 493.88, // G3, D4, G4, B4
+            174.61, 261.63, 349.23, 440.00, // F3, C4, F4, A4
+            196.00, 293.66, 392.00, 493.88  // G3, D4, G4, B4
+        ];
+        
+        let currentStep = 0;
+
+        // Renderizado del Visualizador de Audio (Osciloscopio / Ecualizador)
+        const visualizerCanvas = document.getElementById('audio-visualizer');
+        const vCtx = visualizerCanvas.getContext('2d');
+        let analyserNode = null;
+        let dataArray = [];
+
+        function resizeVisualizer() {
+            visualizerCanvas.width = visualizerCanvas.parentElement.clientWidth;
+            visualizerCanvas.height = visualizerCanvas.parentElement.clientHeight;
+        }
+        window.addEventListener('resize', resizeVisualizer);
+        resizeVisualizer();
+
+        function initSynth() {
+            // Inicializar el contexto de audio
+            const AudioContext = window.AudioContext || window.webkitAudioContext;
+            audioCtx = new AudioContext();
+
+            // Analizador para el visualizador gráfico
+            analyserNode = audioCtx.createAnalyser();
+            analyserNode.fftSize = 64; // barras estéticas anchas
+            const bufferLength = analyserNode.frequencyBinCount;
+            dataArray = new Uint8Array(bufferLength);
+
+            // Filtro de paso bajo análogo
+            filterNode = audioCtx.createBiquadFilter();
+            filterNode.type = 'lowpass';
+            filterNode.frequency.setValueAtTime(currentFilterFreq, audioCtx.currentTime);
+            filterNode.Q.setValueAtTime(1.5, audioCtx.currentTime); // Añadir resonancia retro
+
+            // Nodo de volumen principal para evitar saturaciones
+            mainVolumeNode = audioCtx.createGain();
+            mainVolumeNode.gain.setValueAtTime(0.35, audioCtx.currentTime);
+
+            // Conexiones de señal
+            filterNode.connect(analyserNode);
+            analyserNode.connect(mainVolumeNode);
+            mainVolumeNode.connect(audioCtx.destination);
+        }
+
+        function playSynthStep() {
+            if (!audioCtx) return;
+
+            const time = audioCtx.currentTime;
+            const stepDuration = 60 / currentBPM / 2; // Corcheas (8th notes)
+
+            // --- 1. SINTETIZACIÓN DEL BAJO (Onda de sierra filtrada profunda) ---
+            const bassOsc = audioCtx.createOscillator();
+            const bassGain = audioCtx.createGain();
+
+            bassOsc.type = 'sawtooth';
+            // Tomamos la nota correspondiente del bajo
+            const bassIndex = Math.floor(currentStep / 2) % bassLine.length;
+            bassOsc.frequency.setValueAtTime(bassLine[bassIndex], time);
+
+            // Envolvente de Volumen para el Bajo (pulsante y rítmico)
+            bassGain.gain.setValueAtTime(0.35, time);
+            bassGain.gain.exponentialRampToValueAtTime(0.01, time + stepDuration - 0.02);
+
+            bassOsc.connect(bassGain);
+            bassGain.connect(filterNode);
+
+            // --- 2. SINTETIZACIÓN DEL ARPEGIO SOLISTA (Onda triangular aérea + sierra suave) ---
+            if (currentStep % 2 === 0) { // Toca en cada tiempo principal
+                const leadOsc1 = audioCtx.createOscillator();
+                const leadOsc2 = audioCtx.createOscillator();
+                const leadGain = audioCtx.createGain();
+
+                leadOsc1.type = 'triangle';
+                leadOsc2.type = 'sawtooth';
+
+                const arpIndex = currentStep % leadArpeggio.length;
+                const baseFreq = leadArpeggio[arpIndex];
+
+                leadOsc1.frequency.setValueAtTime(baseFreq, time);
+                leadOsc2.frequency.setValueAtTime(baseFreq * 1.005, time); // desafinado sutil estéreo/coro
+
+                // Envolvente para el sintetizador solista
+                leadGain.gain.setValueAtTime(0.18, time);
+                leadGain.gain.exponentialRampToValueAtTime(0.001, time + (stepDuration * 1.8));
+
+                leadOsc1.connect(leadGain);
+                leadOsc2.connect(leadGain);
+                leadGain.connect(filterNode);
+
+                leadOsc1.start(time);
+                leadOsc1.stop(time + stepDuration * 2);
+                leadOsc2.start(time);
+                leadOsc2.stop(time + stepDuration * 2);
+            }
+
+            // --- 3. CAJA RÍTMICA PROCEDURAL (Sonido blanco para simular cajas retro/snares) ---
+            if (currentStep % 4 === 2) { // Caja en la segunda mitad del compás
+                const noiseBuffer = audioCtx.createBuffer(1, audioCtx.sampleRate * 0.15, audioCtx.sampleRate);
+                const output = noiseBuffer.getChannelData(0);
+                for (let i = 0; i < noiseBuffer.length; i++) {
+                    output[i] = Math.random() * 2 - 1;
+                }
+
+                const noiseSource = audioCtx.createBufferSource();
+                noiseSource.buffer = noiseBuffer;
+
+                const noiseFilter = audioCtx.createBiquadFilter();
+                noiseFilter.type = 'bandpass';
+                noiseFilter.frequency.value = 1000;
+
+                const noiseGain = audioCtx.createGain();
+                noiseGain.gain.setValueAtTime(0.15, time);
+                noiseGain.gain.exponentialRampToValueAtTime(0.001, time + 0.12);
+
+                noiseSource.connect(noiseFilter);
+                noiseFilter.connect(noiseGain);
+                noiseGain.connect(mainVolumeNode); // bypass al filtro general para conservar el brillo de caja
+
+                noiseSource.start(time);
+                noiseSource.stop(time + 0.15);
+            }
+
+            bassOsc.start(time);
+            bassOsc.stop(time + stepDuration);
+
+            // Avanzar secuenciador
+            currentStep = (currentStep + 1) % 16;
+        }
+
+        function toggleSynth() {
+            if (!audioCtx) {
+                initSynth();
+            }
+
+            const playBtn = document.getElementById('synth-play-btn');
+            const playIcon = document.getElementById('play-icon');
+            const statusText = document.getElementById('synth-status');
+
+            if (isSynthPlaying) {
+                // Pausar
+                clearInterval(synthIntervalId);
+                isSynthPlaying = false;
+                playBtn.classList.remove('bg-blue-600', 'shadow-[0_0_20px_rgba(0,85,255,0.5)]');
+                playBtn.classList.add('bg-[#ff003c]');
+                playIcon.className = 'fa-solid fa-play ml-1';
+                statusText.innerText = 'SINTETIZADOR CONECTADO (PAUSADO)';
+                statusText.className = 'font-bold text-sm tracking-wider text-yellow-500';
+            } else {
+                // Iniciar Audio Context si estaba suspendido (guardrail del navegador)
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                
+                // Programar secuenciador
+                const intervalTime = (60 / currentBPM / 2) * 1000;
+                synthIntervalId = setInterval(playSynthStep, intervalTime);
+                isSynthPlaying = true;
+                
+                playBtn.classList.remove('bg-[#ff003c]');
+                playBtn.classList.add('bg-blue-600', 'shadow-[0_0_20px_rgba(0,85,255,0.5)]');
+                playIcon.className = 'fa-solid fa-pause';
+                statusText.innerText = 'SINTETIZANDO EN TIEMPO REAL...';
+                statusText.className = 'font-bold text-sm tracking-wider text-green-500 animate-pulse';
+
+                // Iniciar animación del visualizador de barras
+                drawVisualizer();
+            }
+        }
+
+        function updateSynthFilter(val) {
+            currentFilterFreq = parseInt(val);
+            document.getElementById('filter-val').innerText = val + ' Hz';
+            if (filterNode && audioCtx) {
+                filterNode.frequency.setValueAtTime(currentFilterFreq, audioCtx.currentTime);
+            }
+        }
+
+        function updateSynthBPM(val) {
+            currentBPM = parseInt(val);
+            document.getElementById('bpm-val').innerText = val + ' BPM';
+            if (isSynthPlaying) {
+                // Reiniciar intervalo del secuenciador para aplicar el tempo de inmediato
+                clearInterval(synthIntervalId);
+                const intervalTime = (60 / currentBPM / 2) * 1000;
+                synthIntervalId = setInterval(playSynthStep, intervalTime);
+            }
+        }
+
+        // Renderizado visual del osciloscopio de barras dinámicas
+        function drawVisualizer() {
+            if (!isSynthPlaying) return;
+
+            requestAnimationFrame(drawVisualizer);
+
+            const vW = visualizerCanvas.width;
+            const vH = visualizerCanvas.height;
+
+            analyserNode.getByteFrequencyData(dataArray);
+
+            vCtx.clearRect(0, 0, vW, vH);
+
+            const barWidth = (vW / dataArray.length) * 1.3;
+            let barHeight;
+            let x = 0;
+
+            for (let i = 0; i < dataArray.length; i++) {
+                barHeight = dataArray[i] * 0.75;
+
+                // Color dinámico de neón híbrido rojo y azul según la frecuencia
+                const grad = vCtx.createLinearGradient(0, vH, 0, vH - barHeight);
+                grad.addColorStop(0, '#0055ff');
+                grad.addColorStop(0.5, '#ff003c');
+                grad.addColorStop(1, '#ffffff');
+
+                vCtx.fillStyle = grad;
+                vCtx.fillRect(x, vH - barHeight, barWidth - 3, barHeight);
+
+                x += barWidth;
+            }
+        }
+
+
+        // --- 3. LÓGICA DE TIENDA Y CARRITO DE COMPRAS INTERACTIVO ---
+        let cart = [];
+
+        function toggleCart() {
+            const sidebar = document.getElementById('cart-sidebar');
+            sidebar.classList.toggle('translate-x-full');
+        }
+
+        function showNotification(text) {
+            const notif = document.getElementById('custom-notification');
+            const notifText = document.getElementById('notification-text');
+            notifText.innerText = text;
+            notif.classList.remove('opacity-0', 'pointer-events-none');
+            notif.classList.add('opacity-100');
+
+            setTimeout(() => {
+                notif.classList.remove('opacity-100');
+                notif.classList.add('opacity-0', 'pointer-events-none');
+            }, 3000);
+        }
+
+        function addToCart(title, price, imgUrl) {
+            const existingItem = cart.find(item => item.title === title);
+            
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({ title, price, img: imgUrl, qty: 1 });
+            }
+
+            updateCartUI();
+            showNotification(`"${title}" añadido al carrito`);
+        }
+
+        function removeCartItem(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cart-items');
+            const totalEl = document.getElementById('cart-total');
+            const countEl = document.getElementById('cart-count');
+            const emptyMsg = document.getElementById('empty-cart-msg');
+
+            container.innerHTML = '';
+            
+            if (cart.length === 0) {
+                emptyMsg.style.display = 'block';
+                container.appendChild(emptyMsg);
+                totalEl.innerText = '$0 CLP';
+                countEl.innerText = '0';
+                return;
+            }
+
+            emptyMsg.style.display = 'none';
+            let total = 0;
+            let totalItems = 0;
+
+            cart.forEach((item, index) => {
+                total += item.price * item.qty;
+                totalItems += item.qty;
+
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'flex items-center justify-between bg-gray-900/50 p-3 rounded-xl border border-blue-900/10';
+                itemDiv.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <img src="${item.img}" class="w-12 h-12 rounded object-cover" alt="${item.title}">
+                        <div>
+                            <h5 class="font-bold text-xs truncate max-w-[150px]">${item.title}</h5>
+                            <p class="text-[10px] text-gray-400">$${item.price.toLocaleString('es-CL')} x ${item.qty}</p>
+                        </div>
+                    </div>
+                    <button onclick="removeCartItem(${index})" class="text-gray-400 hover:text-red-500 p-2">
+                        <i class="fa-solid fa-trash-can text-sm"></i>
+                    </button>
+                `;
+                container.appendChild(itemDiv);
+            });
+
+            totalEl.innerText = `$${total.toLocaleString('es-CL')} CLP`;
+            countEl.innerText = totalItems;
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                showNotification("Añade algún producto primero");
+                return;
+            }
+            
+            // Creamos un modal de éxito interactivo y estético
+            const modal = document.createElement('div');
+            modal.className = "fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-6";
+            modal.innerHTML = `
+                <div class="bg-[#050a18] text-white rounded-2xl p-8 max-w-sm w-full text-center border border-blue-900/40 shadow-[0_0_35px_rgba(0,85,255,0.3)] space-y-6">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto text-3xl">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h4 class="text-xl font-black tracking-widest text-neon-blue uppercase">¡COMPRA EXITOSA!</h4>
+                    <p class="text-xs text-gray-400">
+                        Tu orden de despacho ha sido procesada con éxito. Un correo con el tracking digital del vinilo/CD ha sido despachado.
+                    </p>
+                    <button id="close-checkout-btn" class="w-full bg-[#ff003c] py-2.5 rounded-lg font-bold tracking-widest hover:brightness-110 text-xs uppercase">
+                        Excelente
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+
+            document.getElementById('close-checkout-btn').addEventListener('click', () => {
+                modal.remove();
+                cart = [];
+                updateCartUI();
+                toggleCart();
+            });
+        }
+
+        function comprarTicket(evento) {
+            showNotification(`Tickets para ${evento} bloqueados. ¡Procediendo a preventa!`);
+        }
+
+        function subscribeNewsletter(e) {
+            e.preventDefault();
+            showNotification("¡Suscrito a la Cofradía de La Ley!");
+            e.target.reset();
+        }
+
+        // --- 4. MENÚ MÓVIL ---
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars';
+            } else {
+                icon.className = 'fa-solid fa-xmark';
+            }
+        }
+
+        // --- INICIALIZACIÓN GENERAL ---
+        window.onload = function() {
+            renderTopography();
+        };
+    </script>
+</body>
+</html>
