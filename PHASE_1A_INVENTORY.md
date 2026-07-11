@@ -1,0 +1,36 @@
+# Phase 1A Inventory
+
+- `.gitignore`
+- `AI_CONTEXT/Current_Backlog.md`
+- `AI_CONTEXT/Current_Decisions.md`
+- `AI_CONTEXT/Current_Objectives.md`
+- `AI_CONTEXT/Current_Risks.md`
+- `AI_CONTEXT/Current_Status.md`
+- `AI_CONTEXT/Next_Task.md`
+- `CAPSTONE_MASTER.md`
+- `CHANGELOG.md`
+- `CHAT_HANDOFF.md`
+- `CONTRIBUTING.md`
+- `DECISIONS/DEC-001.md`
+- `DECISIONS/DEC-002.md`
+- `DECISIONS/DEC-003.md`
+- `DECISIONS/DEC-004.md`
+- `DEFENSE/.gitkeep`
+- `KNOWLEDGE/Algorithms/.gitkeep`
+- `KNOWLEDGE/Concepts/.gitkeep`
+- `KNOWLEDGE/Frameworks/.gitkeep`
+- `KNOWLEDGE/Glossary/.gitkeep`
+- `KNOWLEDGE/Metrics/.gitkeep`
+- `KNOWLEDGE/Models/.gitkeep`
+- `LICENSE.md`
+- `MAGISTER/.gitkeep`
+- `MEETINGS/Meeting_000_Preparation_Ahmad.md`
+- `PROJECT/Architecture.md`
+- `PROJECT/Objectives.md`
+- `PROJECT/Problem.md`
+- `PROMPTS/.gitkeep`
+- `README.md`
+- `RESEARCH/Papers/.gitkeep`
+- `RESOURCES/.gitkeep`
+- `TEMPLATES/Decision_Template.md`
+- `TEMPLATES/Meeting_Template.md`
