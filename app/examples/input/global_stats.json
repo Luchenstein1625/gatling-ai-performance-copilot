@@ -1,0 +1,27 @@
+{
+  "stats": {
+    "numberOfRequests": {
+      "total": 2801,
+      "ok": 2801,
+      "ko": 0
+    },
+    "minResponseTime": {
+      "total": 374
+    },
+    "maxResponseTime": {
+      "total": 10510
+    },
+    "meanResponseTime": {
+      "total": 745
+    },
+    "percentiles3": {
+      "total": 1465
+    },
+    "percentiles4": {
+      "total": 2221
+    },
+    "meanNumberOfRequestsPerSecond": {
+      "total": 9.3993
+    }
+  }
+}

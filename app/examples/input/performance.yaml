@@ -1,0 +1,19 @@
+loadType: sequence
+features:
+  - name: obtener consentimiento por id
+    feature: classpath:example.feature@name=buscarPorId
+    performance: true
+    reason: Se requiere performance
+    reason_detail: Obtiene un consentimiento por id
+    concurrency: low
+    iterations: low
+    response_time: low
+
+  - name: buscar consentimiento
+    feature: classpath:example.feature@name=buscarConsentimiento
+    performance: true
+    reason: Se requiere performance
+    reason_detail: Busca por atributos
+    concurrency: high
+    iterations: high
+    response_time: very_high
