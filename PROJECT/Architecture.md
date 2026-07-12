@@ -1,26 +1,52 @@
 # Arquitectura Preliminar
 
-## Componentes
-1. Ingesta de requisitos.
-2. Generador LLM.
-3. Validador y compilador.
-4. Orquestador de ejecución.
-5. Parser de resultados.
-6. Base histórica.
-7. Motor de recomendación.
-8. Agente explicador.
-9. Validación humana.
+## Flujo general
 
-## MVP
-- un formato de entrada;
-- un tipo de prueba;
-- cuatro cuadrantes;
-- parser de métricas;
-- recomendación simple;
-- validación con expertos.
-
-## Fuera de alcance inicial
-- producción autónoma;
-- cambios de infraestructura;
-- soporte universal;
-- ajuste sin supervisión.
+```text
+Información del endpoint
+        +
+criticidad y complejidad
+        +
+performance.yaml
+        +
+parametricConfigurationValues.yaml
+        |
+        v
+Ingesta y validación
+        |
+        v
+Motor de matriz
+        |
+        +--> Cuadrante inicial
+        +--> Tripleta
+        +--> Apdex esperado
+        +--> Throughput esperado
+        +--> Ramp-up
+        +--> Duración
+        +--> Cantidad VU
+        |
+        v
+Ejecución Gatling
+        |
+        v
+Parser de resultados
+        |
+        v
+Historial normalizado
+        |
+        v
+Baseline y motor inteligente
+        |
+        +--> Mantener cuadrante
+        +--> Subir cuadrante
+        +--> Bajar cuadrante
+        +--> Revisar manualmente
+        |
+        v
+Explicación
+        |
+        v
+Validación especialista
+        |
+        v
+Registro de feedback
