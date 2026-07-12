@@ -1,15 +1,23 @@
-# Current Status
+# Estado Actual
 
-Proyecto en definición. La nueva propuesta está activa, pero pendiente de validación académica.
+## Confirmado
+- Tripleta;
+- matriz de nueve cuadrantes;
+- archivos YAML;
+- resultados Gatling;
+- `performance-lib` Java;
+- human-in-the-loop.
 
-## Avances
-- problema preliminar;
-- objetivos preliminares;
-- arquitectura conceptual;
-- métricas candidatas;
-- cuadrantes preliminares.
+## En desarrollo
+- cuantificación;
+- esquema de datos;
+- parsers;
+- baseline;
+- demo.
 
-## Bloqueadores
-- falta de validación del profesor;
-- datos aún no caracterizados;
-- baseline y metodología pendientes.
+## Pendiente
+- resolver ambigüedades;
+- inventario completo;
+- etiquetas;
+- selección de modelo;
+- evaluación.

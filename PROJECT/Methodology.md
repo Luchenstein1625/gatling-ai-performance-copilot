@@ -1,59 +1,19 @@
-# Metodología Preliminar
+# Metodología
 
-## Enfoque general
+## Fase 1 — Caracterización
+Medir proceso actual, tiempos, volumen, correcciones y criterios expertos.
 
-Se propone una metodología híbrida con elementos de:
+## Fase 2 — Ingesta
+Parser YAML, parser Gatling, validación, normalización y calidad de datos.
 
-- Design Thinking para comprender el problema;
-- CRISP-DM o KDD para análisis de datos;
-- ingeniería de software para construcción del prototipo;
-- experimentación controlada para comparar baseline y solución;
-- human in the loop para validar scripts y recomendaciones.
+## Fase 3 — Baseline
+Matriz determinista y reglas expertas.
 
-## Fases
+## Fase 4 — Recomendación
+Evaluar modelos según datos: árbol de decisión, regresión logística, Random Forest, Gradient Boosting o clustering.
 
-### 1. Descubrimiento
-- entrevistas con especialistas;
-- levantamiento del proceso actual;
-- identificación de puntos de dolor;
-- medición de tiempos y reprocesos.
+## Fase 5 — Evaluación
+Split temporal o por microservicio, F1 macro, matriz de confusión, aceptación experta y tiempo ahorrado.
 
-### 2. Inventario de datos
-- ejecuciones Gatling disponibles;
-- atributos por microservicio;
-- métricas comparables;
-- calidad y completitud.
-
-### 3. Baseline
-- proceso manual actual;
-- reglas expertas;
-- cuadrante medio inicial.
-
-### 4. Prototipo generativo
-- entrada estructurada;
-- generación de script;
-- validación;
-- compilación.
-
-### 5. Motor de recomendación
-- reglas;
-- clasificación;
-- clustering;
-- recomendación híbrida.
-
-### 6. Evaluación
-- productividad;
-- calidad técnica;
-- coincidencia con expertos;
-- robustez;
-- explicabilidad.
-
-### 7. Validación
-- sesiones con usuarios;
-- feedback;
-- iteración;
-- aceptación final.
-
-## Principio metodológico
-
-El sistema debe demostrar valor más allá de la generación de código. La innovación debe sustentarse en aprendizaje histórico, trazabilidad, explicabilidad y validación cuantitativa.
+## Fase 6 — Human-in-the-loop
+Aceptar, modificar, rechazar y registrar motivo.

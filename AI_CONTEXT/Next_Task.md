@@ -1,12 +1,12 @@
-# Next Task
+# Próxima Tarea
 
-Preparar la reunión inicial con Ahmad Armoush.
-
-## Entregables
-- resumen de una página;
-- problema;
-- solución;
-- hipótesis;
-- datos disponibles;
-- preguntas;
-- alcance sugerido para P2.
+1. Validar con QA:
+   - concurrencia versus cantidad VU;
+   - iteraciones;
+   - Apdex;
+   - throughput;
+   - criticidad;
+   - complejidad.
+2. Inventariar ejecuciones.
+3. Crear esquema normalizado.
+4. Implementar parser YAML.
