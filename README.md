@@ -1,240 +1,101 @@
-# Gatling AI Performance Copilot
-
-Repositorio oficial del Capstone del Magíster en Inteligencia Artificial de la Universidad Adolfo Ibáñez.
-
-## Integrantes
-- Luis Araya
-- Rodrigo González
-- Hernán Medina
-
-## Profesor guía
-Ahmad Armoush
-
-## Visión
-Automatizar la generación de pruebas Gatling mediante IA generativa y aprender del historial de cada microservicio para recomendar el cuadrante de prueba más adecuado.
-
-## Uso del repositorio
-Este repositorio es la fuente única de verdad del proyecto. Registra problema, objetivos, arquitectura, decisiones, reuniones, experimentos, papers, contenidos del Magíster, presentaciones y defensa.
-
-## Próximo hito
-Validar con el profesor guía el cambio de tema, la innovación, el acceso a datos, el alcance, la metodología y las métricas.
-
-📖 Documentación
-📅 Planificación
-💻 Código
-📊 Datos
-📈 Evaluación
-🎓 Material Magíster
-
 # 🚀 Gatling AI Performance Copilot
 
-> Sistema Inteligente de apoyo a la toma de decisiones para pruebas de rendimiento.
+> Sistema Inteligente para la recomendación y automatización de pruebas de rendimiento mediante Inteligencia Artificial.
+
+![Status](https://img.shields.io/badge/status-En%20Desarrollo-blue)
+![Capstone](https://img.shields.io/badge/UAI-Capstone-red)
+![Python](https://img.shields.io/badge/Python-3.12-green)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
 
 ---
 
-# 📖 Descripción
+# 📖 Proyecto
 
-Gatling AI Performance Copilot es el proyecto de **Capstone del Magíster en Inteligencia Artificial** cuyo objetivo es asistir a los especialistas de QA Infraestructura en la selección del cuadrante más adecuado para ejecutar pruebas de rendimiento sobre microservicios.
+**Gatling AI Performance Copilot** es el proyecto de Capstone del **Magíster en Inteligencia Artificial de la Universidad Adolfo Ibáñez (UAI)**.
 
-El proyecto reutiliza:
+El objetivo es desarrollar un sistema inteligente capaz de asistir a especialistas de QA y Performance Engineering en la selección automática de configuraciones de pruebas Gatling utilizando:
 
-- configuración actual (`performance.yaml`)
-- parámetros corporativos (`parametricConfigurationValues.yaml`)
-- resultados históricos de Gatling
+- IA Generativa
+- Machine Learning
 - conocimiento experto
-- matriz de decisión de nueve cuadrantes
+- resultados históricos
+- configuraciones corporativas
+- reglas de negocio
 
-para recomendar configuraciones de prueba explicables y trazables.
-
----
-
-# 🎯 Objetivo del proyecto
-
-Diseñar y validar un sistema inteligente que recomiende el cuadrante más adecuado para ejecutar una prueba de rendimiento, utilizando conocimiento experto, configuraciones reales y resultados históricos.
+La solución busca transformar un proceso actualmente manual en uno **explicable, reproducible y basado en evidencia**.
 
 ---
 
-# 🗂 Estructura del repositorio
+# 🎯 Objetivo
+
+Diseñar, implementar y validar un copiloto inteligente que recomiende el cuadrante de pruebas de rendimiento más adecuado para un microservicio utilizando información histórica y conocimiento experto.
+
+---
+
+# 👥 Equipo
+
+| Integrante | Rol |
+|------------|-----|
+| Luis Araya | Performance Engineering / IA |
+| Rodrigo González | Desarrollo |
+| Hernán Medina | Investigación |
+
+### Profesor guía
+
+**Ahmad Armoush**
+
+Universidad Adolfo Ibáñez
+
+---
+
+# 🏗 Arquitectura del repositorio
 
 ```
-.
-├── AI_CONTEXT/
-├── DATA/
-├── DECISIONS/
-├── EVALUATION/
-├── MAGISTER/
-├── PLANNING/
-├── PRESENTATIONS/
-├── PROJECT/
-├── RESOURCES/
-├── scripts/
-├── src/
+gatling-ai-performance-copilot
+│
+├── AI_CONTEXT/        Estado y continuidad del proyecto
+├── app/               Aplicación del Copilot
+├── DATA/              Dataset y calidad de datos
+├── DECISIONS/         Architecture Decision Records (ADR)
+├── DEFENSE/           Defensa final
+├── EVALUATION/        Protocolos de evaluación
+├── KNOWLEDGE/         Base de conocimiento
+├── MAGISTER/          Material académico
+├── MEETINGS/          Actas de reuniones
+├── PLANNING/          Roadmap e hitos
+├── PRESENTATIONS/     Presentaciones
+├── PROJECT/           Definición del Capstone
+├── PROMPTS/           Prompts utilizados
+├── RESEARCH/          Papers e investigación
+├── RESOURCES/         Recursos reales del proceso
+├── TEMPLATES/         Plantillas
+│
+├── CHANGELOG.md
+├── CONTRIBUTING.md
+├── LICENSE.md
 └── README.md
 ```
 
 ---
 
-# 📂 Descripción de cada carpeta
+# 📂 Carpetas principales
 
-## 📁 PROJECT/
-
-Contiene toda la definición académica y técnica del Capstone.
-
-Incluye:
-
-- definición del proyecto
-- problema
-- objetivos
-- alcance
-- metodología
-- arquitectura
-- Tripleta
-- matriz de decisión
-- migración de performance-lib
+| Carpeta | Descripción |
+|----------|-------------|
+| PROJECT | Definición completa del Capstone |
+| PLANNING | Roadmap, backlog e hitos |
+| app | Implementación del sistema |
+| DATA | Dataset y fuentes de datos |
+| EVALUATION | Métricas y protocolos de evaluación |
+| DECISIONS | Registro de decisiones técnicas |
+| KNOWLEDGE | Base documental del proyecto |
+| PRESENTATIONS | Material utilizado en las presentaciones |
+| MAGISTER | Material académico del Magíster |
+| DEFENSE | Evidencias para la defensa final |
 
 ---
 
-## 📁 PLANNING/
-
-Contiene la planificación completa del proyecto.
-
-Incluye:
-
-- roadmap
-- calendario
-- hitos
-- backlog
-- planificación de la Presentación 2
-- planificación de la presentación final
-
----
-
-## 📁 PRESENTATIONS/
-
-Material utilizado para las exposiciones del Magíster.
-
-Incluye:
-
-- estructura de las presentaciones
-- checklist para la evaluación
-- material de apoyo
-
----
-
-## 📁 DATA/
-
-Documentación relacionada con los datos utilizados por el proyecto.
-
-Incluye:
-
-- definición del dataset
-- calidad de datos
-- estructura de registros
-- inventario de información
-
----
-
-## 📁 EVALUATION/
-
-Define cómo será evaluada la solución.
-
-Incluye:
-
-- baseline
-- protocolo de evaluación
-- métricas
-- comparación con especialistas
-- productividad
-
----
-
-## 📁 DECISIONS/
-
-Registro de decisiones importantes del proyecto (Architecture Decision Records).
-
-Ejemplos:
-
-- evolución Tripleta → Matriz
-- alcance del MVP
-- decisiones técnicas
-- decisiones metodológicas
-
----
-
-## 📁 AI_CONTEXT/
-
-Contexto resumido utilizado para mantener continuidad durante el desarrollo.
-
-Incluye:
-
-- estado actual
-- próximas tareas
-- backlog
-- riesgos
-- decisiones recientes
-
----
-
-## 📁 RESOURCES/
-
-Material del proceso actual utilizado como fuente de verdad.
-
-Ejemplos:
-
-- `performance.yaml`
-- `parametricConfigurationValues.yaml`
-- documentación funcional
-- configuraciones reales
-- ejemplos corporativos
-
-> Esta carpeta representa el funcionamiento actual del proceso de pruebas de rendimiento.
-
----
-
-## 📁 src/
-
-Código fuente principal del proyecto.
-
-Aquí se implementarán progresivamente:
-
-- parser YAML
-- parser Gatling
-- normalización
-- motor de cuadrantes
-- recomendador
-- explicador
-- API
-
----
-
-## 📁 scripts/
-
-Scripts auxiliares para:
-
-- generación de datasets
-- migraciones
-- utilidades
-- validaciones
-- pruebas
-
----
-
-## 📁 MAGISTER/
-
-Material académico utilizado durante el desarrollo.
-
-Incluye:
-
-- clases
-- tareas
-- documentos
-- retroalimentación del profesor
-- presentaciones
-- evidencias
-
----
-
-# 🔄 Flujo del proyecto
+# 🔄 Flujo general
 
 ```text
 Proceso actual
@@ -242,39 +103,36 @@ Proceso actual
 performance.yaml
         │
         ▼
-parametricConfigurationValues.yaml
+Configuración corporativa
         │
         ▼
-performance-lib (Java)
+Performance Library
         │
         ▼
 Gatling
         │
         ▼
-Resultados
+Resultados históricos
 ```
 
 ↓
 
 ```text
-Capstone
+Copilot IA
 
 Información del endpoint
         │
         ▼
-Parser Python
+Parser
         │
         ▼
-Motor de matriz
+Motor de reglas
         │
         ▼
-Historial
+Motor IA
         │
         ▼
-Baseline
-        │
-        ▼
-Recomendador IA
+Recomendación
         │
         ▼
 Explicación
@@ -285,50 +143,80 @@ Validación especialista
 
 ---
 
-# 📅 Estado del proyecto
+# 🧠 Componentes principales
 
-Actualmente el proyecto se encuentra en la etapa de:
-
-- ✅ Definición del problema
-- ✅ Arquitectura
-- ✅ Formalización de la matriz
-- ✅ Definición del MVP
-- 🔄 Construcción de parsers
-- 🔄 Consolidación del dataset
-- ⏳ Implementación del recomendador
-- ⏳ Evaluación
-- ⏳ Validación con especialistas
+- Parser de configuraciones YAML
+- Parser de resultados Gatling
+- Motor de clasificación
+- Matriz de decisión de cuadrantes
+- Base de conocimiento
+- Sistema RAG
+- Explicador
+- API REST
+- Interfaz Web
 
 ---
 
-# 🎓 Capstone
+# 📊 Estado del proyecto
 
-Este proyecto forma parte del Magíster en Inteligencia Artificial y será desarrollado durante 2026.
-
-El MVP inicial se basa en la matriz vigente de nueve cuadrantes y evoluciona hacia un sistema inteligente capaz de recomendar configuraciones de pruebas de rendimiento de forma explicable y validable.
-
----
-
-# 📄 Documentación principal
-
-| Documento | Descripción |
-|------------|-------------|
-| `PROJECT/CapstoneDefinition.md` | Definición general |
-| `PROJECT/Problem.md` | Problema |
-| `PROJECT/Objectives.md` | Objetivos |
-| `PROJECT/Architecture.md` | Arquitectura |
-| `PROJECT/Methodology.md` | Metodología |
-| `PROJECT/DecisionMatrix.md` | Matriz de decisión |
-| `PROJECT/TripletDefinition.md` | Definición de Tripleta |
-| `PLANNING/ROADMAP.md` | Roadmap |
-| `PLANNING/PRESENTATION_2_PLAN.md` | Plan de Presentación 2 |
-| `EVALUATION/Baseline.md` | Baseline |
-| `DATA/DatasetDefinition.md` | Dataset |
+| Área | Estado |
+|------|--------|
+| Definición del problema | ✅ |
+| Arquitectura | ✅ |
+| Matriz de decisión | ✅ |
+| Dataset | 🔄 |
+| Parser YAML | 🔄 |
+| Parser Gatling | 🔄 |
+| IA de recomendación | ⏳ |
+| Evaluación | ⏳ |
+| Validación con especialistas | ⏳ |
 
 ---
 
-# ⚠ Estado
+# 📁 Documentación
 
-Proyecto en desarrollo.
+La documentación completa se encuentra organizada por dominio:
 
-La documentación y la arquitectura evolucionan conforme avanza el Capstone.
+| Carpeta | Contenido |
+|----------|-----------|
+| PROJECT | Proyecto de investigación |
+| DATA | Dataset |
+| EVALUATION | Evaluación |
+| PLANNING | Planificación |
+| DECISIONS | ADR |
+| RESEARCH | Papers |
+| MAGISTER | Material académico |
+
+---
+
+# 💻 Aplicación
+
+La implementación del Copilot se encuentra en:
+
+```
+app/
+```
+
+Su documentación específica se encuentra en:
+
+```
+app/README.md
+```
+
+---
+
+# 🎓 Contexto académico
+
+Proyecto desarrollado como parte del:
+
+**Magíster en Inteligencia Artificial**
+
+Universidad Adolfo Ibáñez
+
+2026
+
+---
+
+# 📄 Licencia
+
+MIT License.
