@@ -1,0 +1,26 @@
+<testsuite name="cl.bci.ecodig.performance.test.ParametricSimulation" tests="8" errors="0" failures="0" time="0">
+<testcase name="Global: percentage of successful events is greater than or equal to 100.0" status="true" time="0">
+  <system-out>Global: percentage of successful events is greater than or equal to 100.0</system-out>
+</testcase>
+<testcase name="obtener consentimiento por id: 99th percentile of response time is less than 3000.0" status="true" time="0">
+  <system-out>obtener consentimiento por id: 99th percentile of response time is less than 3000.0</system-out>
+</testcase>
+<testcase name="buscar consentimiento: 99th percentile of response time is less than 15000.0" status="true" time="0">
+  <system-out>buscar consentimiento: 99th percentile of response time is less than 15000.0</system-out>
+</testcase>
+<testcase name="obtener parametria: 99th percentile of response time is less than 3000.0" status="true" time="0">
+  <system-out>obtener parametria: 99th percentile of response time is less than 3000.0</system-out>
+</testcase>
+<testcase name="actualiza consentimiento: 99th percentile of response time is less than 5000.0" status="true" time="0">
+  <system-out>actualiza consentimiento: 99th percentile of response time is less than 5000.0</system-out>
+</testcase>
+<testcase name="listado consentimientos: 99th percentile of response time is less than 5000.0" status="true" time="0">
+  <system-out>listado consentimientos: 99th percentile of response time is less than 5000.0</system-out>
+</testcase>
+<testcase name="consentimientos_partners: 99th percentile of response time is less than 8000.0" status="true" time="0">
+  <system-out>consentimientos_partners: 99th percentile of response time is less than 8000.0</system-out>
+</testcase>
+<testcase name="actualiza extra consentimiento: 99th percentile of response time is less than 5000.0" status="true" time="0">
+  <system-out>actualiza extra consentimiento: 99th percentile of response time is less than 5000.0</system-out>
+</testcase>
+</testsuite>

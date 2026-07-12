@@ -1,0 +1,34 @@
+#YAML que contiene los valores de configuracion de los parametros de los escenarios de prueba
+#Estos valores son administrados por el equipo de QAInfraestructura y se mapean con la matriz de decisión de los escenarios de prueba de archivo performance.yaml
+#Usuarios Virtuales (VU) concurrentes por endpoint
+concurrency:
+  very_low: 5
+  low: 20
+  medium: 40
+  high: 60
+  very_high: 80
+#Cantidad de veces que se re-ejecutara un enpoint
+iterations:
+  low: 5
+  medium: 7
+  high: 10
+#Tiempo de respuesta máximo esperado en milisegundos
+response_time:
+  low: 3000
+  medium: 5000
+  high: 8000
+  very_high: 15000
+#Porcentaje mínimo de respuestas exitosas (puede ser con decimales ejemplo : 99.99)
+success_rate: 100
+#Lista de razones por las cuales se requiere justificacion de performance
+#Si llave performance=false se aplica la validacion de los valores que aca se presentan
+reason:
+  - 'Consume Servicio Externo No virtualizado'
+  - 'Consume multipass/ BCIpass'
+  - 'Transaccional'
+  - 'Sin datos de prueba'
+  - 'Sin ambiente de certificación'
+  - 'Depende respuesta de otra plataforma'
+  - 'Deuda Técnica'
+  - 'Ejecucion Batch'
+  - 'Migración'

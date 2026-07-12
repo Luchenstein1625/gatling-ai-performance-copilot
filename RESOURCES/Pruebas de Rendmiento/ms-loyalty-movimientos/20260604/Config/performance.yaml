@@ -1,0 +1,181 @@
+loadType: sequence
+features:
+  - name: users-obtener-saldo
+    operation_id: getSaldos
+    feature: classpath:cl/bci/ecodig/acceptance/movimientos/obtener-saldo.feature@name=users-obtener-saldo
+    performance: true
+    reason: "Saldo de usuario"
+    reason_detail: "Obtiene el saldo de un usuario"
+    concurrency: low
+    iterations: low
+    response_time: very_high
+    success_rate: 100
+  - name: users-obtener-saldo-cache
+    operation_id: getSaldos
+    feature: classpath:cl/bci/ecodig/acceptance/movimientos/obtener-saldo.feature@name=users-obtener-saldo-cache
+    performance: true
+    reason: "Saldo de usuario desde el cache"
+    reason_detail: "Obtiene el saldo de un usuario  desde el cache"
+    concurrency: low
+    iterations: low
+    response_time: very_high
+    success_rate: 100
+
+  - name: users-obtener-transacciones-historica
+    operation_id: getAllTransacciones
+    feature: classpath:cl/bci/ecodig/acceptance/movimientos/obtener-transacciones-historicas.feature@name=users-obtener-transacciones-historica
+    performance: true
+    reason: "Transacciones historicas de usuario"
+    reason_detail: "Obtiene las transacciones historicas del usuario"
+    concurrency: low
+    iterations: low
+    response_time: high
+    success_rate: 100
+  - name: users-obtener-transacciones-pendientes
+    operation_id: getPendingTransactions
+    feature: classpath:cl/bci/ecodig/acceptance/movimientos/obtener-transacciones-pendientes.feature@name=users-obtener-transacciones-pendientes
+    performance: true
+    reason: "Transacciones pendientes del usuario"
+    reason_detail: "Obtiene las transacciones pendientes del usuario"
+    concurrency: low
+    iterations: low
+    response_time: very_high
+    success_rate: 100
+  - name: users-obtener-retiros-disponibles
+    operation_id: getRetirosDisponibles
+    feature: classpath:cl/bci/ecodig/acceptance/movimientos/obtener-retiros-disponibles.feature@name=users-obtener-retiros-disponibles
+    performance: true
+    reason: "Retiros disponibles del usuario"
+    reason_detail: "Obtiene los retiros disponibles del usuario"
+    concurrency: low
+    iterations: low
+    response_time: very_high
+    success_rate: 100
+  - name: users-obtener-transacciones-retiro
+    operation_id: getTransaccionesRetiro
+    feature: classpath:cl/bci/ecodig/acceptance/movimientos/obtener-transacciones-retiro.feature@name=users-obtener-transacciones-retiro
+    performance: true
+    reason: "Transacciones de un retiro"
+    reason_detail: "Obtiene el listado de transacciones asociadas a un retiro"
+    concurrency: low
+    iterations: low
+    response_time: very_high
+    success_rate: 100
+  - name: obtener-simulacion-cashback-sin-filtro
+    operation_id: getCashbackSimulation
+    feature: classpath:cl/bci/ecodig/acceptance/movimientos/obtener-simulacion-cashback.feature@name=obtener-simulacion-cashback-sin-filtro
+    performance: true
+    reason: "Simulacion de cashback"
+    reason_detail: "Obtiene la simulacion de cashback sin filtro"
+    concurrency: low
+    iterations: low
+    response_time: very_high
+    success_rate: 100
+  - name: users-obtener-detalle-de-transaccion
+    operation_id: getTransaccionDetail
+    feature: ""
+    performance: false
+    reason: "Consume Servicio Externo No virtualizado"
+    reason_detail: "Consume Servicio Externo No virtualizado"
+    concurrency: very_low
+    iterations: low
+    response_time: very_high
+  - name: users-registrar-retiro
+    operation_id: registrarRetiro
+    feature: ""
+    performance: false
+    reason: "Sin datos de prueba"
+    reason_detail: "Sin datos de prueba"
+    concurrency: very_low
+    iterations: low
+    response_time: very_high
+  - name: crear-transaccion-pendiente
+    operation_id: givePoints
+    feature: ""
+    performance: false
+    reason: "Sin datos de prueba"
+    reason_detail: "Sin datos de prueba"
+    concurrency: very_low
+    iterations: low
+    response_time: very_high
+  - name: aprobar-rechazar-transacciones
+    operation_id: approvePoints
+    feature: ""
+    performance: false
+    reason: "Sin datos de prueba"
+    reason_detail: "Sin datos de prueba"
+    concurrency: very_low
+    iterations: low
+    response_time: very_high
+  - name: abonar-transaccion
+    operation_id: approveTransferredCashback
+    feature: ""
+    performance: false
+    reason: "Sin datos de prueba"
+    reason_detail: "Sin datos de prueba"
+    concurrency: very_low
+    iterations: low
+    response_time: very_high
+  - name: crear-otros-cashback
+    operation_id: saveRewards
+    feature: ""
+    performance: false
+    reason: "Sin datos de prueba"
+    reason_detail: "Sin datos de prueba"
+    concurrency: very_low
+    iterations: low
+    response_time: very_high
+  - name: consumer-estado-pago
+    operation_id: consumerEstadoPago
+    feature: classpath:cl/bci/ecodig/acceptance/movimientos/consumer-estado-pago.feature@name=consumer-estado-pago
+    performance: true
+    reason: ""
+    reason_detail: ""
+    concurrency: high
+    iterations: high
+    response_time: low
+  - name: eliminar-cache
+    feature: classpath:cl/bci/ecodig/acceptance/movimientos/eliminar-cache.feature@name=eliminar-cache
+    performance: true
+    reason: "Se requiere eliminar un cache con un prefijo."
+    reason_detail: "Este test verifica el comportamiento del sistema al eliminar un cache."
+    concurrency: high
+    iterations: medium
+    response_time: very_high
+    operation_id: "CacheController_evictCache"
+  - name: post-stores-storeId-pending-transactions-approved-estados-invalidos
+    operation_id: "approvePoints"
+    feature: classpath:cl/bci/ecodig/acceptance/movimientos/post-stores-store-id-pending-transactions-approved.feature@name=post-stores-storeId-pending-transactions-approved-estados-invalidos
+    performance: true
+    reason: "Validacion de transacciones con estados no validos"
+    reason_detail: "Test que verifica el comportamiento de la operación que aprueba transacciones si estas son invalidas"
+    concurrency: very_low
+    iterations: low
+    response_time: very_high
+  - name: post-stores-storeId-pending-transactions-rejected-estados-invalidos
+    operation_id: "approvePoints"
+    feature: classpath:cl/bci/ecodig/acceptance/movimientos/post-stores-store-id-pending-transactions-rejected.feature@name=post-stores-storeId-pending-transactions-rejected-estados-invalidos
+    performance: true
+    reason: "Validacion de transacciones con estados no validos"
+    reason_detail: "Test que verifica el comportamiento de la operación que rechaza transacciones si estas son invalidas"
+    concurrency: very_low
+    iterations: low
+    response_time: very_high
+  - name: get-internal-montos-transacciones-pendientes
+    operation_id: "montosTransaccionesPendientes"
+    feature: classpath:cl/bci/ecodig/acceptance/movimientos/get-internal-montos-transacciones-pendientes.feature@name=get-internal-montos-transacciones-pendientes
+    performance: true
+    reason: "Se requiere obtener los montos de transacciones pendientes de varios ruts."
+    reason_detail: "Este test verifica el comportamiento del sistema al obtener los montos de transacciones pendientes ."
+    concurrency: high
+    iterations: medium
+    response_time: very_high
+  - name: revertir-retiro-error
+    operation_id: "revertirRetiro"
+    feature: classpath:cl/bci/ecodig/acceptance/movimientos/revertir-retiro.feature@revertir-retiro-error
+    performance: true
+    reason: "Reversion de un retiro con error"
+    reason_detail: "Reliza reversion de un retiro y genera error."
+    concurrency: high
+    iterations: medium
+    response_time: very_high

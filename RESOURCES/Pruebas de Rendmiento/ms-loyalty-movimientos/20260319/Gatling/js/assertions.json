@@ -1,0 +1,135 @@
+{
+  "simulation": "cl.bci.ecodig.performance.test.ParametricSimulation",
+  "simulationId": "parametricsimulation",
+  "start": 1773927450000,
+  "description": "",
+  "scenarios": ["users-obtener-saldo", "users-obtener-saldo-cache", "users-obtener-transacciones-historica", "users-obtener-transacciones-pendientes", "users-obtener-retiros-disponibles", "users-obtener-transacciones-retiro", "obtener-simulacion-cashback-sin-filtro", "users-obtener-detalle-de-transaccion", "users-registrar-retiro", "crear-transaccion-pendiente", "aprobar-rechazar-transacciones", "abonar-transaccion", "crear-otros-cashback", "consumer-estado-pago", "eliminar-cache", "post-stores-storeId-pending-transactions-approved-estados-invalidos", "post-stores-storeId-pending-transactions-rejected-estados-invalidos", "get-internal-montos-transacciones-pendientes", "revertir-retiro-error"],
+  "assertions": [
+{
+  "path": "Global",
+  "target": "percentage of successful events",
+  "condition": "is greater than or equal to",
+  "expectedValues": [100.0],
+  "result": true,
+  "message": "Global: percentage of successful events is greater than or equal to 100.0",
+  "actualValue": [100.0]
+},
+{
+  "path": "users-obtener-saldo",
+  "target": "99th percentile of response time",
+  "condition": "is less than",
+  "expectedValues": [15000.0],
+  "result": true,
+  "message": "users-obtener-saldo: 99th percentile of response time is less than 15000.0",
+  "actualValue": [2730.0]
+},
+{
+  "path": "users-obtener-saldo-cache",
+  "target": "99th percentile of response time",
+  "condition": "is less than",
+  "expectedValues": [15000.0],
+  "result": true,
+  "message": "users-obtener-saldo-cache: 99th percentile of response time is less than 15000.0",
+  "actualValue": [773.0]
+},
+{
+  "path": "users-obtener-transacciones-historica",
+  "target": "99th percentile of response time",
+  "condition": "is less than",
+  "expectedValues": [8000.0],
+  "result": true,
+  "message": "users-obtener-transacciones-historica: 99th percentile of response time is less than 8000.0",
+  "actualValue": [2108.0]
+},
+{
+  "path": "users-obtener-transacciones-pendientes",
+  "target": "99th percentile of response time",
+  "condition": "is less than",
+  "expectedValues": [15000.0],
+  "result": true,
+  "message": "users-obtener-transacciones-pendientes: 99th percentile of response time is less than 15000.0",
+  "actualValue": [730.0]
+},
+{
+  "path": "users-obtener-retiros-disponibles",
+  "target": "99th percentile of response time",
+  "condition": "is less than",
+  "expectedValues": [15000.0],
+  "result": true,
+  "message": "users-obtener-retiros-disponibles: 99th percentile of response time is less than 15000.0",
+  "actualValue": [702.0]
+},
+{
+  "path": "users-obtener-transacciones-retiro",
+  "target": "99th percentile of response time",
+  "condition": "is less than",
+  "expectedValues": [15000.0],
+  "result": true,
+  "message": "users-obtener-transacciones-retiro: 99th percentile of response time is less than 15000.0",
+  "actualValue": [688.0]
+},
+{
+  "path": "obtener-simulacion-cashback-sin-filtro",
+  "target": "99th percentile of response time",
+  "condition": "is less than",
+  "expectedValues": [15000.0],
+  "result": true,
+  "message": "obtener-simulacion-cashback-sin-filtro: 99th percentile of response time is less than 15000.0",
+  "actualValue": [398.0]
+},
+{
+  "path": "consumer-estado-pago",
+  "target": "99th percentile of response time",
+  "condition": "is less than",
+  "expectedValues": [3000.0],
+  "result": true,
+  "message": "consumer-estado-pago: 99th percentile of response time is less than 3000.0",
+  "actualValue": [1083.0]
+},
+{
+  "path": "eliminar-cache",
+  "target": "99th percentile of response time",
+  "condition": "is less than",
+  "expectedValues": [15000.0],
+  "result": true,
+  "message": "eliminar-cache: 99th percentile of response time is less than 15000.0",
+  "actualValue": [1861.0]
+},
+{
+  "path": "post-stores-storeId-pending-transactions-approved-estados-invalidos",
+  "target": "99th percentile of response time",
+  "condition": "is less than",
+  "expectedValues": [15000.0],
+  "result": true,
+  "message": "post-stores-storeId-pending-transactions-approved-estados-invalidos: 99th percentile of response time is less than 15000.0",
+  "actualValue": [1202.0]
+},
+{
+  "path": "post-stores-storeId-pending-transactions-rejected-estados-invalidos",
+  "target": "99th percentile of response time",
+  "condition": "is less than",
+  "expectedValues": [15000.0],
+  "result": true,
+  "message": "post-stores-storeId-pending-transactions-rejected-estados-invalidos: 99th percentile of response time is less than 15000.0",
+  "actualValue": [865.0]
+},
+{
+  "path": "get-internal-montos-transacciones-pendientes",
+  "target": "99th percentile of response time",
+  "condition": "is less than",
+  "expectedValues": [15000.0],
+  "result": true,
+  "message": "get-internal-montos-transacciones-pendientes: 99th percentile of response time is less than 15000.0",
+  "actualValue": [777.0]
+},
+{
+  "path": "revertir-retiro-error",
+  "target": "99th percentile of response time",
+  "condition": "is less than",
+  "expectedValues": [15000.0],
+  "result": true,
+  "message": "revertir-retiro-error: 99th percentile of response time is less than 15000.0",
+  "actualValue": [1166.0]
+}
+  ]
+}
