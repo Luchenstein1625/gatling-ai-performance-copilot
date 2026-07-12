@@ -1,6 +1,5 @@
 from performance_decision_engine.domain.entities.quadrant import Quadrant
 
-
 _MATRIX: dict[tuple[str, str], int] = {
     ("low", "low"): 1,
     ("medium", "low"): 2,

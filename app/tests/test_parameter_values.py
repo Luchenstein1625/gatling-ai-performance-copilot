@@ -7,7 +7,6 @@ from performance_decision_engine.infrastructure.parsers.parameter_values import 
     UnknownParameterLevelError,
 )
 
-
 PARAMETERS_FILE = Path("examples/input/parametricConfigurationValues.yaml")
 
 

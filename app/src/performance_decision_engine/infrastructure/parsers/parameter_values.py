@@ -30,13 +30,13 @@ class ParameterValuesDocument(BaseModel):
 
 
 class ParameterValues:
-    """Resolves semantic performance levels into numeric values."""
+    """Resolve semantic performance levels into numeric values."""
 
     def __init__(self, document: ParameterValuesDocument) -> None:
         self.document = document
 
     @classmethod
-    def from_file(cls, path: Path) -> "ParameterValues":
+    def from_file(cls, path: Path) -> ParameterValues:
         """Load and validate a parametric configuration YAML file."""
         raw = load_yaml(path)
 
@@ -78,22 +78,51 @@ class ParameterValues:
 
         return None
 
-    def resolve_concurrency(self, level: str, *, strict: bool = False) -> int | None:
+    def resolve_concurrency(
+        self,
+        level: str,
+        *,
+        strict: bool = False,
+    ) -> int | None:
+        """Resolve a concurrency semantic level."""
         return self.resolve("concurrency", level, strict=strict)
 
-    def resolve_iterations(self, level: str, *, strict: bool = False) -> int | None:
+    def resolve_iterations(
+        self,
+        level: str,
+        *,
+        strict: bool = False,
+    ) -> int | None:
+        """Resolve an iterations semantic level."""
         return self.resolve("iterations", level, strict=strict)
 
-    def resolve_response_time(self, level: str, *, strict: bool = False) -> int | None:
+    def resolve_response_time(
+        self,
+        level: str,
+        *,
+        strict: bool = False,
+    ) -> int | None:
+        """Resolve a response-time semantic level."""
         return self.resolve("response_time", level, strict=strict)
 
     @property
     def success_rate(self) -> float | int | None:
+        """Return the configured success rate."""
         return self.document.success_rate
 
     @property
     def reasons(self) -> tuple[str, ...]:
+        """Return configured reasons as an immutable tuple."""
         return tuple(self.document.reasons)
 
-    def _section_values(self, section: ParameterSection) -> dict[str, int]:
-        return getattr(self.document, section)
+    def _section_values(
+        self,
+        section: ParameterSection,
+    ) -> dict[str, int]:
+        if section == "concurrency":
+            return self.document.concurrency
+
+        if section == "iterations":
+            return self.document.iterations
+
+        return self.document.response_time
