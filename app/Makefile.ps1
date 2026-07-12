@@ -1,5 +1,5 @@
 param(
-    [ValidateSet("install", "test", "quality", "format", "doctor", "example", "api")]
+    [ValidateSet("install", "doctor", "test", "quality", "format", "example", "api")]
     [string]$Task = "doctor"
 )
 
@@ -8,6 +8,9 @@ $ErrorActionPreference = "Stop"
 switch ($Task) {
     "install" {
         python -m pip install -e ".[dev]"
+    }
+    "doctor" {
+        pde doctor
     }
     "test" {
         pytest
@@ -21,17 +24,14 @@ switch ($Task) {
         black .
         ruff check . --fix
     }
-    "doctor" {
-        pde doctor
-    }
     "example" {
         pde normalize `
-            --performance examples/input/performance.yaml `
-            --parameters examples/input/parametricConfigurationValues.yaml `
-            --gatling examples/input/global_stats.json `
-            --output examples/output/execution_summary.json
+          --performance examples/input/performance.yaml `
+          --parameters examples/input/parametricConfigurationValues.yaml `
+          --results examples/input/global_stats.json `
+          --output examples/output/execution_summary.json
     }
     "api" {
-        uvicorn performance_decision_engine.api.main:app --reload
+        uvicorn performance_decision_engine.interfaces.api.main:app --reload
     }
 }

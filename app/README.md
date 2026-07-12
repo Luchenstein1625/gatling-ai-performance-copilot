@@ -2,68 +2,78 @@
 
 Motor desacoplado para apoyar decisiones de configuración en pruebas de rendimiento.
 
-El caso de estudio inicial utiliza Gatling, `performance.yaml` y `parametricConfigurationValues.yaml`, pero la arquitectura está diseñada para incorporar otras herramientas mediante parsers y adaptadores.
+El caso de estudio inicial utiliza archivos YAML y resultados Gatling, pero el núcleo del sistema no depende de una herramienta específica. Nuevas fuentes como JMeter, k6 o LoadRunner pueden incorporarse mediante adaptadores sin modificar el dominio.
 
-## Objetivo del MVP
-
-1. Leer configuraciones existentes.
-2. Resolver parámetros semánticos.
-3. Leer resultados de una ejecución.
-4. Normalizar la información.
-5. Aplicar un baseline.
-6. Generar una recomendación explicable.
-7. Registrar validación humana.
-
-## Estructura
+## Arquitectura
 
 ```text
 app/
 ├── src/performance_decision_engine/
-│   ├── api/
-│   ├── cli/
-│   ├── config/
-│   ├── core/
 │   ├── domain/
-│   ├── parsers/
-│   ├── adapters/
-│   ├── recommendation/
-│   ├── explainability/
-│   ├── evaluation/
-│   └── storage/
+│   │   ├── entities/
+│   │   └── services/
+│   ├── application/
+│   │   ├── ports/
+│   │   └── use_cases/
+│   ├── infrastructure/
+│   │   ├── parsers/
+│   │   └── repositories/
+│   └── interfaces/
+│       ├── cli/
+│       └── api/
 ├── tests/
 ├── examples/
 ├── docs/
 ├── scripts/
-├── pyproject.toml
-├── requirements.txt
-├── requirements-dev.txt
-├── Makefile
-├── Makefile.ps1
-└── CONTRIBUTING.md
+└── pyproject.toml
 ```
 
-## Responsabilidad de cada carpeta
+## Responsabilidades
 
-| Carpeta | Responsabilidad |
-|---|---|
-| `domain/` | Entidades y reglas del negocio, independientes de herramientas |
-| `parsers/` | Lectura de YAML, JSON y resultados externos |
-| `adapters/` | Conversión desde formatos externos hacia el dominio |
-| `recommendation/` | Baseline, reglas y modelos de recomendación |
-| `explainability/` | Evidencia y explicaciones |
-| `evaluation/` | Métricas y comparación con baseline |
-| `storage/` | Persistencia JSON, CSV y futura base de datos |
-| `api/` | Interfaz HTTP con FastAPI |
-| `cli/` | Interfaz de línea de comandos |
-| `core/` | Logging, excepciones y utilidades comunes |
-| `config/` | Configuración y variables de entorno |
+### `domain/`
+
+Contiene el conocimiento del negocio:
+
+- Tripleta;
+- cuadrante;
+- configuración de endpoint;
+- métricas de ejecución;
+- recomendación;
+- reglas puras.
+
+No importa FastAPI, Typer, YAML, Gatling ni persistencia.
+
+### `application/`
+
+Contiene los casos de uso:
+
+- normalizar una ejecución;
+- resolver un cuadrante;
+- generar una recomendación baseline.
+
+También define puertos para desacoplar el dominio de archivos y repositorios.
+
+### `infrastructure/`
+
+Implementa detalles externos:
+
+- parser de `performance.yaml`;
+- parser de `parametricConfigurationValues.yaml`;
+- parser de resultados Gatling;
+- repositorio JSON.
+
+### `interfaces/`
+
+Expone la aplicación:
+
+- CLI;
+- API HTTP.
 
 ## Requisitos
 
 - Python 3.11 o 3.12
-- PowerShell, Bash o terminal equivalente
 
-## Instalación en Windows PowerShell
+## Instalación en PowerShell
 
 Desde la carpeta `app`:
 
@@ -74,114 +84,151 @@ python -m pip install --upgrade pip
 pip install -e ".[dev]"
 ```
 
-## Instalación en Linux/macOS
+## Verificación
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-pip install -e ".[dev]"
-```
+Ejecutar cada comando por separado:
 
-## Comprobar instalación
-
-```bash
-pde --version
+```powershell
 pde doctor
+pde --version
+pytest
 ```
 
-También se puede ejecutar como módulo:
-
-```bash
-python -m performance_decision_engine --version
-python -m performance_decision_engine doctor
-```
-
-## Ejecutar ejemplo de normalización
-
-```bash
-pde normalize \
-  --performance examples/input/performance.yaml \
-  --parameters examples/input/parametricConfigurationValues.yaml \
-  --gatling examples/input/global_stats.json \
-  --output examples/output/execution_summary.json
-```
-
-En PowerShell:
+## Ejecutar ejemplo incluido
 
 ```powershell
 pde normalize `
   --performance examples/input/performance.yaml `
   --parameters examples/input/parametricConfigurationValues.yaml `
-  --gatling examples/input/global_stats.json `
+  --results examples/input/global_stats.json `
   --output examples/output/execution_summary.json
 ```
 
-## Ejecutar pruebas
+## Resolver un cuadrante
 
-```bash
-pytest
+```powershell
+pde quadrant --criticality high --complexity medium
 ```
 
-Con cobertura:
+Resultado esperado:
 
-```bash
-pytest --cov=performance_decision_engine --cov-report=term-missing
-```
-
-## Calidad de código
-
-```bash
-ruff check .
-black --check .
-mypy src
-```
-
-Para corregir formato:
-
-```bash
-black .
-ruff check . --fix
+```text
+Quadrant: 6
 ```
 
 ## Ejecutar API
 
-```bash
-uvicorn performance_decision_engine.api.main:app --reload
+```powershell
+uvicorn performance_decision_engine.interfaces.api.main:app --reload
 ```
 
-Endpoints iniciales:
+Endpoints:
 
 - `GET /health`
 - `GET /version`
+- `GET /quadrants/{criticality}/{complexity}`
 
-## Estado actual
+## Calidad
 
-Esta plantilla incluye:
+```powershell
+ruff check .
+black --check .
+mypy src
+pytest --cov=performance_decision_engine
+```
 
+## Flujo funcional inicial
+
+```text
+performance.yaml
+        +
+parametricConfigurationValues.yaml
+        +
+resultado global
+        |
+        v
+parsers de infraestructura
+        |
+        v
+caso de uso de normalización
+        |
+        v
+entidades del dominio
+        |
+        v
+JSON normalizado
+```
+
+## Estado
+
+Esta base incluye:
+
+- arquitectura limpia;
 - paquete Python instalable;
 - CLI funcional;
-- comando `doctor`;
-- comando `normalize`;
-- parser de `performance.yaml`;
-- parser de parámetros;
-- parser global Gatling;
-- modelos Pydantic;
-- almacenamiento JSON;
-- baseline de matriz;
 - API mínima;
-- pruebas unitarias;
-- archivos de ejemplo;
-- documentación técnica.
+- dominio desacoplado;
+- parser YAML;
+- parser de parámetros;
+- parser de métricas globales;
+- normalización;
+- baseline simple;
+- persistencia JSON;
+- pruebas;
+- ejemplos.
 
-Todavía no incluye:
+No declara como implementado ningún modelo de Machine Learning.
 
-- recomendador entrenado;
-- clasificación automática validada;
-- migración completa de `performance-lib`;
-- integración productiva;
-- despliegue corporativo.
 
-## Principio de diseño
+# Ejecución
 
-La herramienta de pruebas es una dependencia externa. La lógica del dominio y de recomendación no debe depender directamente de Gatling.
+## Crear entorno virtual
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+## Instalar dependencias
+
+```powershell
+pip install -e ".[dev]"
+```
+
+## Verificar instalación
+
+```powershell
+pde doctor
+```
+
+---
+
+# Ejecutar pruebas
+
+```powershell
+pytest
+```
+
+---
+
+# Ejecutar parser de parámetros
+
+```powershell
+pytest tests/test_parameter_values.py -v
+```
+
+---
+
+# Ejecutar normalización
+
+```powershell
+pde normalize ...
+```
+
+---
+
+# Ejecutar API
+
+```powershell
+uvicorn performance_decision_engine.interfaces.api.main:app --reload
+```

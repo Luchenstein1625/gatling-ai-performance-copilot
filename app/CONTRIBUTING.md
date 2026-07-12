@@ -1,46 +1,31 @@
-# Guía de Contribución
-
-## Flujo recomendado
-
-1. Actualizar `main`.
-2. Crear rama.
-3. Implementar una unidad pequeña.
-4. Agregar pruebas.
-5. Ejecutar calidad.
-6. Crear Pull Request.
-
-```bash
-git checkout main
-git pull
-git checkout -b feature/nombre-corto
-```
+# Contribución
 
 ## Convenciones
 
-- código y nombres técnicos en inglés;
-- documentación de negocio en español;
-- funciones pequeñas;
+- código técnico en inglés;
+- documentación funcional en español;
 - type hints obligatorios;
-- no mezclar parsing con reglas de negocio;
-- no inventar datos faltantes;
-- toda recomendación debe conservar evidencia.
+- pruebas para cada comportamiento;
+- el dominio no depende de frameworks;
+- los parsers no toman decisiones;
+- los valores desconocidos se conservan como `None`;
+- ninguna recomendación puede inventar métricas.
 
-## Antes de realizar commit
+## Antes de un commit
 
-```bash
+```powershell
 pytest
 ruff check .
 black --check .
 mypy src
 ```
 
-## Commits
-
-Ejemplos:
+## Ramas
 
 ```text
-feat(parser): add performance yaml parser
-test(domain): cover quadrant matrix
-docs(app): explain local execution
-fix(storage): preserve UTF-8 output
+feature/*
+fix/*
+docs/*
+refactor/*
+experiment/*
 ```

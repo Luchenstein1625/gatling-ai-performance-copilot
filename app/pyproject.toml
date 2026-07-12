@@ -4,15 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "performance-decision-engine"
-version = "0.1.0"
-description = "Motor de decisión para configuraciones de pruebas de rendimiento"
+version = "0.2.0"
+description = "Motor desacoplado de decisión para pruebas de rendimiento"
 readme = "README.md"
 requires-python = ">=3.11"
-authors = [
-  { name = "Luis Araya" },
-  { name = "Rodrigo González" },
-  { name = "Hernán Medina" }
-]
 dependencies = [
   "pydantic>=2.7,<3",
   "PyYAML>=6.0,<7",
@@ -29,12 +24,11 @@ dev = [
   "black>=24.4,<25",
   "ruff>=0.5,<1",
   "mypy>=1.10,<2",
-  "pre-commit>=3.7,<4",
   "types-PyYAML>=6.0,<7"
 ]
 
 [project.scripts]
-pde = "performance_decision_engine.cli.main:app"
+pde = "performance_decision_engine.interfaces.cli.main:app"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
@@ -56,7 +50,6 @@ target-version = "py311"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP"]
-ignore = []
 
 [tool.mypy]
 python_version = "3.11"

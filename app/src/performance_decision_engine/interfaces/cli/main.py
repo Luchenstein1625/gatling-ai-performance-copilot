@@ -6,10 +6,10 @@ import typer
 from rich.console import Console
 
 from performance_decision_engine import __version__
-from performance_decision_engine.domain.services.quadrant_service import resolve_quadrant
 from performance_decision_engine.application.use_cases.normalize_execution import (
     NormalizeExecution,
 )
+from performance_decision_engine.domain.services.quadrant_service import resolve_quadrant
 from performance_decision_engine.infrastructure.parsers.gatling_metrics_reader import (
     GatlingMetricsReader,
 )
@@ -27,13 +27,8 @@ console = Console()
 @app.callback(invoke_without_command=True)
 def root(
     ctx: typer.Context,
-    show_version: bool = typer.Option(
-        False,
-        "--version",
-        help="Show application version.",
-    ),
+    show_version: bool = typer.Option(False, "--version"),
 ) -> None:
-    """Performance Decision Engine CLI."""
     if show_version:
         console.print(__version__)
         raise typer.Exit()
@@ -44,7 +39,6 @@ def root(
 
 @app.command()
 def doctor() -> None:
-    """Validate the local execution environment."""
     console.print("[bold green]Performance Decision Engine[/bold green]")
     console.print(f"Version: {__version__}")
     console.print(f"Python: {sys.version.split()[0]}")
@@ -54,57 +48,20 @@ def doctor() -> None:
 
 @app.command()
 def quadrant(
-    criticality: str = typer.Option(
-        ...,
-        "--criticality",
-        help="Criticality level: low, medium or high.",
-    ),
-    complexity: str = typer.Option(
-        ...,
-        "--complexity",
-        help="Complexity level: low, medium or high.",
-    ),
+    criticality: str = typer.Option(...),
+    complexity: str = typer.Option(...),
 ) -> None:
-    """Resolve the matrix quadrant from criticality and complexity."""
-    try:
-        result = resolve_quadrant(criticality, complexity)
-    except ValueError as exc:
-        console.print(f"[red]Error:[/red] {exc}")
-        raise typer.Exit(code=2) from exc
-
+    result = resolve_quadrant(criticality, complexity)
     console.print(f"Quadrant: {result.number}")
 
 
 @app.command()
 def normalize(
-    performance: Path = typer.Option(
-        ...,
-        "--performance",
-        exists=True,
-        readable=True,
-        help="Path to performance.yaml.",
-    ),
-    parameters: Path = typer.Option(
-        ...,
-        "--parameters",
-        exists=True,
-        readable=True,
-        help="Path to parametricConfigurationValues.yaml.",
-    ),
-    results: Path = typer.Option(
-        ...,
-        "--results",
-        exists=True,
-        readable=True,
-        help="Path to global_stats.json.",
-    ),
-    output: Path = typer.Option(
-        ...,
-        "--output",
-        help="Output JSON path.",
-    ),
+    performance: Path = typer.Option(..., exists=True, readable=True),
+    parameters: Path = typer.Option(..., exists=True, readable=True),
+    results: Path = typer.Option(..., exists=True, readable=True),
+    output: Path = typer.Option(...),
 ) -> None:
-    """Normalize one execution into a JSON document."""
     use_case = NormalizeExecution(
         configuration_reader=YamlConfigurationReader(),
         metrics_reader=GatlingMetricsReader(),

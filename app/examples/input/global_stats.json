@@ -8,11 +8,11 @@
     "minResponseTime": {
       "total": 374
     },
-    "maxResponseTime": {
-      "total": 10510
-    },
     "meanResponseTime": {
       "total": 745
+    },
+    "maxResponseTime": {
+      "total": 10510
     },
     "percentiles3": {
       "total": 1465
