@@ -5,5 +5,4 @@ from performance_decision_engine.domain.entities.execution import NormalizedExec
 
 
 class ExecutionRepository(Protocol):
-    def save(self, execution: NormalizedExecution, path: Path) -> None:
-        ...
+    def save(self, execution: NormalizedExecution, path: Path) -> None: ...

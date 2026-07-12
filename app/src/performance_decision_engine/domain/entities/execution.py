@@ -28,21 +28,14 @@ class AssertionSummary(BaseModel):
     def validate_counts(self) -> "AssertionSummary":
         if self.total != self.successful + self.failed:
             raise ValueError(
-                "Assertion counts are inconsistent: "
-                "total must equal successful plus failed"
+                "Assertion counts are inconsistent: total must equal successful plus failed"
             )
-
         if self.total != len(self.results):
             raise ValueError(
-                "Assertion counts are inconsistent: "
-                "total must equal the number of results"
+                "Assertion counts are inconsistent: total must equal the number of results"
             )
-
         if self.all_passed != (self.failed == 0):
-            raise ValueError(
-                "Assertion status is inconsistent with the failed count"
-            )
-
+            raise ValueError("Assertion status is inconsistent with the failed count")
         return self
 
 
@@ -60,6 +53,7 @@ class ExecutionMetrics(BaseModel):
 
     p50_response_time_ms: int | None = Field(default=None, ge=0)
     p75_response_time_ms: int | None = Field(default=None, ge=0)
+    p90_response_time_ms: int | None = Field(default=None, ge=0)
     p95_response_time_ms: int | None = Field(default=None, ge=0)
     p99_response_time_ms: int | None = Field(default=None, ge=0)
 
@@ -70,9 +64,14 @@ class ExecutionMetrics(BaseModel):
     def validate_request_counts(self) -> "ExecutionMetrics":
         if self.total_requests != self.successful_requests + self.failed_requests:
             raise ValueError(
-                "Request counts are inconsistent: "
-                "total_requests must equal successful_requests plus failed_requests"
+                "Request counts are inconsistent: total_requests must equal "
+                "successful_requests plus failed_requests"
             )
+        expected_rate = (
+            self.failed_requests / self.total_requests * 100.0 if self.total_requests else 0.0
+        )
+        if abs(self.error_rate_percent - expected_rate) > 0.001:
+            raise ValueError("error_rate_percent is inconsistent with the request counts")
         return self
 
 

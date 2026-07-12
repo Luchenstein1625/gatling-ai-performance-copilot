@@ -7,6 +7,10 @@ from performance_decision_engine.domain.entities.configuration import (
     PerformanceConfiguration,
     ResolvedTriplet,
 )
+from performance_decision_engine.domain.services.normalization_service import (
+    normalize_boolean,
+    normalize_text,
+)
 from performance_decision_engine.infrastructure.parsers.parameter_values import ParameterValues
 from performance_decision_engine.infrastructure.parsers.yaml_loader import load_yaml
 
@@ -22,7 +26,6 @@ class YamlConfigurationReader(ConfigurationReader):
 
         warnings: list[str] = []
         endpoints: list[EndpointConfiguration] = []
-
         raw_features = document.get("features", [])
         if not isinstance(raw_features, list):
             warnings.append("The 'features' field is not a list")
@@ -32,12 +35,14 @@ class YamlConfigurationReader(ConfigurationReader):
             if not isinstance(raw, dict):
                 warnings.append(f"Feature at index {index} is not an object")
                 continue
+            try:
+                endpoints.append(self._map_endpoint(raw, index, parameters))
+            except ValueError as exc:
+                raise ValueError(f"Invalid feature at index {index}: {exc}") from exc
 
-            endpoints.append(self._map_endpoint(raw, index, parameters))
-
-        load_type = document.get("loadType")
+        load_type = normalize_text(document.get("loadType"), lowercase=True)
         return PerformanceConfiguration(
-            load_type=str(load_type) if load_type is not None else None,
+            load_type=load_type,
             endpoints=endpoints,
             warnings=warnings,
         )
@@ -48,35 +53,33 @@ class YamlConfigurationReader(ConfigurationReader):
         index: int,
         parameters: ParameterValues,
     ) -> EndpointConfiguration:
-        concurrency = str(raw.get("concurrency", "unknown"))
-        iterations = str(raw.get("iterations", "unknown"))
-        response_time = str(raw.get("response_time", "unknown"))
+        concurrency = normalize_text(raw.get("concurrency"), default="unknown", lowercase=True)
+        iterations = normalize_text(raw.get("iterations"), default="unknown", lowercase=True)
+        response_time = normalize_text(raw.get("response_time"), default="unknown", lowercase=True)
+        assert concurrency is not None
+        assert iterations is not None
+        assert response_time is not None
 
         return EndpointConfiguration(
-            name=str(raw.get("name", f"endpoint-{index}")),
-            feature_reference=str(raw.get("feature", "")),
-            enabled=bool(raw.get("performance", False)),
-            reason=self._optional_text(raw.get("reason")),
-            reason_detail=self._optional_text(raw.get("reason_detail")),
+            name=normalize_text(raw.get("name"), default=f"endpoint-{index}")
+            or f"endpoint-{index}",
+            feature_reference=normalize_text(raw.get("feature"), default="") or "",
+            enabled=normalize_boolean(raw.get("performance"), default=False),
+            reason=normalize_text(raw.get("reason")),
+            reason_detail=normalize_text(raw.get("reason_detail")),
             triplet=ResolvedTriplet(
                 concurrency_level=concurrency,
                 concurrency_value=self._optional_int(
                     parameters.resolve("concurrency", concurrency)
                 ),
                 iterations_level=iterations,
-                iterations_value=self._optional_int(
-                    parameters.resolve("iterations", iterations)
-                ),
+                iterations_value=self._optional_int(parameters.resolve("iterations", iterations)),
                 response_time_level=response_time,
                 response_time_ms=self._optional_int(
                     parameters.resolve("response_time", response_time)
                 ),
             ),
         )
-
-    @staticmethod
-    def _optional_text(value: Any) -> str | None:
-        return str(value) if value is not None else None
 
     @staticmethod
     def _optional_int(value: int | float | None) -> int | None:

@@ -66,16 +66,12 @@ class GatlingAssertionsReader:
         if not raw:
             return []
 
-        raise ValueError(
-            "Invalid assertions document: no assertions collection was found"
-        )
+        raise ValueError("Invalid assertions document: no assertions collection was found")
 
     @staticmethod
     def _ensure_dict_items(items: list[Any]) -> list[dict[str, Any]]:
         if not all(isinstance(item, dict) for item in items):
-            raise ValueError(
-                "Invalid assertions document: every assertion must be an object"
-            )
+            raise ValueError("Invalid assertions document: every assertion must be an object")
         return items
 
     @classmethod

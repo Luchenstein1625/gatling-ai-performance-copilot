@@ -43,9 +43,7 @@ class ParameterValues:
         try:
             document = ParameterValuesDocument.model_validate(raw)
         except ValidationError as exc:
-            raise InvalidInputFileError(
-                f"Invalid parameter values document: {path}"
-            ) from exc
+            raise InvalidInputFileError(f"Invalid parameter values document: {path}") from exc
 
         return cls(document)
 

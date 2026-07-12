@@ -2,28 +2,13 @@
 
 Motor desacoplado para apoyar decisiones de configuración en pruebas de rendimiento.
 
-El proyecto implementa una arquitectura limpia (*Clean Architecture*) para separar completamente la lógica de negocio de las herramientas utilizadas para ejecutar las pruebas.
-
-Actualmente el caso de estudio utiliza archivos **YAML** y resultados de **Gatling**, pero el núcleo del sistema no depende de una herramienta específica. Nuevas fuentes como **JMeter**, **k6** o **LoadRunner** pueden incorporarse mediante adaptadores sin modificar el dominio.
-
----
-
-# Objetivo
-
-El objetivo del proyecto es construir un motor capaz de:
-
-* Interpretar configuraciones de pruebas de rendimiento.
-* Normalizar resultados provenientes de distintas herramientas.
-* Generar una representación común de las ejecuciones.
-* Servir como base para un futuro motor de recomendaciones basado en Machine Learning.
+El caso de estudio inicial utiliza archivos YAML y resultados Gatling, pero el núcleo del sistema no depende de una herramienta específica. Nuevas fuentes como JMeter, k6 o LoadRunner pueden incorporarse mediante adaptadores sin modificar el dominio.
 
 ---
 
 # Arquitectura
 
-El proyecto sigue una arquitectura desacoplada basada en **Clean Architecture**.
-
-```text
+```
 app/
 ├── src/performance_decision_engine/
 │   ├── domain/
@@ -47,136 +32,239 @@ app/
 
 ---
 
-# Componentes
+# Responsabilidades
 
-## Domain
+## domain/
 
-Contiene el conocimiento del negocio.
+Contiene únicamente el conocimiento del negocio.
 
 Incluye:
 
-* Tripleta
-* Cuadrantes
-* Configuración de endpoints
-* Métricas de ejecución
-* Recomendaciones
-* Reglas puras
+- Tripleta
+- Configuración de endpoint
+- Métricas
+- Cuadrantes
+- Recomendaciones
+- Reglas de dominio
 
-El dominio no depende de:
+El dominio no conoce:
 
-* FastAPI
-* Typer
-* YAML
-* Gatling
-* Persistencia
-* Frameworks externos
+- YAML
+- JSON
+- Gatling
+- FastAPI
+- Typer
+- Persistencia
 
 ---
 
-## Application
+## application/
 
-Implementa los casos de uso del sistema.
+Contiene los casos de uso.
+
+Actualmente implementa:
+
+- NormalizeExecution
+- Quadrant Resolution
+
+Los siguientes casos de uso serán incorporados durante los próximos hitos:
+
+- Recommendation Engine
+- Explainability
+- Learning Pipeline
+
+---
+
+## infrastructure/
+
+Implementa adaptadores hacia herramientas externas.
 
 Actualmente incluye:
 
-* Normalización de una ejecución
-* Resolución de cuadrantes
-* Recomendación Baseline
-
-También define los puertos utilizados para desacoplar el dominio de la infraestructura.
-
----
-
-## Infrastructure
-
-Implementa los detalles técnicos externos.
-
-Actualmente incorpora:
-
-* Parser de `performance.yaml`
-* Parser de `parametricConfigurationValues.yaml`
-* Parser de resultados Gatling
-* Repositorio JSON
+- Parser de performance.yaml
+- Parser de parametricConfigurationValues.yaml
+- Parser de global_stats.json
+- Parser de assertions.json
+- Repositorio JSON
 
 ---
 
-## Interfaces
+## interfaces/
 
-Expone la funcionalidad mediante:
+Expone la funcionalidad del sistema mediante:
 
-* CLI
-* API REST
+- CLI
+- REST API
 
 ---
 
 # Requisitos
 
-* Python 3.11 o superior
-* Windows, Linux o macOS
+- Python 3.11+
+- pip
+- virtualenv
 
 ---
 
 # Instalación
 
-Desde la carpeta `app`:
+Desde la carpeta **app**:
 
 ```powershell
 python -m venv .venv
-.\.venv\Scripts\Activate.ps1
+
+.\.venv\Scripts\activate
 
 python -m pip install --upgrade pip
+
 pip install -e ".[dev]"
 ```
 
 ---
 
-# Uso
-
-## Verificar instalación
+# Verificación
 
 ```powershell
 pde doctor
 ```
 
+```powershell
+pde --version
+```
+
+```powershell
+pytest
+```
+
 ---
 
-## Ver versión
+# Estado actual
+
+Actualmente el proyecto implementa completamente:
+
+- Arquitectura limpia
+- CLI
+- API REST
+- Parser YAML
+- Parser de parámetros
+- Parser de métricas Gatling
+- Parser de assertions
+- Resolución de cuadrantes
+- Normalización de configuraciones
+- Normalización de métricas
+- Persistencia JSON
+- Modelo `NormalizedExecution`
+- Validaciones automáticas
+- Warnings
+- Pruebas unitarias
+
+---
+
+# Calidad
+
+El proyecto pasa satisfactoriamente:
+
+- ✅ Black
+- ✅ Ruff
+- ✅ MyPy
+- ✅ Pytest
+
+45 pruebas automatizadas aprobadas.
+
+---
+
+# Ejecución
+
+Para validar el entorno:
+
+```powershell
+pde doctor
+```
+
+Para obtener la versión:
 
 ```powershell
 pde --version
 ```
 
----
-
-## Resolver un cuadrante
+Para ejecutar las pruebas:
 
 ```powershell
-pde quadrant --criticality high --complexity medium
+pytest
+```
+
+---
+
+# Normalización
+
+El principal caso de uso implementado durante el Hito 5 corresponde a la normalización de una ejecución completa de pruebas de rendimiento.
+
+El proceso combina la configuración de la prueba con los resultados generados por Gatling para producir un modelo único de dominio denominado `NormalizedExecution`.
+
+---
+
+## Ejecutar normalización
+
+```powershell
+pde normalize `
+    --performance examples/input/performance.yaml `
+    --parameters examples/input/parametricConfigurationValues.yaml `
+    --results examples/input/global_stats.json `
+    --output examples/output/execution_summary.json
+```
+
+Si existen assertions:
+
+```powershell
+pde normalize `
+    --performance examples/input/performance.yaml `
+    --parameters examples/input/parametricConfigurationValues.yaml `
+    --results examples/input/global_stats.json `
+    --assertions examples/input/assertions.json `
+    --output examples/output/execution_summary.json
+```
+
+---
+
+## Salida
+
+El proceso genera un archivo JSON con la representación normalizada de la ejecución.
+
+La salida contiene:
+
+- Configuración resuelta
+- Endpoints
+- Tripletas
+- Métricas globales
+- Percentiles
+- TPS
+- Error Rate
+- Assertions
+- Warnings
+
+---
+
+# Resolver cuadrante
+
+Ejemplo:
+
+```powershell
+pde quadrant `
+    --criticality high `
+    --complexity medium
 ```
 
 Resultado esperado:
 
-```text
-Quadrant: 6
 ```
-
----
-
-## Normalizar una ejecución
-
-```powershell
-pde normalize `
-  --performance examples/input/performance.yaml `
-  --parameters examples/input/parametricConfigurationValues.yaml `
-  --results examples/input/global_stats.json `
-  --output examples/output/execution_summary.json
+Quadrant: 6
 ```
 
 ---
 
 # API REST
 
-Ejecutar:
+Levantar la API:
 
 ```powershell
 uvicorn performance_decision_engine.interfaces.api.main:app --reload
@@ -184,151 +272,128 @@ uvicorn performance_decision_engine.interfaces.api.main:app --reload
 
 Endpoints disponibles:
 
-* `GET /health`
-* `GET /version`
-* `GET /quadrants/{criticality}/{complexity}`
+```
+GET /health
+
+GET /version
+
+GET /quadrants/{criticality}/{complexity}
+```
+
+Durante H6 se incorporarán nuevos endpoints para recomendaciones inteligentes.
 
 ---
 
-# Flujo de procesamiento
+# Flujo funcional
 
-```text
+```
 performance.yaml
         +
 parametricConfigurationValues.yaml
         +
 global_stats.json
-        |
-        v
+        +
+assertions.json (opcional)
+        │
+        ▼
 Infrastructure Parsers
-        |
-        v
+        │
+        ▼
 NormalizeExecution
-        |
-        v
-ExecutionMetrics
-        |
-        v
-Normalized JSON
+        │
+        ▼
+NormalizedExecution
+        │
+        ▼
+Recommendation Engine (H6)
 ```
 
 ---
 
-# Calidad del proyecto
+# Estado del proyecto
 
-Ejecutar las verificaciones:
+## Implementado
+
+- Arquitectura limpia
+- CLI
+- API REST
+- YAML Parser
+- Parameter Resolver
+- Gatling Metrics Parser
+- Assertions Parser
+- Normalization Engine
+- JSON Repository
+- Quadrant Resolution
+- Unit Testing
+
+---
+
+## En desarrollo
+
+- Recommendation Engine
+- Explainability
+- Machine Learning
+- Recommendation Repository
+- Recommendation API
+
+---
+
+# Calidad
+
+El proyecto mantiene como requisito obligatorio que todos los cambios aprueben:
 
 ```powershell
-ruff check .
-
 black --check .
+
+ruff check .
 
 mypy src
 
-pytest -v
-
-pytest --cov=performance_decision_engine
+pytest
 ```
 
-Resultado esperado:
+Estado actual:
 
-```text
-All checks passed!
+- ✅ Black
+- ✅ Ruff
+- ✅ MyPy
+- ✅ Pytest
 
-Success: no issues found
-
-21 passed
-```
-
----
-
-# Hitos implementados
-
-| Hito | Estado | Descripción       |
-| ---- | :----: | ----------------- |
-| H1   |    ✅   | Project Bootstrap |
-| H2   |    ✅   | Parameter Values  |
-| H3   |    ✅   | Performance YAML  |
-| H4   |    ✅   | Gatling Results   |
-
----
-
-# H4 – Gatling Results
-
-El cuarto hito incorpora el parser oficial de resultados Gatling y normaliza la información para que el dominio permanezca completamente desacoplado del formato de la herramienta.
-
-## Funcionalidades
-
-* Lectura de `global_stats.json`
-* Lectura opcional de `assertions.json`
-* Validación de archivos JSON
-* Validación de estructura
-* Validación de requests
-* Cálculo de Error Rate
-* Extracción de Throughput
-* Extracción de tiempos de respuesta
-* Extracción de percentiles P50, P75, P95 y P99
-* Normalización de assertions
-* Entidades Pydantic tipadas
-* Compatibilidad con Ruff
-* Compatibilidad con MyPy
-* Pruebas unitarias
-
-## Componentes incorporados
-
-* `ExecutionMetrics`
-* `AssertionResult`
-* `AssertionSummary`
-* `GatlingMetricsReader`
-* `GatlingAssertionsReader`
-
-## Validaciones
-
-El parser rechaza automáticamente:
-
-* Archivos inexistentes
-* JSON inválido
-* Estructuras incompatibles
-* Valores negativos
-* Requests inconsistentes
-* Assertions sin estado válido
+**45 pruebas aprobadas.**
 
 ---
 
 # Roadmap
 
-| Hito                    | Estado |
-| ----------------------- | :----: |
-| H5 – Normalization      |    ⏳   |
-| H6 – Decision Matrix    |    ⏳   |
-| H7 – Dataset Generation |    ⏳   |
-| H8 – Machine Learning   |    ⏳   |
-| H9 – Explainability     |    ⏳   |
-| H10 – Integration       |    ⏳   |
+| Hito | Estado |
+|------|--------|
+| H1 | ✅ |
+| H2 | ✅ |
+| H3 | ✅ |
+| H4 | ✅ |
+| H5 | ✅ |
+| H6 | ⏳ |
+| H7 | ⏳ |
+| H8 | ⏳ |
 
 ---
 
-# Estado actual
+# Próximo hito
 
-El proyecto incorpora actualmente:
+## H6 – Recommendation Engine
 
-* ✅ Arquitectura Clean Architecture
-* ✅ Dominio desacoplado
-* ✅ CLI funcional
-* ✅ API REST
-* ✅ Parser de `performance.yaml`
-* ✅ Parser de `parametricConfigurationValues.yaml`
-* ✅ Parser de resultados Gatling
-* ✅ Normalización de métricas
-* ✅ Persistencia JSON
-* ✅ Baseline simple
-* ✅ Pruebas unitarias
-* ✅ Ruff
-* ✅ MyPy
-* ✅ Ejemplos funcionales
+El siguiente objetivo consiste en utilizar el modelo `NormalizedExecution` para generar recomendaciones automáticas sobre la configuración óptima de pruebas de rendimiento.
 
-## Próximo objetivo
+El motor incorporará:
 
-**H5 – Normalization**
+- reglas de negocio;
+- recomendaciones baseline;
+- persistencia;
+- explicaciones;
+- integración con la API REST.
 
-Este hito unificará la configuración de la prueba (`PerformanceConfiguration`) con las métricas normalizadas (`ExecutionMetrics`) para construir una representación única de cada ejecución, que servirá posteriormente como base para la generación automática de datasets y el motor de recomendaciones basado en Machine Learning.
+---
+
+# Licencia
+
+MIT License.
