@@ -62,9 +62,7 @@ def test_recommendation_maintains_when_execution_complies() -> None:
 
 
 def test_recommendation_reviews_failed_requests() -> None:
-    result = RecommendExecution().execute(
-        _execution(error_rate=1.0, failed_requests=1)
-    )
+    result = RecommendExecution().execute(_execution(error_rate=1.0, failed_requests=1))
 
     assert result.action == "review"
 
