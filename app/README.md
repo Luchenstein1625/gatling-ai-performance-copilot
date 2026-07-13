@@ -1,53 +1,84 @@
 # Performance Decision Engine
 
-Motor desacoplado para apoyar decisiones de configuración en pruebas de rendimiento.
+Motor de decisión desacoplado para apoyar el diseño, análisis y recomendación de configuraciones de pruebas de rendimiento.
 
-El caso de estudio inicial utiliza archivos YAML y resultados Gatling, pero el núcleo del sistema no depende de una herramienta específica. Nuevas fuentes como JMeter, k6 o LoadRunner pueden incorporarse mediante adaptadores sin modificar el dominio.
+El caso de estudio inicial utiliza **Gatling**, sin embargo el núcleo del sistema fue diseñado para ser completamente independiente de cualquier herramienta específica.
+
+La arquitectura permite incorporar futuras fuentes de información como:
+
+- JMeter
+- k6
+- LoadRunner
+- NeoLoad
+- Herramientas propietarias
+
+mediante adaptadores de infraestructura sin modificar el dominio.
+
+---
+
+# Objetivos
+
+El Performance Decision Engine tiene como propósito:
+
+- interpretar configuraciones de pruebas;
+- resolver parámetros corporativos;
+- normalizar configuraciones y resultados;
+- construir un modelo único de dominio;
+- generar recomendaciones automáticas;
+- preparar la incorporación de Explainable AI y Machine Learning.
 
 ---
 
 # Arquitectura
 
+El proyecto implementa una arquitectura basada en **Clean Architecture** y **Domain Driven Design**.
+
 ```
 app/
-├── src/performance_decision_engine/
+
+├── src/
+│
+├── performance_decision_engine/
+│
 │   ├── domain/
-│   │   ├── entities/
-│   │   └── services/
+│   │
 │   ├── application/
-│   │   ├── ports/
-│   │   └── use_cases/
+│   │
 │   ├── infrastructure/
-│   │   ├── parsers/
-│   │   └── repositories/
+│   │
 │   └── interfaces/
-│       ├── cli/
-│       └── api/
-├── tests/
-├── examples/
+│
 ├── docs/
+│
+├── examples/
+│
 ├── scripts/
+│
+├── tests/
+│
 └── pyproject.toml
 ```
 
 ---
 
-# Responsabilidades
+# Capas
 
-## domain/
+## Domain
 
 Contiene únicamente el conocimiento del negocio.
 
-Incluye:
+Implementa:
 
-- Tripleta
-- Configuración de endpoint
-- Métricas
-- Cuadrantes
-- Recomendaciones
-- Reglas de dominio
+- Triplet
+- EndpointConfiguration
+- PerformanceConfiguration
+- ExecutionMetrics
+- NormalizedExecution
+- Recommendation
+- Quadrant
+- Servicios de dominio
 
-El dominio no conoce:
+El dominio no depende de:
 
 - YAML
 - JSON
@@ -58,40 +89,38 @@ El dominio no conoce:
 
 ---
 
-## application/
+## Application
 
-Contiene los casos de uso.
+Implementa los casos de uso.
+
+Actualmente:
+
+- NormalizeExecution
+- RecommendExecution
+
+Los casos de uso reciben entidades de dominio y delegan las decisiones a los servicios correspondientes.
+
+---
+
+## Infrastructure
+
+Contiene los adaptadores externos.
 
 Actualmente implementa:
 
-- NormalizeExecution
-- Quadrant Resolution
+- YAML Configuration Parser
+- Parameter Values Parser
+- Gatling Metrics Parser
+- Assertions Parser
+- JSON Repository
 
-Los siguientes casos de uso serán incorporados durante los próximos hitos:
-
-- Recommendation Engine
-- Explainability
-- Learning Pipeline
-
----
-
-## infrastructure/
-
-Implementa adaptadores hacia herramientas externas.
-
-Actualmente incluye:
-
-- Parser de performance.yaml
-- Parser de parametricConfigurationValues.yaml
-- Parser de global_stats.json
-- Parser de assertions.json
-- Repositorio JSON
+Esta capa es responsable únicamente de traducir datos externos al modelo interno.
 
 ---
 
-## interfaces/
+## Interfaces
 
-Expone la funcionalidad del sistema mediante:
+Expone el sistema mediante:
 
 - CLI
 - REST API
@@ -122,15 +151,23 @@ pip install -e ".[dev]"
 
 ---
 
-# Verificación
+# Verificación del entorno
 
 ```powershell
 pde doctor
 ```
 
+---
+
+## Versión
+
 ```powershell
 pde --version
 ```
+
+---
+
+## Ejecutar pruebas
 
 ```powershell
 pytest
@@ -138,153 +175,75 @@ pytest
 
 ---
 
-# Estado actual
+# Componentes implementados
 
-Actualmente el proyecto implementa completamente:
+## Configuración
 
-- Arquitectura limpia
-- CLI
-- API REST
-- Parser YAML
-- Parser de parámetros
-- Parser de métricas Gatling
-- Parser de assertions
-- Resolución de cuadrantes
-- Normalización de configuraciones
-- Normalización de métricas
-- Persistencia JSON
-- Modelo `NormalizedExecution`
-- Validaciones automáticas
-- Warnings
-- Pruebas unitarias
+- YAML Configuration Parser
+- Parameter Resolver
+- Triplet Resolution
+- Endpoint Configuration
 
 ---
 
-# Calidad
+## Métricas
 
-El proyecto pasa satisfactoriamente:
-
-- ✅ Black
-- ✅ Ruff
-- ✅ MyPy
-- ✅ Pytest
-
-45 pruebas automatizadas aprobadas.
-
----
-
-# Ejecución
-
-Para validar el entorno:
-
-```powershell
-pde doctor
-```
-
-Para obtener la versión:
-
-```powershell
-pde --version
-```
-
-Para ejecutar las pruebas:
-
-```powershell
-pytest
-```
-
----
-
-# Normalización
-
-El principal caso de uso implementado durante el Hito 5 corresponde a la normalización de una ejecución completa de pruebas de rendimiento.
-
-El proceso combina la configuración de la prueba con los resultados generados por Gatling para producir un modelo único de dominio denominado `NormalizedExecution`.
-
----
-
-## Ejecutar normalización
-
-```powershell
-pde normalize `
-    --performance examples/input/performance.yaml `
-    --parameters examples/input/parametricConfigurationValues.yaml `
-    --results examples/input/global_stats.json `
-    --output examples/output/execution_summary.json
-```
-
-Si existen assertions:
-
-```powershell
-pde normalize `
-    --performance examples/input/performance.yaml `
-    --parameters examples/input/parametricConfigurationValues.yaml `
-    --results examples/input/global_stats.json `
-    --assertions examples/input/assertions.json `
-    --output examples/output/execution_summary.json
-```
-
----
-
-## Salida
-
-El proceso genera un archivo JSON con la representación normalizada de la ejecución.
-
-La salida contiene:
-
-- Configuración resuelta
-- Endpoints
-- Tripletas
-- Métricas globales
+- Gatling Metrics Parser
+- Assertions Parser
 - Percentiles
-- TPS
 - Error Rate
-- Assertions
-- Warnings
+- TPS
+- Response Times
 
 ---
 
-# Resolver cuadrante
+## Dominio
 
-Ejemplo:
-
-```powershell
-pde quadrant `
-    --criticality high `
-    --complexity medium
-```
-
-Resultado esperado:
-
-```
-Quadrant: 6
-```
+- Quadrant Resolution
+- NormalizeExecution
+- NormalizedExecution
+- Recommendation Engine
 
 ---
 
-# API REST
+## Persistencia
 
-Levantar la API:
-
-```powershell
-uvicorn performance_decision_engine.interfaces.api.main:app --reload
-```
-
-Endpoints disponibles:
-
-```
-GET /health
-
-GET /version
-
-GET /quadrants/{criticality}/{complexity}
-```
-
-Durante H6 se incorporarán nuevos endpoints para recomendaciones inteligentes.
+- JSON Repository
 
 ---
 
-# Flujo funcional
+## Interfaces
+
+- CLI
+- REST API
+
+---
+
+# Recommendation Engine (H6)
+
+El Hito 6 incorpora el primer motor de recomendación del proyecto.
+
+Su objetivo consiste en transformar una ejecución normalizada en una recomendación reutilizable por cualquier consumidor del dominio.
+
+## Entrada
+
+El Recommendation Engine recibe únicamente:
+
+```text
+NormalizedExecution
+```
+
+No conoce:
+
+- Gatling
+- YAML
+- JSON
+- CLI
+- REST API
+
+---
+
+## Flujo
 
 ```
 performance.yaml
@@ -305,42 +264,226 @@ NormalizeExecution
 NormalizedExecution
         │
         ▼
-Recommendation Engine (H6)
+RecommendExecution
+        │
+        ▼
+Recommendation
 ```
 
 ---
 
-# Estado del proyecto
+## Recommendation
 
-## Implementado
+La salida corresponde a la entidad:
 
-- Arquitectura limpia
-- CLI
-- API REST
-- YAML Parser
-- Parameter Resolver
-- Gatling Metrics Parser
-- Assertions Parser
-- Normalization Engine
-- JSON Repository
-- Quadrant Resolution
-- Unit Testing
+```text
+Recommendation
+```
+
+Compuesta por:
+
+- action
+- explanation
+- evidence
 
 ---
 
-## En desarrollo
+## Reglas implementadas
 
-- Recommendation Engine
-- Explainability
-- Machine Learning
-- Recommendation Repository
-- Recommendation API
+### Error Rate
+
+```
+error_rate > 0
+
+↓
+
+review
+```
+
+---
+
+### Tiempo de respuesta
+
+```
+P95 > objetivo
+
+↓
+
+review
+```
+
+---
+
+### Assertions
+
+```
+assertions failed
+
+↓
+
+review
+```
+
+---
+
+### Sin requests
+
+```
+requests == 0
+
+↓
+
+review
+```
+
+---
+
+### Sin endpoints
+
+```
+no enabled endpoints
+
+↓
+
+review
+```
+
+---
+
+### Ejecución correcta
+
+```
+↓
+
+maintain
+```
+
+---
+
+# Normalización
+
+El principal caso de uso desarrollado durante H5 corresponde a la normalización de una ejecución.
+
+El proceso produce un objeto único denominado:
+
+```text
+NormalizedExecution
+```
+
+que contiene:
+
+- configuración
+- endpoints
+- tripletas
+- métricas
+- warnings
+
+Este objeto constituye la representación oficial de una ejecución dentro del dominio.
+
+---
+
+# Ejecutar normalización
+
+```powershell
+pde normalize `
+    --performance examples/input/performance.yaml `
+    --parameters examples/input/parametricConfigurationValues.yaml `
+    --results examples/input/global_stats.json `
+    --output examples/output/execution_summary.json
+```
+
+Con assertions:
+
+```powershell
+pde normalize `
+    --performance examples/input/performance.yaml `
+    --parameters examples/input/parametricConfigurationValues.yaml `
+    --results examples/input/global_stats.json `
+    --assertions examples/input/assertions.json `
+    --output examples/output/execution_summary.json
+```
+
+---
+
+# Recommendation CLI
+
+El H6 incorpora un nuevo comando.
+
+```powershell
+pde recommend `
+    --performance examples/input/performance.yaml `
+    --parameters examples/input/parametricConfigurationValues.yaml `
+    --results examples/input/global_stats.json `
+    --output examples/output/recommendation.json
+```
+
+Ejemplo de salida:
+
+```
+Recommendation: maintain
+
+Las reglas básicas evaluadas no detectaron incumplimientos.
+
+Created:
+examples/output/recommendation.json
+```
+
+---
+
+# API REST
+
+Ejecutar:
+
+```powershell
+uvicorn performance_decision_engine.interfaces.api.main:app --reload
+```
+
+Endpoints:
+
+```
+GET /health
+
+GET /version
+
+GET /quadrants/{criticality}/{complexity}
+
+POST /recommendations
+```
+
+---
+
+# Recommendation JSON
+
+Ejemplo:
+
+```json
+{
+  "action": "maintain",
+  "explanation": "Las reglas básicas evaluadas no detectaron incumplimientos.",
+  "evidence": {
+    "error_rate_percent": 0,
+    "p95_response_time_ms": 1465,
+    "expected_response_time_ms": 15000,
+    "metrics_scope": "execution"
+  }
+}
+```
+
+---
+
+# Limitaciones actuales
+
+Actualmente las métricas corresponden a la ejecución completa.
+
+No existen métricas individuales por endpoint.
+
+Las recomendaciones son globales para toda la ejecución.
 
 ---
 
 # Calidad
 
-El proyecto mantiene como requisito obligatorio que todos los cambios aprueben:
+Todos los cambios deben aprobar:
 
 ```powershell
 black --check .
@@ -359,11 +502,11 @@ Estado actual:
 - ✅ MyPy
 - ✅ Pytest
 
-**45 pruebas aprobadas.**
+**50 pruebas automatizadas aprobadas.**
 
 ---
 
-# Roadmap
+# Estado del proyecto
 
 | Hito | Estado |
 |------|--------|
@@ -372,25 +515,34 @@ Estado actual:
 | H3 | ✅ |
 | H4 | ✅ |
 | H5 | ✅ |
-| H6 | ⏳ |
+| H6 | ✅ |
 | H7 | ⏳ |
 | H8 | ⏳ |
 
 ---
 
-# Próximo hito
+# Próximo Hito
 
-## H6 – Recommendation Engine
+## H7 – Explainability
 
-El siguiente objetivo consiste en utilizar el modelo `NormalizedExecution` para generar recomendaciones automáticas sobre la configuración óptima de pruebas de rendimiento.
+Se incorporará:
 
-El motor incorporará:
+- explicación de recomendaciones;
+- trazabilidad de reglas;
+- evidencia enriquecida;
+- preparación para Machine Learning.
 
-- reglas de negocio;
-- recomendaciones baseline;
-- persistencia;
-- explicaciones;
-- integración con la API REST.
+---
+
+# H8
+
+Posteriormente el proyecto evolucionará incorporando:
+
+- Machine Learning
+- entrenamiento supervisado
+- modelos predictivos
+- Dashboard
+- Explainable AI
 
 ---
 
