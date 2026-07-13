@@ -1,0 +1,1 @@
+{"stats": {"numberOfRequests": {"total": 100, "ok": 98, "ko": 2}, "p90": {"total": 850}, "percentiles3": {"total": 1200}, "percentiles4": {"total": 1500}, "meanNumberOfRequestsPerSecond": {"total": 25.5}}}

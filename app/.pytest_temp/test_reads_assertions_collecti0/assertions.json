@@ -1,0 +1,1 @@
+{"assertions": [{"path": "Global", "target": "responseTime.percentile3", "condition": "lt", "expected": 2000, "actual": 850, "successful": true, "message": "p95 is below the SLA"}, {"path": "Global", "target": "failedRequests.percent", "condition": "lte", "expected": 1, "actual": 2.5, "successful": false, "message": "error rate exceeded"}]}

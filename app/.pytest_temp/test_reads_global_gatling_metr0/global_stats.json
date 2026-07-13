@@ -1,0 +1,1 @@
+{"stats": {"numberOfRequests": {"total": 100, "ok": 95, "ko": 5}, "minResponseTime": {"total": 10}, "meanResponseTime": {"total": 120}, "maxResponseTime": {"total": 900}, "percentiles1": {"total": 100}, "percentiles2": {"total": 150}, "percentiles3": {"total": 300}, "percentiles4": {"total": 600}, "meanNumberOfRequestsPerSecond": {"total": 25.5}}}

@@ -1,0 +1,9 @@
+
+loadType: stress
+features:
+  - name: consulta-saldo
+    feature: saldo.feature
+    performance: "false"
+    concurrency: medium
+    iterations: medium
+    response_time: medium

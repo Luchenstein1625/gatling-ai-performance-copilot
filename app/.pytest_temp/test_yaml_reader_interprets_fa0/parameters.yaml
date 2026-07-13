@@ -1,0 +1,7 @@
+
+concurrency:
+  medium: 20
+iterations:
+  medium: 100
+response_time:
+  medium: 2000

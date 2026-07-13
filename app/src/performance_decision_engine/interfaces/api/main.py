@@ -1,6 +1,11 @@
 from fastapi import FastAPI, HTTPException
 
 from performance_decision_engine import __version__
+from performance_decision_engine.application.use_cases.recommend_execution import (
+    RecommendExecution,
+)
+from performance_decision_engine.domain.entities.execution import NormalizedExecution
+from performance_decision_engine.domain.entities.recommendation import Recommendation
 from performance_decision_engine.domain.services.quadrant_service import resolve_quadrant
 
 app = FastAPI(
@@ -31,3 +36,9 @@ def quadrant(criticality: str, complexity: str) -> dict[str, int | str]:
         "criticality": result.criticality,
         "complexity": result.complexity,
     }
+
+
+@app.post("/recommendations", response_model=Recommendation)
+def recommendation(execution: NormalizedExecution) -> Recommendation:
+    """Generate a baseline recommendation from a normalized execution."""
+    return RecommendExecution().execute(execution)
