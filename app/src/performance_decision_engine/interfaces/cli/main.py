@@ -20,7 +20,6 @@ from performance_decision_engine.infrastructure.parsers.yaml_configuration_reade
 from performance_decision_engine.infrastructure.repositories.json_execution_repository import (
     JsonExecutionRepository,
 )
-from performance_decision_engine.interfaces.dependencies import build_generate_recommendation
 
 app = typer.Typer(help="Performance Decision Engine")
 console = Console()
@@ -31,13 +30,17 @@ def root(
     ctx: typer.Context,
     show_version: Annotated[
         bool,
-        typer.Option("--version", help="Show application version."),
+        typer.Option(
+            "--version",
+            help="Show application version.",
+        ),
     ] = False,
 ) -> None:
     """Performance Decision Engine CLI."""
     if show_version:
         console.print(__version__)
         raise typer.Exit()
+
     if ctx.invoked_subcommand is None:
         console.print(ctx.get_help())
 
@@ -56,11 +59,17 @@ def doctor() -> None:
 def quadrant(
     criticality: Annotated[
         str,
-        typer.Option("--criticality", help="Criticality level: low, medium or high."),
+        typer.Option(
+            "--criticality",
+            help="Criticality level: low, medium or high.",
+        ),
     ],
     complexity: Annotated[
         str,
-        typer.Option("--complexity", help="Complexity level: low, medium or high."),
+        typer.Option(
+            "--complexity",
+            help="Complexity level: low, medium or high.",
+        ),
     ],
 ) -> None:
     """Resolve the matrix quadrant from criticality and complexity."""
@@ -69,19 +78,58 @@ def quadrant(
     except ValueError as exc:
         console.print(f"[red]Error:[/red] {exc}")
         raise typer.Exit(code=2) from exc
+
     console.print(f"Quadrant: {result.number}")
 
 
 @app.command()
 def normalize(
-    performance: Annotated[Path, typer.Option("--performance", exists=True, readable=True)],
-    parameters: Annotated[Path, typer.Option("--parameters", exists=True, readable=True)],
-    results: Annotated[Path, typer.Option("--results", exists=True, readable=True)],
-    output: Annotated[Path, typer.Option("--output")],
-    assertions: Annotated[
-        Path | None,
-        typer.Option("--assertions", exists=True, readable=True),
-    ] = None,
+    performance: Annotated[
+        Path,
+        typer.Option(
+            "--performance",
+            exists=True,
+            file_okay=True,
+            dir_okay=False,
+            readable=True,
+            resolve_path=True,
+            help="Path to performance.yaml.",
+        ),
+    ],
+    parameters: Annotated[
+        Path,
+        typer.Option(
+            "--parameters",
+            exists=True,
+            file_okay=True,
+            dir_okay=False,
+            readable=True,
+            resolve_path=True,
+            help="Path to parametricConfigurationValues.yaml.",
+        ),
+    ],
+    results: Annotated[
+        Path,
+        typer.Option(
+            "--results",
+            exists=True,
+            file_okay=True,
+            dir_okay=False,
+            readable=True,
+            resolve_path=True,
+            help="Path to global_stats.json.",
+        ),
+    ],
+    output: Annotated[
+        Path,
+        typer.Option(
+            "--output",
+            file_okay=True,
+            dir_okay=False,
+            resolve_path=True,
+            help="Output JSON path.",
+        ),
+    ],
 ) -> None:
     """Normalize one performance-test execution into a JSON document."""
     try:
@@ -89,52 +137,16 @@ def normalize(
             configuration_reader=YamlConfigurationReader(),
             metrics_reader=GatlingMetricsReader(),
         )
+
         execution = use_case.execute(
             performance_path=performance,
             parameters_path=parameters,
             results_path=results,
-            assertions_path=assertions,
         )
+
         JsonExecutionRepository().save(execution, output)
     except ValueError as exc:
         console.print(f"[red]Error:[/red] {exc}")
         raise typer.Exit(code=2) from exc
-    console.print(f"[green]Created:[/green] {output}")
 
-
-@app.command()
-def recommend(
-    performance: Annotated[Path, typer.Option("--performance", exists=True, readable=True)],
-    parameters: Annotated[Path, typer.Option("--parameters", exists=True, readable=True)],
-    results: Annotated[Path, typer.Option("--results", exists=True, readable=True)],
-    output: Annotated[Path, typer.Option("--output")],
-    assertions: Annotated[
-        Path | None,
-        typer.Option("--assertions", exists=True, readable=True),
-    ] = None,
-) -> None:
-    """Normalize an execution and generate a rule-based recommendation."""
-    try:
-        execution = NormalizeExecution(
-            configuration_reader=YamlConfigurationReader(),
-            metrics_reader=GatlingMetricsReader(),
-        ).execute(
-            performance_path=performance,
-            parameters_path=parameters,
-            results_path=results,
-            assertions_path=assertions,
-        )
-        recommendation = build_generate_recommendation(output).execute(
-            execution,
-            persist=True,
-        )
-    except ValueError as exc:
-        console.print(f"[red]Error:[/red] {exc}")
-        raise typer.Exit(code=2) from exc
-
-    console.print(f"Recommendation: {recommendation.decision.value.upper()}")
-    console.print(
-        f"Engine: {recommendation.engine.engine_type} "
-        f"{recommendation.engine.engine_version}"
-    )
     console.print(f"[green]Created:[/green] {output}")
