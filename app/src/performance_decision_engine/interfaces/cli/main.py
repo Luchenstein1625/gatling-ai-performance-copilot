@@ -1,5 +1,7 @@
+import csv
 import platform
 import sys
+from collections.abc import Mapping
 from pathlib import Path
 from typing import Annotated
 
@@ -7,6 +9,9 @@ import typer
 from rich.console import Console
 
 from performance_decision_engine import __version__
+from performance_decision_engine.application.use_cases.generate_dataset import (
+    GenerateDatasetRow,
+)
 from performance_decision_engine.application.use_cases.normalize_execution import (
     NormalizeExecution,
 )
@@ -243,3 +248,108 @@ def recommend(
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(recommendation.model_dump_json(indent=2), encoding="utf-8")
     console.print(f"[green]Created:[/green] {output}")
+
+
+def _append_dataset_row(
+    output: Path,
+    row: Mapping[str, object],
+    fieldnames: tuple[str, ...],
+) -> None:
+    output.parent.mkdir(parents=True, exist_ok=True)
+
+    if output.exists() and output.stat().st_size > 0:
+        with output.open("r", encoding="utf-8", newline="") as source:
+            existing_header = next(csv.reader(source), [])
+        if tuple(existing_header) != fieldnames:
+            raise ValueError("The existing dataset header is incompatible with schema version 1.")
+
+    write_header = not output.exists() or output.stat().st_size == 0
+    with output.open("a", encoding="utf-8", newline="") as target:
+        writer = csv.DictWriter(target, fieldnames=fieldnames)
+        if write_header:
+            writer.writeheader()
+        writer.writerow(row)
+
+
+@app.command()
+def dataset(
+    performance: Annotated[
+        Path,
+        typer.Option(
+            "--performance",
+            exists=True,
+            file_okay=True,
+            dir_okay=False,
+            readable=True,
+            resolve_path=True,
+            help="Path to performance.yaml.",
+        ),
+    ],
+    parameters: Annotated[
+        Path,
+        typer.Option(
+            "--parameters",
+            exists=True,
+            file_okay=True,
+            dir_okay=False,
+            readable=True,
+            resolve_path=True,
+            help="Path to parametricConfigurationValues.yaml.",
+        ),
+    ],
+    results: Annotated[
+        Path,
+        typer.Option(
+            "--results",
+            exists=True,
+            file_okay=True,
+            dir_okay=False,
+            readable=True,
+            resolve_path=True,
+            help="Path to global_stats.json.",
+        ),
+    ],
+    output: Annotated[
+        Path,
+        typer.Option(
+            "--output",
+            file_okay=True,
+            dir_okay=False,
+            resolve_path=True,
+            help="Dataset CSV output path.",
+        ),
+    ],
+    assertions: Annotated[
+        Path | None,
+        typer.Option(
+            "--assertions",
+            exists=True,
+            file_okay=True,
+            dir_okay=False,
+            readable=True,
+            resolve_path=True,
+            help="Optional path to assertions.json.",
+        ),
+    ] = None,
+) -> None:
+    """Append one normalized execution and its H6 decision to a CSV dataset."""
+    try:
+        normalize_use_case = NormalizeExecution(
+            configuration_reader=YamlConfigurationReader(),
+            metrics_reader=GatlingMetricsReader(),
+        )
+        execution = normalize_use_case.execute(
+            performance_path=performance,
+            parameters_path=parameters,
+            results_path=results,
+            assertions_path=assertions,
+        )
+        recommendation = RecommendExecution().execute(execution)
+        dataset_use_case = GenerateDatasetRow()
+        row = dataset_use_case.execute(execution, recommendation)
+        _append_dataset_row(output, row, dataset_use_case.fieldnames)
+    except ValueError as exc:
+        console.print(f"[red]Error:[/red] {exc}")
+        raise typer.Exit(code=2) from exc
+
+    console.print(f"[green]Appended:[/green] {output}")
