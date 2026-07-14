@@ -219,7 +219,7 @@ pytest
 
 ---
 
-# Recommendation Engine (H6)
+# Decision Matrix (H6)
 
 El Hito 6 incorpora el primer motor de recomendación del proyecto.
 
@@ -514,8 +514,13 @@ Estado actual:
 | H2 | ✅ |
 | H3 | ✅ |
 | H4 | ✅ |
-| H5 | ✅ |
-| H6 | ✅ |
+| H5 – Normalization | ✅ |
+| H6 – Decision Matrix | ✅ |
+| H7 – Dataset Generation | ⏳ |
+| H8 – Machine Learning | ⏳ |
+| H9 – Explainability | ⏳ |
+| H10 – Integration | ⏳ |
+ ✅ |
 | H7 | ⏳ |
 | H8 | ⏳ |
 
@@ -523,14 +528,15 @@ Estado actual:
 
 # Próximo Hito
 
-## H7 – Explainability
+## H7 – Dataset Generation
 
 Se incorporará:
 
-- explicación de recomendaciones;
-- trazabilidad de reglas;
-- evidencia enriquecida;
-- preparación para Machine Learning.
+- generación de registros desde `NormalizedExecution`;
+- incorporación de la decisión determinística de H6;
+- esquema estable y reproducible;
+- validaciones de calidad del dataset;
+- preparación para entrenamiento supervisado.
 
 ---
 

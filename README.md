@@ -241,8 +241,13 @@ Actualmente el proyecto implementa los siguientes componentes funcionales:
 | H2 | YAML Configuration Parser | ✅ |
 | H3 | Parameter Resolution | ✅ |
 | H4 | Gatling Metrics Parser | ✅ |
-| H5 | Normalization Engine | ✅ |
-| H6 | Recommendation Engine | ✅ |
+| H5 | Normalization | ✅ |
+| H6 | Decision Matrix | ✅ |
+| H7 | Dataset Generation | ⏳ |
+| H8 | Machine Learning | ⏳ |
+| H9 | Explainability | ⏳ |
+| H10 | Integration | ⏳ |
+ Recommendation Engine | ✅ |
 | H7 | Explainability | ⏳ |
 | H8 | Machine Learning | ⏳ |
 
@@ -267,7 +272,7 @@ Hasta el H6 el sistema permite:
 
 ---
 
-# 🚀 Recommendation Engine (H6)
+# 🚀 Decision Matrix (H6)
 
 El Recommendation Engine constituye el primer motor de decisión del proyecto.
 
@@ -704,26 +709,34 @@ Recommendation Engine basado en reglas determinísticas.
 
 ## Próximo Hito — H7
 
-El objetivo del siguiente hito consiste en incorporar capacidades de Explainability.
+El objetivo del siguiente hito consiste en generar un dataset reproducible a partir de
+`NormalizedExecution` y de las decisiones determinísticas de H6.
 
 Entre las funcionalidades esperadas se encuentran:
 
-- explicación detallada de las recomendaciones;
-- trazabilidad de reglas;
-- evidencia estructurada;
-- preparación para modelos de Machine Learning.
+- generación de registros tabulares;
+- esquema estable de features y etiqueta;
+- exportación reproducible;
+- validación de calidad;
+- preparación para Machine Learning.
 
 ---
 
 ## H8
 
-El último hito incorporará:
+Machine Learning.
 
-- modelos predictivos;
-- entrenamiento supervisado;
-- recomendación inteligente basada en ejecuciones históricas;
-- Dashboard de apoyo para especialistas;
-- integración completa con Explainable AI.
+---
+
+## H9
+
+Explainability.
+
+---
+
+## H10
+
+Integration.
 
 ---
 

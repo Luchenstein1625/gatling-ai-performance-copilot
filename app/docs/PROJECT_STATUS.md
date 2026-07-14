@@ -18,7 +18,7 @@
 
 **Current Milestone**
 
-✅ H6 – Recommendation Engine
+✅ H6 – Decision Matrix
 
 ---
 
@@ -52,10 +52,12 @@ The application remains fully aligned with:
 | H2 | YAML Configuration Parser | ✅ Completed |
 | H3 | Parameter Resolution | ✅ Completed |
 | H4 | Gatling Metrics Parser | ✅ Completed |
-| H5 | Normalization Engine | ✅ Completed |
-| H6 | Recommendation Engine | ✅ Completed |
-| H7 | Explainability | ⏳ Planned |
+| H5 | Normalization | ✅ Completed |
+| H6 | Decision Matrix | ✅ Completed |
+| H7 | Dataset Generation | ⏳ Planned |
 | H8 | Machine Learning | ⏳ Planned |
+| H9 | Explainability | ⏳ Planned |
+| H10 | Integration | ⏳ Planned | Machine Learning | ⏳ Planned |
 
 ---
 
@@ -162,7 +164,7 @@ This object is now the only input required by the Recommendation Engine.
 
 ---
 
-# H6 Deliverables
+# H6 Deliverables — Decision Matrix
 
 The Recommendation Engine introduces automatic evaluation of normalized executions.
 
@@ -373,29 +375,40 @@ The domain remains independent from:
 
 # Next Milestone
 
-## H7 – Explainability
+## H7 – Dataset Generation
 
 Objectives:
 
-- recommendation explanation;
-- rule traceability;
-- enriched evidence;
-- explainable decisions;
-- recommendation auditing.
+- generate reproducible records from `NormalizedExecution`;
+- include the deterministic H6 decision as the target;
+- define a stable dataset schema;
+- validate completeness and consistency;
+- prepare the supervised-learning input for H8.
 
 ---
 
-# Future Milestone
+# Future Milestones
 
 ## H8 – Machine Learning
-
-The Recommendation Engine will evolve through:
 
 - supervised learning;
 - historical execution datasets;
 - intelligent recommendation models;
 - prediction;
 - confidence estimation.
+
+## H9 – Explainability
+
+- rule and model explanation;
+- decision traceability;
+- enriched evidence;
+- recommendation auditing.
+
+## H10 – Integration
+
+- end-to-end integration;
+- operational interfaces;
+- final compatibility validation.
 
 ---
 
