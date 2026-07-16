@@ -12,6 +12,7 @@ import typer
 from rich.console import Console
 
 from performance_decision_engine import __version__
+from performance_decision_engine.application.use_cases.explain_model import ExplainModel
 from performance_decision_engine.application.use_cases.generate_dataset import (
     GenerateDatasetRow,
 )
@@ -156,13 +157,11 @@ def normalize(
             configuration_reader=YamlConfigurationReader(),
             metrics_reader=GatlingMetricsReader(),
         )
-
         execution = use_case.execute(
             performance_path=performance,
             parameters_path=parameters,
             results_path=results,
         )
-
         JsonExecutionRepository().save(execution, output)
     except ValueError as exc:
         console.print(f"[red]Error:[/red] {exc}")
@@ -425,6 +424,50 @@ def train_model(
     console.print(f"[green]Report:[/green] {report}")
 
 
+@app.command("explain-model")
+def explain_model(
+    model: Annotated[
+        Path,
+        typer.Option(
+            "--model",
+            exists=True,
+            file_okay=True,
+            dir_okay=False,
+            readable=True,
+            resolve_path=True,
+            help="Path to a trusted H8 joblib model artifact.",
+        ),
+    ],
+    output: Annotated[
+        Path,
+        typer.Option(
+            "--output",
+            file_okay=True,
+            dir_okay=False,
+            resolve_path=True,
+            help="Output path for the H9 model explanation JSON.",
+        ),
+    ],
+) -> None:
+    """Export a global explanation from a trusted H8 Decision Tree artifact."""
+    try:
+        result = ExplainModel(DecisionTreeTrainingBackend()).execute(model, output)
+    except (OSError, ValueError) as exc:
+        console.print(f"[red]Error:[/red] {exc}")
+        raise typer.Exit(code=2) from exc
+
+    classes = result.get("classes", [])
+    transformed_features = result.get("transformed_feature_columns", [])
+
+    console.print("[bold green]H9 model explanation completed[/bold green]")
+    console.print(f"Model type: {result['model_type']}")
+    if isinstance(classes, list):
+        console.print(f"Classes: {classes}")
+    if isinstance(transformed_features, list):
+        console.print(f"Transformed features: {len(transformed_features)}")
+    console.print(f"[green]Explanation:[/green] {output}")
+
+
 def _batch_fingerprint(files: ExecutionFiles) -> str:
     digest = hashlib.sha256()
     for path in (
@@ -566,7 +609,7 @@ def dataset_batch(
                 "performance": str(files.performance),
                 "parameters": str(files.parameters),
                 "results": str(files.results),
-                "assertions": (str(files.assertions) if files.assertions is not None else None),
+                "assertions": str(files.assertions) if files.assertions is not None else None,
             }
         )
 
