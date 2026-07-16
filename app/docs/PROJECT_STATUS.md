@@ -2,54 +2,64 @@
 
 ## General Information
 
-**Project:** Performance Decision Engine
-
-**Capstone:** Gatling AI Performance Copilot
-
-**University:** Universidad Adolfo Ibáñez
-
+**Project:** Performance Decision Engine  
+**Capstone:** Gatling AI Performance Copilot  
+**University:** Universidad Adolfo Ibáñez  
 **Program:** Magíster en Inteligencia Artificial
 
-**Current Version**
+**Declared project version:**
 
-```
+```text
 0.4.0
 ```
 
-**Current Milestone**
+> Nota: `pyproject.toml` mantiene actualmente la versión de paquete `0.3.0`. Este documento no modifica código ni versionado.
 
-🚧 H8 – Machine Learning
+**Current Milestone:**
+
+```text
+✅ H8 — Machine Learning implementation completed
+```
+
+**Next Milestone:**
+
+```text
+⏳ H9 — Explainability
+```
 
 ---
 
 # Executive Summary
 
-The project has successfully completed the first seven milestones defined in the roadmap.
+The first eight roadmap milestones have reached their planned implementation state.
 
-The application is now capable of:
+The application currently supports:
 
-- parsing performance configurations;
-- resolving corporate parameters;
-- parsing Gatling execution metrics;
-- parsing optional assertions;
-- normalizing complete executions;
-- generating baseline recommendations;
-- generating reproducible dataset rows;
-- appending H6 decisions to a schema-validated CSV dataset;
-- exposing functionality through CLI and REST API.
+- performance configuration parsing;
+- corporate parameter resolution;
+- Gatling metrics parsing;
+- optional assertions parsing;
+- execution normalization;
+- deterministic recommendations;
+- stable dataset-row generation;
+- historical batch execution discovery;
+- historical dataset import;
+- dataset validation;
+- supervised-learning orchestration;
+- Decision Tree training through an infrastructure backend;
+- explicit rejection of non-trainable datasets;
+- CLI and REST interfaces.
 
-The application remains fully aligned with:
+H8 is technically implemented. Model training cannot currently be executed against the available historical dataset because the target contains only one class.
 
-- Clean Architecture
-- Domain Driven Design
-- SOLID Principles
+This is a historical-data limitation, not an implementation defect.
 
 ---
 
 # Milestone Status
 
 | Milestone | Description | Status |
-|-----------|-------------|--------|
+|---|---|---|
 | H1 | Project Structure | ✅ Completed |
 | H2 | YAML Configuration Parser | ✅ Completed |
 | H3 | Parameter Resolution | ✅ Completed |
@@ -57,15 +67,13 @@ The application remains fully aligned with:
 | H5 | Normalization | ✅ Completed |
 | H6 | Decision Matrix | ✅ Completed |
 | H7 | Dataset Generation | ✅ Completed |
-| H8 | Machine Learning | 🚧 Active |
-| H9 | Explainability | ⏳ Planned |
+| H8 | Machine Learning | ✅ Implementation completed |
+| H9 | Explainability | ⏳ Next |
 | H10 | Integration | ⏳ Planned |
 
 ---
 
 # Current Capabilities
-
-The project currently implements:
 
 ## Architecture
 
@@ -74,20 +82,13 @@ The project currently implements:
 - SOLID
 - Strong typing
 - Dependency inversion
+- Framework-independent domain
 
----
-
-## Configuration
+## Configuration and Metrics
 
 - YAML Parser
 - Parameter Resolution
-- Endpoint normalization
-- Triplet normalization
-
----
-
-## Metrics
-
+- Endpoint and triplet normalization
 - Gatling Metrics Parser
 - Optional Assertions Parser
 - Error Rate
@@ -95,23 +96,23 @@ The project currently implements:
 - TPS
 - Response Times
 
----
-
-## Domain
+## Domain and Application
 
 - Quadrant Resolution
-- NormalizeExecution
-- NormalizedExecution
-- Recommendation Engine
-- Dataset Generation
+- `NormalizeExecution`
+- `NormalizedExecution`
+- `RecommendExecution`
+- `Recommendation`
+- `GenerateDatasetRow`
+- `TrainModel`
 
----
+## Infrastructure
 
-## Persistence
-
-- JSON Repository
-
----
+- external-format parsers;
+- JSON persistence;
+- historical execution discovery;
+- Decision Tree training backend;
+- model artifact persistence through the implemented backend.
 
 ## Interfaces
 
@@ -120,70 +121,11 @@ The project currently implements:
 
 ---
 
-# H5 Deliverables
-
-The following functionality was completed during H5.
-
-## Configuration Normalization
-
-The engine now resolves:
-
-- symbolic configuration values;
-- endpoint metadata;
-- triplet values;
-- logical levels;
-- boolean values.
-
-The resulting configuration is represented through a single normalized model.
-
----
-
-## Metrics Normalization
-
-Execution metrics include:
-
-- total requests;
-- successful requests;
-- failed requests;
-- error rate;
-- minimum response time;
-- mean response time;
-- maximum response time;
-- percentiles;
-- TPS;
-- optional assertions.
-
----
-
-## Output
-
-The normalization process generates a canonical domain object:
-
-```
-NormalizedExecution
-```
-
-This object is now the only input required by the Recommendation Engine.
-
----
-
 # H6 Deliverables — Decision Matrix
 
-The Recommendation Engine introduces automatic evaluation of normalized executions.
+H6 provides the deterministic recommendation baseline.
 
-The recommendation process is completely independent from:
-
-- YAML;
-- Gatling;
-- CLI;
-- REST API;
-- persistence.
-
----
-
-## Recommendation Flow
-
-```
+```text
 NormalizedExecution
         │
         ▼
@@ -193,125 +135,13 @@ RecommendExecution
 Recommendation
 ```
 
----
-
-## Recommendation Rules
-
-### Error Rate
-
-If failed requests exist:
-
-```
-review
-```
+The deterministic decision remains active and is not replaced by H8.
 
 ---
-
-### Response Time
-
-If:
-
-```
-P95 > configured target
-```
-
-↓
-
-```
-review
-```
-
----
-
-### Assertions
-
-If assertions exist and at least one fails:
-
-```
-review
-```
-
----
-
-### Empty Execution
-
-If:
-
-```
-requests == 0
-```
-
-↓
-
-```
-review
-```
-
----
-
-### Missing Endpoints
-
-If no enabled endpoints exist:
-
-```
-review
-```
-
----
-
-### Successful Execution
-
-If every previous validation succeeds:
-
-```
-maintain
-```
-
----
-
-# Recommendation Output
-
-The Recommendation Engine generates:
-
-```text
-Recommendation
-├── action
-├── explanation
-└── evidence
-```
-
-Evidence contains:
-
-- error rate;
-- P95;
-- configured response time target;
-- request counters;
-- enabled endpoints;
-- warnings;
-- metrics scope.
-
----
-
-# Current Constraints
-
-The current implementation intentionally evaluates only execution-level metrics.
-
-Therefore:
-
-- metrics are global;
-- endpoint metrics are not yet available;
-- recommendations are generated for the complete execution.
-
-This limitation will be addressed during future milestones.
-
----
-
 
 # H7 Deliverables — Dataset Generation
 
-H7 introduces a stable dataset contract for subsequent Machine Learning work.
-
-## Flow
+H7 provides a stable, versioned dataset contract.
 
 ```text
 NormalizedExecution
@@ -325,35 +155,98 @@ GenerateDatasetRow
 CSV schema version 1
 ```
 
-## Guarantees
+Guarantees:
 
-- one normalized execution produces one row;
-- the H6 action is stored as `recommendation_action`;
+- one real execution produces one row;
+- the H6 action is stored in `recommendation_action`;
 - metrics retain execution-level scope;
 - missing values remain missing;
-- the CSV header is validated before appending;
-- no Machine Learning dependency is introduced in H7.
+- CSV headers are validated;
+- no unsupported attributes are invented.
 
-## Quality
+Historical-import interpretation:
 
-- Black: passing;
-- Ruff: passing;
-- MyPy: passing;
-- Pytest: 53 passing tests.
+- each dated directory represents exactly one execution;
+- multiple Gatling files inside that directory belong to the same execution;
+- contained files must not be counted as additional executions.
+
+---
+
+# H8 Deliverables — Machine Learning
+
+H8 introduces the supervised-learning implementation while preserving the existing architecture.
+
+## Application
+
+- `TrainModel` orchestrates the training use case.
+- Application logic remains separated from the concrete Machine Learning backend.
+
+## Infrastructure
+
+- historical execution discovery;
+- batch dataset import support;
+- Decision Tree training backend;
+- model artifact persistence using the H8 infrastructure implementation.
+
+## Validation
+
+The implementation rejects training when:
+
+- the dataset is incompatible;
+- required information is unavailable;
+- there are not enough valid examples;
+- the target contains a single class.
+
+## Compatibility
+
+- H6 remains the deterministic baseline.
+- H7 remains the dataset contract.
+- No synthetic data are generated.
+- H1–H7 public behavior remains compatible.
+
+---
+
+# Historical Dataset Status
+
+The current historical dataset contains:
+
+| Measure | Value |
+|---|---:|
+| Real historical executions | 11 |
+| `maintain` | 11 |
+| `review` | 0 |
+| Target classes | 1 |
+
+The historical importer and `dataset-batch` workflow operate correctly.
+
+Training cannot currently proceed because supervised classification requires more than one target class. The implementation correctly detects and reports this condition.
+
+No synthetic executions will be added to bypass the limitation.
+
+New real executions containing errors are expected to provide future `review` examples.
+
+---
+
+# Current Constraints
+
+- Metrics remain execution-scoped.
+- Endpoint-level metrics are not represented in the current normalized model.
+- Deterministic recommendations are execution-wide.
+- The historical dataset contains only one target class.
+- No valid trained-model performance metrics can be reported yet.
+
+These constraints must remain visible in project documentation.
 
 ---
 
 # Quality Gates
 
-Every commit must successfully pass:
+Every change must pass:
 
 ```powershell
 black --check .
-
 ruff check .
-
 mypy src
-
 pytest
 ```
 
@@ -370,7 +263,9 @@ Current status:
 
 Current automated test suite:
 
-**53 passing tests**
+```text
+61 passing tests
+```
 
 Coverage includes:
 
@@ -381,16 +276,20 @@ Coverage includes:
 - Normalization
 - Recommendation Engine
 - Quadrant Resolution
+- Dataset Generation
+- Historical Execution Discovery
+- Decision Tree Training Backend
+- TrainModel
 - CLI
 - Validation Rules
 
 ---
 
-# Architecture
+# Architecture Compatibility
 
-The project continues following the same architecture.
+The project continues following the existing dependency direction:
 
-```
+```text
 Interfaces
         │
         ▼
@@ -409,47 +308,23 @@ The domain remains independent from:
 - JSON;
 - FastAPI;
 - CLI;
-- persistence.
+- persistence;
+- scikit-learn;
+- joblib.
+
+Machine Learning dependencies remain outside the domain.
 
 ---
 
-# Current Milestone
+# Next Milestone
 
-## H8 – Machine Learning
+## H9 — Explainability
 
-Objectives:
+H9 is the next roadmap milestone.
 
-- validate H7 schema version 1;
-- reject datasets that are not trainable;
-- establish a reproducible supervised-learning baseline;
-- separate training and evaluation data;
-- report model metrics without replacing the deterministic H6 baseline;
-- persist only approved model artifacts through an infrastructure adapter.
+Its architecture must be proposed only after a complete review of the existing implementation and must preserve compatibility with H1–H8.
 
----
-
-# Future Milestones
-
-## H8 – Machine Learning
-
-- supervised learning;
-- historical execution datasets;
-- intelligent recommendation models;
-- prediction;
-- confidence estimation.
-
-## H9 – Explainability
-
-- rule and model explanation;
-- decision traceability;
-- enriched evidence;
-- recommendation auditing.
-
-## H10 – Integration
-
-- end-to-end integration;
-- operational interfaces;
-- final compatibility validation.
+No H9 implementation is included in this documentation update.
 
 ---
 
@@ -457,10 +332,14 @@ Objectives:
 
 🟢 Active Development
 
-Current milestone:
+Last completed implementation milestone:
 
-🚧 H8 Machine Learning
+```text
+✅ H8 — Machine Learning
+```
 
-Last completed milestone:
+Next milestone:
 
-✅ H7 Dataset Generation
+```text
+⏳ H9 — Explainability
+```

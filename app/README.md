@@ -2,62 +2,51 @@
 
 Motor de decisión desacoplado para apoyar el diseño, análisis y recomendación de configuraciones de pruebas de rendimiento.
 
-El caso de estudio inicial utiliza **Gatling**, sin embargo el núcleo del sistema fue diseñado para ser completamente independiente de cualquier herramienta específica.
-
-La arquitectura permite incorporar futuras fuentes de información como:
-
-- JMeter
-- k6
-- LoadRunner
-- NeoLoad
-- Herramientas propietarias
-
-mediante adaptadores de infraestructura sin modificar el dominio.
+El caso de estudio inicial utiliza **Gatling**. El dominio permanece independiente de Gatling, YAML, JSON, FastAPI, Typer y mecanismos concretos de persistencia.
 
 ---
 
-# Objetivos
+# Estado actual
 
-El Performance Decision Engine tiene como propósito:
+**H8 — Machine Learning: ✅ implementación completada**
 
-- interpretar configuraciones de pruebas;
-- resolver parámetros corporativos;
-- normalizar configuraciones y resultados;
-- construir un modelo único de dominio;
-- generar recomendaciones automáticas;
-- preparar la incorporación de Explainable AI y Machine Learning.
+**Próximo hito: H9 — Explainability**
+
+Quality Gates:
+
+- ✅ Black
+- ✅ Ruff
+- ✅ MyPy
+- ✅ Pytest
+- ✅ 61 tests pasando
 
 ---
 
 # Arquitectura
 
-El proyecto implementa una arquitectura basada en **Clean Architecture** y **Domain Driven Design**.
-
-```
+```text
 app/
-
 ├── src/
-│
-├── performance_decision_engine/
-│
-│   ├── domain/
-│   │
-│   ├── application/
-│   │
-│   ├── infrastructure/
-│   │
-│   └── interfaces/
-│
+│   └── performance_decision_engine/
+│       ├── domain/
+│       ├── application/
+│       ├── infrastructure/
+│       └── interfaces/
 ├── docs/
-│
 ├── examples/
-│
 ├── scripts/
-│
 ├── tests/
-│
 └── pyproject.toml
 ```
+
+La implementación mantiene:
+
+- Clean Architecture;
+- Domain Driven Design;
+- SOLID;
+- tipado estricto;
+- inversión de dependencias;
+- compatibilidad incremental entre hitos.
 
 ---
 
@@ -65,66 +54,49 @@ app/
 
 ## Domain
 
-Contiene únicamente el conocimiento del negocio.
+Contiene el conocimiento del negocio y los modelos reutilizados por los hitos existentes:
 
-Implementa:
+- `Triplet`
+- `EndpointConfiguration`
+- `PerformanceConfiguration`
+- `ExecutionMetrics`
+- `NormalizedExecution`
+- `Recommendation`
+- `Quadrant`
+- servicios de dominio
 
-- Triplet
-- EndpointConfiguration
-- PerformanceConfiguration
-- ExecutionMetrics
-- NormalizedExecution
-- Recommendation
-- Quadrant
-- Servicios de dominio
-
-El dominio no depende de:
-
-- YAML
-- JSON
-- Gatling
-- FastAPI
-- Typer
-- Persistencia
-
----
+H8 no incorpora dependencias de Machine Learning dentro del dominio.
 
 ## Application
 
-Implementa los casos de uso.
+Casos de uso implementados:
 
-Actualmente:
+- `NormalizeExecution`
+- `RecommendExecution`
+- `GenerateDatasetRow`
+- `TrainModel`
 
-- NormalizeExecution
-- RecommendExecution
-- GenerateDatasetRow
-
-Los casos de uso reciben entidades de dominio y delegan las decisiones a los servicios correspondientes.
-
----
+La capa de aplicación coordina el flujo y depende de contratos, no de detalles concretos del entrenamiento.
 
 ## Infrastructure
 
-Contiene los adaptadores externos.
-
-Actualmente implementa:
+Adaptadores implementados:
 
 - YAML Configuration Parser
 - Parameter Values Parser
 - Gatling Metrics Parser
 - Assertions Parser
 - JSON Repository
-
-Esta capa es responsable únicamente de traducir datos externos al modelo interno.
-
----
+- descubrimiento de ejecuciones históricas
+- backend de entrenamiento basado en Decision Tree
+- persistencia de artefactos del modelo mediante el backend H8
 
 ## Interfaces
 
-Expone el sistema mediante:
-
 - CLI
 - REST API
+
+La CLI incorpora los comandos existentes de H1–H8, incluyendo generación de dataset, importación histórica por lotes y entrenamiento.
 
 ---
 
@@ -134,119 +106,53 @@ Expone el sistema mediante:
 - pip
 - virtualenv
 
+Dependencias de H8 declaradas en `pyproject.toml`:
+
+- `scikit-learn`
+- `joblib`
+
 ---
 
 # Instalación
 
-Desde la carpeta **app**:
+Desde la carpeta `app`:
 
 ```powershell
 python -m venv .venv
-
 .\.venv\Scripts\activate
-
 python -m pip install --upgrade pip
-
 pip install -e ".[dev]"
 ```
 
 ---
 
-# Verificación del entorno
+# Verificación
 
 ```powershell
 pde doctor
-```
-
----
-
-## Versión
-
-```powershell
 pde --version
 ```
 
----
-
-## Ejecutar pruebas
+## Quality Gates
 
 ```powershell
+black --check .
+ruff check .
+mypy src
 pytest
 ```
 
----
-
-# Componentes implementados
-
-## Configuración
-
-- YAML Configuration Parser
-- Parameter Resolver
-- Triplet Resolution
-- Endpoint Configuration
-
----
-
-## Métricas
-
-- Gatling Metrics Parser
-- Assertions Parser
-- Percentiles
-- Error Rate
-- TPS
-- Response Times
-
----
-
-## Dominio
-
-- Quadrant Resolution
-- NormalizeExecution
-- NormalizedExecution
-- Recommendation Engine
-
----
-
-## Persistencia
-
-- JSON Repository
-
----
-
-## Interfaces
-
-- CLI
-- REST API
-
----
-
-# Decision Matrix (H6)
-
-El Hito 6 incorpora el primer motor de recomendación del proyecto.
-
-Su objetivo consiste en transformar una ejecución normalizada en una recomendación reutilizable por cualquier consumidor del dominio.
-
-## Entrada
-
-El Recommendation Engine recibe únicamente:
+Estado confirmado:
 
 ```text
-NormalizedExecution
+61 passed
 ```
-
-No conoce:
-
-- Gatling
-- YAML
-- JSON
-- CLI
-- REST API
 
 ---
 
-## Flujo
+# Flujo H1–H8
 
-```
+```text
 performance.yaml
         +
 parametricConfigurationValues.yaml
@@ -256,319 +162,158 @@ global_stats.json
 assertions.json (opcional)
         │
         ▼
-Infrastructure Parsers
-        │
-        ▼
 NormalizeExecution
         │
         ▼
 NormalizedExecution
         │
-        ▼
-RecommendExecution
-        │
-        ▼
-Recommendation
+        ├──────────────► RecommendExecution
+        │                        │
+        │                        ▼
+        │                 Recommendation
+        │                        │
+        └────────────────────────┤
+                                 ▼
+                       GenerateDatasetRow
+                                 │
+                                 ▼
+                       CSV schema version 1
+                                 │
+                                 ▼
+                  Batch execution discovery/import
+                                 │
+                                 ▼
+                       Dataset validation
+                                 │
+                                 ▼
+                            TrainModel
+                                 │
+                                 ▼
+                 Decision Tree training backend
 ```
 
 ---
 
-## Recommendation
+# H6 — Decision Matrix
 
-La salida corresponde a la entidad:
+El Recommendation Engine transforma un `NormalizedExecution` en una `Recommendation`.
 
-```text
-Recommendation
-```
+La decisión determinística continúa siendo el baseline oficial y no es reemplazada por H8.
 
-Compuesta por:
+Reglas existentes:
 
-- action
-- explanation
-- evidence
-
----
-
-## Reglas implementadas
-
-### Error Rate
-
-```
-error_rate > 0
-
-↓
-
-review
-```
+- solicitudes fallidas → `review`;
+- P95 superior al objetivo → `review`;
+- assertions fallidas → `review`;
+- ejecución sin solicitudes → `review`;
+- ejecución sin endpoints habilitados → `review`;
+- ejecución satisfactoria → `maintain`.
 
 ---
 
-### Tiempo de respuesta
+# H7 — Dataset Generation
 
-```
-P95 > objetivo
+H7 incorpora `GenerateDatasetRow` y el comando de generación de dataset.
 
-↓
+Garantías:
 
-review
-```
+- una ejecución produce una fila;
+- `schema_version` identifica el contrato;
+- `metrics_scope` conserva el valor `execution`;
+- `recommendation_action` utiliza la decisión H6;
+- los valores ausentes permanecen ausentes;
+- no se inventan criticidad, complejidad ni cuadrantes;
+- el encabezado CSV se valida antes de anexar registros.
 
----
+La importación histórica respeta la siguiente regla:
 
-### Assertions
+> Una carpeta con fecha equivale exactamente a una ejecución real.
 
-```
-assertions failed
-
-↓
-
-review
-```
+Los archivos Gatling contenidos dentro de esa carpeta pertenecen a la misma ejecución.
 
 ---
 
-### Sin requests
+# H8 — Machine Learning
 
-```
-requests == 0
+H8 implementa el baseline supervisado sobre el dataset H7.
 
-↓
+Componentes confirmados:
 
-review
-```
+- `application/use_cases/train_model.py`
+- `infrastructure/batch_execution_discovery.py`
+- `infrastructure/decision_tree_training_backend.py`
+- integración en `interfaces/cli/main.py`
+- tests del caso de uso;
+- tests del backend;
+- tests del descubrimiento histórico;
+- validaciones adicionales del Assertions Parser.
 
----
+## Salvaguardas
 
-### Sin endpoints
+Antes de entrenar, H8 valida que:
 
-```
-no enabled endpoints
+- el dataset pueda leerse;
+- el contrato sea compatible;
+- exista información suficiente;
+- la variable objetivo contenga al menos dos clases;
+- no se publiquen resultados de entrenamiento inexistentes.
 
-↓
-
-review
-```
-
----
-
-### Ejecución correcta
-
-```
-↓
-
-maintain
-```
+H8 no genera datos sintéticos y no oculta limitaciones del dataset.
 
 ---
 
-# Normalización
+# Estado real del dataset
 
-El principal caso de uso desarrollado durante H5 corresponde a la normalización de una ejecución.
+| Métrica | Valor |
+|---|---:|
+| Ejecuciones históricas reales | 11 |
+| `maintain` | 11 |
+| `review` | 0 |
 
-El proceso produce un objeto único denominado:
+El importador `dataset-batch` funciona correctamente.
 
-```text
-NormalizedExecution
-```
+El entrenamiento no puede ejecutarse actualmente porque la etiqueta contiene una sola clase. Este resultado es esperado y demuestra que la validación implementada funciona.
 
-que contiene:
-
-- configuración
-- endpoints
-- tripletas
-- métricas
-- warnings
-
-Este objeto constituye la representación oficial de una ejecución dentro del dominio.
-
----
-
-# Ejecutar normalización
-
-```powershell
-pde normalize `
-    --performance examples/input/performance.yaml `
-    --parameters examples/input/parametricConfigurationValues.yaml `
-    --results examples/input/global_stats.json `
-    --output examples/output/execution_summary.json
-```
-
-Con assertions:
-
-```powershell
-pde normalize `
-    --performance examples/input/performance.yaml `
-    --parameters examples/input/parametricConfigurationValues.yaml `
-    --results examples/input/global_stats.json `
-    --assertions examples/input/assertions.json `
-    --output examples/output/execution_summary.json
-```
-
----
-
-# Recommendation CLI
-
-El H6 incorpora un nuevo comando.
-
-```powershell
-pde recommend `
-    --performance examples/input/performance.yaml `
-    --parameters examples/input/parametricConfigurationValues.yaml `
-    --results examples/input/global_stats.json `
-    --output examples/output/recommendation.json
-```
-
-Ejemplo de salida:
-
-```
-Recommendation: maintain
-
-Las reglas básicas evaluadas no detectaron incumplimientos.
-
-Created:
-examples/output/recommendation.json
-```
-
----
-
-# API REST
-
-Ejecutar:
-
-```powershell
-uvicorn performance_decision_engine.interfaces.api.main:app --reload
-```
-
-Endpoints:
-
-```
-GET /health
-
-GET /version
-
-GET /quadrants/{criticality}/{complexity}
-
-POST /recommendations
-```
-
----
-
-# Recommendation JSON
-
-Ejemplo:
-
-```json
-{
-  "action": "maintain",
-  "explanation": "Las reglas básicas evaluadas no detectaron incumplimientos.",
-  "evidence": {
-    "error_rate_percent": 0,
-    "p95_response_time_ms": 1465,
-    "expected_response_time_ms": 15000,
-    "metrics_scope": "execution"
-  }
-}
-```
+Durante los próximos días se incorporarán nuevas ejecuciones reales con errores para obtener ejemplos `review`.
 
 ---
 
 # Limitaciones actuales
 
-Actualmente las métricas corresponden a la ejecución completa.
+- Las métricas disponibles tienen alcance de ejecución.
+- No existen métricas individuales por endpoint.
+- Las recomendaciones H6 son globales para la ejecución.
+- El histórico sólo contiene una clase objetivo.
+- No existe todavía evidencia válida para reportar métricas de un modelo entrenado.
 
-No existen métricas individuales por endpoint.
-
-Las recomendaciones son globales para toda la ejecución.
-
----
-
-
-# Dataset Generation (H7)
-
-H7 incorpora el caso de uso `GenerateDatasetRow` y el comando `pde dataset`.
-
-```text
-NormalizedExecution
-        +
-Recommendation
-        │
-        ▼
-GenerateDatasetRow
-        │
-        ▼
-CSV schema version 1
-```
-
-Cada ejecución produce una fila con configuración agregada, métricas globales, assertions,
-warnings y la etiqueta `recommendation_action`.
-
-El generador conserva valores ausentes y no inventa criticidad, complejidad o cuadrantes que no
-formen parte de `NormalizedExecution`.
+Estas limitaciones no deben ocultarse ni resolverse mediante datos sintéticos.
 
 ---
 
-# Calidad
-
-Todos los cambios deben aprobar:
-
-```powershell
-black --check .
-
-ruff check .
-
-mypy src
-
-pytest
-```
-
-Estado actual:
-
-- ✅ Black
-- ✅ Ruff
-- ✅ MyPy
-- ✅ Pytest
-
-**53 pruebas automatizadas aprobadas.**
-
----
-
-# Estado del proyecto
+# Estado del roadmap
 
 | Hito | Estado |
-|------|--------|
+|---|---|
 | H1 | ✅ |
 | H2 | ✅ |
 | H3 | ✅ |
 | H4 | ✅ |
-| H5 – Normalization | ✅ |
-| H6 – Decision Matrix | ✅ |
-| H7 – Dataset Generation | ✅ |
-| H8 – Machine Learning | 🚧 |
-| H9 – Explainability | ⏳ |
-| H10 – Integration | ⏳ |
+| H5 — Normalization | ✅ |
+| H6 — Decision Matrix | ✅ |
+| H7 — Dataset Generation | ✅ |
+| H8 — Machine Learning | ✅ Implementación completada |
+| H9 — Explainability | ⏳ Próximo |
+| H10 — Integration | ⏳ |
 
 ---
 
-# Hito actual
+# Próximo hito
 
-## H8 – Machine Learning
+## H9 — Explainability
 
-H8 incorporará un baseline supervisado sobre el dataset generado por H7.
+H9 debe diseñarse después de revisar por completo la arquitectura y la implementación de H1–H8.
 
-El hito deberá validar el dataset antes de entrenar y no podrá declarar resultados de Machine
-Learning cuando no existan suficientes filas o cuando la etiqueta contenga una sola clase.
-
----
-
-# H8
-
-Posteriormente el proyecto evolucionará incorporando:
-
-- Machine Learning
-- entrenamiento supervisado
-- modelos predictivos
-- Dashboard
-- Explainable AI
+El cierre de H8 no incorpora código, carpetas ni decisiones anticipadas para H9.
 
 ---
 
