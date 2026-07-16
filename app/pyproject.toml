@@ -30,7 +30,7 @@ dev = [
 ]
 
 [project.scripts]
-pde = "performance_decision_engine.interfaces.cli.main:app"
+pde = "performance_decision_engine.interfaces.cli.h10_main:app"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
@@ -57,6 +57,7 @@ select = ["E", "F", "I", "B", "UP"]
 python_version = "3.11"
 strict = true
 packages = ["performance_decision_engine"]
+
 [[tool.mypy.overrides]]
 module = [
   "joblib",

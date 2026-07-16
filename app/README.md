@@ -15,7 +15,7 @@ Implementación técnica de Gatling AI Performance Copilot.
 | H7 – Dataset Generation | ✅ |
 | H8 – Machine Learning | ✅ |
 | H9 – Explainability | ✅ |
-| H10 – Integration | ⏳ |
+| H10 – Local End-to-End Integration PoC | ✅ |
 
 ## Instalación
 
@@ -37,61 +37,71 @@ mypy src
 pytest -v
 ```
 
-## CLI
-
-### Normalizar
+## Pipeline H10
 
 ```powershell
-pde normalize `
+pde pipeline `
   --performance examples/input/performance.yaml `
   --parameters examples/input/parametricConfigurationValues.yaml `
   --results examples/input/global_stats.json `
-  --output examples/output/execution_summary.json
+  --output-dir examples/output/pipeline
 ```
 
-### Recomendar
+Con assertions:
 
 ```powershell
-pde recommend `
+pde pipeline `
   --performance examples/input/performance.yaml `
   --parameters examples/input/parametricConfigurationValues.yaml `
   --results examples/input/global_stats.json `
-  --output examples/output/recommendation.json
+  --assertions examples/input/assertions.json `
+  --output-dir examples/output/pipeline
 ```
 
-### Dataset H7
+Con entrenamiento opcional:
 
 ```powershell
-pde dataset `
+pde pipeline `
   --performance examples/input/performance.yaml `
   --parameters examples/input/parametricConfigurationValues.yaml `
   --results examples/input/global_stats.json `
-  --output examples/output/dataset.csv
+  --output-dir examples/output/pipeline `
+  --train
 ```
 
-### Entrenar H8
+## Flujo integrado
 
-```powershell
-pde train-model `
-  --dataset examples/output/dataset.csv `
-  --model examples/output/model.joblib `
-  --report examples/output/training_report.json
+```text
+NormalizeExecution
+        │
+        ▼
+RecommendExecution
+        │
+        ▼
+GenerateDatasetRow
+        │
+        ├──► TrainModel (opcional)
+        │          │
+        │          ▼
+        │     ExplainModel
+        │
+        ▼
+HtmlReportGenerator
 ```
 
-### Explicar H9
-
-```powershell
-pde explain-model `
-  --model examples/output/model.joblib `
-  --output examples/output/model_explanation.json
-```
-
-## Artefactos
+## Artefactos obligatorios
 
 ```text
 execution_summary.json
 recommendation.json
 dataset.csv
+pipeline_summary.json
+report.html
+```
+
+## Artefactos condicionales
+
+```text
 model.joblib
 training_report.json
 model_explanation.json
@@ -100,7 +110,8 @@ model_explanation.json
 ## Restricciones
 
 - H6 es el baseline determinístico oficial.
-- H8 aproxima etiquetas de H6.
-- H9 explica el baseline y el artefacto H8.
-- El modelo no se entrena con una sola clase.
-- Solo deben cargarse artefactos confiables.
+- H8 aproxima etiquetas generadas por H6.
+- H9 explica reglas y artefactos confiables H8.
+- H10 integra el flujo, pero no reemplaza las validaciones anteriores.
+- El entrenamiento puede quedar como `skipped`.
+- La PoC no se conecta con plataformas del banco.

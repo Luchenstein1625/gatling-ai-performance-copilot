@@ -33,21 +33,6 @@ El caso de uso `ExplainModel` utiliza un puerto desacoplado y genera:
 - `random_state`;
 - limitaciones.
 
-## Flujo
-
-```text
-model.joblib
-        │
-        ▼
-Validación del artefacto
-        │
-        ▼
-ExplainModel
-        │
-        ▼
-model_explanation.json
-```
-
 ## Ejecución
 
 ```powershell
@@ -86,6 +71,6 @@ pytest -v
 
 ✅ Completado
 
-## Próximo hito
+## Integración posterior
 
-H10 — Integration
+H10 consume opcionalmente `ExplainModel` dentro del pipeline local y agrega la explicación disponible al reporte HTML.

@@ -17,11 +17,20 @@ Cada hito debe registrar objetivo, diseño, componentes, ejecución, pruebas, ev
 | H7 | Dataset Generation | ✅ |
 | H8 | Machine Learning | ✅ |
 | H9 | Explainability | ✅ |
-| H10 | Integration | ⏳ |
+| H10 | Local End-to-End Integration PoC | ✅ |
 
 ## Estado actual
 
-El proyecto ya puede normalizar ejecuciones, recomendar, generar datasets, importar históricos, validar y entrenar un baseline supervisado y explicar sus decisiones.
+El proyecto puede:
+
+- normalizar ejecuciones;
+- generar recomendaciones determinísticas;
+- construir datasets;
+- importar históricos;
+- validar y entrenar un baseline supervisado;
+- explicar decisiones y modelos;
+- ejecutar el flujo completo mediante `pde pipeline`;
+- generar un resumen JSON y un reporte HTML local.
 
 ## Quality Gates
 
@@ -32,6 +41,8 @@ mypy src
 pytest -v
 ```
 
-## Próximo hito
+## Estado del roadmap
 
-**H10 — Integration**
+Los diez hitos técnicos planificados se encuentran implementados para la PoC local.
+
+Las conexiones con plataformas corporativas quedan como evolución posterior y deberán realizarse mediante adaptadores.
