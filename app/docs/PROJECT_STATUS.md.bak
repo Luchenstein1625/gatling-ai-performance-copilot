@@ -18,13 +18,13 @@
 
 **Current Milestone**
 
-🚧 H8 – Machine Learning
+✅ H6 – Decision Matrix
 
 ---
 
 # Executive Summary
 
-The project has successfully completed the first seven milestones defined in the roadmap.
+The project has successfully completed the first six milestones defined in the roadmap.
 
 The application is now capable of:
 
@@ -34,8 +34,6 @@ The application is now capable of:
 - parsing optional assertions;
 - normalizing complete executions;
 - generating baseline recommendations;
-- generating reproducible dataset rows;
-- appending H6 decisions to a schema-validated CSV dataset;
 - exposing functionality through CLI and REST API.
 
 The application remains fully aligned with:
@@ -56,10 +54,10 @@ The application remains fully aligned with:
 | H4 | Gatling Metrics Parser | ✅ Completed |
 | H5 | Normalization | ✅ Completed |
 | H6 | Decision Matrix | ✅ Completed |
-| H7 | Dataset Generation | ✅ Completed |
-| H8 | Machine Learning | 🚧 Active |
+| H7 | Dataset Generation | ⏳ Planned |
+| H8 | Machine Learning | ⏳ Planned |
 | H9 | Explainability | ⏳ Planned |
-| H10 | Integration | ⏳ Planned |
+| H10 | Integration | ⏳ Planned | Machine Learning | ⏳ Planned |
 
 ---
 
@@ -103,7 +101,6 @@ The project currently implements:
 - NormalizeExecution
 - NormalizedExecution
 - Recommendation Engine
-- Dataset Generation
 
 ---
 
@@ -306,43 +303,6 @@ This limitation will be addressed during future milestones.
 
 ---
 
-
-# H7 Deliverables — Dataset Generation
-
-H7 introduces a stable dataset contract for subsequent Machine Learning work.
-
-## Flow
-
-```text
-NormalizedExecution
-        +
-Recommendation
-        │
-        ▼
-GenerateDatasetRow
-        │
-        ▼
-CSV schema version 1
-```
-
-## Guarantees
-
-- one normalized execution produces one row;
-- the H6 action is stored as `recommendation_action`;
-- metrics retain execution-level scope;
-- missing values remain missing;
-- the CSV header is validated before appending;
-- no Machine Learning dependency is introduced in H7.
-
-## Quality
-
-- Black: passing;
-- Ruff: passing;
-- MyPy: passing;
-- Pytest: 53 passing tests.
-
----
-
 # Quality Gates
 
 Every commit must successfully pass:
@@ -370,7 +330,7 @@ Current status:
 
 Current automated test suite:
 
-**53 passing tests**
+**50 passing tests**
 
 Coverage includes:
 
@@ -413,18 +373,17 @@ The domain remains independent from:
 
 ---
 
-# Current Milestone
+# Next Milestone
 
-## H8 – Machine Learning
+## H7 – Dataset Generation
 
 Objectives:
 
-- validate H7 schema version 1;
-- reject datasets that are not trainable;
-- establish a reproducible supervised-learning baseline;
-- separate training and evaluation data;
-- report model metrics without replacing the deterministic H6 baseline;
-- persist only approved model artifacts through an infrastructure adapter.
+- generate reproducible records from `NormalizedExecution`;
+- include the deterministic H6 decision as the target;
+- define a stable dataset schema;
+- validate completeness and consistency;
+- prepare the supervised-learning input for H8.
 
 ---
 
@@ -459,8 +418,8 @@ Objectives:
 
 Current milestone:
 
-🚧 H8 Machine Learning
+✅ H6 Completed
 
-Last completed milestone:
+Next milestone:
 
-✅ H7 Dataset Generation
+⏳ H7 Explainability

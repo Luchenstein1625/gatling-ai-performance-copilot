@@ -90,7 +90,7 @@ class GatlingAssertionsReader:
 
     @staticmethod
     def _resolve_success(item: dict[str, Any]) -> bool:
-        for key in ("successful", "success", "passed", "valid"):
+        for key in ("successful", "success", "passed", "valid", "result"):
             value = item.get(key)
             if isinstance(value, bool):
                 return value

@@ -97,7 +97,6 @@ Actualmente:
 
 - NormalizeExecution
 - RecommendExecution
-- GenerateDatasetRow
 
 Los casos de uso reciben entidades de dominio y delegan las decisiones a los servicios correspondientes.
 
@@ -482,31 +481,6 @@ Las recomendaciones son globales para toda la ejecución.
 
 ---
 
-
-# Dataset Generation (H7)
-
-H7 incorpora el caso de uso `GenerateDatasetRow` y el comando `pde dataset`.
-
-```text
-NormalizedExecution
-        +
-Recommendation
-        │
-        ▼
-GenerateDatasetRow
-        │
-        ▼
-CSV schema version 1
-```
-
-Cada ejecución produce una fila con configuración agregada, métricas globales, assertions,
-warnings y la etiqueta `recommendation_action`.
-
-El generador conserva valores ausentes y no inventa criticidad, complejidad o cuadrantes que no
-formen parte de `NormalizedExecution`.
-
----
-
 # Calidad
 
 Todos los cambios deben aprobar:
@@ -528,7 +502,7 @@ Estado actual:
 - ✅ MyPy
 - ✅ Pytest
 
-**53 pruebas automatizadas aprobadas.**
+**50 pruebas automatizadas aprobadas.**
 
 ---
 
@@ -542,21 +516,27 @@ Estado actual:
 | H4 | ✅ |
 | H5 – Normalization | ✅ |
 | H6 – Decision Matrix | ✅ |
-| H7 – Dataset Generation | ✅ |
-| H8 – Machine Learning | 🚧 |
+| H7 – Dataset Generation | ⏳ |
+| H8 – Machine Learning | ⏳ |
 | H9 – Explainability | ⏳ |
 | H10 – Integration | ⏳ |
+ ✅ |
+| H7 | ⏳ |
+| H8 | ⏳ |
 
 ---
 
-# Hito actual
+# Próximo Hito
 
-## H8 – Machine Learning
+## H7 – Dataset Generation
 
-H8 incorporará un baseline supervisado sobre el dataset generado por H7.
+Se incorporará:
 
-El hito deberá validar el dataset antes de entrenar y no podrá declarar resultados de Machine
-Learning cuando no existan suficientes filas o cuando la etiqueta contenga una sola clase.
+- generación de registros desde `NormalizedExecution`;
+- incorporación de la decisión determinística de H6;
+- esquema estable y reproducible;
+- validaciones de calidad del dataset;
+- preparación para entrenamiento supervisado.
 
 ---
 
