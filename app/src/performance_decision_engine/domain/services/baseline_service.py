@@ -162,9 +162,7 @@ def recommend_execution(execution: NormalizedExecution) -> Recommendation:
         _trace_entry(
             "assertions",
             "passed" if assertions_passed else "failed",
-            observed=(
-                None if metrics.assertions is None else metrics.assertions.failed
-            ),
+            observed=(None if metrics.assertions is None else metrics.assertions.failed),
             expected=0,
         )
     )

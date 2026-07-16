@@ -202,27 +202,22 @@ class DecisionTreeTrainingBackend:
         if not isinstance(classifier, DecisionTreeClassifier):
             raise ValueError("Only H8 DecisionTreeClassifier artifacts are supported.")
 
-        transformed_feature_names = [
-            str(name) for name in preprocessor.get_feature_names_out()
-        ]
+        transformed_feature_names = [str(name) for name in preprocessor.get_feature_names_out()]
         importances = classifier.feature_importances_
         if len(transformed_feature_names) != len(importances):
             raise ValueError("Model artifact feature metadata is inconsistent.")
 
-        feature_importance = sorted(
-            (
-                {
-                    "feature": feature_name,
-                    "importance": float(importance),
-                }
-                for feature_name, importance in zip(
-                    transformed_feature_names,
-                    importances,
-                    strict=True,
-                )
-            ),
-            key=lambda item: (-float(item["importance"]), str(item["feature"])),
+        importance_pairs = sorted(
+            zip(transformed_feature_names, importances, strict=True),
+            key=lambda pair: (-float(pair[1]), pair[0]),
         )
+        feature_importance = [
+            {
+                "feature": feature_name,
+                "importance": float(importance),
+            }
+            for feature_name, importance in importance_pairs
+        ]
 
         decision_rules = export_text(
             classifier,
@@ -274,9 +269,7 @@ class DecisionTreeTrainingBackend:
         }
         missing_keys = sorted(required_keys.difference(loaded))
         if missing_keys:
-            raise ValueError(
-                "Model artifact is missing required keys: " + ", ".join(missing_keys)
-            )
+            raise ValueError("Model artifact is missing required keys: " + ", ".join(missing_keys))
 
         if loaded["schema_version"] != SUPPORTED_SCHEMA_VERSION:
             raise ValueError("Model artifact schema_version is incompatible with H8.")
@@ -327,8 +320,7 @@ class DecisionTreeTrainingBackend:
 
         if min(class_counts.values()) < 2:
             raise ValueError(
-                "Each recommendation class requires at least two rows "
-                "for stratified evaluation."
+                "Each recommendation class requires at least two rows " "for stratified evaluation."
             )
 
     @staticmethod

@@ -12,6 +12,7 @@ from performance_decision_engine.domain.entities.execution import (
     ExecutionMetrics,
     NormalizedExecution,
 )
+from performance_decision_engine.domain.entities.recommendation import Recommendation
 
 
 def _execution(
@@ -54,9 +55,8 @@ def _execution(
     )
 
 
-def _rule_names(result: object) -> list[str]:
-    evidence = getattr(result, "evidence")
-    trace = evidence["decision_trace"]
+def _rule_names(result: Recommendation) -> list[str]:
+    trace = result.evidence["decision_trace"]
     assert isinstance(trace, list)
     return [entry["rule"] for entry in trace]
 
@@ -175,7 +175,5 @@ def test_trace_preserves_existing_evidence_fields() -> None:
     assert result.evidence["successful_requests"] == 100
     assert result.evidence["failed_requests"] == 0
     assert result.evidence["enabled_endpoints"] == ["example"]
-    assert result.evidence["endpoint_response_time_targets_ms"] == {
-        "example": 3000
-    }
+    assert result.evidence["endpoint_response_time_targets_ms"] == {"example": 3000}
     assert result.evidence["warnings"] == []
