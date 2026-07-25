@@ -4,6 +4,10 @@ from pathlib import Path
 from performance_decision_engine.application.use_cases.analyze_dataset import (
     AnalyzeDataset,
 )
+from performance_decision_engine.application.use_cases.evaluate_evolution import (
+    EvaluateEvolution,
+    EvolutionObservation,
+)
 from performance_decision_engine.application.use_cases.generate_dataset import (
     GenerateDatasetRow,
 )
@@ -80,3 +84,68 @@ def test_review_plan_keeps_quadrant_until_human_validation() -> None:
     assert result["action"] == "review_configuration"
     assert result["proposed_quadrant"] == 5
     assert result["human_validation_required"] is True
+
+
+def _stable_observation(component_id: str, p95: int = 1000) -> EvolutionObservation:
+    return EvolutionObservation(
+        component_id=component_id,
+        recommendation_action="maintain",
+        p95_response_time_ms=p95,
+        response_time_target_ms=2000,
+        error_rate_percent=0,
+        assertions_all_passed=True,
+    )
+
+
+def test_stable_component_can_be_recommended_to_evolve() -> None:
+    current = Recommendation(action="maintain", explanation="Complies")
+    history = [_stable_observation("balances") for _ in range(3)]
+
+    recommendation = EvaluateEvolution().execute("balances", current, history)
+    plan = PlanQuadrantAction().execute(recommendation, 5)
+
+    assert recommendation.action == "evolve"
+    assert recommendation.evidence["consecutive_successes"] == 3
+    assert plan["action"] == "evaluate_load_increase"
+    assert plan["proposed_load_increase_percent"] == 10
+    assert plan["proposed_quadrant"] == 5
+    assert plan["human_validation_required"] is True
+
+
+def test_component_without_enough_history_remains_unchanged() -> None:
+    current = Recommendation(action="maintain", explanation="Complies")
+
+    recommendation = EvaluateEvolution().execute(
+        "balances",
+        current,
+        [_stable_observation("balances") for _ in range(2)],
+    )
+
+    assert recommendation.action == "maintain"
+    assert recommendation.evidence["evolution_reason"] == "insufficient_history"
+
+
+def test_failure_in_recent_history_prevents_evolution() -> None:
+    current = Recommendation(action="maintain", explanation="Complies")
+    history = [
+        _stable_observation("balances"),
+        _stable_observation("balances", p95=1500),
+        _stable_observation("balances"),
+    ]
+
+    recommendation = EvaluateEvolution().execute("balances", current, history)
+
+    assert recommendation.action == "maintain"
+    assert recommendation.evidence["evolution_reason"] == "stability_criteria_not_met"
+
+
+def test_review_recommendation_is_never_overridden() -> None:
+    current = Recommendation(action="review", explanation="Failed assertion")
+
+    recommendation = EvaluateEvolution().execute(
+        "balances",
+        current,
+        [_stable_observation("balances") for _ in range(3)],
+    )
+
+    assert recommendation is current

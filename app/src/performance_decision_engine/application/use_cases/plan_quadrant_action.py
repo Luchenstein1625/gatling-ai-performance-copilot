@@ -2,7 +2,7 @@ from performance_decision_engine.domain.entities.recommendation import Recommend
 
 
 class PlanQuadrantAction:
-    """Translate maintain/review into an explicit, human-controlled next step."""
+    """Translate a recommendation into an explicit, human-controlled next step."""
 
     def execute(
         self,
@@ -11,6 +11,25 @@ class PlanQuadrantAction:
     ) -> dict[str, object]:
         if current_quadrant not in range(1, 10):
             raise ValueError("Current quadrant must be between 1 and 9.")
+
+        if recommendation.action == "evolve":
+            load_increase = recommendation.evidence.get(
+                "proposed_load_increase_percent",
+                10,
+            )
+            return {
+                "schema_version": "1",
+                "current_quadrant": current_quadrant,
+                "action": "evaluate_load_increase",
+                "proposed_quadrant": current_quadrant,
+                "proposed_load_increase_percent": load_increase,
+                "human_validation_required": True,
+                "triggered_rule": recommendation.evidence.get("triggered_rule"),
+                "explanation": (
+                    f"Evaluate a controlled load increase of {load_increase}% "
+                    "and let a specialist approve it."
+                ),
+            }
 
         review_required = recommendation.action == "review"
         return {
