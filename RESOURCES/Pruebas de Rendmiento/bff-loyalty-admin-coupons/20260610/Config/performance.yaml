@@ -1,0 +1,56 @@
+loadType: sequence
+features:
+  - name: obtencion-lista-cupones
+    feature: classpath:cl/bci/ecodig/acceptance/obtener-lista-cupones.feature@name=obtencion-lista-cupones
+    performance: true
+    reason: "Consume Servicio Externo No virtualizado"
+    reason_detail: "Flujo depende de integraciones externas no virtualizadas para obtener la lista de cupones"
+    concurrency: very_high
+    iterations: high
+    response_time: low
+    operation_id: "MSCouponsController_getCouponsList"
+  - name: actualizar-lista-cupones
+    feature: classpath:cl/bci/ecodig/acceptance/actualizar-lista-cupones.feature@name=actualizar-lista-cupones
+    performance: false
+    reason: "Consume Servicio Externo No virtualizado"
+    reason_detail: "Escenario actualiza estados de cupones contra servicios externos no virtualizados"
+    concurrency: very_high
+    iterations: high
+    response_time: low
+    operation_id: "MSCouponsController_actualizaEstado"
+  - name: obtener-configuracion-cupones
+    feature: classpath:cl/bci/ecodig/acceptance/obtener-configuracion-cupones.feature@name=obtener-configuracion-cupones
+    performance: false
+    reason: "Sin datos de prueba"
+    reason_detail: "Endpoint para obtener configuracion de cupones filtrado por ID de oferta"
+    concurrency: medium
+    iterations: medium
+    response_time: medium
+    operation_id: "MSCouponsController_getCouponsConfigByOfferId"
+  - name: obtener-configuracion-cupones-por-id
+    feature: classpath:cl/bci/ecodig/acceptance/obtener-configuracion-cupones-por-id.feature@name=obtener-configuracion-cupones-por-id
+    performance: false
+    reason: "Sin datos de prueba"
+    reason_detail: "Endpoint para obtener configuracion de cupones por ID de configuracion"
+    concurrency: medium
+    iterations: medium
+    response_time: medium
+    operation_id: "MSCouponsController_getCouponsConfigByConfigId"
+  - name: crear-configuracion-cupones
+    feature: classpath:cl/bci/ecodig/acceptance/crear-configuracion-cupones.feature@name=crear-configuracion-cupones
+    performance: false
+    reason: "Sin datos de prueba"
+    reason_detail: "Endpoint para crear nueva configuracion de cupones"
+    concurrency: low
+    iterations: low
+    response_time: high
+    operation_id: "MSCouponsController_createCouponsConfig"
+  - name: actualizar-configuracion-cupones
+    feature: classpath:cl/bci/ecodig/acceptance/actualizar-configuracion-cupones.feature@name=actualizar-configuracion-cupones
+    performance: false
+    reason: "Sin datos de prueba"
+    reason_detail: "Endpoint para actualizar configuracion existente de cupones"
+    concurrency: low
+    iterations: low
+    response_time: high
+    operation_id: "MSCouponsController_updateCouponsConfig"

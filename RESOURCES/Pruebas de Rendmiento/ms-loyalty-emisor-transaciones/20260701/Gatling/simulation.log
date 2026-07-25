@@ -1,0 +1,613 @@
+ASSERTION	AAECAAICAAAAAAAAAFlA
+ASSERTION	AAMAARVpbnllY2Npb24tdHJhbnNhY2Npb24DAAEFAAAAAAAAwFhAAwAAAAAAAHCnQA==
+ASSERTION	AAMAARVsaXN0YWRvLXRyYW5zYWNjaW9uZXMDAAEFAAAAAAAAwFhAAwAAAAAAAHCnQA==
+ASSERTION	AAMAARNkZXRhbGxlLXRyYW5zYWNjaW9uAwABBQAAAAAAAMBYQAMAAAAAAABwp0A=
+ASSERTION	AAMAARdjYW1iaWFyLWVzdGFkby1jYXNoYmFjawMAAQUAAAAAAADAWEADAAAAAAAAcKdA
+RUN	cl.bci.ecodig.performance.test.ParametricSimulation	parametricsimulation	1782917113432	 	3.7.4
+USER	registrar-cashback	START	1782917113567
+USER	registrar-cashback	START	1782917113563
+USER	registrar-cashback	START	1782917113563
+USER	registrar-cashback	START	1782917113566
+USER	registrar-cashback	START	1782917113569
+USER	registrar-cashback	START	1782917113572
+USER	registrar-cashback	START	1782917113573
+USER	registrar-cashback	START	1782917113573
+USER	registrar-cashback	START	1782917113573
+USER	registrar-cashback	START	1782917113573
+USER	registrar-cashback	START	1782917113574
+USER	registrar-cashback	START	1782917113574
+USER	registrar-cashback	START	1782917113574
+USER	registrar-cashback	START	1782917113574
+USER	registrar-cashback	START	1782917113574
+USER	registrar-cashback	START	1782917113574
+USER	registrar-cashback	START	1782917113574
+USER	registrar-cashback	START	1782917113574
+USER	registrar-cashback	START	1782917113574
+USER	registrar-cashback	START	1782917113575
+USER	registrar-cashback	START	1782917113575
+USER	registrar-cashback	START	1782917113575
+USER	registrar-cashback	START	1782917113575
+USER	registrar-cashback	START	1782917113575
+USER	registrar-cashback	START	1782917113575
+USER	registrar-cashback	START	1782917113575
+USER	registrar-cashback	START	1782917113575
+USER	registrar-cashback	START	1782917113575
+USER	registrar-cashback	START	1782917113575
+USER	registrar-cashback	START	1782917113575
+USER	registrar-cashback	START	1782917113575
+USER	registrar-cashback	START	1782917113575
+USER	registrar-cashback	START	1782917113576
+USER	registrar-cashback	START	1782917113576
+USER	registrar-cashback	START	1782917113576
+USER	registrar-cashback	START	1782917113576
+USER	registrar-cashback	START	1782917113576
+USER	registrar-cashback	START	1782917113576
+USER	registrar-cashback	START	1782917113576
+USER	registrar-cashback	START	1782917113576
+USER	registrar-cashback	START	1782917113576
+USER	registrar-cashback	START	1782917113576
+USER	registrar-cashback	START	1782917113578
+USER	registrar-cashback	START	1782917113578
+USER	registrar-cashback	START	1782917113578
+USER	registrar-cashback	START	1782917113578
+USER	registrar-cashback	START	1782917113578
+USER	registrar-cashback	START	1782917113579
+USER	registrar-cashback	START	1782917113579
+USER	registrar-cashback	START	1782917113579
+USER	registrar-cashback	START	1782917113578
+USER	registrar-cashback	START	1782917113580
+USER	registrar-cashback	START	1782917113580
+USER	registrar-cashback	START	1782917113580
+USER	registrar-cashback	START	1782917113581
+USER	registrar-cashback	START	1782917113581
+USER	registrar-cashback	START	1782917113581
+USER	registrar-cashback	START	1782917113581
+USER	registrar-cashback	START	1782917113581
+USER	registrar-cashback	START	1782917113581
+USER	registrar-cashback	END	1782917113569
+USER	registrar-cashback	END	1782917113569
+USER	registrar-cashback	END	1782917113569
+USER	registrar-cashback	END	1782917113569
+USER	registrar-cashback	END	1782917113572
+USER	registrar-cashback	END	1782917113572
+USER	registrar-cashback	END	1782917113573
+USER	registrar-cashback	END	1782917113573
+USER	registrar-cashback	END	1782917113574
+USER	registrar-cashback	END	1782917113574
+USER	registrar-cashback	END	1782917113574
+USER	registrar-cashback	END	1782917113574
+USER	registrar-cashback	END	1782917113574
+USER	registrar-cashback	END	1782917113574
+USER	registrar-cashback	END	1782917113574
+USER	registrar-cashback	END	1782917113574
+USER	registrar-cashback	END	1782917113574
+USER	registrar-cashback	END	1782917113574
+USER	registrar-cashback	END	1782917113575
+USER	registrar-cashback	END	1782917113575
+USER	registrar-cashback	END	1782917113575
+USER	registrar-cashback	END	1782917113575
+USER	registrar-cashback	END	1782917113575
+USER	registrar-cashback	END	1782917113575
+USER	registrar-cashback	END	1782917113575
+USER	registrar-cashback	END	1782917113575
+USER	registrar-cashback	END	1782917113576
+USER	registrar-cashback	END	1782917113576
+USER	registrar-cashback	END	1782917113576
+USER	registrar-cashback	END	1782917113576
+USER	registrar-cashback	END	1782917113576
+USER	registrar-cashback	END	1782917113576
+USER	registrar-cashback	END	1782917113576
+USER	registrar-cashback	END	1782917113576
+USER	registrar-cashback	END	1782917113576
+USER	registrar-cashback	END	1782917113576
+USER	registrar-cashback	END	1782917113576
+USER	registrar-cashback	END	1782917113576
+USER	registrar-cashback	END	1782917113576
+USER	registrar-cashback	END	1782917113576
+USER	registrar-cashback	END	1782917113576
+USER	registrar-cashback	END	1782917113576
+USER	registrar-cashback	END	1782917113578
+USER	registrar-cashback	END	1782917113578
+USER	registrar-cashback	END	1782917113578
+USER	registrar-cashback	END	1782917113578
+USER	registrar-cashback	END	1782917113579
+USER	registrar-cashback	END	1782917113579
+USER	registrar-cashback	END	1782917113579
+USER	registrar-cashback	END	1782917113579
+USER	registrar-cashback	END	1782917113580
+USER	registrar-cashback	END	1782917113580
+USER	registrar-cashback	END	1782917113580
+USER	registrar-cashback	END	1782917113580
+USER	registrar-cashback	END	1782917113581
+USER	registrar-cashback	END	1782917113581
+USER	registrar-cashback	END	1782917113581
+USER	registrar-cashback	END	1782917113581
+USER	registrar-cashback	END	1782917113581
+USER	registrar-cashback	END	1782917113582
+USER	registrar-bono-independiente	START	1782917114555
+USER	registrar-bono-independiente	START	1782917114556
+USER	registrar-bono-independiente	START	1782917114556
+USER	registrar-bono-independiente	START	1782917114556
+USER	registrar-bono-independiente	START	1782917114557
+USER	registrar-bono-independiente	START	1782917114557
+USER	registrar-bono-independiente	START	1782917114557
+USER	registrar-bono-independiente	START	1782917114557
+USER	registrar-bono-independiente	START	1782917114557
+USER	registrar-bono-independiente	START	1782917114557
+USER	registrar-bono-independiente	START	1782917114557
+USER	registrar-bono-independiente	START	1782917114558
+USER	registrar-bono-independiente	START	1782917114558
+USER	registrar-bono-independiente	START	1782917114558
+USER	registrar-bono-independiente	START	1782917114558
+USER	registrar-bono-independiente	START	1782917114561
+USER	registrar-bono-independiente	START	1782917114561
+USER	registrar-bono-independiente	START	1782917114561
+USER	registrar-bono-independiente	START	1782917114563
+USER	registrar-bono-independiente	START	1782917114563
+USER	registrar-bono-independiente	START	1782917114563
+USER	registrar-bono-independiente	START	1782917114563
+USER	registrar-bono-independiente	START	1782917114563
+USER	registrar-bono-independiente	START	1782917114563
+USER	registrar-bono-independiente	START	1782917114564
+USER	registrar-bono-independiente	START	1782917114564
+USER	registrar-bono-independiente	START	1782917114564
+USER	registrar-bono-independiente	START	1782917114564
+USER	registrar-bono-independiente	START	1782917114564
+USER	registrar-bono-independiente	START	1782917114564
+USER	registrar-bono-independiente	START	1782917114564
+USER	registrar-bono-independiente	START	1782917114564
+USER	registrar-bono-independiente	START	1782917114564
+USER	registrar-bono-independiente	START	1782917114564
+USER	registrar-bono-independiente	START	1782917114565
+USER	registrar-bono-independiente	START	1782917114565
+USER	registrar-bono-independiente	START	1782917114565
+USER	registrar-bono-independiente	START	1782917114565
+USER	registrar-bono-independiente	START	1782917114565
+USER	registrar-bono-independiente	START	1782917114565
+USER	registrar-bono-independiente	START	1782917114565
+USER	registrar-bono-independiente	START	1782917114565
+USER	registrar-bono-independiente	START	1782917114565
+USER	registrar-bono-independiente	START	1782917114566
+USER	registrar-bono-independiente	START	1782917114566
+USER	registrar-bono-independiente	START	1782917114566
+USER	registrar-bono-independiente	START	1782917114566
+USER	registrar-bono-independiente	START	1782917114566
+USER	registrar-bono-independiente	START	1782917114566
+USER	registrar-bono-independiente	START	1782917114566
+USER	registrar-bono-independiente	START	1782917114567
+USER	registrar-bono-independiente	START	1782917114567
+USER	registrar-bono-independiente	START	1782917114567
+USER	registrar-bono-independiente	START	1782917114567
+USER	registrar-bono-independiente	START	1782917114567
+USER	registrar-bono-independiente	START	1782917114567
+USER	registrar-bono-independiente	START	1782917114567
+USER	registrar-bono-independiente	START	1782917114567
+USER	registrar-bono-independiente	START	1782917114567
+USER	registrar-bono-independiente	START	1782917114567
+USER	registrar-bono-independiente	END	1782917114555
+USER	registrar-bono-independiente	END	1782917114556
+USER	registrar-bono-independiente	END	1782917114556
+USER	registrar-bono-independiente	END	1782917114556
+USER	registrar-bono-independiente	END	1782917114557
+USER	registrar-bono-independiente	END	1782917114557
+USER	registrar-bono-independiente	END	1782917114557
+USER	registrar-bono-independiente	END	1782917114557
+USER	registrar-bono-independiente	END	1782917114557
+USER	registrar-bono-independiente	END	1782917114557
+USER	registrar-bono-independiente	END	1782917114558
+USER	registrar-bono-independiente	END	1782917114558
+USER	registrar-bono-independiente	END	1782917114558
+USER	registrar-bono-independiente	END	1782917114558
+USER	registrar-bono-independiente	END	1782917114558
+USER	registrar-bono-independiente	END	1782917114561
+USER	registrar-bono-independiente	END	1782917114561
+USER	registrar-bono-independiente	END	1782917114561
+USER	registrar-bono-independiente	END	1782917114563
+USER	registrar-bono-independiente	END	1782917114563
+USER	registrar-bono-independiente	END	1782917114563
+USER	registrar-bono-independiente	END	1782917114563
+USER	registrar-bono-independiente	END	1782917114564
+USER	registrar-bono-independiente	END	1782917114564
+USER	registrar-bono-independiente	END	1782917114564
+USER	registrar-bono-independiente	END	1782917114564
+USER	registrar-bono-independiente	END	1782917114564
+USER	registrar-bono-independiente	END	1782917114564
+USER	registrar-bono-independiente	END	1782917114564
+USER	registrar-bono-independiente	END	1782917114564
+USER	registrar-bono-independiente	END	1782917114564
+USER	registrar-bono-independiente	END	1782917114564
+USER	registrar-bono-independiente	END	1782917114564
+USER	registrar-bono-independiente	END	1782917114564
+USER	registrar-bono-independiente	END	1782917114565
+USER	registrar-bono-independiente	END	1782917114565
+USER	registrar-bono-independiente	END	1782917114565
+USER	registrar-bono-independiente	END	1782917114565
+USER	registrar-bono-independiente	END	1782917114565
+USER	registrar-bono-independiente	END	1782917114565
+USER	registrar-bono-independiente	END	1782917114566
+USER	registrar-bono-independiente	END	1782917114566
+USER	registrar-bono-independiente	END	1782917114566
+USER	registrar-bono-independiente	END	1782917114566
+USER	registrar-bono-independiente	END	1782917114566
+USER	registrar-bono-independiente	END	1782917114566
+USER	registrar-bono-independiente	END	1782917114566
+USER	registrar-bono-independiente	END	1782917114566
+USER	registrar-bono-independiente	END	1782917114566
+USER	registrar-bono-independiente	END	1782917114566
+USER	registrar-bono-independiente	END	1782917114567
+USER	registrar-bono-independiente	END	1782917114567
+USER	registrar-bono-independiente	END	1782917114567
+USER	registrar-bono-independiente	END	1782917114567
+USER	registrar-bono-independiente	END	1782917114567
+USER	registrar-bono-independiente	END	1782917114568
+USER	registrar-bono-independiente	END	1782917114568
+USER	registrar-bono-independiente	END	1782917114568
+USER	registrar-bono-independiente	END	1782917114568
+USER	registrar-bono-independiente	END	1782917114568
+USER	inyeccion-transaccion	START	1782917115559
+USER	inyeccion-transaccion	START	1782917115554
+USER	inyeccion-transaccion	START	1782917115559
+USER	inyeccion-transaccion	START	1782917115559
+USER	inyeccion-transaccion	START	1782917115556
+USER	inyeccion-transaccion	START	1782917115557
+USER	inyeccion-transaccion	START	1782917115559
+USER	inyeccion-transaccion	START	1782917115562
+USER	inyeccion-transaccion	START	1782917116720
+USER	inyeccion-transaccion	START	1782917116718
+USER	inyeccion-transaccion	START	1782917116718
+USER	inyeccion-transaccion	START	1782917116724
+USER	inyeccion-transaccion	START	1782917116731
+USER	inyeccion-transaccion	START	1782917116718
+USER	inyeccion-transaccion	START	1782917116733
+USER	inyeccion-transaccion	START	1782917116743
+USER	inyeccion-transaccion	START	1782917116718
+USER	inyeccion-transaccion	START	1782917116747
+USER	inyeccion-transaccion	START	1782917116751
+USER	inyeccion-transaccion	START	1782917116752
+REQUEST		GET /ECOAzDevOps/ECOAzureDevOps/_apis/distributedtask/variablegroups?groupName=testing-crt	1782917118318	1782917118753	OK	 
+REQUEST		POST /e5dea286-ff90-4426-9fe5-a29cb8192882/oauth2/v2.0/token	1782917119050	1782917119646	OK	 
+REQUEST		inyeccion-transaccion	1782917119708	1782917120703	OK	 
+REQUEST		inyeccion-transaccion	1782917119707	1782917120718	OK	 
+REQUEST		inyeccion-transaccion	1782917119701	1782917121014	OK	 
+REQUEST		inyeccion-transaccion	1782917119708	1782917121019	OK	 
+REQUEST		inyeccion-transaccion	1782917119708	1782917121070	OK	 
+REQUEST		inyeccion-transaccion	1782917119706	1782917121070	OK	 
+REQUEST		inyeccion-transaccion	1782917120725	1782917121114	OK	 
+REQUEST		inyeccion-transaccion	1782917119711	1782917121299	OK	 
+REQUEST		inyeccion-transaccion	1782917119710	1782917121353	OK	 
+REQUEST		inyeccion-transaccion	1782917120739	1782917121391	OK	 
+REQUEST		inyeccion-transaccion	1782917121096	1782917121479	OK	 
+REQUEST		inyeccion-transaccion	1782917121087	1782917121488	OK	 
+REQUEST		inyeccion-transaccion	1782917121065	1782917121777	OK	 
+REQUEST		inyeccion-transaccion	1782917121030	1782917121807	OK	 
+REQUEST		inyeccion-transaccion	1782917121146	1782917121824	OK	 
+REQUEST		inyeccion-transaccion	1782917121517	1782917121920	OK	 
+REQUEST		inyeccion-transaccion	1782917121507	1782917121932	OK	 
+REQUEST		inyeccion-transaccion	1782917121375	1782917122037	OK	 
+REQUEST		inyeccion-transaccion	1782917121324	1782917122093	OK	 
+REQUEST		inyeccion-transaccion	1782917121419	1782917122145	OK	 
+REQUEST		inyeccion-transaccion	1782917121945	1782917122332	OK	 
+REQUEST		inyeccion-transaccion	1782917122090	1782917122509	OK	 
+REQUEST		inyeccion-transaccion	1782917121825	1782917122509	OK	 
+REQUEST		inyeccion-transaccion	1782917121856	1782917122527	OK	 
+REQUEST		inyeccion-transaccion	1782917121788	1782917122528	OK	 
+REQUEST		inyeccion-transaccion	1782917122149	1782917122565	OK	 
+REQUEST		inyeccion-transaccion	1782917122198	1782917122623	OK	 
+REQUEST		inyeccion-transaccion	1782917121953	1782917122680	OK	 
+REQUEST		inyeccion-transaccion	1782917122359	1782917122729	OK	 
+REQUEST		inyeccion-transaccion	1782917122524	1782917122915	OK	 
+REQUEST		inyeccion-transaccion	1782917122566	1782917122947	OK	 
+REQUEST		inyeccion-transaccion	1782917122579	1782917122957	OK	 
+REQUEST		inyeccion-transaccion	1782917122591	1782917122984	OK	 
+REQUEST		inyeccion-transaccion	1782917122636	1782917123928	OK	 
+REQUEST		inyeccion-transaccion	1782917122766	1782917123943	OK	 
+REQUEST		inyeccion-transaccion	1782917122700	1782917123949	OK	 
+REQUEST		inyeccion-transaccion	1782917122528	1782917123962	OK	 
+REQUEST		inyeccion-transaccion	1782917122991	1782917124255	OK	 
+REQUEST		inyeccion-transaccion	1782917122990	1782917124270	OK	 
+REQUEST		inyeccion-transaccion	1782917123019	1782917124282	OK	 
+REQUEST		inyeccion-transaccion	1782917123937	1782917124366	OK	 
+REQUEST		inyeccion-transaccion	1782917123982	1782917124928	OK	 
+REQUEST		inyeccion-transaccion	1782917122950	1782917124971	OK	 
+REQUEST		inyeccion-transaccion	1782917123990	1782917125003	OK	 
+REQUEST		inyeccion-transaccion	1782917123983	1782917125033	OK	 
+REQUEST		inyeccion-transaccion	1782917124418	1782917125284	OK	 
+REQUEST		inyeccion-transaccion	1782917124277	1782917125290	OK	 
+REQUEST		inyeccion-transaccion	1782917124318	1782917125294	OK	 
+REQUEST		inyeccion-transaccion	1782917124944	1782917125366	OK	 
+REQUEST		inyeccion-transaccion	1782917124991	1782917125400	OK	 
+REQUEST		inyeccion-transaccion	1782917125027	1782917126447	OK	 
+REQUEST		inyeccion-transaccion	1782917125058	1782917126448	OK	 
+REQUEST		inyeccion-transaccion	1782917124303	1782917126448	OK	 
+REQUEST		inyeccion-transaccion	1782917125312	1782917126500	OK	 
+REQUEST		inyeccion-transaccion	1782917125307	1782917126523	OK	 
+REQUEST		inyeccion-transaccion	1782917125388	1782917126519	OK	 
+REQUEST		inyeccion-transaccion	1782917125316	1782917126530	OK	 
+REQUEST		inyeccion-transaccion	1782917125425	1782917126539	OK	 
+REQUEST		inyeccion-transaccion	1782917126519	1782917126909	OK	 
+REQUEST		inyeccion-transaccion	1782917126522	1782917126909	OK	 
+REQUEST		inyeccion-transaccion	1782917126548	1782917126965	OK	 
+REQUEST		inyeccion-transaccion	1782917126682	1782917127086	OK	 
+REQUEST		inyeccion-transaccion	1782917126545	1782917127250	OK	 
+REQUEST		inyeccion-transaccion	1782917126932	1782917127331	OK	 
+REQUEST		inyeccion-transaccion	1782917126937	1782917127344	OK	 
+REQUEST		inyeccion-transaccion	1782917126641	1782917127343	OK	 
+REQUEST		inyeccion-transaccion	1782917126668	1782917127364	OK	 
+REQUEST		inyeccion-transaccion	1782917126697	1782917127392	OK	 
+REQUEST		inyeccion-transaccion	1782917127010	1782917127428	OK	 
+REQUEST		inyeccion-transaccion	1782917127115	1782917127528	OK	 
+REQUEST		inyeccion-transaccion	1782917127287	1782917127678	OK	 
+REQUEST		inyeccion-transaccion	1782917127361	1782917127749	OK	 
+REQUEST		inyeccion-transaccion	1782917127377	1782917127766	OK	 
+USER	inyeccion-transaccion	END	1782917127366
+REQUEST		inyeccion-transaccion	1782917127351	1782917127769	OK	 
+REQUEST		inyeccion-transaccion	1782917127406	1782917127795	OK	 
+REQUEST		inyeccion-transaccion	1782917127449	1782917127838	OK	 
+REQUEST		inyeccion-transaccion	1782917127364	1782917128051	OK	 
+REQUEST		inyeccion-transaccion	1782917127688	1782917128098	OK	 
+REQUEST		inyeccion-transaccion	1782917127794	1782917128201	OK	 
+REQUEST		inyeccion-transaccion	1782917127802	1782917128224	OK	 
+REQUEST		inyeccion-transaccion	1782917127859	1782917128232	OK	 
+REQUEST		inyeccion-transaccion	1782917127540	1782917128257	OK	 
+REQUEST		inyeccion-transaccion	1782917127791	1782917128398	OK	 
+REQUEST		inyeccion-transaccion	1782917127763	1782917128408	OK	 
+REQUEST		inyeccion-transaccion	1782917128060	1782917128423	OK	 
+REQUEST		inyeccion-transaccion	1782917128115	1782917128514	OK	 
+REQUEST		inyeccion-transaccion	1782917128215	1782917128611	OK	 
+REQUEST		inyeccion-transaccion	1782917128247	1782917128621	OK	 
+REQUEST		inyeccion-transaccion	1782917128267	1782917128677	OK	 
+REQUEST		inyeccion-transaccion	1782917128431	1782917128821	OK	 
+USER	inyeccion-transaccion	END	1782917127776
+USER	inyeccion-transaccion	END	1782917127841
+USER	inyeccion-transaccion	END	1782917128052
+USER	inyeccion-transaccion	END	1782917128099
+USER	inyeccion-transaccion	END	1782917128237
+USER	inyeccion-transaccion	END	1782917128412
+USER	inyeccion-transaccion	END	1782917128426
+USER	inyeccion-transaccion	END	1782917128515
+USER	inyeccion-transaccion	END	1782917128622
+USER	inyeccion-transaccion	END	1782917128677
+USER	inyeccion-transaccion	END	1782917128824
+REQUEST		inyeccion-transaccion	1782917128436	1782917128827	OK	 
+USER	inyeccion-transaccion	END	1782917128827
+REQUEST		inyeccion-transaccion	1782917128522	1782917128891	OK	 
+USER	inyeccion-transaccion	END	1782917128892
+REQUEST		inyeccion-transaccion	1782917128234	1782917128923	OK	 
+USER	inyeccion-transaccion	END	1782917128924
+REQUEST		inyeccion-transaccion	1782917128623	1782917129004	OK	 
+USER	inyeccion-transaccion	END	1782917129005
+REQUEST		inyeccion-transaccion	1782917128634	1782917129014	OK	 
+REQUEST		inyeccion-transaccion	1782917128720	1782917129127	OK	 
+USER	inyeccion-transaccion	END	1782917129128
+REQUEST		inyeccion-transaccion	1782917128428	1782917129184	OK	 
+REQUEST		inyeccion-transaccion	1782917128832	1782917129212	OK	 
+USER	inyeccion-transaccion	END	1782917129215
+REQUEST		inyeccion-transaccion	1782917129022	1782917129405	OK	 
+USER	inyeccion-transaccion	END	1782917129406
+REQUEST		inyeccion-transaccion	1782917129192	1782917129582	OK	 
+USER	inyeccion-transaccion	END	1782917129583
+USER	transaccion-pendiente	START	1782917130554
+USER	transaccion-pendiente	START	1782917130554
+USER	transaccion-pendiente	START	1782917130554
+USER	transaccion-pendiente	START	1782917130554
+USER	transaccion-pendiente	START	1782917130554
+USER	transaccion-pendiente	START	1782917130554
+USER	transaccion-pendiente	START	1782917130554
+USER	transaccion-pendiente	START	1782917130554
+USER	transaccion-pendiente	START	1782917130554
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130554
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130554
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	END	1782917130554
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	END	1782917130554
+USER	transaccion-pendiente	END	1782917130554
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	START	1782917130556
+USER	transaccion-pendiente	START	1782917130556
+USER	transaccion-pendiente	START	1782917130556
+USER	transaccion-pendiente	START	1782917130556
+USER	transaccion-pendiente	START	1782917130556
+USER	transaccion-pendiente	START	1782917130556
+USER	transaccion-pendiente	START	1782917130556
+USER	transaccion-pendiente	START	1782917130556
+USER	transaccion-pendiente	START	1782917130556
+USER	transaccion-pendiente	START	1782917130556
+USER	transaccion-pendiente	START	1782917130556
+USER	transaccion-pendiente	START	1782917130556
+USER	transaccion-pendiente	START	1782917130556
+USER	transaccion-pendiente	START	1782917130556
+USER	transaccion-pendiente	START	1782917130556
+USER	transaccion-pendiente	START	1782917130556
+USER	transaccion-pendiente	START	1782917130556
+USER	transaccion-pendiente	START	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130555
+USER	transaccion-pendiente	END	1782917130556
+USER	transaccion-pendiente	END	1782917130556
+USER	transaccion-pendiente	END	1782917130556
+USER	transaccion-pendiente	END	1782917130556
+USER	transaccion-pendiente	END	1782917130556
+USER	transaccion-pendiente	END	1782917130556
+USER	transaccion-pendiente	END	1782917130556
+USER	transaccion-pendiente	END	1782917130556
+USER	transaccion-pendiente	END	1782917130556
+USER	transaccion-pendiente	END	1782917130556
+USER	transaccion-pendiente	END	1782917130556
+USER	transaccion-pendiente	END	1782917130556
+USER	transaccion-pendiente	END	1782917130556
+USER	transaccion-pendiente	END	1782917130556
+USER	transaccion-pendiente	END	1782917130556
+USER	transaccion-pendiente	END	1782917130556
+USER	transaccion-pendiente	END	1782917130556
+USER	transaccion-pendiente	END	1782917130556
+USER	transaccion-pendiente	END	1782917130556
+USER	transaccion-pendiente	END	1782917130557
+USER	listado-transacciones	START	1782917131557
+USER	listado-transacciones	START	1782917131555
+USER	listado-transacciones	START	1782917131555
+USER	listado-transacciones	START	1782917131558
+USER	listado-transacciones	START	1782917131557
+REQUEST		listado-transacciones	1782917131572	1782917131996	OK	 
+REQUEST		listado-transacciones	1782917131569	1782917132011	OK	 
+REQUEST		listado-transacciones	1782917131575	1782917132054	OK	 
+REQUEST		listado-transacciones	1782917131570	1782917132050	OK	 
+REQUEST		listado-transacciones	1782917131575	1782917132279	OK	 
+REQUEST		listado-transacciones	1782917132026	1782917132436	OK	 
+REQUEST		listado-transacciones	1782917132026	1782917132465	OK	 
+REQUEST		listado-transacciones	1782917132081	1782917132503	OK	 
+REQUEST		listado-transacciones	1782917132069	1782917132507	OK	 
+REQUEST		listado-transacciones	1782917132301	1782917132733	OK	 
+REQUEST		listado-transacciones	1782917132449	1782917132873	OK	 
+REQUEST		listado-transacciones	1782917132485	1782917132900	OK	 
+REQUEST		listado-transacciones	1782917132533	1782917132993	OK	 
+REQUEST		listado-transacciones	1782917132548	1782917133000	OK	 
+REQUEST		listado-transacciones	1782917132744	1782917133154	OK	 
+REQUEST		listado-transacciones	1782917132882	1782917133270	OK	 
+REQUEST		listado-transacciones	1782917132913	1782917133302	OK	 
+REQUEST		listado-transacciones	1782917133166	1782917133580	OK	 
+REQUEST		listado-transacciones	1782917133318	1782917133693	OK	 
+USER	listado-transacciones	END	1782917133694
+REQUEST		listado-transacciones	1782917133015	1782917133778	OK	 
+REQUEST		listado-transacciones	1782917133011	1782917133806	OK	 
+REQUEST		listado-transacciones	1782917133280	1782917133934	OK	 
+USER	listado-transacciones	END	1782917133935
+REQUEST		listado-transacciones	1782917133591	1782917133978	OK	 
+USER	listado-transacciones	END	1782917133980
+REQUEST		listado-transacciones	1782917133790	1782917134197	OK	 
+USER	listado-transacciones	END	1782917134197
+REQUEST		listado-transacciones	1782917133814	1782917134222	OK	 
+USER	listado-transacciones	END	1782917134223
+USER	detalle-transaccion	START	1782917134544
+USER	detalle-transaccion	START	1782917134547
+USER	detalle-transaccion	START	1782917134551
+USER	detalle-transaccion	START	1782917134544
+USER	detalle-transaccion	START	1782917134544
+REQUEST		detalle-transaccion	1782917134574	1782917134962	OK	 
+REQUEST		detalle-transaccion	1782917134566	1782917134976	OK	 
+REQUEST		detalle-transaccion	1782917134571	1782917134986	OK	 
+REQUEST		detalle-transaccion	1782917134573	1782917134993	OK	 
+REQUEST		detalle-transaccion	1782917134567	1782917135273	OK	 
+REQUEST		detalle-transaccion	1782917134995	1782917135427	OK	 
+REQUEST		detalle-transaccion	1782917135008	1782917135436	OK	 
+REQUEST		detalle-transaccion	1782917134974	1782917135437	OK	 
+REQUEST		detalle-transaccion	1782917135013	1782917135592	OK	 
+REQUEST		detalle-transaccion	1782917135283	1782917135663	OK	 
+REQUEST		detalle-transaccion	1782917135445	1782917135807	OK	 
+REQUEST		detalle-transaccion	1782917135446	1782917135848	OK	 
+REQUEST		detalle-transaccion	1782917135436	1782917135857	OK	 
+REQUEST		detalle-transaccion	1782917135601	1782917136046	OK	 
+REQUEST		detalle-transaccion	1782917135683	1782917136115	OK	 
+REQUEST		detalle-transaccion	1782917135821	1782917136232	OK	 
+REQUEST		detalle-transaccion	1782917135869	1782917136241	OK	 
+REQUEST		detalle-transaccion	1782917135861	1782917136288	OK	 
+REQUEST		detalle-transaccion	1782917136053	1782917136444	OK	 
+REQUEST		detalle-transaccion	1782917136140	1782917136509	OK	 
+REQUEST		detalle-transaccion	1782917136262	1782917136611	OK	 
+USER	detalle-transaccion	END	1782917136611
+REQUEST		detalle-transaccion	1782917136308	1782917136710	OK	 
+USER	detalle-transaccion	END	1782917136710
+REQUEST		detalle-transaccion	1782917136464	1782917136844	OK	 
+USER	detalle-transaccion	END	1782917136844
+REQUEST		detalle-transaccion	1782917136526	1782917136890	OK	 
+USER	detalle-transaccion	END	1782917136890
+REQUEST		detalle-transaccion	1782917136261	1782917136970	OK	 
+USER	detalle-transaccion	END	1782917136970
+USER	cambiar-estado-cashback	START	1782917137555
+USER	cambiar-estado-cashback	START	1782917137554
+USER	cambiar-estado-cashback	START	1782917137554
+USER	cambiar-estado-cashback	START	1782917137557
+USER	cambiar-estado-cashback	START	1782917137556
+REQUEST		cambiar-estado-cashback	1782917137581	1782917138886	OK	 
+REQUEST		cambiar-estado-cashback	1782917137569	1782917138889	OK	 
+REQUEST		cambiar-estado-cashback	1782917137578	1782917138922	OK	 
+REQUEST		cambiar-estado-cashback	1782917137567	1782917138923	OK	 
+REQUEST		cambiar-estado-cashback	1782917137574	1782917138923	OK	 
+REQUEST		cambiar-estado-cashback	1782917138903	1782917139294	OK	 
+REQUEST		cambiar-estado-cashback	1782917138900	1782917139296	OK	 
+REQUEST		cambiar-estado-cashback	1782917138937	1782917139321	OK	 
+REQUEST		cambiar-estado-cashback	1782917138936	1782917139323	OK	 
+REQUEST		cambiar-estado-cashback	1782917138947	1782917139326	OK	 
+REQUEST		cambiar-estado-cashback	1782917139308	1782917139685	OK	 
+REQUEST		cambiar-estado-cashback	1782917139305	1782917139709	OK	 
+REQUEST		cambiar-estado-cashback	1782917139338	1782917139722	OK	 
+REQUEST		cambiar-estado-cashback	1782917139339	1782917139728	OK	 
+REQUEST		cambiar-estado-cashback	1782917139341	1782917139729	OK	 
+REQUEST		cambiar-estado-cashback	1782917139734	1782917140117	OK	 
+REQUEST		cambiar-estado-cashback	1782917139721	1782917140117	OK	 
+REQUEST		cambiar-estado-cashback	1782917139694	1782917140120	OK	 
+REQUEST		cambiar-estado-cashback	1782917139745	1782917140136	OK	 
+REQUEST		cambiar-estado-cashback	1782917139744	1782917140419	OK	 
+REQUEST		cambiar-estado-cashback	1782917140132	1782917140506	OK	 
+USER	cambiar-estado-cashback	END	1782917140506
+REQUEST		cambiar-estado-cashback	1782917140130	1782917140525	OK	 
+USER	cambiar-estado-cashback	END	1782917140525
+REQUEST		cambiar-estado-cashback	1782917140130	1782917140532	OK	 
+USER	cambiar-estado-cashback	END	1782917140532
+REQUEST		cambiar-estado-cashback	1782917140142	1782917140550	OK	 
+USER	cambiar-estado-cashback	END	1782917140550
+REQUEST		cambiar-estado-cashback	1782917140427	1782917140800	OK	 
+USER	cambiar-estado-cashback	END	1782917140800

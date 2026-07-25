@@ -1,0 +1,29 @@
+<testsuite name="cl.bci.ecodig.performance.test.ParametricSimulation" tests="9" errors="0" failures="1" time="0">
+<testcase name="Global: percentage of successful events is greater than or equal to 100.0" status="false" time="0">
+  <failure type="Global">Actual value: 82.57984238905019</failure>
+</testcase>
+<testcase name="users-get-offer-slug: 99th percentile of response time is less than 15000.0" status="true" time="0">
+  <system-out>users-get-offer-slug: 99th percentile of response time is less than 15000.0</system-out>
+</testcase>
+<testcase name="obtener-ofertas-visibles: 99th percentile of response time is less than 15000.0" status="true" time="0">
+  <system-out>obtener-ofertas-visibles: 99th percentile of response time is less than 15000.0</system-out>
+</testcase>
+<testcase name="users-get-offers-edc-sin-rut: 99th percentile of response time is less than 15000.0" status="true" time="0">
+  <system-out>users-get-offers-edc-sin-rut: 99th percentile of response time is less than 15000.0</system-out>
+</testcase>
+<testcase name="users-get-offers-edc-rut-con-tyc: 99th percentile of response time is less than 15000.0" status="true" time="0">
+  <system-out>users-get-offers-edc-rut-con-tyc: 99th percentile of response time is less than 15000.0</system-out>
+</testcase>
+<testcase name="get-offers-filtered: 99th percentile of response time is less than 5000.0" status="true" time="0">
+  <system-out>get-offers-filtered: 99th percentile of response time is less than 5000.0</system-out>
+</testcase>
+<testcase name="search-offers-success: 99th percentile of response time is less than 5000.0" status="true" time="0">
+  <system-out>search-offers-success: 99th percentile of response time is less than 5000.0</system-out>
+</testcase>
+<testcase name="offer-detail-by-id-200: 99th percentile of response time is less than 15000.0" status="true" time="0">
+  <system-out>offer-detail-by-id-200: 99th percentile of response time is less than 15000.0</system-out>
+</testcase>
+<testcase name="offer-detail-by-slug-200: 99th percentile of response time is less than 15000.0" status="true" time="0">
+  <system-out>offer-detail-by-slug-200: 99th percentile of response time is less than 15000.0</system-out>
+</testcase>
+</testsuite>

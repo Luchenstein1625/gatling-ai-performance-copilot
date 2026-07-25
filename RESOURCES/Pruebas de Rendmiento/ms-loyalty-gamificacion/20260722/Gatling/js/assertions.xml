@@ -1,0 +1,41 @@
+<testsuite name="cl.bci.ecodig.performance.test.ParametricSimulation" tests="13" errors="0" failures="0" time="0">
+<testcase name="Global: percentage of successful events is greater than or equal to 100.0" status="true" time="0">
+  <system-out>Global: percentage of successful events is greater than or equal to 100.0</system-out>
+</testcase>
+<testcase name="info-campania: 99th percentile of response time is less than 15000.0" status="true" time="0">
+  <system-out>info-campania: 99th percentile of response time is less than 15000.0</system-out>
+</testcase>
+<testcase name="info-misiones: 99th percentile of response time is less than 15000.0" status="true" time="0">
+  <system-out>info-misiones: 99th percentile of response time is less than 15000.0</system-out>
+</testcase>
+<testcase name="marca-visualizacion: 99th percentile of response time is less than 5000.0" status="true" time="0">
+  <system-out>marca-visualizacion: 99th percentile of response time is less than 5000.0</system-out>
+</testcase>
+<testcase name="request-gamificacion: 99th percentile of response time is less than 5000.0" status="true" time="0">
+  <system-out>request-gamificacion: 99th percentile of response time is less than 5000.0</system-out>
+</testcase>
+<testcase name="request-obtener-mision: 99th percentile of response time is less than 3000.0" status="true" time="0">
+  <system-out>request-obtener-mision: 99th percentile of response time is less than 3000.0</system-out>
+</testcase>
+<testcase name="request-obtener-misiones: 99th percentile of response time is less than 3000.0" status="true" time="0">
+  <system-out>request-obtener-misiones: 99th percentile of response time is less than 3000.0</system-out>
+</testcase>
+<testcase name="request-obtener-misiones-eventos: 99th percentile of response time is less than 3000.0" status="true" time="0">
+  <system-out>request-obtener-misiones-eventos: 99th percentile of response time is less than 3000.0</system-out>
+</testcase>
+<testcase name="request-actualizar-mision: 99th percentile of response time is less than 3000.0" status="true" time="0">
+  <system-out>request-actualizar-mision: 99th percentile of response time is less than 3000.0</system-out>
+</testcase>
+<testcase name="request-crear-mision: 99th percentile of response time is less than 3000.0" status="true" time="0">
+  <system-out>request-crear-mision: 99th percentile of response time is less than 3000.0</system-out>
+</testcase>
+<testcase name="request-asignar-mision: 99th percentile of response time is less than 3000.0" status="true" time="0">
+  <system-out>request-asignar-mision: 99th percentile of response time is less than 3000.0</system-out>
+</testcase>
+<testcase name="request-obtener-ruts-mision: 99th percentile of response time is less than 3000.0" status="true" time="0">
+  <system-out>request-obtener-ruts-mision: 99th percentile of response time is less than 3000.0</system-out>
+</testcase>
+<testcase name="request-usuarios-info-resumen-misiones: 99th percentile of response time is less than 3000.0" status="true" time="0">
+  <system-out>request-usuarios-info-resumen-misiones: 99th percentile of response time is less than 3000.0</system-out>
+</testcase>
+</testsuite>

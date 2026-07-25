@@ -1,0 +1,17 @@
+<testsuite name="cl.bci.ecodig.performance.test.ParametricSimulation" tests="5" errors="0" failures="4" time="0">
+<testcase name="Global: percentage of successful events is greater than or equal to 100.0" status="true" time="0">
+  <system-out>Global: percentage of successful events is greater than or equal to 100.0</system-out>
+</testcase>
+<testcase name="inyeccion-transaccion: 99th percentile of response time is less than 3000.0" status="false" time="0">
+  <failure type="inyeccion-transaccion">Actual value: 6000.0</failure>
+</testcase>
+<testcase name="listado-transacciones: 99th percentile of response time is less than 3000.0" status="false" time="0">
+  <failure type="listado-transacciones">Actual value: 16367.0</failure>
+</testcase>
+<testcase name="detalle-transaccion: 99th percentile of response time is less than 3000.0" status="false" time="0">
+  <failure type="detalle-transaccion">Actual value: 5698.0</failure>
+</testcase>
+<testcase name="cambiar-estado-cashback: 99th percentile of response time is less than 3000.0" status="false" time="0">
+  <failure type="cambiar-estado-cashback">Actual value: 6642.0</failure>
+</testcase>
+</testsuite>

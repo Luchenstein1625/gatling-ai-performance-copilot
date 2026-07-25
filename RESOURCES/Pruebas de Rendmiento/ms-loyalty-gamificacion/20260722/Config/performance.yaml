@@ -1,0 +1,10 @@
+loadType: sequence
+features:
+- name: consulta info campania
+  feature: classpath:cl/bci/ecodig/acceptance/consulta-info-campania.feature@name=info-campania
+  performance: true
+  reason: ""
+  reason_detail: ""
+  concurrency: low
+  iterations: low
+  response_time: medium

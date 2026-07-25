@@ -1,0 +1,14 @@
+loadType: sequence
+features:
+# Recuerda reemplazar plantilla feature por tú test de karate.
+# Este es un test de ejemplo de como llamar un endpoint básico "hello world".
+- name: partners
+  feature: classpath:cl/bci/ecodig/acceptance/partners.feature@name=partners
+  reason: prueba un get de partners
+  reason_detail: ""
+  performance: true
+  concurrency: very_low
+  iterations: low
+  response_time: very_high
+  operation_id: PartnersController_getPartners
+  
