@@ -89,6 +89,21 @@ def test_trains_and_persists_reproducible_baseline(tmp_path: Path) -> None:
     assert "macro_f1" in persisted_report["metrics"]
 
 
+def test_training_reports_and_excludes_completely_empty_feature(tmp_path: Path) -> None:
+    dataset = tmp_path / "dataset.csv"
+    model = tmp_path / "model.joblib"
+    report = tmp_path / "report.json"
+    rows = [_row(index, "maintain" if index % 2 == 0 else "review") for index in range(24)]
+    for row in rows:
+        row["p75_response_time_ms"] = ""
+    _write_dataset(dataset, rows)
+
+    result = DecisionTreeTrainingBackend().train(dataset, model, report)
+
+    assert result["excluded_empty_feature_columns"] == ["p75_response_time_ms"]
+    assert "p75_response_time_ms" not in result["feature_columns"]
+
+
 def test_explains_trusted_h8_artifact(tmp_path: Path) -> None:
     model = _trained_artifact(tmp_path)
     output = tmp_path / "model_explanation.json"
@@ -108,6 +123,18 @@ def test_explains_trusted_h8_artifact(tmp_path: Path) -> None:
 
     persisted = json.loads(output.read_text(encoding="utf-8"))
     assert persisted == result
+
+
+def test_predicts_one_dataset_row_with_probabilities(tmp_path: Path) -> None:
+    model = _trained_artifact(tmp_path)
+    row = _row(100, "review")
+
+    result = DecisionTreeTrainingBackend().predict(model, row)
+
+    assert result["prediction"] == "review"
+    assert 0.0 <= result["confidence"] <= 1.0
+    assert set(result["probabilities"]) == {"maintain", "review"}
+    assert result["feature_columns"]
 
 
 def test_feature_importance_is_sorted_and_stable(tmp_path: Path) -> None:
