@@ -8,6 +8,10 @@ from rich.console import Console
 from performance_decision_engine.application.use_cases.analyze_dataset import (
     AnalyzeDataset,
 )
+from performance_decision_engine.application.use_cases.evaluate_evolution import (
+    EvaluateEvolution,
+    load_evolution_history,
+)
 from performance_decision_engine.application.use_cases.normalize_execution import (
     NormalizeExecution,
 )
@@ -237,4 +241,58 @@ def register_experiment_commands(app: typer.Typer, console: Console) -> None:
         console.print("[bold green]Quadrant action plan completed[/bold green]")
         console.print(f"Action: {plan['action']}")
         console.print(f"Human validation: {plan['human_validation_required']}")
+        console.print(f"[green]Output:[/green] {output}")
+
+    @app.command("evaluate-evolution")
+    def evaluate_evolution(
+        recommendation_path: Annotated[
+            Path,
+            typer.Option(
+                "--recommendation",
+                exists=True,
+                file_okay=True,
+                dir_okay=False,
+                readable=True,
+                resolve_path=True,
+            ),
+        ],
+        history_path: Annotated[
+            Path,
+            typer.Option(
+                "--history",
+                exists=True,
+                file_okay=True,
+                dir_okay=False,
+                readable=True,
+                resolve_path=True,
+                help="Comparable component history CSV, oldest row first.",
+            ),
+        ],
+        component_id: Annotated[
+            str,
+            typer.Option("--component-id", min=1, help="Stable component identifier."),
+        ],
+        output: Annotated[
+            Path,
+            typer.Option("--output", resolve_path=True, help="Evaluated recommendation JSON."),
+        ],
+    ) -> None:
+        """Evaluate whether a compliant component can evolve its load."""
+        try:
+            recommendation = Recommendation.model_validate_json(
+                recommendation_path.read_text(encoding="utf-8")
+            )
+            history = load_evolution_history(history_path)
+            evaluated = EvaluateEvolution().execute(
+                component_id,
+                recommendation,
+                history,
+            )
+            _write_json(output, evaluated.model_dump())
+        except (OSError, ValueError) as exc:
+            console.print(f"[red]Error:[/red] {exc}")
+            raise typer.Exit(code=2) from exc
+        console.print("[bold green]Evolution evaluation completed[/bold green]")
+        console.print(f"Component: {component_id}")
+        console.print(f"Recommendation: {evaluated.action}")
         console.print(f"[green]Output:[/green] {output}")

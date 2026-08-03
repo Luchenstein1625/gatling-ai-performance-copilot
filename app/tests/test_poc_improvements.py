@@ -7,6 +7,7 @@ from performance_decision_engine.application.use_cases.analyze_dataset import (
 from performance_decision_engine.application.use_cases.evaluate_evolution import (
     EvaluateEvolution,
     EvolutionObservation,
+    load_evolution_history,
 )
 from performance_decision_engine.application.use_cases.generate_dataset import (
     GenerateDatasetRow,
@@ -149,3 +150,44 @@ def test_review_recommendation_is_never_overridden() -> None:
     )
 
     assert recommendation is current
+
+
+def test_evolution_history_csv_is_loaded_and_filtered(tmp_path: Path) -> None:
+    history_path = tmp_path / "evolution_history.csv"
+    history_path.write_text(
+        (
+            "component_id,recommendation_action,p95_response_time_ms,"
+            "response_time_target_ms,error_rate_percent,assertions_all_passed\n"
+            "balances,maintain,1000,2000,0,True\n"
+            "offers,maintain,900,2000,0,True\n"
+            "balances,maintain,950,2000,0,True\n"
+            "balances,maintain,1050,2000,0,True\n"
+        ),
+        encoding="utf-8",
+    )
+
+    history = load_evolution_history(history_path)
+    recommendation = EvaluateEvolution().execute(
+        "balances",
+        Recommendation(action="maintain", explanation="Complies"),
+        history,
+    )
+
+    assert len(history) == 4
+    assert recommendation.action == "evolve"
+    assert recommendation.evidence["observed_comparable_executions"] == 3
+
+
+def test_evolution_history_csv_rejects_missing_columns(tmp_path: Path) -> None:
+    history_path = tmp_path / "evolution_history.csv"
+    history_path.write_text(
+        "component_id,recommendation_action\nbalances,maintain\n",
+        encoding="utf-8",
+    )
+
+    try:
+        load_evolution_history(history_path)
+    except ValueError as exc:
+        assert "missing required columns" in str(exc)
+    else:
+        raise AssertionError("Invalid history CSV should be rejected.")

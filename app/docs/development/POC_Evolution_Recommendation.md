@@ -52,9 +52,44 @@ Para `evolve`, `PlanQuadrantAction` genera:
 }
 ```
 
-## Alcance actual
+## Ejecución integrada
 
-La regla y su traducción a una acción humana están implementadas y probadas. La
-integración con el pipeline requiere que el dataset incorpore un identificador
-estable del componente. Los 28 registros actuales no contienen ese campo, por lo
-que no deben reetiquetarse artificialmente como `evolve`.
+La evaluación histórica está conectada de forma opcional a
+`scripts/run_august_poc.ps1`. Se debe agregar:
+
+```powershell
+-ComponentId "ms-loyalty-ofertas" `
+-EvolutionHistory ".\examples\input\evolution_history.csv"
+```
+
+Si ambos parámetros se omiten, el pipeline conserva exactamente el comportamiento
+anterior. Si se informa solo uno, la ejecución se detiene para evitar una evaluación
+sin identidad o sin historial.
+
+Con historial, se genera un noveno artefacto:
+
+```text
+evolution_recommendation.json
+```
+
+`quadrant_action.json` se construye a partir de esa recomendación evaluada.
+
+## Formato del historial
+
+```csv
+component_id,recommendation_action,p95_response_time_ms,response_time_target_ms,error_rate_percent,assertions_all_passed
+ms-loyalty-ofertas,maintain,900,2000,0,True
+ms-loyalty-ofertas,maintain,980,2000,0,True
+ms-loyalty-ofertas,maintain,1050,2000,0,True
+```
+
+Las filas deben ir de la más antigua a la más reciente. El identificador debe ser
+estable y definido por el equipo; no se infiere desde rutas o nombres de archivos.
+
+## Alcance del modelo
+
+`evolve` es una recomendación determinística posterior a H6 y H8. El árbol H8
+continúa entrenado con `maintain` y `review`, porque los 28 registros disponibles no
+incluyen identidad histórica ni ejemplos validados de `evolve`. La nueva capacidad
+es operativa dentro del pipeline, pero no debe presentarse como una tercera clase
+aprendida por Machine Learning hasta disponer de datos etiquetados suficientes.

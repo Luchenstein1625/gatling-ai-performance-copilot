@@ -1,0 +1,4 @@
+component_id,recommendation_action,p95_response_time_ms,response_time_target_ms,error_rate_percent,assertions_all_passed
+ms-loyalty-ofertas,maintain,900,2000,0,True
+ms-loyalty-ofertas,maintain,980,2000,0,True
+ms-loyalty-ofertas,maintain,1050,2000,0,True

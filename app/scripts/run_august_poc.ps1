@@ -12,6 +12,8 @@ param(
     [string]$Results,
 
     [string]$Assertions,
+    [string]$ComponentId,
+    [string]$EvolutionHistory,
     [int]$CurrentQuadrant = 5,
     [string]$OutputDirectory = ".\examples\output\august_poc"
 )
@@ -28,6 +30,14 @@ if ($Assertions -and -not (Test-Path -LiteralPath $Assertions -PathType Leaf)) {
     throw "Assertions file does not exist: $Assertions"
 }
 
+if ([bool]$ComponentId -xor [bool]$EvolutionHistory) {
+    throw "ComponentId and EvolutionHistory must be provided together."
+}
+
+if ($EvolutionHistory -and -not (Test-Path -LiteralPath $EvolutionHistory -PathType Leaf)) {
+    throw "Evolution history file does not exist: $EvolutionHistory"
+}
+
 New-Item -ItemType Directory -Force -Path $OutputDirectory | Out-Null
 
 $modelPath = Join-Path $OutputDirectory "decision_tree.joblib"
@@ -37,6 +47,7 @@ $evaluationReport = Join-Path $OutputDirectory "model_comparison.json"
 $explanation = Join-Path $OutputDirectory "model_explanation.json"
 $prediction = Join-Path $OutputDirectory "prediction.json"
 $recommendation = Join-Path $OutputDirectory "recommendation.json"
+$evaluatedRecommendation = Join-Path $OutputDirectory "evolution_recommendation.json"
 $quadrantPlan = Join-Path $OutputDirectory "quadrant_action.json"
 
 pde data-quality --dataset $Dataset --output $qualityReport
@@ -55,8 +66,19 @@ if ($Assertions) {
 
 & pde recommend @commonArguments --output $recommendation
 & pde predict --model $modelPath @commonArguments --output $prediction
+
+$recommendationForPlan = $recommendation
+if ($ComponentId -and $EvolutionHistory) {
+    pde evaluate-evolution `
+        --recommendation $recommendation `
+        --history $EvolutionHistory `
+        --component-id $ComponentId `
+        --output $evaluatedRecommendation
+    $recommendationForPlan = $evaluatedRecommendation
+}
+
 pde plan-quadrant `
-    --recommendation $recommendation `
+    --recommendation $recommendationForPlan `
     --current-quadrant $CurrentQuadrant `
     --output $quadrantPlan
 

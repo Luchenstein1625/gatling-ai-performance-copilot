@@ -1,4 +1,7 @@
-from pydantic import BaseModel, Field
+import csv
+from pathlib import Path
+
+from pydantic import BaseModel, Field, ValidationError
 
 from performance_decision_engine.domain.entities.recommendation import Recommendation
 
@@ -106,3 +109,30 @@ class EvaluateEvolution:
             ),
             evidence=evidence,
         )
+
+
+def load_evolution_history(path: Path) -> list[EvolutionObservation]:
+    """Load and validate comparable observations from a UTF-8 CSV file."""
+    try:
+        with path.open(encoding="utf-8-sig", newline="") as source:
+            reader = csv.DictReader(source)
+            if reader.fieldnames is None:
+                raise ValueError("Evolution history CSV must include a header.")
+
+            required = set(EvolutionObservation.model_fields)
+            missing = sorted(required.difference(reader.fieldnames))
+            if missing:
+                raise ValueError(
+                    "Evolution history CSV is missing required columns: " + ", ".join(missing)
+                )
+
+            observations: list[EvolutionObservation] = []
+            for row_number, row in enumerate(reader, start=2):
+                try:
+                    observations.append(EvolutionObservation.model_validate(row))
+                except ValidationError as exc:
+                    raise ValueError(f"Invalid evolution history row {row_number}: {exc}") from exc
+    except OSError as exc:
+        raise ValueError(f"Could not read evolution history: {path}") from exc
+
+    return observations
