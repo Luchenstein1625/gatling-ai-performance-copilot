@@ -5,7 +5,7 @@ import { copyFile } from "node:fs/promises";
 const { chromium } = playwright;
 
 const url = process.env.PRESENTATION_URL || "http://127.0.0.1:5173/?print=1";
-const version = "1.4.6";
+const version = "1.5.0";
 const output = new URL(`../public/Performance-Intelligence-Copilot-v${version}.pdf`, import.meta.url).pathname;
 const latestOutput = new URL("../public/Performance-Intelligence-Copilot-latest.pdf", import.meta.url).pathname;
 

@@ -2,6 +2,19 @@
 
 Todos los cambios relevantes de la presentación se registran en este archivo.
 
+## [1.5.0] — 2026-08-10
+
+- Reestructuración completa según la rúbrica `Pres3`.
+- Dataset real actualizado: 6.444 ejecuciones utilizables de 6.445 filas.
+- EDA con distribución `not_applies`/`applies`, calidad de variables y split por `Build_Id`.
+- Comparación de baseline, árbol de decisión, regresión logística y Random Forest.
+- Métricas train/test, matriz de confusión y discusión explícita del sobreajuste.
+- Pipeline de cuatro capas: aplicabilidad, decisión, optimización y validación Gatling.
+- Análisis del costo asimétrico de falsos `applies` y política conservadora de `review`.
+- Recomendación operacional `review`/`maintain`/`upgrade`; no existe downgrade automático.
+- Evaluación económica conservada como escenario preliminar sujeto a piloto.
+- Trabajos futuros y estado `pending_new_execution` incorporados sin presentar la recomendación como validación real.
+
 ## [1.4.4] — 2026-08-03
 
 - Slide 6: diccionario visual de seis variables principales y sus roles.

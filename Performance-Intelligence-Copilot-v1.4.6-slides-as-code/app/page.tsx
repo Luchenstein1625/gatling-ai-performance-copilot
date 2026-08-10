@@ -33,47 +33,47 @@ const slides = [
   },
   {
     kicker: "05 · DESCRIPCIÓN Y VISUALIZACIÓN",
-    title: "Composición y calidad del dataset disponible",
+    title: "6.444 ejecuciones permiten evaluar el problema con un holdout independiente",
     type: "data-quality",
   },
   {
     kicker: "06 · ETL, PREPROCESAMIENTO E INGENIERÍA DE ATRIBUTOS",
-    title: "ETL e ingeniería de atributos para construir variables auditables",
+    title: "El pipeline evita fugas y convierte resultados Gatling en evidencia auditable",
     type: "comparison",
   },
   {
-    kicker: "07 · SELECCIÓN DE CARACTERÍSTICAS",
-    title: "Panorama de señales evaluadas y límites de la muestra",
+    kicker: "07 · COMPARACIÓN DE SOLUCIONES IA",
+    title: "Random Forest logra el mejor equilibrio para detectar configuraciones que no aplican",
     type: "feature-selection",
   },
   {
-    kicker: "08 · PRIMER MODELO ENTRENADO",
-    title: "Qué aporta hoy el árbol y qué deberá aprender después",
+    kicker: "08 · ANÁLISIS DE ERROR Y SOBREAJUSTE",
+    title: "La brecha train–test exige control: el desempeño es útil, pero no perfecto",
     type: "sensitivity",
   },
   {
-    kicker: "09 · EVALUACIÓN DEL MODELO",
-    title: "El árbol reproduce H6, pero aún no demuestra generalización",
+    kicker: "09 · PIPELINE DE DECISIÓN POR CAPAS",
+    title: "El modelo recomienda; Gatling y el especialista validan el cambio",
     type: "results",
   },
   {
-    kicker: "10 · VALIDACIÓN EN UN CASO REAL",
-    title: "La falla actual prevalece sobre un buen historial",
+    kicker: "10 · SENSIBILIDAD Y COSTO DEL ERROR",
+    title: "Ante la duda, revisar cuesta menos que aprobar una configuración incorrecta",
     type: "case",
   },
   {
-    kicker: "11 · IMPACTO OPERACIONAL ESPERADO",
-    title: "Impacto operacional y evaluación económica preliminar",
+    kicker: "11 · RECOMENDACIÓN ÓPTIMA Y EVALUACIÓN ECONÓMICA",
+    title: "El cut-off operativo protege la decisión y habilita un beneficio medible",
     type: "impact",
   },
   {
-    kicker: "12 · IMPLEMENTACIÓN Y EVOLUCIÓN",
-    title: "De la POC a una capacidad productiva y controlada",
+    kicker: "12 · VALIDACIÓN Y TRABAJOS FUTUROS",
+    title: "La recomendación solo se aprueba después de una nueva ejecución Gatling",
     type: "implementation",
   },
   {
     kicker: "13 · CONCLUSIONES",
-    title: "Una base explicable para decisiones de rendimiento más consistentes",
+    title: "La POC cumple el objetivo y deja una ruta verificable hacia producción",
     type: "closing",
   },
 ];
@@ -232,34 +232,21 @@ function SlideContent({ type }: { type: string }) {
 
   if (type === "data-quality")
     return (
-      <div className="data-layout">
-        <div className="predictor-charts" aria-label="Relación entre variables predictoras y recomendación">
-          <img className="historical-charts" src="/graficos-lamina-6.png" alt="Tasa de error y margen de p95 respecto del SLA para las 28 ejecuciones, agrupadas por maintain y review" />
-          <div className="dataset-funnel"><b>59</b><span>detectadas</span><i>→</i><b>29</b><span>completas</span><i>→</i><b>28</b><span>finales · 20 maintain / 8 review</span></div>
+      <div className="rubric-data-layout">
+        <div className="data-hero"><small>INPUT REAL</small><b>6.444</b><span>ejecuciones utilizables de 6.445 filas</span><p>Fuente: <code>resultadoPruebasGatling.txt</code></p></div>
+        <div className="class-bars" aria-label="Distribución de la variable objetivo">
+          <span>VARIABLE OBJETIVO · APLICABILIDAD DE LA CONFIGURACIÓN</span>
+          <div><b>not_applies</b><i><u style={{width:"58.7%"}} /></i><strong>3.781 · 58,7 %</strong></div>
+          <div><b>applies</b><i><u className="applies" style={{width:"41.3%"}} /></i><strong>2.663 · 41,3 %</strong></div>
+          <p>El desbalance es moderado; se priorizan F1 y recall de <code>not_applies</code>, no solo accuracy.</p>
         </div>
-        <div className="variable-dictionary" aria-label="Diccionario de variables principales">
-          <div className="head"><b>Variable</b><b>Descripción operacional</b><b>Rol</b></div>
-          <div><code>error_rate_percent</code><span>Porcentaje de solicitudes fallidas</span><em>Predictora</em></div>
-          <div><code>p95_response_time_ms</code><span>Tiempo bajo el cual finaliza el 95 % de las solicitudes</span><em>Predictora</em></div>
-          <div><code>sla_margin_ms</code><span>Diferencia entre p95 observado y SLA; positivo = incumplimiento</span><em>Derivada</em></div>
-          <div><code>assertions_failed</code><span>Cantidad de criterios técnicos incumplidos</span><em>Predictora</em></div>
-          <div><code>warning_count</code><span>Advertencias generadas durante el análisis</span><em>Posible proxy</em></div>
-          <div><code>recommendation_action</code><span>Decisión maintain o review generada por H6</span><em>Objetivo</em></div>
+        <div className="split-evidence">
+          <div><small>ENTRENAMIENTO</small><b>5.114</b><span>408 Build_Id</span></div>
+          <div><small>HOLDOUT</small><b>1.330</b><span>136 Build_Id</span></div>
+          <div className="safe"><small>FUGA ENTRE GRUPOS</small><b>0</b><span>Build_Id compartidos</span></div>
         </div>
-        <div className="eda-insights" aria-label="Insights principales del análisis exploratorio">
-          <div>
-            <small>COMPOSICIÓN FINAL</small>
-            <b>20 maintain frente a 8 review</b>
-            <p>La muestra final contiene <strong>28 casos</strong> y presenta desbalance entre las dos clases disponibles.</p>
-          </div>
-          <div>
-            <small>ALCANCE DEL ANÁLISIS</small>
-            <b>Evidencia exploratoria</b>
-            <p>El desbalance <strong>71,4 % / 28,6 %</strong> justificó usar Macro-F1 y balanced accuracy.</p>
-          </div>
-        </div>
-        <p className="takeaway"><strong>Nota:</strong> análisis exploratorio sobre 28 ejecuciones. Las asociaciones observadas son preliminares y no demuestran generalización.</p>
-        <p className="predictor-scope"><strong>Universo evaluado:</strong> carga/concurrencia, TPS, volumen de solicitudes e historial comparable también se probaron como predictoras, pero no aportaron señal al árbol (importancia 0,00). El diccionario destaca las variables con importancia o relevancia metodológica.</p>
+        <div className="quality-findings"><b>Calidad y límites</b><span><code>apdex</code> contiene referencias Java, no valores numéricos</span><span><code>rating</code> está vacío</span><span>criticidad de negocio no existe y no se inventa</span></div>
+        <p className="takeaway"><strong>Conclusión EDA:</strong> el volumen permite comparar modelos; la partición agrupada evita que ejecuciones del mismo build aparezcan en train y test.</p>
       </div>
     );
 
@@ -314,129 +301,86 @@ function SlideContent({ type }: { type: string }) {
       <div className="comparison-layout">
         <div className="comparison-table">
           <div className="head"><b>Etapa ETL</b><b>Tratamiento aplicado</b><b>Resultado</b></div>
-          <div><strong>Ingesta</strong><span>59 carpetas de ejecución detectadas; se exigieron configuración, parámetros y resultados Gatling legibles</span><span><b>29 ejecuciones completas</b> formaron el dataset inicial de 29 × 27</span></div>
-          <div><strong>Validación de filas</strong><span>Cada fila debía representar una ejecución terminada, cumplir el esquema, tener tipos válidos y una recomendación reproducible</span><span><b>1 ejecución abortada excluida</b>; quedaron 28 registros validados y 0 duplicados</span></div>
-          <div><strong>Nulos y atípicos</strong><span><b>1 columna excluida:</b> p90_response_time_ms, con 28 de 28 valores nulos; las demás variables utilizadas quedaron sin nulos</span><span><b>0 % de filas eliminado por outliers:</b> los extremos se conservaron como posibles señales de degradación</span></div>
-          <div className="selected"><strong>Ingeniería de atributos</strong><span>Se crean: cumplimiento de SLA, assertions fallidas, margen respecto del SLA e historial comparable</span><span>Predictoras derivadas con sentido técnico y de negocio</span></div>
+          <div><strong>Ingesta</strong><span>Lectura del TXT de ancho fijo y normalización de nombres, tipos y categorías</span><span><b>6.444 registros utilizables</b></span></div>
+          <div><strong>Control de calidad</strong><span>Se descartan campos vacíos o no numéricos y filas sin etiqueta reproducible</span><span><b>apdex y rating fuera del modelo</b></span></div>
+          <div><strong>Prevención de fuga</strong><span>Variables posteriores que revelan directamente la etiqueta no ingresan como predictoras</span><span><b>features disponibles antes de decidir</b></span></div>
+          <div className="selected"><strong>Partición y trazabilidad</strong><span>Holdout agrupado por Build_Id; modelo, reglas, métricas y recomendaciones se exportan</span><span><b>0 grupos compartidos</b></span></div>
         </div>
         <div className="etl-evidence">
-          <div className="etl-funnel"><b>Embudo</b><span><strong>59</strong> detectadas</span><i>→</i><span><strong>29</strong> completas</span><i>→</i><span><strong>28</strong> válidas</span></div>
-          <div className="null-visual" aria-label="Visualización de valores nulos"><b>Nulos por columna</b><span><code>p90_response_time_ms</code><i><u /></i><strong>28/28</strong></span><span><code>Variables utilizadas</code><i><u className="zero" /></i><strong>0/28</strong></span></div>
+          <div className="etl-funnel"><b>Flujo auditable</b><span><strong>TXT</strong> real</span><i>→</i><span><strong>ETL</strong> validado</span><i>→</i><span><strong>split</strong> por Build_Id</span><i>→</i><span><strong>artefactos</strong></span></div>
+          <div className="null-visual"><b>Variables operacionales</b><span><code>Concurrency</code><i><u style={{width:"82%"}} /></i><strong>carga</strong></span><span><code>Iterations</code><i><u style={{width:"70%"}} /></i><strong>volumen</strong></span><span><code>ResponseTime</code><i><u style={{width:"62%"}} /></i><strong>objetivo</strong></span></div>
         </div>
-        <p className="takeaway"><strong>Validación final:</strong> 59 detectadas → 29 completas → 28 válidas. Los nulos de p90 eliminaron una columna, no registros; los outliers se conservaron como evidencia técnica.</p>
+        <p className="takeaway"><strong>Resultado:</strong> las entradas, transformaciones y decisiones quedan reproducibles; una métrica inválida no se convierte silenciosamente en señal predictiva.</p>
       </div>
     );
 
   if (type === "feature-selection")
     return (
-      <div className="feature-selection-layout">
-        <div className="signal-landscape">
-          <span>MAPA DE VARIABLES CANDIDATAS</span>
-          <div className="signal-group"><b>Carga aplicada</b><p>Concurrencia · TPS · volumen de solicitudes</p><em>Contexto de ejecución</em></div>
-          <div className="signal-group"><b>Respuesta del sistema</b><p>Tasa de error · p95 · margen respecto del SLA</p><em>Desempeño observado</em></div>
-          <div className="signal-group caution"><b>Criterios derivados</b><p>Assertions fallidas · warning_count</p><em>Posible dependencia de H6</em></div>
-          <div className="signal-group"><b>Memoria histórica</b><p>Historial comparable y comportamiento previo</p><em>Contexto temporal</em></div>
-          <p className="landscape-note">Todas se evaluaron como predictoras. En esta muestra, carga, TPS, volumen e historial no agregaron separación al árbol entrenado; esto no permite concluir que sean irrelevantes en otros datos.</p>
+      <div className="model-comparison-layout">
+        <div className="model-table">
+          <div className="head"><b>Solución</b><b>Accuracy test</b><b>F1 not_applies</b><b>Recall not_applies</b></div>
+          <div><strong>Baseline mayoritario</strong><span>0,5677</span><span>0,7242*</span><span>1,0000*</span></div>
+          <div><strong>Árbol de decisión</strong><span>0,6579</span><span>0,6486</span><span>0,5563</span></div>
+          <div><strong>Regresión logística</strong><span>0,6895</span><span>0,7165</span><span>0,6914</span></div>
+          <div className="winner"><strong>Random Forest</strong><span>0,7256</span><span>0,7446</span><span>0,7046</span></div>
         </div>
-        <div className="selection-reading">
-          <div className="class-separation">
-            <span>COMPOSICIÓN DE LA MUESTRA</span>
-            <div><b>20</b><i><u /></i><p><strong>maintain</strong> · 71,4 %</p></div>
-            <div className="review"><b>8</b><i><u /></i><p><strong>review</strong> · 28,6 %</p></div>
-            <p>El desbalance justifica Macro‑F1 y balanced accuracy; no autoriza extrapolar el patrón a nuevos servicios.</p>
-          </div>
-          <div className="selection-conclusion">
-            <small>HALLAZGO DE ESTA MUESTRA</small>
-            <strong>Las etiquetas coinciden con criterios derivados del mismo motor que las generó.</strong>
-            <p><code>assertions_failed</code> fue la señal utilizada por este árbol y <code>warning_count</code> puede actuar como proxy. Se reporta como dependencia potencial, no como variable universalmente decisiva.</p>
-          </div>
-          <p className="proxy-note">Próxima validación: excluir conjuntamente variables de assertions y warnings, y separar entrenamiento/prueba por microservicio.</p>
-        </div>
+        <div className="model-rationale"><small>MODELO SELECCIONADO</small><b>Random Forest</b><p>Maximiza F1 de <code>not_applies</code> entre los modelos entrenados; recall desempata.</p><div><span>+3,6 pp</span><em>accuracy frente a regresión logística</em></div></div>
+        <p className="baseline-warning">* El baseline predice siempre <code>not_applies</code>: su recall aparente es alto, pero no detecta ningún caso <code>applies</code>. Por eso no es candidato de selección.</p>
+        <p className="takeaway"><strong>Decisión:</strong> Random Forest ofrece el mejor compromiso global sin ocultar la clase operativamente riesgosa.</p>
       </div>
     );
 
   if (type === "sensitivity")
     return (
-      <div className="sensitivity-layout">
-        <div className="cost-matrix">
-          <div className="head"><b>Evidencia</b><b>Qué permite afirmar</b><b>Qué no permite afirmar</b></div>
-          <div><strong>Baseline mayoritario</strong><span>Referencia mínima frente al desbalance de clases</span><b>No evalúa señales</b></div>
-          <div><strong>10 holdouts estratificados</strong><span>Estabilidad interna en particiones de 21 train / 7 test</span><b>No reemplaza datos externos</b></div>
-          <div className="critical"><strong>Árbol de decisión</strong><span>Reproduce las etiquetas históricas de H6 en la muestra disponible</span><b>No prueba generalización</b></div>
-        </div>
-        <div className="feature-panel">
-          <span>APORTE DEL MACHINE LEARNING · CONVERGENCIA CON H6, NO SUSTITUCIÓN</span>
-          <div className="ml-value"><small>HOY · POC</small><strong>Auditar la relación entre señales y decisiones históricas</strong><p>El árbol hace explícitas dependencias y posibles fugas de información.</p></div>
-          <div className="ml-value future"><small>CON MÁS HISTÓRICO</small><strong>Detectar combinaciones que las reglas actuales no capturan</strong><p>Requiere etiquetas expertas independientes, más servicios y validación temporal.</p></div>
-        </div>
-        <p className="takeaway"><strong>Alcance:</strong> el experimento confirma reproducibilidad interna y revela dependencia de la fuente de etiquetas. El valor futuro del ML debe probarse con señales independientes y casos que las reglas actuales no resuelvan por sí solas.</p>
+      <div className="overfit-layout">
+        <div className="train-test-gap"><span>RANDOM FOREST · TRAIN VS TEST</span><div><b>Accuracy</b><i><u style={{width:"83.2%"}} /><u className="test" style={{width:"72.6%"}} /></i><strong>0,8318 → 0,7256</strong></div><div><b>F1 not_applies</b><i><u style={{width:"85.5%"}} /><u className="test" style={{width:"74.5%"}} /></i><strong>0,8547 → 0,7446</strong></div><div><b>Recall not_applies</b><i><u style={{width:"83.6%"}} /><u className="test" style={{width:"70.5%"}} /></i><strong>0,8358 → 0,7046</strong></div></div>
+        <div className="gap-reading"><small>LECTURA</small><b>Brecha de ≈ 11 puntos</b><p>Existe sobreajuste moderado. El holdout agrupado entrega una estimación más realista que el desempeño de entrenamiento.</p><div><strong>Control aplicado</strong><span>Separación por Build_Id · 0 solapamiento</span></div><div><strong>Límite</strong><span>Etiquetas derivadas de evidencia, aún sin validación experta independiente</span></div></div>
+        <p className="takeaway"><strong>Conclusión:</strong> el modelo es apto para apoyar una revisión humana, no para cambiar configuraciones de forma autónoma.</p>
       </div>
     );
 
   if (type === "results")
     return (
-      <div className="results-layout">
-        <div className="result-hero evidence-first">
-          <small>CONCLUSIÓN DEL EXPERIMENTO</small>
-          <strong>La evaluación mide fidelidad a H6 dentro de una muestra pequeña</strong>
-          <p>El desempeño observado es consistente en las particiones evaluadas, pero las etiquetas y algunas variables comparten la misma fuente de verdad.</p>
-        </div>
-        <div className="result-proof">
-          <div><small>DATOS EVALUADOS</small><b>28 ejecuciones</b><span>20 maintain · 8 review</span></div>
-          <div><small>PROTOCOLO</small><b>10 semillas</b><span>holdout estratificado · 21/7</span></div>
-          <div><small>RESULTADO OBSERVADO</small><b>Macro‑F1 1,0000</b><span>DE 0,0000 · solo en esta muestra</span></div>
-          <div><small>BASELINE MAYORITARIO</small><b>0,4167</b><span>Macro‑F1 · siempre predice maintain</span></div>
-        </div>
-        <div className="evidence-boundary">
-          <div><small>SÍ DEMUESTRA</small><b>Fidelidad interna</b><span>Reproduce de forma estable las decisiones históricas generadas por H6.</span></div>
-          <div><small>NO DEMUESTRA TODAVÍA</small><b>Generalización</b><span>No hay etiquetas expertas independientes, servicios externos ni ablación libre de proxies.</span></div>
-        </div>
-        <p className="result-message"><strong>Próximo experimento decisivo:</strong> ablación conjunta de assertions y warnings, partición agrupada por microservicio y etiquetas expertas independientes. Solo entonces podrá evaluarse si el modelo aporta generalización adicional a las reglas.</p>
+      <div className="layered-layout">
+        <div className="layer-flow"><div><small>CAPA 1</small><b>Aplicabilidad</b><span>applies / not_applies</span></div><Arrow/><div><small>CAPA 2</small><b>Decisión</b><span>review / maintain / upgrade</span></div><Arrow/><div><small>CAPA 3</small><b>Optimización</b><span>cuadrante + parámetros</span></div><Arrow/><div><small>CAPA 4</small><b>Validación</b><span>nueva ejecución Gatling</span></div></div>
+        <div className="decision-distribution"><span>HOLDOUT · 1.330 RECOMENDACIONES</span><div className="review"><b>674</b><strong>review</strong><p>50,7 % · conserva configuración</p></div><div><b>383</b><strong>maintain</strong><p>28,8 % · mantiene cuadrante</p></div><div className="upgrade"><b>273</b><strong>upgrade</strong><p>20,5 % · candidato controlado</p></div></div>
+        <div className="pipeline-guard"><b>0 cambios automáticos ante review</b><span>Downgrade queda como decisión humana posterior al diagnóstico.</span><strong>100 % de upgrades requieren aprobación</strong></div>
+        <p className="takeaway"><strong>Valor:</strong> el modelo no entrega solo una clase; la traduce en una acción, una configuración candidata y un contrato de validación.</p>
       </div>
     );
 
   if (type === "case")
     return (
-      <div className="case-flow">
-        <div><small>ENTRADA</small><b>Cuadrante 5</b><span>Assertions fallidas</span></div><Arrow />
-        <div><small>REGLAS EXPERTAS</small><b>review</b><span>criterio de seguridad</span></div><Arrow />
-        <div><small>ÁRBOL DE DECISIÓN</small><b>review</b><span>concordancia: true</span></div><Arrow />
-        <div className="case-final"><small>EVALUACIÓN HISTÓRICA</small><b>review</b><span>evolve bloqueado</span></div>
-        <p>Una validación fallida activa la <strong>revisión de configuración</strong>. La estabilidad histórica nunca puede elevar la carga cuando la ejecución actual presenta incumplimientos.</p>
+      <div className="cost-sensitivity-layout">
+        <div className="cost-matrix-v2"><div className="head"><b>Real \ Predicho</b><b>not_applies</b><b>applies</b></div><div><strong>not_applies</strong><span className="good">532 · revisión correcta</span><span className="critical">223 · riesgo de aprobación</span></div><div><strong>applies</strong><span>142 · revisión adicional</span><span className="good">433 · aprobación correcta</span></div></div>
+        <div className="cost-priority"><small>COSTO ASIMÉTRICO</small><b>Falso “applies” &gt; falso “not_applies”</b><p>Aprobar una configuración que no aplica puede ocultar una falla real. Enviar un caso válido a review agrega tiempo, pero conserva el control.</p><div><strong>Política</strong><span>incertidumbre, falla o evidencia insuficiente → <b>review</b></span></div></div>
+        <div className="threshold-note"><b>Sensibilidad operativa</b><span>El umbral debe priorizar recall de <code>not_applies</code>; el cut-off definitivo se calibrará con costos reales del piloto.</span></div>
+        <p className="takeaway"><strong>Recomendación:</strong> usar el modelo como filtro de seguridad y mantener aprobación humana para cualquier cambio.</p>
       </div>
     );
 
   if (type === "impact")
     return (
       <div className="impact-layout economic-impact">
-        <div className="impact-before"><small>ESCENARIO A · ACTUAL</small><b>3–48 h + 1–35 h</b><p>Desarrollo de la prueba y posterior revisión QA. El tiempo específico de preparación analítica se medirá en el piloto.</p></div>
+        <div className="impact-before"><small>SITUACIÓN ACTUAL</small><b>3–48 h + 1–35 h</b><p>Desarrollo y revisión QA; la preparación analítica aún debe medirse por separado.</p></div>
         <Arrow />
-        <div className="impact-after"><small>ESCENARIO B · CON COPILOT</small><b>Minutos + validación humana</b><p>La preparación analítica y la recomendación se automatizan; QA recibe evidencia explicable para revisar y aprobar con mayor rapidez.</p></div>
+        <div className="impact-after"><small>RECOMENDACIÓN ÓPTIMA</small><b>Minutos + validación humana</b><p>Review ante riesgo; maintain si la exigencia es adecuada; upgrade solo con holgura y reejecución.</p></div>
         <div className="economic-model">
           <div><small>BASE HISTÓRICA</small><b>$1.569 MM ÷ 7.003</b><span>≈ $224 mil por atención</span></div>
           <div><small>ALCANCE INICIAL</small><b>144 atenciones/año</b><span>12 atenciones mensuales × 12 meses · ≈ $32,3 MM</span></div>
           <div className="economic-scenario"><small>ESCENARIO PRELIMINAR</small><b>50 % cobertura × 75 % reducción</b><span>Supuestos de adopción y eficiencia · ≈ $12,1 MM potencial/año</span></div>
         </div>
-        <p className="economic-note"><strong>Supuestos:</strong> 144 atenciones = 12 mensuales × 12 meses; 50 % es cobertura inicial estimada y 75 % es una meta preliminar de reducción del esfuerzo abordado. Deben validarse en un piloto antes de considerar ahorro efectivo.</p>
+        <p className="economic-note"><strong>Evaluación económica:</strong> ≈ $12,1 MM es beneficio bruto potencial, no ahorro demostrado. El piloto debe medir tiempo antes/después, cobertura real, reejecuciones y costo de falsos “applies”.</p>
       </div>
     );
 
   if (type === "implementation")
     return (
-      <div className="implementation-layout">
-        <div className="implementation-flow">
-          <div><span>01</span><b>Integrar fuentes</b><p>Resultados, configuraciones e historial.</p></div>
-          <div><span>02</span><b>Persistir y versionar</b><p>Ejecuciones, etiquetas y modelos.</p></div>
-          <div><span>03</span><b>Exponer y aprobar</b><p>API, interfaz, evidencia y validación humana.</p></div>
-          <div><span>04</span><b>Evolucionar con control</b><p>YAML propuesto, diff, aprobación, monitoreo, auditoría y reversión.</p></div>
-        </div>
-        <div className="implementation-compare"><b>Aporte demostrado</b><span>pipeline reproducible desde los archivos de entrada hasta la recomendación</span><b>Control</b><span>explicación trazable y aprobación humana</span></div>
-        <div className="implementation-proof">
-          <div><small>ENTRADA REAL</small><b>YAML + resultados Gatling</b></div>
-          <div><small>SALIDA REAL</small><b>Maintain · Review · Evolve</b></div>
-          <div><small>EVIDENCIA</small><b>Reglas activadas + explicación</b></div>
-        </div>
-        <p className="takeaway"><strong>Siguiente validación:</strong> medir en un piloto el tiempo de análisis y las reejecuciones antes y después de incorporar el Copilot.</p>
+      <div className="validation-layout">
+        <div className="validation-contract"><small>CONTRATO DE VALIDACIÓN ONLINE</small><div><b>1</b><span>Aprobar propuesta <code>upgrade</code></span></div><div><b>2</b><span>Ejecutar nueva prueba Gatling</span></div><div><b>3</b><span>Comparar errores, p95, RPS, éxitos y Estado</span></div><div><b>4</b><span>Aprobar cuadrante o retornar a <code>review</code></span></div></div>
+        <div className="validation-status"><span>ESTADO ACTUAL</span><b>pending_new_execution</b><p>La configuración candidata todavía es una recomendación, no evidencia experimental.</p><div><small>ÉXITO</small><strong>0 errores + estado exitoso + sin regresión</strong></div></div>
+        <div className="future-work"><b>Trabajos futuros</b><span>Etiquetas expertas independientes</span><span>Calibración económica del cut-off</span><span>Validación temporal y por microservicio</span><span>API, auditoría y monitoreo de drift</span></div>
+        <p className="takeaway"><strong>Principio:</strong> si la nueva ejecución falla o es irregular, la propuesta vuelve a review; nunca hay downgrade automático.</p>
       </div>
     );
 
@@ -495,18 +439,19 @@ function SlideContent({ type }: { type: string }) {
   return (
     <div className="closing-layout">
       <div className="closing-claim">
-        <span>CONTRIBUCIÓN</span>
-        <p>La POC transforma resultados Gatling en datos estructurados y entrena un primer modelo capaz de <b>reproducir las recomendaciones del motor de reglas</b> sobre la muestra disponible.</p>
+        <span>OBJETIVO CUMPLIDO</span>
+        <p>La POC transforma <b>6.444 resultados Gatling</b> en una recomendación explicable, parámetros candidatos y un proceso de validación controlado.</p>
       </div>
       <div className="next">
-        <strong>Siguiente validación</strong>
+        <strong>Entregables verificados</strong>
         <ul>
-          <li>Validar las recomendaciones con especialistas</li>
-          <li>Ampliar el histórico con nuevos casos etiquetados</li>
-          <li>Medir tiempo de análisis y reejecuciones en un piloto</li>
+          <li>Comparación de 3 modelos + baseline</li>
+          <li>Pipeline de decisión en cuatro capas</li>
+          <li>Cuadrante y parámetros recomendados</li>
+          <li>Validación Gatling pendiente y auditable</li>
         </ul>
       </div>
-      <div className="closing-line">La generalización deberá validarse con nuevos datos y revisión experta.</div>
+      <div className="closing-line">El valor económico y la configuración óptima se confirmarán en el piloto, no antes.</div>
     </div>
   );
 }
