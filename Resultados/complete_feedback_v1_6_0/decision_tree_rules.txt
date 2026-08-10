@@ -1,0 +1,61 @@
+|--- numeric__x2 <= 0.50
+|   |--- numeric__x1 <= 7.50
+|   |   |--- numeric__x0 <= 11.50
+|   |   |   |--- categorical__x3_Loyalty <= 0.50
+|   |   |   |   |--- categorical__x6_medium <= 0.50
+|   |   |   |   |   |--- class: not_applies
+|   |   |   |   |--- categorical__x6_medium >  0.50
+|   |   |   |   |   |--- class: not_applies
+|   |   |   |--- categorical__x3_Loyalty >  0.50
+|   |   |   |   |--- categorical__x4_Loyalty-TheOffice-Backend-EP <= 0.50
+|   |   |   |   |   |--- class: not_applies
+|   |   |   |   |--- categorical__x4_Loyalty-TheOffice-Backend-EP >  0.50
+|   |   |   |   |   |--- class: not_applies
+|   |   |--- numeric__x0 >  11.50
+|   |   |   |--- numeric__x0 <= 13.50
+|   |   |   |   |--- numeric__x1 <= 6.50
+|   |   |   |   |   |--- class: not_applies
+|   |   |   |   |--- numeric__x1 >  6.50
+|   |   |   |   |   |--- class: applies
+|   |   |   |--- numeric__x0 >  13.50
+|   |   |   |   |--- class: not_applies
+|   |--- numeric__x1 >  7.50
+|   |   |--- categorical__x4_OSS-Shazam-Frontend-EP <= 0.50
+|   |   |   |--- categorical__x3_None <= 0.50
+|   |   |   |   |--- categorical__x4_OSS-LosBorbotones-Backend-EP <= 0.50
+|   |   |   |   |   |--- class: applies
+|   |   |   |   |--- categorical__x4_OSS-LosBorbotones-Backend-EP >  0.50
+|   |   |   |   |   |--- class: not_applies
+|   |   |   |--- categorical__x3_None >  0.50
+|   |   |   |   |--- class: not_applies
+|   |   |--- categorical__x4_OSS-Shazam-Frontend-EP >  0.50
+|   |   |   |--- numeric__x1 <= 11.50
+|   |   |   |   |--- categorical__x7_low <= 0.50
+|   |   |   |   |   |--- class: applies
+|   |   |   |   |--- categorical__x7_low >  0.50
+|   |   |   |   |   |--- class: applies
+|   |   |   |--- numeric__x1 >  11.50
+|   |   |   |   |--- categorical__x7_medium <= 0.50
+|   |   |   |   |   |--- class: applies
+|   |   |   |   |--- categorical__x7_medium >  0.50
+|   |   |   |   |   |--- class: applies
+|--- numeric__x2 >  0.50
+|   |--- numeric__x0 <= 51.00
+|   |   |--- categorical__x5_PATCH <= 0.50
+|   |   |   |--- categorical__x4_OSS-LosBorbotones-Backend-EP <= 0.50
+|   |   |   |   |--- categorical__x6_high <= 0.50
+|   |   |   |   |   |--- class: applies
+|   |   |   |   |--- categorical__x6_high >  0.50
+|   |   |   |   |   |--- class: applies
+|   |   |   |--- categorical__x4_OSS-LosBorbotones-Backend-EP >  0.50
+|   |   |   |   |--- numeric__x1 <= 3.50
+|   |   |   |   |   |--- class: applies
+|   |   |   |   |--- numeric__x1 >  3.50
+|   |   |   |   |   |--- class: not_applies
+|   |   |--- categorical__x5_PATCH >  0.50
+|   |   |   |--- categorical__x4_Loyalty-SuperDruperKit-Backend-EP <= 0.50
+|   |   |   |   |--- class: not_applies
+|   |   |   |--- categorical__x4_Loyalty-SuperDruperKit-Backend-EP >  0.50
+|   |   |   |   |--- class: applies
+|   |--- numeric__x0 >  51.00
+|   |   |--- class: not_applies

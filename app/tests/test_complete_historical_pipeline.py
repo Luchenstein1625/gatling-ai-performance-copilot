@@ -31,6 +31,13 @@ def test_complete_pipeline_implements_four_layers(tmp_path: Path) -> None:
     assert (output / "complete_pipeline_evaluation.json").exists()
     assert (output / "layered_recommendations.csv").exists()
     assert (output / "layer1_applicability_model.joblib").exists()
+    assert (output / "threshold_cost_analysis.csv").exists()
+    assert (output / "segment_metrics.csv").exists()
+    layer1 = report["layers"]["1_applicability"]
+    assert 0.1 <= layer1["decision_threshold"] <= 0.9
+    assert len(layer1["threshold_selection"]["thresholds"]) == 17
+    assert len(layer1["grouped_cross_validation"]["folds"]) == 5
+    assert layer1["threshold_selection"]["costs_are_configurable_assumptions"] is True
 
 
 def test_review_never_changes_configuration() -> None:

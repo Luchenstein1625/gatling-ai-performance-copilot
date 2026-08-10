@@ -17,6 +17,14 @@ baseline; matrices de confusión; reglas del árbol; configuración y cuadrante 
 propuestos; y el estado `pending_new_execution` cuando falta validar la recomendación con
 una nueva ejecución Gatling. Una falla siempre produce `review` y conserva la configuración.
 
+La evaluación Pres3 ampliada también genera `threshold_cost_analysis.csv` con 17
+cut-offs, `segment_metrics.csv` por pilar y componente, EDA por clase y validación
+cruzada `GroupKFold` de cinco particiones por `Build_Id`. Los costos relativos por
+defecto son supuestos configurables: falso `applies` = 10, falso `not_applies` = 2 y
+revisión manual = 1; no representan pesos ni ahorro demostrado. La validación
+experimental permanece en `pending_new_execution` hasta correr en Gatling una muestra
+de configuraciones `upgrade`.
+
 Implementación técnica de Gatling AI Performance Copilot.
 
 ## Estado

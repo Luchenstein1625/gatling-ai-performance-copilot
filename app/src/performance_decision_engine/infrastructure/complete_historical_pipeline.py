@@ -6,6 +6,7 @@ from statistics import median
 from typing import Any
 
 import joblib
+from sklearn.base import clone
 from sklearn.dummy import DummyClassifier
 from sklearn.metrics import (
     accuracy_score,
@@ -15,6 +16,7 @@ from sklearn.metrics import (
     precision_score,
     recall_score,
 )
+from sklearn.model_selection import GroupKFold
 
 from performance_decision_engine.infrastructure.historical_binary_evaluator import (
     FEATURES,
@@ -27,6 +29,12 @@ APPLIES = "applies"
 NOT_APPLIES = "not_applies"
 LEVELS = ("very_low", "low", "medium", "high", "very_high")
 PARAMETERS = ("Concurrency", "Iterations", "ResponseTime")
+DEFAULT_ERROR_COSTS = {
+    "false_applies": 10.0,
+    "false_not_applies": 2.0,
+    "manual_review": 1.0,
+}
+THRESHOLDS = tuple(round(value / 20, 2) for value in range(2, 19))
 
 
 class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
@@ -74,6 +82,20 @@ class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
             ),
         )
         predictions = list(fitted[selected_name].predict(x_test))
+        threshold_analysis = self._threshold_analysis(
+            fitted[selected_name], x_test, y_test, DEFAULT_ERROR_COSTS
+        )
+        selected_threshold = float(threshold_analysis["selected_threshold"])
+        predictions = self._predict_with_threshold(
+            fitted[selected_name], x_test, selected_threshold
+        )
+        grouped_cv = self._grouped_cross_validation(
+            candidates[selected_name], features, binary_labels, groups
+        )
+        segment_metrics = self._segment_metrics(
+            [usable[index] for index in test_indexes], y_test, predictions
+        )
+        eda = self._eda_summary(usable, binary_labels)
         peer_profiles = self._build_peer_profiles([usable[index] for index in train_indexes])
         recommendations = [
             self._recommend(usable[index], prediction, peer_profiles)
@@ -92,6 +114,10 @@ class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
         )
         self._export_tree(fitted["decision_tree"], output_dir)
         self._write_recommendations(recommendations, output_dir / "layered_recommendations.csv")
+        self._write_thresholds(
+            threshold_analysis["thresholds"], output_dir / "threshold_cost_analysis.csv"
+        )
+        self._write_segment_metrics(segment_metrics, output_dir / "segment_metrics.csv")
 
         action_counts = Counter(str(item["action"]) for item in recommendations)
         safety_violations = sum(
@@ -111,6 +137,11 @@ class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
                     "models": model_reports,
                     "selected_model": selected_name,
                     "selection_rule": "highest holdout F1 for not_applies; recall breaks ties",
+                    "decision_threshold": selected_threshold,
+                    "threshold_selection": threshold_analysis,
+                    "grouped_cross_validation": grouped_cv,
+                    "segment_metrics": segment_metrics,
+                    "eda": eda,
                     "baseline_is_selection_candidate": False,
                 },
                 "2_decision": {
@@ -161,6 +192,8 @@ class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
                 "decision_tree_rules.txt",
                 "layered_recommendations.csv",
                 "complete_pipeline_evaluation.json",
+                "threshold_cost_analysis.csv",
+                "segment_metrics.csv",
             ],
             "limitations": [
                 "Labels are derived from auditable execution evidence, not manual expert labels.",
@@ -172,6 +205,183 @@ class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
             json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8"
         )
         return report
+
+    @staticmethod
+    def _predict_with_threshold(model: Any, features: list[list[object]], threshold: float) -> list[str]:
+        probabilities = model.predict_proba(features)
+        classes = list(model.classes_)
+        positive_index = classes.index(NOT_APPLIES)
+        return [
+            NOT_APPLIES if float(row[positive_index]) >= threshold else APPLIES
+            for row in probabilities
+        ]
+
+    def _threshold_analysis(
+        self,
+        model: Any,
+        features: list[list[object]],
+        expected: list[str],
+        costs: dict[str, float],
+    ) -> dict[str, object]:
+        rows: list[dict[str, object]] = []
+        for threshold in THRESHOLDS:
+            predicted = self._predict_with_threshold(model, features, threshold)
+            false_applies = sum(
+                truth == NOT_APPLIES and guess == APPLIES
+                for truth, guess in zip(expected, predicted, strict=True)
+            )
+            false_not_applies = sum(
+                truth == APPLIES and guess == NOT_APPLIES
+                for truth, guess in zip(expected, predicted, strict=True)
+            )
+            reviews = sum(guess == NOT_APPLIES for guess in predicted)
+            total_cost = (
+                false_applies * costs["false_applies"]
+                + false_not_applies * costs["false_not_applies"]
+                + reviews * costs["manual_review"]
+            )
+            metrics = self._binary_metrics(expected, predicted)
+            rows.append(
+                {
+                    "threshold": threshold,
+                    "not_applies_recall": metrics["not_applies_recall"],
+                    "not_applies_precision": metrics["not_applies_precision"],
+                    "not_applies_f1": metrics["not_applies_f1"],
+                    "false_applies": false_applies,
+                    "false_not_applies": false_not_applies,
+                    "manual_reviews": reviews,
+                    "total_cost_units": total_cost,
+                }
+            )
+        selected = min(
+            rows,
+            key=lambda row: (
+                float(row["total_cost_units"]),
+                -float(row["not_applies_recall"]),
+            ),
+        )
+        return {
+            "selected_threshold": selected["threshold"],
+            "selection_rule": "minimum expected cost; not_applies recall breaks ties",
+            "cost_units": costs,
+            "costs_are_configurable_assumptions": True,
+            "selected_result": selected,
+            "thresholds": rows,
+        }
+
+    def _grouped_cross_validation(
+        self,
+        model: Any,
+        features: list[list[object]],
+        labels: list[str],
+        groups: list[str],
+    ) -> dict[str, object]:
+        splitter = GroupKFold(n_splits=5)
+        fold_rows: list[dict[str, float | int]] = []
+        for fold, (train, test) in enumerate(splitter.split(features, labels, groups), start=1):
+            x_train = [features[index] for index in train]
+            y_train = [labels[index] for index in train]
+            x_test = [features[index] for index in test]
+            y_test = [labels[index] for index in test]
+            fold_model = clone(model)
+            fold_model.fit(x_train, y_train)
+            predicted = list(fold_model.predict(x_test))
+            metrics = self._binary_metrics(y_test, predicted)
+            fold_rows.append(
+                {
+                    "fold": fold,
+                    "rows": len(test),
+                    "not_applies_f1": float(metrics["not_applies_f1"]),
+                    "not_applies_recall": float(metrics["not_applies_recall"]),
+                    "accuracy": float(metrics["accuracy"]),
+                }
+            )
+        summary = {
+            name: {
+                "mean": sum(float(row[name]) for row in fold_rows) / len(fold_rows),
+                "min": min(float(row[name]) for row in fold_rows),
+                "max": max(float(row[name]) for row in fold_rows),
+            }
+            for name in ("not_applies_f1", "not_applies_recall", "accuracy")
+        }
+        return {"method": "5-fold GroupKFold by Build_Id", "folds": fold_rows, "summary": summary}
+
+    def _segment_metrics(
+        self,
+        rows: list[dict[str, str]],
+        expected: list[str],
+        predicted: list[str],
+    ) -> list[dict[str, object]]:
+        result: list[dict[str, object]] = []
+        for column in ("pilar", "Tcomponente"):
+            segments = sorted({row.get(column, "").strip() or "missing" for row in rows})
+            for segment in segments:
+                indexes = [
+                    index
+                    for index, row in enumerate(rows)
+                    if (row.get(column, "").strip() or "missing") == segment
+                ]
+                if len(indexes) < 20:
+                    continue
+                truth = [expected[index] for index in indexes]
+                guess = [predicted[index] for index in indexes]
+                metrics = self._binary_metrics(truth, guess)
+                result.append(
+                    {
+                        "dimension": column,
+                        "segment": segment,
+                        "rows": len(indexes),
+                        "not_applies_rate": sum(x == NOT_APPLIES for x in truth) / len(truth),
+                        "not_applies_f1": metrics["not_applies_f1"],
+                        "not_applies_recall": metrics["not_applies_recall"],
+                        "accuracy": metrics["accuracy"],
+                    }
+                )
+        return result
+
+    def _eda_summary(self, rows: list[dict[str, str]], labels: list[str]) -> dict[str, object]:
+        by_class: dict[str, object] = {}
+        for label in (NOT_APPLIES, APPLIES):
+            selected = [row for row, item_label in zip(rows, labels, strict=True) if item_label == label]
+            p95_values = [
+                value for row in selected if (value := self._number(row.get("p95"))) is not None
+            ]
+            rps_values = [
+                value for row in selected if (value := self._number(row.get("rps"))) is not None
+            ]
+            by_class[label] = {
+                "rows": len(selected),
+                "median_p95_ms": median(p95_values) if p95_values else None,
+                "median_rps": median(rps_values) if rps_values else None,
+                "error_rate_rows": sum((self._number(row.get("errorCount")) or 0) > 0 for row in selected)
+                / len(selected),
+            }
+        return {
+            "by_class": by_class,
+            "missingness": {
+                name: sum(not row.get(name, "").strip() for row in rows) / len(rows)
+                for name in (*FEATURES, "p95", "rps", "errorCount")
+            },
+            "warning": "EDA result fields describe the observed label; they are excluded from model inputs.",
+        }
+
+    @staticmethod
+    def _write_thresholds(rows: list[dict[str, object]], path: Path) -> None:
+        with path.open("w", encoding="utf-8", newline="") as target:
+            writer = csv.DictWriter(target, fieldnames=list(rows[0]))
+            writer.writeheader()
+            writer.writerows(rows)
+
+    @staticmethod
+    def _write_segment_metrics(rows: list[dict[str, object]], path: Path) -> None:
+        fieldnames = [
+            "dimension", "segment", "rows", "not_applies_rate",
+            "not_applies_f1", "not_applies_recall", "accuracy",
+        ]
+        with path.open("w", encoding="utf-8", newline="") as target:
+            writer = csv.DictWriter(target, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(rows)
 
     @classmethod
     def validate_reexecution(
