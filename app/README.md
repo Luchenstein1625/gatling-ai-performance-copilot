@@ -1,5 +1,22 @@
 # Performance Decision Engine
 
+## Pipeline integral del feedback evaluador
+
+La versión completa incorpora cuatro capas: clasificación binaria de aplicabilidad,
+decisión `review/maintain/upgrade`, recomendación controlada de parámetros y validación
+offline/online. Se ejecuta sobre el histórico real con:
+
+```powershell
+pde evaluate-complete `
+  --source "..\datasaet\resultadoPruebasGatling.txt" `
+  --output-dir "..\Resultados\complete_feedback"
+```
+
+La salida incluye comparación de árbol de decisión, regresión logística, random forest y
+baseline; matrices de confusión; reglas del árbol; configuración y cuadrante operacional
+propuestos; y el estado `pending_new_execution` cuando falta validar la recomendación con
+una nueva ejecución Gatling. Una falla siempre produce `review` y conserva la configuración.
+
 Implementación técnica de Gatling AI Performance Copilot.
 
 ## Estado
@@ -126,6 +143,38 @@ Regenerar el comparador consolidado desde el índice:
 pde compare-runs `
   --output-base examples/output
 ```
+
+## Recomendación histórica de cuadrante (dataset corporativo)
+
+El input real es `datasaet/resultadoPruebasGatling.txt`. El comando importa sus 6.000+
+registros de ancho fijo, separa entrenamiento y prueba por `Build_Id` y compara árbol,
+regresión logística y random forest para recomendar `review`, `maintain` o `upgrade`.
+
+```powershell
+pde evaluate-historical `
+  --source ..\datasaet\resultadoPruebasGatling.txt `
+  --output-dir examples\output\historical_recommendation
+```
+
+Artefactos generados:
+
+- `historical_recommendation_evaluation.json`: matrices de confusión y precision/recall/F1 para
+  entrenamiento y prueba de los tres modelos.
+- `historical_recommendation_model.joblib`: mejor modelo según F1 de `review`.
+- `historical_recommendation_dataset.csv`: versión normalizada y auditable del dataset.
+- `decision_tree.dot` y `decision_tree_rules.txt`: árbol visualizable y reglas legibles.
+
+Para renderizar el árbol si Graphviz está instalado:
+
+```powershell
+dot -Tpng examples\output\historical_recommendation\decision_tree.dot `
+  -o examples\output\historical_recommendation\decision_tree.png
+```
+
+Las fallas y resultados irregulares siempre producen `review`; nunca `downgrade`. Un caso
+exitoso puede producir `maintain` o proponer `upgrade`, pero el cambio de cuadrante requiere
+validación humana. Las métricas posteriores crean la etiqueta histórica y luego se excluyen
+de los predictores para evitar fuga de información.
 
 ## API de corridas
 

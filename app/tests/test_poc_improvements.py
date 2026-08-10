@@ -90,6 +90,16 @@ def test_review_plan_keeps_quadrant_until_human_validation() -> None:
 
     assert result["action"] == "review_configuration"
     assert result["proposed_quadrant"] == 5
+
+
+def test_upgrade_plan_proposes_next_quadrant_with_human_validation() -> None:
+    result = PlanQuadrantAction().execute(
+        Recommendation(action="upgrade", explanation="Stable headroom"), 5
+    )
+
+    assert result["action"] == "evaluate_quadrant_upgrade"
+    assert result["proposed_quadrant"] == 6
+    assert result["human_validation_required"] is True
     assert result["human_validation_required"] is True
 
 

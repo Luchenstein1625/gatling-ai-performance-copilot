@@ -12,6 +12,8 @@ class FakeTrainingBackend:
         dataset_path: Path,
         model_path: Path,
         report_path: Path,
+        *,
+        feature_profile: str = "all_features",
     ) -> dict[str, object]:
         self.received = (dataset_path, model_path, report_path)
         return {"model_type": "fake"}

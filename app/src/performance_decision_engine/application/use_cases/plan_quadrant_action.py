@@ -31,6 +31,26 @@ class PlanQuadrantAction:
                 ),
             }
 
+        if recommendation.action == "upgrade":
+            proposed = min(current_quadrant + 1, 9)
+            return {
+                "schema_version": "1",
+                "current_quadrant": current_quadrant,
+                "action": (
+                    "evaluate_quadrant_upgrade"
+                    if proposed != current_quadrant
+                    else "maintain_configuration"
+                ),
+                "proposed_quadrant": proposed,
+                "human_validation_required": proposed != current_quadrant,
+                "triggered_rule": recommendation.evidence.get("triggered_rule"),
+                "explanation": (
+                    f"Evaluate quadrant {proposed}; the execution passed with stable headroom."
+                    if proposed != current_quadrant
+                    else "Keep quadrant 9; it is already the highest available configuration."
+                ),
+            }
+
         review_required = recommendation.action == "review"
         return {
             "schema_version": "1",
