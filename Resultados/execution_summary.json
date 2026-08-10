@@ -1,0 +1,55 @@
+{
+  "configuration": {
+    "load_type": "sequence",
+    "endpoints": [
+      {
+        "name": "obtener consentimiento por id",
+        "feature_reference": "classpath:example.feature@name=buscarPorId",
+        "enabled": false,
+        "reason": "Se requiere performance",
+        "reason_detail": "Obtiene un consentimiento por id",
+        "triplet": {
+          "concurrency_level": "low",
+          "concurrency_value": 20,
+          "iterations_level": "low",
+          "iterations_value": 5,
+          "response_time_level": "low",
+          "response_time_ms": 3000
+        }
+      },
+      {
+        "name": "buscar consentimiento",
+        "feature_reference": "classpath:example.feature@name=buscarConsentimiento",
+        "enabled": true,
+        "reason": "Se requiere performance",
+        "reason_detail": "Busca por atributos",
+        "triplet": {
+          "concurrency_level": "high",
+          "concurrency_value": 60,
+          "iterations_level": "high",
+          "iterations_value": 10,
+          "response_time_level": "very_high",
+          "response_time_ms": 15000
+        }
+      }
+    ],
+    "warnings": []
+  },
+  "global_metrics": {
+    "total_requests": 2801,
+    "successful_requests": 2801,
+    "failed_requests": 0,
+    "error_rate_percent": 0.0,
+    "min_response_time_ms": 374,
+    "mean_response_time_ms": 745,
+    "max_response_time_ms": 10510,
+    "p50_response_time_ms": null,
+    "p75_response_time_ms": null,
+    "p90_response_time_ms": null,
+    "p95_response_time_ms": 1465,
+    "p99_response_time_ms": 2221,
+    "requests_per_second": 9.3993,
+    "assertions": null
+  },
+  "warnings": []
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": "1",
+  "mode": "local_poc",
+  "recommendation_action": "maintain",
+  "training": {
+    "status": "not_requested"
+  },
+  "artifacts": {
+    "execution_summary": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\app\\examples\\output\\pipeline\\execution_summary.json",
+    "recommendation": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\app\\examples\\output\\pipeline\\recommendation.json",
+    "dataset": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\app\\examples\\output\\pipeline\\dataset.csv",
+    "model": null,
+    "training_report": null,
+    "model_explanation": null,
+    "html_report": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\app\\examples\\output\\pipeline\\report.html"
+  },
+  "limitations": [
+    "Local proof of concept only.",
+    "No integration with bank platforms.",
+    "Training is optional and may be skipped when H8 safeguards reject the dataset."
+  ]
+}

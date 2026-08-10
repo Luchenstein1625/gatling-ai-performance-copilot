@@ -1,8 +1,0 @@
-<testsuite name="cl.bci.ecodig.performance.test.ParametricSimulation" tests="2" errors="0" failures="2" time="0">
-<testcase name="Global: percentage of successful events is greater than or equal to 100.0" status="false" time="0">
-  <failure type="Global">Actual value: 11.970074812967582</failure>
-</testcase>
-<testcase name="obtencion-lista-cupones: 99th percentile of response time is less than 3000.0" status="false" time="0">
-  <failure type="obtencion-lista-cupones">Actual value: 15600.0</failure>
-</testcase>
-</testsuite>

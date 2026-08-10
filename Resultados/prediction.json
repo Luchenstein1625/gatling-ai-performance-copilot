@@ -1,0 +1,41 @@
+{
+  "schema_version": "1",
+  "model_role": "supervised_baseline_approximating_h6",
+  "prediction": "review",
+  "confidence": 1.0,
+  "probabilities": {
+    "maintain": 0.0,
+    "review": 1.0
+  },
+  "feature_columns": [
+    "load_type",
+    "enabled_endpoint_count",
+    "configured_endpoint_target_count",
+    "configured_concurrency_total",
+    "configured_iterations_total",
+    "strictest_response_time_target_ms",
+    "total_requests",
+    "successful_requests",
+    "failed_requests",
+    "error_rate_percent",
+    "min_response_time_ms",
+    "mean_response_time_ms",
+    "max_response_time_ms",
+    "p50_response_time_ms",
+    "p75_response_time_ms",
+    "p95_response_time_ms",
+    "p99_response_time_ms",
+    "requests_per_second",
+    "assertions_total",
+    "assertions_successful",
+    "assertions_failed",
+    "assertions_all_passed",
+    "warning_count"
+  ],
+  "rule_based_recommendation": "review",
+  "agreement": true,
+  "limitations": [
+    "The prediction approximates historical H6 labels.",
+    "Human validation is required before changing a test quadrant."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "action": "maintain",
+  "explanation": "Las reglas básicas evaluadas no detectaron incumplimientos.",
+  "evidence": {
+    "error_rate_percent": 0.0,
+    "p95_response_time_ms": 1465,
+    "expected_response_time_ms": 15000,
+    "total_requests": 2801,
+    "successful_requests": 2801,
+    "failed_requests": 0,
+    "enabled_endpoints": [
+      "buscar consentimiento"
+    ],
+    "endpoint_response_time_targets_ms": {
+      "buscar consentimiento": 15000
+    },
+    "metrics_scope": "execution",
+    "warnings": []
+  }
+}

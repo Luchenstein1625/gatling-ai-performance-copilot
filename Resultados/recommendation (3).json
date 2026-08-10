@@ -1,0 +1,55 @@
+{
+  "action": "review",
+  "explanation": "Una o más assertions de la ejecución fallaron.",
+  "evidence": {
+    "total_requests": 2411,
+    "successful_requests": 1991,
+    "failed_requests": 420,
+    "enabled_endpoints": [
+      "users-get-offer-slug",
+      "obtener-ofertas-visibles",
+      "users-get-offers-edc-sin-rut",
+      "users-get-offers-edc-rut-con-tyc",
+      "get-offers-filtered",
+      "offer-detail-by-id-200",
+      "offer-detail-by-slug-200"
+    ],
+    "endpoint_response_time_targets_ms": {
+      "users-get-offer-slug": 15000,
+      "obtener-ofertas-visibles": 15000,
+      "users-get-offers-edc-sin-rut": 15000,
+      "users-get-offers-edc-rut-con-tyc": 15000,
+      "get-offers-filtered": 5000,
+      "offer-detail-by-id-200": 15000,
+      "offer-detail-by-slug-200": 15000
+    },
+    "metrics_scope": "execution",
+    "warnings": [
+      "The execution contains 420 failed requests",
+      "One or more Gatling assertions failed"
+    ],
+    "scope_note": "Las métricas son globales para la ejecución; no representan resultados individuales por endpoint.",
+    "failed_assertions": 1,
+    "decision_trace": [
+      {
+        "rule": "enabled_endpoints",
+        "result": "passed",
+        "observed": 7,
+        "expected": "at_least_one"
+      },
+      {
+        "rule": "total_requests",
+        "result": "passed",
+        "observed": 2411,
+        "expected": "greater_than_zero"
+      },
+      {
+        "rule": "assertions",
+        "result": "failed",
+        "observed": 1,
+        "expected": 0
+      }
+    ],
+    "triggered_rule": "assertions"
+  }
+}

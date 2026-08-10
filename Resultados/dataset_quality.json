@@ -1,0 +1,46 @@
+{
+  "schema_version": "1",
+  "dataset": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\app\\examples\\output\\historical_dataset.csv",
+  "rows": 28,
+  "columns": 27,
+  "class_distribution": {
+    "maintain": 20,
+    "review": 8
+  },
+  "duplicate_rows": 0,
+  "completely_empty_columns": [
+    "p90_response_time_ms"
+  ],
+  "missing_values_by_column": {
+    "schema_version": 0,
+    "metrics_scope": 0,
+    "load_type": 0,
+    "enabled_endpoint_count": 0,
+    "configured_endpoint_target_count": 0,
+    "configured_concurrency_total": 0,
+    "configured_iterations_total": 0,
+    "strictest_response_time_target_ms": 0,
+    "total_requests": 0,
+    "successful_requests": 0,
+    "failed_requests": 0,
+    "error_rate_percent": 0,
+    "min_response_time_ms": 0,
+    "mean_response_time_ms": 0,
+    "max_response_time_ms": 0,
+    "p50_response_time_ms": 0,
+    "p75_response_time_ms": 0,
+    "p90_response_time_ms": 28,
+    "p95_response_time_ms": 0,
+    "p99_response_time_ms": 0,
+    "requests_per_second": 0,
+    "assertions_total": 0,
+    "assertions_successful": 0,
+    "assertions_failed": 0,
+    "assertions_all_passed": 0,
+    "warning_count": 0,
+    "recommendation_action": 0
+  },
+  "warnings": [
+    "One or more columns are completely empty and cannot contribute to training."
+  ]
+}

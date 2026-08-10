@@ -1,0 +1,12 @@
+schema_version,metrics_scope,load_type,enabled_endpoint_count,configured_endpoint_target_count,configured_concurrency_total,configured_iterations_total,strictest_response_time_target_ms,total_requests,successful_requests,failed_requests,error_rate_percent,min_response_time_ms,mean_response_time_ms,max_response_time_ms,p50_response_time_ms,p75_response_time_ms,p90_response_time_ms,p95_response_time_ms,p99_response_time_ms,requests_per_second,assertions_total,assertions_successful,assertions_failed,assertions_all_passed,warning_count,recommendation_action
+1,execution,sequence,7,7,180,40,3000,2801,2801,0,0.0,374,745,10510,732,805,,1465,2221,9.399328859060402,8,8,0,True,0,maintain
+1,execution,sequence,7,7,180,40,3000,2801,2801,0,0.0,156,650,2736,514,729,,1313,1847,11.115079365079366,8,8,0,True,0,maintain
+1,execution,sequence,3,3,60,15,5000,601,601,0,0.0,258,1387,4451,895,2224,,3183,3505,5.008333333333334,4,4,0,True,0,maintain
+1,execution,sequence,3,3,60,15,5000,601,601,0,0.0,313,1430,4478,973,2336,,3113,3695,5.008333333333334,4,4,0,True,0,maintain
+1,execution,sequence,13,13,390,76,3000,2970,2970,0,0.0,193,470,2740,389,433,,950,1697,13.378378378378379,14,14,0,True,0,maintain
+1,execution,sequence,13,13,390,76,3000,2970,2970,0,0.0,336,500,2219,409,486,,1049,1486,12.323651452282158,14,14,0,True,0,maintain
+1,execution,sequence,13,13,390,76,3000,2970,2970,0,0.0,245,464,3456,393,426,,884,1655,13.5,14,14,0,True,0,maintain
+1,execution,sequence,8,8,325,54,5000,1991,1991,0,0.0,343,536,3432,412,535,,1122,2583,12.366459627329192,8,8,0,True,0,maintain
+1,execution,sequence,7,7,285,47,5000,1991,1991,0,0.0,345,589,3479,484,648,,1182,1607,10.879781420765028,8,8,0,True,0,maintain
+1,execution,sequence,7,7,285,47,5000,1991,1991,0,0.0,333,454,2184,394,429,,821,1330,14.02112676056338,8,8,0,True,0,maintain
+1,execution,sequence,1,1,5,5,15000,27,27,0,0.0,619,1284,3202,888,1150,,3163,3192,1.8,2,2,0,True,0,maintain

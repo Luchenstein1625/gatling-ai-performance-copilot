@@ -1,0 +1,1377 @@
+{
+  "schema_version": "1",
+  "dataset_rows": 28,
+  "class_distribution": {
+    "maintain": 20,
+    "review": 8
+  },
+  "evaluation": "repeated_stratified_holdout",
+  "seeds": 10,
+  "test_size": 0.25,
+  "split_random_state": 42,
+  "split_detail_csv": "multiseed_evaluation_splits.csv",
+  "majority_baseline_accuracy": 0.7142857142857143,
+  "variants": {
+    "all_features": {
+      "feature_columns": [
+        "load_type",
+        "enabled_endpoint_count",
+        "configured_endpoint_target_count",
+        "configured_concurrency_total",
+        "configured_iterations_total",
+        "strictest_response_time_target_ms",
+        "total_requests",
+        "successful_requests",
+        "failed_requests",
+        "error_rate_percent",
+        "min_response_time_ms",
+        "mean_response_time_ms",
+        "max_response_time_ms",
+        "p50_response_time_ms",
+        "p75_response_time_ms",
+        "p95_response_time_ms",
+        "p99_response_time_ms",
+        "requests_per_second",
+        "assertions_total",
+        "assertions_successful",
+        "assertions_failed",
+        "assertions_all_passed",
+        "warning_count"
+      ],
+      "excluded_columns": [
+        "p90_response_time_ms"
+      ],
+      "metrics": {
+        "accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "balanced_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "macro_f1": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "review_f1": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      },
+      "splits": [
+        {
+          "split_id": 1,
+          "train_size": 21,
+          "test_size": 7,
+          "train_class_distribution": {
+            "maintain": 15,
+            "review": 6
+          },
+          "test_class_distribution": {
+            "maintain": 5,
+            "review": 2
+          },
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "review_f1": 1.0
+          },
+          "confusion_matrix": {
+            "labels": [
+              "maintain",
+              "review"
+            ],
+            "values": [
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          "test_row_indexes": [
+            12,
+            14,
+            9,
+            10,
+            2,
+            18,
+            20
+          ],
+          "y_true": [
+            "review",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "maintain"
+          ],
+          "y_pred": [
+            "review",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "maintain"
+          ]
+        },
+        {
+          "split_id": 2,
+          "train_size": 21,
+          "test_size": 7,
+          "train_class_distribution": {
+            "maintain": 15,
+            "review": 6
+          },
+          "test_class_distribution": {
+            "maintain": 5,
+            "review": 2
+          },
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "review_f1": 1.0
+          },
+          "confusion_matrix": {
+            "labels": [
+              "maintain",
+              "review"
+            ],
+            "values": [
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          "test_row_indexes": [
+            9,
+            3,
+            20,
+            2,
+            17,
+            24,
+            11
+          ],
+          "y_true": [
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "review",
+            "maintain"
+          ],
+          "y_pred": [
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "review",
+            "maintain"
+          ]
+        },
+        {
+          "split_id": 3,
+          "train_size": 21,
+          "test_size": 7,
+          "train_class_distribution": {
+            "maintain": 15,
+            "review": 6
+          },
+          "test_class_distribution": {
+            "maintain": 5,
+            "review": 2
+          },
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "review_f1": 1.0
+          },
+          "confusion_matrix": {
+            "labels": [
+              "maintain",
+              "review"
+            ],
+            "values": [
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          "test_row_indexes": [
+            10,
+            1,
+            14,
+            24,
+            17,
+            4,
+            27
+          ],
+          "y_true": [
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "maintain",
+            "review"
+          ],
+          "y_pred": [
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "maintain",
+            "review"
+          ]
+        },
+        {
+          "split_id": 4,
+          "train_size": 21,
+          "test_size": 7,
+          "train_class_distribution": {
+            "maintain": 15,
+            "review": 6
+          },
+          "test_class_distribution": {
+            "maintain": 5,
+            "review": 2
+          },
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "review_f1": 1.0
+          },
+          "confusion_matrix": {
+            "labels": [
+              "maintain",
+              "review"
+            ],
+            "values": [
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          "test_row_indexes": [
+            20,
+            9,
+            18,
+            14,
+            12,
+            27,
+            25
+          ],
+          "y_true": [
+            "maintain",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "review",
+            "maintain"
+          ],
+          "y_pred": [
+            "maintain",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "review",
+            "maintain"
+          ]
+        },
+        {
+          "split_id": 5,
+          "train_size": 21,
+          "test_size": 7,
+          "train_class_distribution": {
+            "maintain": 15,
+            "review": 6
+          },
+          "test_class_distribution": {
+            "maintain": 5,
+            "review": 2
+          },
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "review_f1": 1.0
+          },
+          "confusion_matrix": {
+            "labels": [
+              "maintain",
+              "review"
+            ],
+            "values": [
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          "test_row_indexes": [
+            1,
+            6,
+            12,
+            3,
+            4,
+            22,
+            15
+          ],
+          "y_true": [
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review"
+          ],
+          "y_pred": [
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review"
+          ]
+        },
+        {
+          "split_id": 6,
+          "train_size": 21,
+          "test_size": 7,
+          "train_class_distribution": {
+            "maintain": 15,
+            "review": 6
+          },
+          "test_class_distribution": {
+            "maintain": 5,
+            "review": 2
+          },
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "review_f1": 1.0
+          },
+          "confusion_matrix": {
+            "labels": [
+              "maintain",
+              "review"
+            ],
+            "values": [
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          "test_row_indexes": [
+            3,
+            11,
+            10,
+            9,
+            27,
+            2,
+            1
+          ],
+          "y_true": [
+            "maintain",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "review",
+            "maintain"
+          ],
+          "y_pred": [
+            "maintain",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "review",
+            "maintain"
+          ]
+        },
+        {
+          "split_id": 7,
+          "train_size": 21,
+          "test_size": 7,
+          "train_class_distribution": {
+            "maintain": 15,
+            "review": 6
+          },
+          "test_class_distribution": {
+            "maintain": 5,
+            "review": 2
+          },
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "review_f1": 1.0
+          },
+          "confusion_matrix": {
+            "labels": [
+              "maintain",
+              "review"
+            ],
+            "values": [
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          "test_row_indexes": [
+            12,
+            3,
+            8,
+            23,
+            19,
+            4,
+            7
+          ],
+          "y_true": [
+            "review",
+            "maintain",
+            "maintain",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review"
+          ],
+          "y_pred": [
+            "review",
+            "maintain",
+            "maintain",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review"
+          ]
+        },
+        {
+          "split_id": 8,
+          "train_size": 21,
+          "test_size": 7,
+          "train_class_distribution": {
+            "maintain": 15,
+            "review": 6
+          },
+          "test_class_distribution": {
+            "maintain": 5,
+            "review": 2
+          },
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "review_f1": 1.0
+          },
+          "confusion_matrix": {
+            "labels": [
+              "maintain",
+              "review"
+            ],
+            "values": [
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          "test_row_indexes": [
+            1,
+            4,
+            27,
+            13,
+            20,
+            23,
+            0
+          ],
+          "y_true": [
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review"
+          ],
+          "y_pred": [
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review"
+          ]
+        },
+        {
+          "split_id": 9,
+          "train_size": 21,
+          "test_size": 7,
+          "train_class_distribution": {
+            "maintain": 15,
+            "review": 6
+          },
+          "test_class_distribution": {
+            "maintain": 5,
+            "review": 2
+          },
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "review_f1": 1.0
+          },
+          "confusion_matrix": {
+            "labels": [
+              "maintain",
+              "review"
+            ],
+            "values": [
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          "test_row_indexes": [
+            23,
+            20,
+            13,
+            8,
+            24,
+            22,
+            7
+          ],
+          "y_true": [
+            "maintain",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "review"
+          ],
+          "y_pred": [
+            "maintain",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "review"
+          ]
+        },
+        {
+          "split_id": 10,
+          "train_size": 21,
+          "test_size": 7,
+          "train_class_distribution": {
+            "maintain": 15,
+            "review": 6
+          },
+          "test_class_distribution": {
+            "maintain": 5,
+            "review": 2
+          },
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "review_f1": 1.0
+          },
+          "confusion_matrix": {
+            "labels": [
+              "maintain",
+              "review"
+            ],
+            "values": [
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          "test_row_indexes": [
+            19,
+            17,
+            15,
+            25,
+            21,
+            16,
+            6
+          ],
+          "y_true": [
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "maintain",
+            "review",
+            "maintain"
+          ],
+          "y_pred": [
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "maintain",
+            "review",
+            "maintain"
+          ]
+        }
+      ]
+    },
+    "without_assertions": {
+      "feature_columns": [
+        "load_type",
+        "enabled_endpoint_count",
+        "configured_endpoint_target_count",
+        "configured_concurrency_total",
+        "configured_iterations_total",
+        "strictest_response_time_target_ms",
+        "total_requests",
+        "successful_requests",
+        "failed_requests",
+        "error_rate_percent",
+        "min_response_time_ms",
+        "mean_response_time_ms",
+        "max_response_time_ms",
+        "p50_response_time_ms",
+        "p75_response_time_ms",
+        "p95_response_time_ms",
+        "p99_response_time_ms",
+        "requests_per_second",
+        "warning_count"
+      ],
+      "excluded_columns": [
+        "assertions_all_passed",
+        "assertions_failed",
+        "assertions_successful",
+        "assertions_total",
+        "p90_response_time_ms"
+      ],
+      "metrics": {
+        "accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "balanced_accuracy": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "macro_f1": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        },
+        "review_f1": {
+          "mean": 1.0,
+          "std": 0.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      },
+      "splits": [
+        {
+          "split_id": 1,
+          "train_size": 21,
+          "test_size": 7,
+          "train_class_distribution": {
+            "maintain": 15,
+            "review": 6
+          },
+          "test_class_distribution": {
+            "maintain": 5,
+            "review": 2
+          },
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "review_f1": 1.0
+          },
+          "confusion_matrix": {
+            "labels": [
+              "maintain",
+              "review"
+            ],
+            "values": [
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          "test_row_indexes": [
+            12,
+            14,
+            9,
+            10,
+            2,
+            18,
+            20
+          ],
+          "y_true": [
+            "review",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "maintain"
+          ],
+          "y_pred": [
+            "review",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "maintain"
+          ]
+        },
+        {
+          "split_id": 2,
+          "train_size": 21,
+          "test_size": 7,
+          "train_class_distribution": {
+            "maintain": 15,
+            "review": 6
+          },
+          "test_class_distribution": {
+            "maintain": 5,
+            "review": 2
+          },
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "review_f1": 1.0
+          },
+          "confusion_matrix": {
+            "labels": [
+              "maintain",
+              "review"
+            ],
+            "values": [
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          "test_row_indexes": [
+            9,
+            3,
+            20,
+            2,
+            17,
+            24,
+            11
+          ],
+          "y_true": [
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "review",
+            "maintain"
+          ],
+          "y_pred": [
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "review",
+            "maintain"
+          ]
+        },
+        {
+          "split_id": 3,
+          "train_size": 21,
+          "test_size": 7,
+          "train_class_distribution": {
+            "maintain": 15,
+            "review": 6
+          },
+          "test_class_distribution": {
+            "maintain": 5,
+            "review": 2
+          },
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "review_f1": 1.0
+          },
+          "confusion_matrix": {
+            "labels": [
+              "maintain",
+              "review"
+            ],
+            "values": [
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          "test_row_indexes": [
+            10,
+            1,
+            14,
+            24,
+            17,
+            4,
+            27
+          ],
+          "y_true": [
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "maintain",
+            "review"
+          ],
+          "y_pred": [
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "maintain",
+            "review"
+          ]
+        },
+        {
+          "split_id": 4,
+          "train_size": 21,
+          "test_size": 7,
+          "train_class_distribution": {
+            "maintain": 15,
+            "review": 6
+          },
+          "test_class_distribution": {
+            "maintain": 5,
+            "review": 2
+          },
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "review_f1": 1.0
+          },
+          "confusion_matrix": {
+            "labels": [
+              "maintain",
+              "review"
+            ],
+            "values": [
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          "test_row_indexes": [
+            20,
+            9,
+            18,
+            14,
+            12,
+            27,
+            25
+          ],
+          "y_true": [
+            "maintain",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "review",
+            "maintain"
+          ],
+          "y_pred": [
+            "maintain",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "review",
+            "maintain"
+          ]
+        },
+        {
+          "split_id": 5,
+          "train_size": 21,
+          "test_size": 7,
+          "train_class_distribution": {
+            "maintain": 15,
+            "review": 6
+          },
+          "test_class_distribution": {
+            "maintain": 5,
+            "review": 2
+          },
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "review_f1": 1.0
+          },
+          "confusion_matrix": {
+            "labels": [
+              "maintain",
+              "review"
+            ],
+            "values": [
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          "test_row_indexes": [
+            1,
+            6,
+            12,
+            3,
+            4,
+            22,
+            15
+          ],
+          "y_true": [
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review"
+          ],
+          "y_pred": [
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review"
+          ]
+        },
+        {
+          "split_id": 6,
+          "train_size": 21,
+          "test_size": 7,
+          "train_class_distribution": {
+            "maintain": 15,
+            "review": 6
+          },
+          "test_class_distribution": {
+            "maintain": 5,
+            "review": 2
+          },
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "review_f1": 1.0
+          },
+          "confusion_matrix": {
+            "labels": [
+              "maintain",
+              "review"
+            ],
+            "values": [
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          "test_row_indexes": [
+            3,
+            11,
+            10,
+            9,
+            27,
+            2,
+            1
+          ],
+          "y_true": [
+            "maintain",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "review",
+            "maintain"
+          ],
+          "y_pred": [
+            "maintain",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "review",
+            "maintain"
+          ]
+        },
+        {
+          "split_id": 7,
+          "train_size": 21,
+          "test_size": 7,
+          "train_class_distribution": {
+            "maintain": 15,
+            "review": 6
+          },
+          "test_class_distribution": {
+            "maintain": 5,
+            "review": 2
+          },
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "review_f1": 1.0
+          },
+          "confusion_matrix": {
+            "labels": [
+              "maintain",
+              "review"
+            ],
+            "values": [
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          "test_row_indexes": [
+            12,
+            3,
+            8,
+            23,
+            19,
+            4,
+            7
+          ],
+          "y_true": [
+            "review",
+            "maintain",
+            "maintain",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review"
+          ],
+          "y_pred": [
+            "review",
+            "maintain",
+            "maintain",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review"
+          ]
+        },
+        {
+          "split_id": 8,
+          "train_size": 21,
+          "test_size": 7,
+          "train_class_distribution": {
+            "maintain": 15,
+            "review": 6
+          },
+          "test_class_distribution": {
+            "maintain": 5,
+            "review": 2
+          },
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "review_f1": 1.0
+          },
+          "confusion_matrix": {
+            "labels": [
+              "maintain",
+              "review"
+            ],
+            "values": [
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          "test_row_indexes": [
+            1,
+            4,
+            27,
+            13,
+            20,
+            23,
+            0
+          ],
+          "y_true": [
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review"
+          ],
+          "y_pred": [
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review"
+          ]
+        },
+        {
+          "split_id": 9,
+          "train_size": 21,
+          "test_size": 7,
+          "train_class_distribution": {
+            "maintain": 15,
+            "review": 6
+          },
+          "test_class_distribution": {
+            "maintain": 5,
+            "review": 2
+          },
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "review_f1": 1.0
+          },
+          "confusion_matrix": {
+            "labels": [
+              "maintain",
+              "review"
+            ],
+            "values": [
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          "test_row_indexes": [
+            23,
+            20,
+            13,
+            8,
+            24,
+            22,
+            7
+          ],
+          "y_true": [
+            "maintain",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "review"
+          ],
+          "y_pred": [
+            "maintain",
+            "maintain",
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "review"
+          ]
+        },
+        {
+          "split_id": 10,
+          "train_size": 21,
+          "test_size": 7,
+          "train_class_distribution": {
+            "maintain": 15,
+            "review": 6
+          },
+          "test_class_distribution": {
+            "maintain": 5,
+            "review": 2
+          },
+          "metrics": {
+            "accuracy": 1.0,
+            "balanced_accuracy": 1.0,
+            "macro_f1": 1.0,
+            "review_f1": 1.0
+          },
+          "confusion_matrix": {
+            "labels": [
+              "maintain",
+              "review"
+            ],
+            "values": [
+              [
+                5,
+                0
+              ],
+              [
+                0,
+                2
+              ]
+            ]
+          },
+          "test_row_indexes": [
+            19,
+            17,
+            15,
+            25,
+            21,
+            16,
+            6
+          ],
+          "y_true": [
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "maintain",
+            "review",
+            "maintain"
+          ],
+          "y_pred": [
+            "maintain",
+            "maintain",
+            "review",
+            "maintain",
+            "maintain",
+            "review",
+            "maintain"
+          ]
+        }
+      ]
+    }
+  },
+  "interpretation": "Compare without_assertions against all_features to quantify how much assertion-derived variables influence the reported performance.",
+  "limitations": [
+    "Small datasets produce high metric variability.",
+    "Rows are not grouped by microservice because H7 schema version 1 has no group id."
+  ]
+}

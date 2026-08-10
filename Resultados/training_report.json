@@ -1,0 +1,87 @@
+{
+  "schema_version": "1",
+  "model_type": "DecisionTreeClassifier",
+  "model_role": "supervised_baseline_approximating_h6",
+  "dataset_rows": 28,
+  "train_rows": 21,
+  "test_rows": 7,
+  "class_distribution": {
+    "maintain": 20,
+    "review": 8
+  },
+  "feature_columns": [
+    "load_type",
+    "enabled_endpoint_count",
+    "configured_endpoint_target_count",
+    "configured_concurrency_total",
+    "configured_iterations_total",
+    "strictest_response_time_target_ms",
+    "total_requests",
+    "successful_requests",
+    "failed_requests",
+    "error_rate_percent",
+    "min_response_time_ms",
+    "mean_response_time_ms",
+    "max_response_time_ms",
+    "p50_response_time_ms",
+    "p75_response_time_ms",
+    "p95_response_time_ms",
+    "p99_response_time_ms",
+    "requests_per_second",
+    "assertions_total",
+    "assertions_successful",
+    "assertions_failed",
+    "assertions_all_passed",
+    "warning_count"
+  ],
+  "excluded_empty_feature_columns": [
+    "p90_response_time_ms"
+  ],
+  "label_column": "recommendation_action",
+  "random_state": 42,
+  "test_size": 0.25,
+  "metrics": {
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "macro_precision": 1.0,
+    "macro_recall": 1.0,
+    "macro_f1": 1.0,
+    "confusion_matrix": [
+      [
+        5,
+        0
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "classification_report": {
+      "maintain": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 5.0
+      },
+      "review": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 2.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 7.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 7.0
+      }
+    }
+  }
+}

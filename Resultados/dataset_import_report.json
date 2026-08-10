@@ -1,0 +1,124 @@
+{
+  "schema_version": "1",
+  "source": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento",
+  "output": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\app\\examples\\output\\dataset.csv",
+  "discovered": 11,
+  "imported_this_run": 11,
+  "skipped_this_run": 0,
+  "failed_this_run": 0,
+  "class_distribution_this_run": {
+    "maintain": 11
+  },
+  "executions": [
+    {
+      "execution_id": "ms-consentimientos-gestor/20250206/Gatling/js",
+      "fingerprint": "217690e20df2c76facc8d4e9a314afefb4b6f7130f62e70daeaf28e79d571679",
+      "status": "imported",
+      "recommendation_action": "maintain",
+      "performance": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-consentimientos-gestor\\20250206\\Config\\performance.yaml",
+      "parameters": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\parametricConfigurationValues.yaml",
+      "results": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-consentimientos-gestor\\20250206\\Gatling\\js\\global_stats.json",
+      "assertions": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-consentimientos-gestor\\20250206\\Gatling\\js\\assertions.json"
+    },
+    {
+      "execution_id": "ms-consentimientos-gestor/20260506/Gatling/js",
+      "fingerprint": "18c592c8c55e6412214884a5030c9b3615ff8d9ca6c7ffef2ec65d5cfd9c1dbf",
+      "status": "imported",
+      "recommendation_action": "maintain",
+      "performance": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-consentimientos-gestor\\20260506\\Config\\performance.yaml",
+      "parameters": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\parametricConfigurationValues.yaml",
+      "results": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-consentimientos-gestor\\20260506\\Gatling\\js\\global_stats.json",
+      "assertions": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-consentimientos-gestor\\20260506\\Gatling\\js\\assertions.json"
+    },
+    {
+      "execution_id": "ms-hub-siicesiones/20260430/Gatling/js",
+      "fingerprint": "05a975b0aea7b7c1dd4e03dead3cbdc4bea718e180ef3d60d84e6a94cfdc8ac7",
+      "status": "imported",
+      "recommendation_action": "maintain",
+      "performance": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-hub-siicesiones\\20260430\\Config\\performance.yaml",
+      "parameters": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\parametricConfigurationValues.yaml",
+      "results": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-hub-siicesiones\\20260430\\Gatling\\js\\global_stats.json",
+      "assertions": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-hub-siicesiones\\20260430\\Gatling\\js\\assertions.json"
+    },
+    {
+      "execution_id": "ms-hub-siicesiones/20260611/Gatling/js",
+      "fingerprint": "4f07f5f64a5cc69472295770decacde0046d5a8b1beeb1d74d2bae8882a71d2d",
+      "status": "imported",
+      "recommendation_action": "maintain",
+      "performance": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-hub-siicesiones\\20260611\\Config\\performance.yaml",
+      "parameters": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\parametricConfigurationValues.yaml",
+      "results": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-hub-siicesiones\\20260611\\Gatling\\js\\global_stats.json",
+      "assertions": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-hub-siicesiones\\20260611\\Gatling\\js\\assertions.json"
+    },
+    {
+      "execution_id": "ms-loyalty-movimientos/20260319/Gatling/js",
+      "fingerprint": "22031fc497eb6929a6fb6f57845e4386d06f59f9777d563c24ba50f1463076d8",
+      "status": "imported",
+      "recommendation_action": "maintain",
+      "performance": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-movimientos\\20260319\\Config\\performance.yaml",
+      "parameters": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\parametricConfigurationValues.yaml",
+      "results": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-movimientos\\20260319\\Gatling\\js\\global_stats.json",
+      "assertions": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-movimientos\\20260319\\Gatling\\js\\assertions.json"
+    },
+    {
+      "execution_id": "ms-loyalty-movimientos/20260604/Gatling/js",
+      "fingerprint": "24325d1cd40e4bc68540c901700bedc75bbc83d6fa7c545ce7c42536c7725c42",
+      "status": "imported",
+      "recommendation_action": "maintain",
+      "performance": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-movimientos\\20260604\\Config\\performance.yaml",
+      "parameters": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\parametricConfigurationValues.yaml",
+      "results": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-movimientos\\20260604\\Gatling\\js\\global_stats.json",
+      "assertions": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-movimientos\\20260604\\Gatling\\js\\assertions.json"
+    },
+    {
+      "execution_id": "ms-loyalty-movimientos/20260702/Gatling/js",
+      "fingerprint": "a6b1f4e02b4dad32360dc50ddd9990a958104470dab44ccdd47ba6b64725282e",
+      "status": "imported",
+      "recommendation_action": "maintain",
+      "performance": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-movimientos\\20260702\\Config\\performance.yaml",
+      "parameters": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\parametricConfigurationValues.yaml",
+      "results": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-movimientos\\20260702\\Gatling\\js\\global_stats.json",
+      "assertions": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-movimientos\\20260702\\Gatling\\js\\assertions.json"
+    },
+    {
+      "execution_id": "ms-loyalty-ofertas/20260623/Gatling/js",
+      "fingerprint": "17018cc18e0ed57a4b55da6c8836f1fb1080cbc8299436f5e653a0f69e96fa9c",
+      "status": "imported",
+      "recommendation_action": "maintain",
+      "performance": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-ofertas\\20260623\\Config\\performance.yaml",
+      "parameters": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\parametricConfigurationValues.yaml",
+      "results": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-ofertas\\20260623\\Gatling\\js\\global_stats.json",
+      "assertions": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-ofertas\\20260623\\Gatling\\js\\assertions.json"
+    },
+    {
+      "execution_id": "ms-loyalty-ofertas/20260702/Gatling/js",
+      "fingerprint": "7b9594d6623a3d467e3ed9612982ae2cc8692f524f8094657fe8ff7b1380ef2e",
+      "status": "imported",
+      "recommendation_action": "maintain",
+      "performance": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-ofertas\\20260702\\Config\\performance.yaml",
+      "parameters": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\parametricConfigurationValues.yaml",
+      "results": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-ofertas\\20260702\\Gatling\\js\\global_stats.json",
+      "assertions": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-ofertas\\20260702\\Gatling\\js\\assertions.json"
+    },
+    {
+      "execution_id": "ms-loyalty-ofertas/20260703/Gatling/js",
+      "fingerprint": "93217edf5656860c0ef74d744665629569d06419b4a03ae8833c8c45011e2af2",
+      "status": "imported",
+      "recommendation_action": "maintain",
+      "performance": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-ofertas\\20260703\\Config\\performance.yaml",
+      "parameters": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\parametricConfigurationValues.yaml",
+      "results": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-ofertas\\20260703\\Gatling\\js\\global_stats.json",
+      "assertions": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-ofertas\\20260703\\Gatling\\js\\assertions.json"
+    },
+    {
+      "execution_id": "ms-loyalty-transfer-partner/20251015/Gatling/js",
+      "fingerprint": "ba583b1dc42cebadde1cafab20e2292f27b1469fdcef909ec52e11a4bfccea6f",
+      "status": "imported",
+      "recommendation_action": "maintain",
+      "performance": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-transfer-partner\\20251015\\Config\\performance.yaml",
+      "parameters": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\parametricConfigurationValues.yaml",
+      "results": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-transfer-partner\\20251015\\Gatling\\js\\global_stats.json",
+      "assertions": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\RESOURCES\\Pruebas de Rendmiento\\ms-loyalty-transfer-partner\\20251015\\Gatling\\js\\assertions.json"
+    }
+  ]
+}
