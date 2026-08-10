@@ -5,6 +5,7 @@ import platform
 import sys
 from collections import Counter
 from collections.abc import Mapping
+from datetime import datetime
 from pathlib import Path
 from typing import Annotated
 
@@ -13,6 +14,10 @@ from rich.console import Console
 
 from performance_decision_engine import __version__
 from performance_decision_engine.application.use_cases.explain_model import ExplainModel
+from performance_decision_engine.application.use_cases.evaluate_evolution import (
+    EvaluateEvolution,
+    EvolutionObservation,
+)
 from performance_decision_engine.application.use_cases.generate_dataset import (
     GenerateDatasetRow,
 )
@@ -399,6 +404,13 @@ def train_model(
             help="Output path for the JSON evaluation report.",
         ),
     ],
+    feature_profile: Annotated[
+        str,
+        typer.Option(
+            "--feature-profile",
+            help="Feature profile: all_features (replicates rules) or operational_core (excludes assertions and warning proxy).",
+        ),
+    ] = "operational_core",
 ) -> None:
     """Train and evaluate the H8 Decision Tree baseline."""
     try:
@@ -406,6 +418,7 @@ def train_model(
             dataset,
             model,
             report,
+            feature_profile=feature_profile,
         )
     except ValueError as exc:
         console.print(f"[red]Error:[/red] {exc}")
@@ -416,6 +429,7 @@ def train_model(
         raise typer.Exit(code=2)
 
     console.print("[bold green]H8 Machine Learning baseline completed[/bold green]")
+    console.print(f"Feature profile: {result['feature_profile']}")
     console.print(f"Dataset rows: {result['dataset_rows']}")
     console.print(f"Accuracy: {metrics['accuracy']:.4f}")
     console.print(f"Balanced accuracy: {metrics['balanced_accuracy']:.4f}")
@@ -483,20 +497,47 @@ def _batch_fingerprint(files: ExecutionFiles) -> str:
     return digest.hexdigest()
 
 
+def _build_run_directory(base_dir: Path) -> Path:
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    candidate = base_dir / f"run_{timestamp}"
+    suffix = 1
+    while candidate.exists():
+        candidate = base_dir / f"run_{timestamp}_{suffix:02d}"
+        suffix += 1
+    candidate.mkdir(parents=True, exist_ok=False)
+    return candidate
+
+
+def _component_id_from_execution_id(execution_id: str) -> str:
+    normalized = execution_id.strip("/")
+    if not normalized:
+        return "unknown_component"
+    return normalized.split("/", 1)[0]
+
+
+def _build_evolution_observation(
+    component_id: str,
+    recommendation_action: str,
+    execution,
+    target_ms: int | None,
+) -> EvolutionObservation | None:
+    p95 = execution.global_metrics.p95_response_time_ms
+    if p95 is None or target_ms is None or target_ms <= 0:
+        return None
+
+    assertions = execution.global_metrics.assertions
+    return EvolutionObservation(
+        component_id=component_id,
+        recommendation_action=recommendation_action,
+        p95_response_time_ms=p95,
+        response_time_target_ms=target_ms,
+        error_rate_percent=execution.global_metrics.error_rate_percent,
+        assertions_all_passed=(assertions is None or assertions.all_passed),
+    )
+
+
 @app.command("dataset-batch")
 def dataset_batch(
-    source: Annotated[
-        Path,
-        typer.Option(
-            "--source",
-            exists=True,
-            file_okay=False,
-            dir_okay=True,
-            readable=True,
-            resolve_path=True,
-            help="Directory containing historical performance executions.",
-        ),
-    ],
     output: Annotated[
         Path,
         typer.Option(
@@ -517,6 +558,21 @@ def dataset_batch(
             help="Batch import JSON report path.",
         ),
     ],
+    source: Annotated[
+        Path,
+        typer.Option(
+            "--source",
+            exists=True,
+            file_okay=False,
+            dir_okay=True,
+            readable=True,
+            resolve_path=True,
+            help=(
+                "Directory containing historical performance executions "
+                "(default: examples/input/sources)."
+            ),
+        ),
+    ] = Path("examples/input/sources"),
     replace: Annotated[
         bool,
         typer.Option(
@@ -526,6 +582,10 @@ def dataset_batch(
     ] = False,
 ) -> None:
     """Import historical executions into the H7 dataset."""
+    run_directory = _build_run_directory(output.parent)
+    output = run_directory / output.name
+    report = run_directory / report.name
+
     if replace:
         output.unlink(missing_ok=True)
         report.unlink(missing_ok=True)
@@ -562,6 +622,8 @@ def dataset_batch(
     entries: list[dict[str, object]] = [
         dict(entry) for entry in processed_entries if isinstance(entry, dict)
     ]
+    evolution_evaluator = EvaluateEvolution()
+    history_by_component: dict[str, list[EvolutionObservation]] = {}
 
     try:
         executions = discovery.discover(source)
@@ -570,6 +632,7 @@ def dataset_batch(
         raise typer.Exit(code=2) from exc
 
     for files in executions:
+        component_id = _component_id_from_execution_id(files.execution_id)
         fingerprint = _batch_fingerprint(files)
         if fingerprint in previous_fingerprints:
             skipped += 1
@@ -582,13 +645,30 @@ def dataset_batch(
                 results_path=files.results,
                 assertions_path=files.assertions,
             )
-            recommendation = RecommendExecution().execute(execution)
+            baseline_recommendation = RecommendExecution().execute(execution)
+            recommendation = evolution_evaluator.execute(
+                component_id,
+                baseline_recommendation,
+                history_by_component.get(component_id, []),
+            )
             row = dataset_use_case.execute(execution, recommendation)
             _append_dataset_row(output, row, dataset_use_case.fieldnames)
+
+            baseline_target_raw = baseline_recommendation.evidence.get("expected_response_time_ms")
+            baseline_target = baseline_target_raw if isinstance(baseline_target_raw, int) else None
+            observation = _build_evolution_observation(
+                component_id,
+                baseline_recommendation.action,
+                execution,
+                baseline_target,
+            )
+            if observation is not None:
+                history_by_component.setdefault(component_id, []).append(observation)
         except (OSError, ValueError) as exc:
             failed += 1
             entries.append(
                 {
+                    "component_id": component_id,
                     "execution_id": files.execution_id,
                     "fingerprint": fingerprint,
                     "status": "failed",
@@ -602,10 +682,12 @@ def dataset_batch(
         previous_fingerprints.add(fingerprint)
         entries.append(
             {
+                "component_id": component_id,
                 "execution_id": files.execution_id,
                 "fingerprint": fingerprint,
                 "status": "imported",
                 "recommendation_action": recommendation.action,
+                "baseline_recommendation_action": baseline_recommendation.action,
                 "performance": str(files.performance),
                 "parameters": str(files.parameters),
                 "results": str(files.results),
@@ -636,6 +718,7 @@ def dataset_batch(
     console.print(f"Skipped: {skipped}")
     console.print(f"Failed: {failed}")
     console.print(f"Classes: {dict(sorted(class_distribution.items()))}")
+    console.print(f"[green]Run directory:[/green] {run_directory}")
     console.print(f"[green]Dataset:[/green] {output}")
     console.print(f"[green]Report:[/green] {report}")
 

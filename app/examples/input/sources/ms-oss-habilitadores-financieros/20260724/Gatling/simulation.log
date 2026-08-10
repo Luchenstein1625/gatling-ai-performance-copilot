@@ -1,0 +1,125 @@
+ASSERTION	AAECAAICAAAAAAAAAFlA
+ASSERTION	AAMAARVvYnRlbmVyLWhhYmlsaXRhZG9yZXMDAAEFAAAAAAAAwFhAAwAAAAAAAEzNQA==
+ASSERTION	AAMAASBvYnRlbmVyLWhhYmlsaXRhZG9yZXMtcG9yLWZpbHRybwMAAQUAAAAAAADAWEADAAAAAAAATM1A
+RUN	cl.bci.ecodig.performance.test.ParametricSimulation	parametricsimulation	1784918467659	 	3.7.4
+USER	obtener-habilitadores	START	1784918467790
+USER	obtener-habilitadores	START	1784918467787
+USER	obtener-habilitadores	START	1784918467787
+USER	obtener-habilitadores	START	1784918467790
+USER	obtener-habilitadores	START	1784918467791
+REQUEST		GET /ECOAzDevOps/ECOAzureDevOps/_apis/distributedtask/variablegroups?groupName=testing-crt	1784918470618	1784918470837	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918471217	1784918472065	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918471217	1784918472080	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918471219	1784918472336	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918471217	1784918472349	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918471217	1784918472465	OK	 
+REQUEST		obtener-habilitadores	1784918472095	1784918497185	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:25 method GET
+REQUEST		obtener-habilitadores	1784918472097	1784918497179	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:25 method GET
+REQUEST		obtener-habilitadores	1784918472345	1784918497426	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:25 method GET
+REQUEST		obtener-habilitadores	1784918472369	1784918497453	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:25 method GET
+REQUEST		obtener-habilitadores	1784918472474	1784918497543	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:25 method GET
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918497518	1784918498212	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918497347	1784918498411	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918497349	1784918498419	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918497620	1784918498578	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918497683	1784918498747	OK	 
+REQUEST		obtener-habilitadores	1784918498754	1784918515911	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918515972	1784918516640	OK	 
+REQUEST		obtener-habilitadores	1784918498219	1784918523295	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:25 method GET
+REQUEST		obtener-habilitadores	1784918498418	1784918523518	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:25 method GET
+REQUEST		obtener-habilitadores	1784918498432	1784918523537	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:25 method GET
+REQUEST		obtener-habilitadores	1784918498585	1784918523653	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:25 method GET
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918523340	1784918524320	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918523563	1784918524582	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918523719	1784918524682	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918523643	1784918524854	OK	 
+REQUEST		obtener-habilitadores	1784918516646	1784918541726	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:25 method GET
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918541768	1784918542922	OK	 
+REQUEST		obtener-habilitadores	1784918524328	1784918549403	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:25 method GET
+REQUEST		obtener-habilitadores	1784918524588	1784918549667	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:25 method GET
+REQUEST		obtener-habilitadores	1784918524688	1784918549768	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:25 method GET
+REQUEST		obtener-habilitadores	1784918524861	1784918549930	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:25 method GET
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918549702	1784918550405	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918549455	1784918550596	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918549962	1784918550721	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918549830	1784918550806	OK	 
+REQUEST		obtener-habilitadores	1784918550410	1784918553571	OK	 
+REQUEST		obtener-habilitadores	1784918550602	1784918554202	OK	 
+REQUEST		obtener-habilitadores	1784918550729	1784918554671	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918553607	1784918555669	OK	 
+REQUEST		obtener-habilitadores	1784918550812	1784918555694	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918554267	1784918555962	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918554703	1784918556809	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918555731	1784918556827	OK	 
+REQUEST		obtener-habilitadores	1784918555967	1784918559639	OK	 
+USER	obtener-habilitadores	END	1784918559646
+REQUEST		obtener-habilitadores	1784918555676	1784918560125	OK	 
+USER	obtener-habilitadores	END	1784918560133
+REQUEST		obtener-habilitadores	1784918556831	1784918560376	OK	 
+USER	obtener-habilitadores	END	1784918560380
+REQUEST		obtener-habilitadores	1784918556814	1784918560846	OK	 
+USER	obtener-habilitadores	END	1784918560852
+REQUEST		obtener-habilitadores	1784918542928	1784918568198	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:25 method GET
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918568221	1784918569334	OK	 
+REQUEST		obtener-habilitadores	1784918569339	1784918572269	OK	 
+USER	obtener-habilitadores	END	1784918572272
+USER	obtener-habilitadores-por-filtro	START	1784918572790
+USER	obtener-habilitadores-por-filtro	START	1784918572790
+USER	obtener-habilitadores-por-filtro	START	1784918572788
+USER	obtener-habilitadores-por-filtro	START	1784918572788
+USER	obtener-habilitadores-por-filtro	START	1784918572790
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918572863	1784918573534	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918572896	1784918573858	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918572870	1784918573874	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918572850	1784918574100	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918572829	1784918574260	OK	 
+REQUEST		obtener-habilitadores-por-filtro	1784918573882	1784918574440	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+REQUEST		obtener-habilitadores-por-filtro	1784918573863	1784918574449	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+REQUEST		obtener-habilitadores-por-filtro	1784918573541	1784918574442	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+REQUEST		obtener-habilitadores-por-filtro	1784918574264	1784918574705	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+REQUEST		obtener-habilitadores-por-filtro	1784918574105	1784918574839	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918574536	1784918575200	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918574543	1784918575254	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918574543	1784918575432	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918574871	1784918575470	OK	 
+REQUEST		obtener-habilitadores-por-filtro	1784918575205	1784918575643	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918574743	1784918575675	OK	 
+REQUEST		obtener-habilitadores-por-filtro	1784918575258	1784918575800	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+REQUEST		obtener-habilitadores-por-filtro	1784918575437	1784918575846	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+REQUEST		obtener-habilitadores-por-filtro	1784918575475	1784918575870	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+REQUEST		obtener-habilitadores-por-filtro	1784918575679	1784918576116	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918575671	1784918576364	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918575829	1784918576502	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918575903	1784918576601	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918575872	1784918576777	OK	 
+REQUEST		obtener-habilitadores-por-filtro	1784918576605	1784918576998	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918576145	1784918577080	OK	 
+REQUEST		obtener-habilitadores-por-filtro	1784918576507	1784918577119	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+REQUEST		obtener-habilitadores-por-filtro	1784918576781	1784918577196	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+REQUEST		obtener-habilitadores-por-filtro	1784918576370	1784918577248	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+REQUEST		obtener-habilitadores-por-filtro	1784918577084	1784918577501	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918577023	1784918577655	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918577267	1784918577894	OK	 
+REQUEST		obtener-habilitadores-por-filtro	1784918577659	1784918578043	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918577218	1784918578116	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918577139	1784918578214	OK	 
+REQUEST		obtener-habilitadores-por-filtro	1784918577899	1784918578254	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918577526	1784918578353	OK	 
+REQUEST		obtener-habilitadores-por-filtro	1784918578120	1784918578494	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+REQUEST		obtener-habilitadores-por-filtro	1784918578217	1784918578558	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918578070	1784918578713	OK	 
+REQUEST		obtener-habilitadores-por-filtro	1784918578357	1784918578737	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918578279	1784918579241	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918578583	1784918579271	OK	 
+REQUEST		obtener-habilitadores-por-filtro	1784918578717	1784918579343	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+USER	obtener-habilitadores-por-filtro	END	1784918579345
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918578521	1784918579568	OK	 
+REQUEST		obtener-habilitadores-por-filtro	1784918579245	1784918579624	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+USER	obtener-habilitadores-por-filtro	END	1784918579625
+REQUEST		obtener-habilitadores-por-filtro	1784918579275	1784918579676	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+USER	obtener-habilitadores-por-filtro	END	1784918579677
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1784918578768	1784918579776	OK	 
+REQUEST		obtener-habilitadores-por-filtro	1784918579572	1784918580046	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+USER	obtener-habilitadores-por-filtro	END	1784918580048
+REQUEST		obtener-habilitadores-por-filtro	1784918579781	1784918580175	KO	cl/bci/ecodig/acceptance/obtener-habilitadores.feature:39 status 200
+USER	obtener-habilitadores-por-filtro	END	1784918580176

@@ -27,11 +27,22 @@ from performance_decision_engine.application.use_cases.generate_dataset import (
 LABEL_COLUMN = "recommendation_action"
 METADATA_COLUMNS = {"schema_version", "metrics_scope"}
 CATEGORICAL_COLUMNS = ("load_type", "assertions_all_passed")
+ASSERTION_COLUMNS = {
+    "assertions_total",
+    "assertions_successful",
+    "assertions_failed",
+    "assertions_all_passed",
+}
+PROXY_COLUMNS = ASSERTION_COLUMNS | {"warning_count"}
 MINIMUM_ROWS = 20
 TEST_SIZE = 0.25
 RANDOM_STATE = 42
 SUPPORTED_SCHEMA_VERSION = "1"
 SUPPORTED_MODEL_TYPE = "DecisionTreeClassifier"
+FEATURE_PROFILES = {
+    "all_features",
+    "operational_core",
+}
 
 
 class DecisionTreeTrainingBackend:
@@ -42,16 +53,34 @@ class DecisionTreeTrainingBackend:
         dataset_path: Path,
         model_path: Path,
         report_path: Path,
+        *,
+        feature_profile: str = "all_features",
     ) -> dict[str, object]:
+        if feature_profile not in FEATURE_PROFILES:
+            allowed = ", ".join(sorted(FEATURE_PROFILES))
+            raise ValueError(f"Unsupported feature profile: {feature_profile}. Allowed: {allowed}")
+
         rows = self._read_dataset(dataset_path)
         self._validate_rows(rows)
 
         labels = [row[LABEL_COLUMN] for row in rows]
-        candidate_feature_columns = [
+        all_candidate_feature_columns = [
             name
             for name in GenerateDatasetRow.fieldnames
             if name not in METADATA_COLUMNS and name != LABEL_COLUMN
         ]
+
+        if feature_profile == "operational_core":
+            candidate_feature_columns = [
+                name for name in all_candidate_feature_columns if name not in PROXY_COLUMNS
+            ]
+            excluded_profile_columns = sorted(
+                set(all_candidate_feature_columns).difference(candidate_feature_columns)
+            )
+        else:
+            candidate_feature_columns = list(all_candidate_feature_columns)
+            excluded_profile_columns = []
+
         empty_feature_columns = [
             name
             for name in candidate_feature_columns
@@ -145,11 +174,13 @@ class DecisionTreeTrainingBackend:
             "schema_version": SUPPORTED_SCHEMA_VERSION,
             "model_type": SUPPORTED_MODEL_TYPE,
             "model_role": "supervised_baseline_approximating_h6",
+            "feature_profile": feature_profile,
             "dataset_rows": len(rows),
             "train_rows": len(train_features),
             "test_rows": len(test_features),
             "class_distribution": dict(sorted(class_counts.items())),
             "feature_columns": feature_columns,
+            "excluded_profile_feature_columns": excluded_profile_columns,
             "excluded_empty_feature_columns": empty_feature_columns,
             "label_column": LABEL_COLUMN,
             "random_state": RANDOM_STATE,
@@ -182,6 +213,7 @@ class DecisionTreeTrainingBackend:
             "pipeline": pipeline,
             "schema_version": SUPPORTED_SCHEMA_VERSION,
             "feature_columns": feature_columns,
+            "feature_profile": feature_profile,
             "label_column": LABEL_COLUMN,
             "classes": classes,
             "random_state": RANDOM_STATE,

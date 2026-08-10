@@ -1,0 +1,14 @@
+<testsuite name="cl.bci.ecodig.performance.test.ParametricSimulation" tests="4" errors="0" failures="0" time="0">
+<testcase name="Global: percentage of successful events is greater than or equal to 100.0" status="true" time="0">
+  <system-out>Global: percentage of successful events is greater than or equal to 100.0</system-out>
+</testcase>
+<testcase name="Gatillar recurrencia de cesiones deudor: 99th percentile of response time is less than 5000.0" status="true" time="0">
+  <system-out>Gatillar recurrencia de cesiones deudor: 99th percentile of response time is less than 5000.0</system-out>
+</testcase>
+<testcase name="Obtener estado recurrencia cesiones: 99th percentile of response time is less than 5000.0" status="true" time="0">
+  <system-out>Obtener estado recurrencia cesiones: 99th percentile of response time is less than 5000.0</system-out>
+</testcase>
+<testcase name="Obtener resultado de recurrencia: 99th percentile of response time is less than 5000.0" status="true" time="0">
+  <system-out>Obtener resultado de recurrencia: 99th percentile of response time is less than 5000.0</system-out>
+</testcase>
+</testsuite>

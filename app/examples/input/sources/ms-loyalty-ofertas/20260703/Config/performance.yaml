@@ -1,0 +1,130 @@
+loadType: sequence
+features:
+  ####USERS
+  - name: obtener-ofertas-paginados-external #1
+    feature: classpath:cl/bci/ecodig/acceptance/ms-loyalty-ofertas-offers-users.feature@name=obtener-ofertas-paginados-external
+    performance: false
+    reason: "Deuda Técnica"
+    reason_detail: "El rpoblema no es de conectividad vine siendo la concurrencia que llega al ms-loyalty-campagns, ajunto ht de deuda tecnica: https://bcibank.atlassian.net/browse/PL-1120"
+    concurrency: very_low
+    iterations: low
+    response_time: very_high
+    operation_id: "OffersUserController_getOffersBy"
+  - name: obtener-ofertas-buscador-minimo #2
+    feature: classpath:cl/bci/ecodig/acceptance/ms-loyalty-ofertas-offers-users.feature@name=obtener-ofertas-buscador-minimo
+    performance: false
+    reason: "Deuda Técnica"
+    reason_detail: "Endpoint deprecado, ya no se utiliza en el flujo actual."
+    concurrency: high
+    iterations: medium
+    response_time: very_high
+    operation_id: "OffersUserController_getOffersMatches"
+  - name: obtener-oferta-by-id-external #3
+    feature: classpath:cl/bci/ecodig/acceptance/ms-loyalty-ofertas-offers-users.feature@name=obtener-oferta-by-id-external
+    performance: false
+    reason: "Deuda Técnica"
+    reason_detail: "Presenta latencias de +30s por dependencia externa, impactando el tiempo total de la prueba."
+    concurrency: medium
+    iterations: medium
+    response_time: very_high
+    operation_id: "OffersUserController_getOfferById"
+  - name: users-get-offer-slug
+    feature: classpath:cl/bci/ecodig/acceptance/getOfferBySlug.feature@name=users-get-offer-slug
+    performance: true
+    reason: "Se requiere performance"
+    reason_detail: "Aca puede ir cualquier texto si performance es true"
+    concurrency: high
+    iterations: medium
+    response_time: very_high
+    operation_id: "OffersUserController_getOfferBySlug"
+  - name: users-get-offers-recomendadas
+    feature: classpath:cl/bci/ecodig/acceptance/getOffersRecomendadas.feature@name=users-get-offers-recomendadas
+    performance: false
+    reason: "Deuda Técnica"
+    reason_detail: "Cuello de botella en ms-loyalty-ofertas-custom-v1 al consultar isHeavyUserOTope, provoca thread starvation de 20s"
+    concurrency: high
+    iterations: medium
+    response_time: very_high
+    operation_id: "OffersUserController_getOffersRecomendadas"
+  - name: obtener-ofertas-visibles
+    feature: classpath:cl/bci/ecodig/acceptance/ms-loyalty-ofertas-internal.feature@name=obtener-ofertas-visibles
+    performance: true
+    reason: "Se requiere performance"
+    reason_detail: "Aca puede ir cualquier texto si performance es true"
+    concurrency: very_low
+    iterations: low
+    response_time: very_high
+    operation_id: "OffersInternalController_getOfertas"
+  - name: users-get-offers-edc-con-rut
+    feature: classpath:cl/bci/ecodig/acceptance/getOffersEdC.feature@name=users-get-offers-edc-con-rut
+    performance: false
+    reason: "Sin datos de prueba"
+    reason_detail: "Sin datos de prueba"
+    concurrency: very_low
+    iterations: low
+    response_time: very_high
+    operation_id: "OffersUserController_getOffersEdC"
+  - name: users-get-offers-edc-sin-rut
+    feature: classpath:cl/bci/ecodig/acceptance/getOffersEdC.feature@name=users-get-offers-edc-sin-rut
+    performance: true
+    reason: "Se requiere performance"
+    reason_detail: "Aca puede ir cualquier texto si performance es true"
+    concurrency: low
+    iterations: medium
+    response_time: very_high
+    operation_id: "OffersUserController_getOffersEdC"
+  - name: users-get-offers-edc-rut-con-tyc
+    feature: classpath:cl/bci/ecodig/acceptance/getOffersEdC.feature@name=users-get-offers-edc-rut-con-tyc
+    performance: true
+    reason: "Se requiere performance"
+    reason_detail: "Aca puede ir cualquier texto si performance es true"
+    concurrency: low
+    iterations: medium
+    response_time: very_high
+    operation_id: "OffersUserController_getOffersEdC"
+  - name: create-offer-segmented-cashback-online
+    feature: classpath:cl/bci/ecodig/acceptance/ms-loyalty-ofertas-internal.feature@name=create-offer-segmented-cashback-online
+    performance: false
+    reason: "Transaccional"
+    reason_detail: "Aca puede ir cualquier texto si performance es true"
+    concurrency: low
+    iterations: low
+    response_time: very_high
+    operation_id: "OffersInternalController_create"
+  - name: update-offer-segmented-cashback-online
+    feature: classpath:cl/bci/ecodig/acceptance/ms-loyalty-ofertas-internal.feature@name=update-offer-segmented-cashback-online
+    performance: false
+    reason: "Transaccional"
+    reason_detail: "Aca puede ir cualquier texto si performance es true"
+    concurrency: low
+    iterations: low
+    response_time: very_high
+    operation_id: "OffersInternalController_update"
+  - name: get-offers-filtered
+    feature: classpath:cl/bci/ecodig/acceptance/getOffersFiltered.feature@name=get-offers-filtered
+    performance: true
+    reason: "Se requiere performance"
+    reason_detail: "Aca puede ir cualquier texto si performance es true"
+    concurrency: high
+    iterations: medium
+    response_time: medium
+    operation_id: "get-offers-filtered"
+  ####OFFER DETAIL SDUI
+  - name: offer-detail-by-id-200
+    feature: classpath:cl/bci/ecodig/acceptance/getOfferDetail.feature@name=offer-detail-by-id-200
+    performance: true
+    reason: "Se requiere performance"
+    reason_detail: "Endpoint de detalle de oferta por ID consumido desde el nuevo home"
+    concurrency: high
+    iterations: medium
+    response_time: very_high
+    operation_id: "OffersController_getOfferById"
+  - name: offer-detail-by-slug-200
+    feature: classpath:cl/bci/ecodig/acceptance/getOfferDetail.feature@name=offer-detail-by-slug-200
+    performance: true
+    reason: "Se requiere performance"
+    reason_detail: "Endpoint de detalle de oferta por slug consumido desde el nuevo home"
+    concurrency: high
+    iterations: medium
+    response_time: very_high
+    operation_id: "OffersController_getOfferBySlug"

@@ -10,6 +10,8 @@ class TrainingBackend(Protocol):
         dataset_path: Path,
         model_path: Path,
         report_path: Path,
+        *,
+        feature_profile: str = "all_features",
     ) -> dict[str, object]:
         """Train, persist and report one supervised-learning baseline."""
 
@@ -25,5 +27,12 @@ class TrainModel:
         dataset_path: Path,
         model_path: Path,
         report_path: Path,
+        *,
+        feature_profile: str = "all_features",
     ) -> dict[str, object]:
-        return self._backend.train(dataset_path, model_path, report_path)
+        return self._backend.train(
+            dataset_path,
+            model_path,
+            report_path,
+            feature_profile=feature_profile,
+        )

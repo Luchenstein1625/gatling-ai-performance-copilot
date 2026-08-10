@@ -1,0 +1,23 @@
+loadType: sequence
+features:
+  # Test 1: Validar información de lealtad de un usuario (GET /partners/{partnerId}/users/{loyaltyPartnerUserId}/rut/{userRut}/validate)
+  - name: validate-user-info-success
+    feature: classpath:cl/bci/ecodig/acceptance/partner.feature@name=validate-user-info-success
+    performance: true
+    reason: "Transaccional"
+    reason_detail: "No requiere prueba de performace porque depende exclusivamente del rendimiento de servicios externos"
+    concurrency: very_low
+    iterations: low
+    response_time: very_high
+    operation_id: validateUserInfo
+
+  # Test 2: Realizar un intercambio de puntos de lealtad (POST /partners/{partnerId}/users/{loyaltyPartnerUserId}/exchange)
+  - name: exchange-loyalty-points-success
+    feature: classpath:cl/bci/ecodig/acceptance/partner.feature@name=exchange-loyalty-points-success
+    performance: false
+    reason: "Transaccional"
+    reason_detail: "No requiere prueba de performace porque depende exclusivamente del rendimiento de servicios externos"
+    concurrency: low
+    iterations: medium
+    response_time: high
+    operation_id: exchangeLoyaltyPoints

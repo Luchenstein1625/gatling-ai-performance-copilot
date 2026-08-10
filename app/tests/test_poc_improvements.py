@@ -67,9 +67,15 @@ def test_model_evaluation_compares_assertion_ablation(tmp_path: Path) -> None:
 
     result = ModelEvaluator().evaluate(dataset, output, seeds=2)
 
-    assert set(result["variants"]) == {"all_features", "without_assertions"}
+    assert set(result["variants"]) == {
+        "all_features",
+        "without_assertions",
+        "operational_core",
+    }
     without_assertions = result["variants"]["without_assertions"]
     assert "assertions_failed" in without_assertions["excluded_columns"]
+    operational_core = result["variants"]["operational_core"]
+    assert "warning_count" in operational_core["excluded_columns"]
     assert output.exists()
 
 
@@ -106,7 +112,7 @@ def test_stable_component_can_be_recommended_to_evolve() -> None:
     plan = PlanQuadrantAction().execute(recommendation, 5)
 
     assert recommendation.action == "evolve"
-    assert recommendation.evidence["consecutive_successes"] == 3
+    assert recommendation.evidence["consecutive_successes"] == 4
     assert plan["action"] == "evaluate_load_increase"
     assert plan["proposed_load_increase_percent"] == 10
     assert plan["proposed_quadrant"] == 5
@@ -116,7 +122,7 @@ def test_stable_component_can_be_recommended_to_evolve() -> None:
 def test_component_without_enough_history_remains_unchanged() -> None:
     current = Recommendation(action="maintain", explanation="Complies")
 
-    recommendation = EvaluateEvolution().execute(
+    recommendation = EvaluateEvolution(minimum_consecutive_successes=4).execute(
         "balances",
         current,
         [_stable_observation("balances") for _ in range(2)],
@@ -136,8 +142,27 @@ def test_failure_in_recent_history_prevents_evolution() -> None:
 
     recommendation = EvaluateEvolution().execute("balances", current, history)
 
+    assert recommendation.action == "evolve"
+
+
+def test_historical_failure_prevents_evolution() -> None:
+    current = Recommendation(action="maintain", explanation="Complies")
+    history = [
+        _stable_observation("balances"),
+        EvolutionObservation(
+            component_id="balances",
+            recommendation_action="review",
+            p95_response_time_ms=1100,
+            response_time_target_ms=2000,
+            error_rate_percent=1.0,
+            assertions_all_passed=False,
+        ),
+    ]
+
+    recommendation = EvaluateEvolution().execute("balances", current, history)
+
     assert recommendation.action == "maintain"
-    assert recommendation.evidence["evolution_reason"] == "stability_criteria_not_met"
+    assert recommendation.evidence["evolution_reason"] == "historical_failures_detected"
 
 
 def test_review_recommendation_is_never_overridden() -> None:

@@ -223,3 +223,37 @@ def test_rejects_dataset_with_too_few_rows(tmp_path: Path) -> None:
             tmp_path / "model.joblib",
             tmp_path / "report.json",
         )
+
+
+def test_train_supports_operational_core_profile(tmp_path: Path) -> None:
+    dataset = tmp_path / "dataset.csv"
+    model = tmp_path / "model.joblib"
+    report = tmp_path / "report.json"
+    rows = [_row(index, "maintain" if index % 2 == 0 else "review") for index in range(24)]
+    _write_dataset(dataset, rows)
+
+    result = DecisionTreeTrainingBackend().train(
+        dataset,
+        model,
+        report,
+        feature_profile="operational_core",
+    )
+
+    assert result["feature_profile"] == "operational_core"
+    excluded = result["excluded_profile_feature_columns"]
+    assert "assertions_failed" in excluded
+    assert "warning_count" in excluded
+
+
+def test_train_rejects_unsupported_feature_profile(tmp_path: Path) -> None:
+    dataset = tmp_path / "dataset.csv"
+    rows = [_row(index, "maintain" if index % 2 == 0 else "review") for index in range(24)]
+    _write_dataset(dataset, rows)
+
+    with pytest.raises(ValueError, match="Unsupported feature profile"):
+        DecisionTreeTrainingBackend().train(
+            dataset,
+            tmp_path / "model.joblib",
+            tmp_path / "report.json",
+            feature_profile="unknown_profile",
+        )

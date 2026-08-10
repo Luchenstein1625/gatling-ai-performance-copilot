@@ -18,16 +18,16 @@ class EvolutionObservation(BaseModel):
 
 
 class EvaluateEvolution:
-    """Promote a compliant result to evolve only when its history is stable."""
+    """Promote a compliant result when component history is consistently successful."""
 
     def __init__(
         self,
-        minimum_consecutive_successes: int = 3,
+        minimum_consecutive_successes: int = 1,
         maximum_sla_utilization: float = 0.70,
         proposed_load_increase_percent: int = 10,
     ) -> None:
-        if minimum_consecutive_successes < 2:
-            raise ValueError("At least two consecutive successes are required.")
+        if minimum_consecutive_successes < 1:
+            raise ValueError("At least one success is required.")
         if not 0 < maximum_sla_utilization < 1:
             raise ValueError("SLA utilization must be between zero and one.")
         if proposed_load_increase_percent <= 0:
@@ -49,16 +49,17 @@ class EvaluateEvolution:
         component_history = [
             observation for observation in history if observation.component_id == component_id
         ]
-        recent = component_history[-self.minimum_consecutive_successes :]
+        successes_including_current = len(component_history) + 1
         evidence = {
             **current_recommendation.evidence,
             "component_id": component_id,
             "required_consecutive_successes": self.minimum_consecutive_successes,
             "observed_comparable_executions": len(component_history),
+            "successes_including_current": successes_including_current,
             "maximum_sla_utilization": self.maximum_sla_utilization,
         }
 
-        if len(recent) < self.minimum_consecutive_successes:
+        if successes_including_current < self.minimum_consecutive_successes:
             evidence["evolution_reason"] = "insufficient_history"
             return Recommendation(
                 action="maintain",
@@ -73,30 +74,26 @@ class EvaluateEvolution:
             observation.recommendation_action == "maintain"
             and observation.error_rate_percent == 0
             and observation.assertions_all_passed
-            and (
-                observation.p95_response_time_ms / observation.response_time_target_ms
-                <= self.maximum_sla_utilization
-            )
-            for observation in recent
+            for observation in component_history
         )
         if not stable:
-            evidence["evolution_reason"] = "stability_criteria_not_met"
+            evidence["evolution_reason"] = "historical_failures_detected"
             return Recommendation(
                 action="maintain",
                 explanation=(
-                    "La ejecución cumple, pero el historial reciente no conserva "
-                    "el margen y la estabilidad exigidos para aumentar la carga."
+                    "La ejecución actual cumple, pero existen fallas históricas del "
+                    "mismo componente y no corresponde aumentar carga todavía."
                 ),
                 evidence=evidence,
             )
 
         evidence.update(
             {
-                "triggered_rule": "stable_history",
-                "consecutive_successes": len(recent),
+                "triggered_rule": "all_component_executions_successful",
+                "consecutive_successes": successes_including_current,
                 "sla_utilization": [
                     observation.p95_response_time_ms / observation.response_time_target_ms
-                    for observation in recent
+                    for observation in component_history
                 ],
                 "proposed_load_increase_percent": self.proposed_load_increase_percent,
             }
@@ -104,7 +101,7 @@ class EvaluateEvolution:
         return Recommendation(
             action="evolve",
             explanation=(
-                "El componente mantiene resultados estables y con margen; "
+                "El componente mantiene historial 100% exitoso; "
                 "puede evaluarse un incremento controlado de carga."
             ),
             evidence=evidence,

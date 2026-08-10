@@ -1,0 +1,58 @@
+loadType: sequence
+features:
+- name: obtener consentimiento por id
+  feature: classpath:cl/bci/ecodig/acceptance/consentimiento.feature@name=buscarPorId
+  performance: true
+  reason: "Se requiere performance"
+  reason_detail: "obtiene un consentimiento por id"
+  concurrency: low
+  iterations: low
+  response_time: low
+- name: buscar consentimiento
+  feature: classpath:cl/bci/ecodig/acceptance/consentimiento.feature@name=buscarConsentimiento
+  performance: true
+  reason: "Se requiere performance"
+  reason_detail: "obtiene un consentimiento por busqueda de sus atributos"
+  concurrency: low
+  iterations: low
+  response_time: very_high
+- name: obtener parametria
+  feature: classpath:cl/bci/ecodig/acceptance/consentimiento.feature@name=getParametriaPerson
+  performance: true
+  reason: "Se requiere performance"
+  reason_detail: "obtiene la parametria creando un consentimiento"
+  concurrency: low
+  iterations: low
+  response_time: low
+- name: actualiza consentimiento
+  feature: classpath:cl/bci/ecodig/acceptance/consentimiento.feature@name=actualizar-person
+  performance: true
+  reason: "Se requiere performance"
+  reason_detail: "Actualiza el estado del consentimiento"
+  concurrency: low
+  iterations: low
+  response_time: medium
+- name: listado consentimientos
+  feature: classpath:cl/bci/ecodig/acceptance/consentimiento.feature@name=listadoConsentimientos
+  performance: true
+  reason: "Se requiere performance"
+  reason_detail: "Lista consentimientos por algun criterio de busqueda"
+  concurrency: low
+  iterations: low
+  response_time: medium
+- name: consentimientos_partners
+  feature: classpath:cl/bci/ecodig/acceptance/consentimientoPersona.feature@name=consentimientos_partners
+  performance: true
+  reason: "Se requiere performance"
+  reason_detail: "Lista consentimientos por algun criterio de busqueda"
+  concurrency: high
+  iterations: high
+  response_time: high
+- name: actualiza extra consentimiento
+  feature: classpath:cl/bci/ecodig/acceptance/consentimiento.feature@name=actualizar-extra-person
+  performance: true
+  reason: "Se requiere performance"
+  reason_detail: "Actualiza el bloque extra del consentimiento"
+  concurrency: low
+  iterations: low
+  response_time: medium

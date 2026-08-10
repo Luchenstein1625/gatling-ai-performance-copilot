@@ -1,0 +1,80 @@
+ASSERTION	AAECAAICAAAAAAAAAFlA
+ASSERTION	AAMAARp2YWxpZGF0ZS11c2VyLWluZm8tc3VjY2VzcwMAAQUAAAAAAADAWEADAAAAAAAATM1A
+RUN	cl.bci.ecodig.performance.test.ParametricSimulation	parametricsimulation	1760528692608	 	3.7.4
+USER	validate-user-info-success	START	1760528692906
+USER	validate-user-info-success	START	1760528692927
+USER	validate-user-info-success	START	1760528692917
+USER	validate-user-info-success	START	1760528692873
+USER	validate-user-info-success	START	1760528692891
+REQUEST		GET /ECOAzDevOps/ECOAzureDevOps/_apis/distributedtask/variablegroups?groupName=testing-crt	1760528697348	1760528697967	OK	 
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1760528698444	1760528699193	OK	 
+REQUEST		validate-user-info-success	1760528699251	1760528701918	OK	 
+REQUEST		validate-user-info-success	1760528699215	1760528702010	OK	 
+REQUEST		validate-user-info-success	1760528699215	1760528702375	OK	 
+REQUEST		validate-user-info-success	1760528699231	1760528702395	OK	 
+REQUEST		validate-user-info-success	1760528699217	1760528702419	OK	 
+REQUEST		validate-user-info-success	1760528702167	1760528703055	OK	 
+REQUEST		validate-user-info-success	1760528702181	1760528703087	OK	 
+REQUEST		validate-user-info-success	1760528702519	1760528703318	OK	 
+REQUEST		validate-user-info-success	1760528702548	1760528703374	OK	 
+REQUEST		validate-user-info-success	1760528702535	1760528703413	OK	 
+REQUEST		validate-user-info-success	1760528703118	1760528703930	OK	 
+REQUEST		validate-user-info-success	1760528703433	1760528704248	OK	 
+REQUEST		validate-user-info-success	1760528703147	1760528704276	OK	 
+REQUEST		validate-user-info-success	1760528703379	1760528704555	OK	 
+REQUEST		validate-user-info-success	1760528703505	1760528704676	OK	 
+REQUEST		validate-user-info-success	1760528704017	1760528704803	OK	 
+REQUEST		validate-user-info-success	1760528704341	1760528705155	OK	 
+REQUEST		validate-user-info-success	1760528704355	1760528705416	OK	 
+REQUEST		validate-user-info-success	1760528704612	1760528705521	OK	 
+REQUEST		validate-user-info-success	1760528704726	1760528705740	OK	 
+REQUEST		validate-user-info-success	1760528704842	1760528705888	OK	 
+USER	validate-user-info-success	END	1760528705892
+REQUEST		validate-user-info-success	1760528705201	1760528706087	OK	 
+USER	validate-user-info-success	END	1760528706091
+REQUEST		validate-user-info-success	1760528705447	1760528706268	OK	 
+USER	validate-user-info-success	END	1760528706272
+REQUEST		validate-user-info-success	1760528705562	1760528706316	OK	 
+USER	validate-user-info-success	END	1760528706318
+REQUEST		validate-user-info-success	1760528705770	1760528706600	OK	 
+USER	validate-user-info-success	END	1760528706605
+USER	exchange-loyalty-points-success	START	1760528706873
+USER	exchange-loyalty-points-success	START	1760528706874
+USER	exchange-loyalty-points-success	START	1760528706874
+USER	exchange-loyalty-points-success	START	1760528706865
+USER	exchange-loyalty-points-success	END	1760528706874
+USER	exchange-loyalty-points-success	END	1760528706874
+USER	exchange-loyalty-points-success	END	1760528706874
+USER	exchange-loyalty-points-success	START	1760528706874
+USER	exchange-loyalty-points-success	START	1760528706874
+USER	exchange-loyalty-points-success	START	1760528706874
+USER	exchange-loyalty-points-success	START	1760528706875
+USER	exchange-loyalty-points-success	START	1760528706875
+USER	exchange-loyalty-points-success	END	1760528706875
+USER	exchange-loyalty-points-success	START	1760528706875
+USER	exchange-loyalty-points-success	END	1760528706875
+USER	exchange-loyalty-points-success	END	1760528706875
+USER	exchange-loyalty-points-success	END	1760528706875
+USER	exchange-loyalty-points-success	START	1760528706875
+USER	exchange-loyalty-points-success	END	1760528706875
+USER	exchange-loyalty-points-success	START	1760528706875
+USER	exchange-loyalty-points-success	END	1760528706875
+USER	exchange-loyalty-points-success	END	1760528706875
+USER	exchange-loyalty-points-success	START	1760528706875
+USER	exchange-loyalty-points-success	START	1760528706875
+USER	exchange-loyalty-points-success	END	1760528706875
+USER	exchange-loyalty-points-success	END	1760528706876
+USER	exchange-loyalty-points-success	START	1760528706876
+USER	exchange-loyalty-points-success	START	1760528706876
+USER	exchange-loyalty-points-success	START	1760528706876
+USER	exchange-loyalty-points-success	END	1760528706876
+USER	exchange-loyalty-points-success	END	1760528706876
+USER	exchange-loyalty-points-success	END	1760528706876
+USER	exchange-loyalty-points-success	END	1760528706876
+USER	exchange-loyalty-points-success	END	1760528706876
+USER	exchange-loyalty-points-success	START	1760528706883
+USER	exchange-loyalty-points-success	START	1760528706883
+USER	exchange-loyalty-points-success	START	1760528706883
+USER	exchange-loyalty-points-success	END	1760528706884
+USER	exchange-loyalty-points-success	END	1760528706884
+USER	exchange-loyalty-points-success	END	1760528706884

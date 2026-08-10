@@ -1,0 +1,2990 @@
+ASSERTION	AAECAAICAAAAAAAAAFlA
+ASSERTION	AAMAARR1c2Vycy1nZXQtb2ZmZXItc2x1ZwMAAQUAAAAAAADAWEADAAAAAAAATM1A
+ASSERTION	AAMAARhvYnRlbmVyLW9mZXJ0YXMtdmlzaWJsZXMDAAEFAAAAAAAAwFhAAwAAAAAAAEzNQA==
+ASSERTION	AAMAARx1c2Vycy1nZXQtb2ZmZXJzLWVkYy1zaW4tcnV0AwABBQAAAAAAAMBYQAMAAAAAAABMzUA=
+ASSERTION	AAMAASB1c2Vycy1nZXQtb2ZmZXJzLWVkYy1ydXQtY29uLXR5YwMAAQUAAAAAAADAWEADAAAAAAAATM1A
+ASSERTION	AAMAARNnZXQtb2ZmZXJzLWZpbHRlcmVkAwABBQAAAAAAAMBYQAMAAAAAAACIs0A=
+ASSERTION	AAMAARZvZmZlci1kZXRhaWwtYnktaWQtMjAwAwABBQAAAAAAAMBYQAMAAAAAAABMzUA=
+ASSERTION	AAMAARhvZmZlci1kZXRhaWwtYnktc2x1Zy0yMDADAAEFAAAAAAAAwFhAAwAAAAAAAEzNQA==
+RUN	cl.bci.ecodig.performance.test.ParametricSimulation	parametricsimulation	1782227811605	 	3.7.4
+USER	obtener-ofertas-paginados-external	START	1782227811735
+USER	obtener-ofertas-paginados-external	START	1782227811740
+USER	obtener-ofertas-paginados-external	START	1782227811735
+USER	obtener-ofertas-paginados-external	START	1782227811743
+USER	obtener-ofertas-paginados-external	START	1782227811734
+USER	obtener-ofertas-paginados-external	END	1782227811743
+USER	obtener-ofertas-paginados-external	END	1782227811744
+USER	obtener-ofertas-paginados-external	END	1782227811747
+USER	obtener-ofertas-paginados-external	END	1782227811747
+USER	obtener-ofertas-paginados-external	END	1782227811747
+USER	obtener-ofertas-buscador-minimo	START	1782227812718
+USER	obtener-ofertas-buscador-minimo	START	1782227812718
+USER	obtener-ofertas-buscador-minimo	START	1782227812718
+USER	obtener-ofertas-buscador-minimo	START	1782227812719
+USER	obtener-ofertas-buscador-minimo	START	1782227812719
+USER	obtener-ofertas-buscador-minimo	START	1782227812719
+USER	obtener-ofertas-buscador-minimo	START	1782227812719
+USER	obtener-ofertas-buscador-minimo	START	1782227812719
+USER	obtener-ofertas-buscador-minimo	START	1782227812719
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812721
+USER	obtener-ofertas-buscador-minimo	START	1782227812721
+USER	obtener-ofertas-buscador-minimo	START	1782227812721
+USER	obtener-ofertas-buscador-minimo	START	1782227812721
+USER	obtener-ofertas-buscador-minimo	START	1782227812721
+USER	obtener-ofertas-buscador-minimo	START	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812718
+USER	obtener-ofertas-buscador-minimo	START	1782227812721
+USER	obtener-ofertas-buscador-minimo	START	1782227812721
+USER	obtener-ofertas-buscador-minimo	START	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812719
+USER	obtener-ofertas-buscador-minimo	START	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812721
+USER	obtener-ofertas-buscador-minimo	START	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812720
+USER	obtener-ofertas-buscador-minimo	END	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812720
+USER	obtener-ofertas-buscador-minimo	END	1782227812720
+USER	obtener-ofertas-buscador-minimo	END	1782227812720
+USER	obtener-ofertas-buscador-minimo	END	1782227812720
+USER	obtener-ofertas-buscador-minimo	END	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812721
+USER	obtener-ofertas-buscador-minimo	START	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812720
+USER	obtener-ofertas-buscador-minimo	START	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	START	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	START	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	START	1782227812722
+USER	obtener-ofertas-buscador-minimo	START	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	START	1782227812722
+USER	obtener-ofertas-buscador-minimo	START	1782227812722
+USER	obtener-ofertas-buscador-minimo	START	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	START	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	START	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812721
+USER	obtener-ofertas-buscador-minimo	END	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812722
+USER	obtener-ofertas-buscador-minimo	END	1782227812722
+USER	obtener-oferta-by-id-external	START	1782227813717
+USER	obtener-oferta-by-id-external	START	1782227813717
+USER	obtener-oferta-by-id-external	START	1782227813717
+USER	obtener-oferta-by-id-external	START	1782227813717
+USER	obtener-oferta-by-id-external	START	1782227813717
+USER	obtener-oferta-by-id-external	START	1782227813718
+USER	obtener-oferta-by-id-external	START	1782227813718
+USER	obtener-oferta-by-id-external	START	1782227813718
+USER	obtener-oferta-by-id-external	START	1782227813718
+USER	obtener-oferta-by-id-external	START	1782227813718
+USER	obtener-oferta-by-id-external	START	1782227813718
+USER	obtener-oferta-by-id-external	START	1782227813718
+USER	obtener-oferta-by-id-external	START	1782227813718
+USER	obtener-oferta-by-id-external	START	1782227813718
+USER	obtener-oferta-by-id-external	START	1782227813718
+USER	obtener-oferta-by-id-external	END	1782227813717
+USER	obtener-oferta-by-id-external	END	1782227813717
+USER	obtener-oferta-by-id-external	END	1782227813717
+USER	obtener-oferta-by-id-external	END	1782227813717
+USER	obtener-oferta-by-id-external	END	1782227813718
+USER	obtener-oferta-by-id-external	START	1782227813718
+USER	obtener-oferta-by-id-external	END	1782227813718
+USER	obtener-oferta-by-id-external	START	1782227813718
+USER	obtener-oferta-by-id-external	END	1782227813718
+USER	obtener-oferta-by-id-external	START	1782227813718
+USER	obtener-oferta-by-id-external	START	1782227813718
+USER	obtener-oferta-by-id-external	END	1782227813718
+USER	obtener-oferta-by-id-external	START	1782227813719
+USER	obtener-oferta-by-id-external	END	1782227813718
+USER	obtener-oferta-by-id-external	END	1782227813718
+USER	obtener-oferta-by-id-external	END	1782227813718
+USER	obtener-oferta-by-id-external	END	1782227813718
+USER	obtener-oferta-by-id-external	START	1782227813719
+USER	obtener-oferta-by-id-external	END	1782227813718
+USER	obtener-oferta-by-id-external	START	1782227813719
+USER	obtener-oferta-by-id-external	END	1782227813718
+USER	obtener-oferta-by-id-external	START	1782227813719
+USER	obtener-oferta-by-id-external	START	1782227813719
+USER	obtener-oferta-by-id-external	START	1782227813719
+USER	obtener-oferta-by-id-external	START	1782227813721
+USER	obtener-oferta-by-id-external	START	1782227813722
+USER	obtener-oferta-by-id-external	START	1782227813722
+USER	obtener-oferta-by-id-external	START	1782227813722
+USER	obtener-oferta-by-id-external	START	1782227813722
+USER	obtener-oferta-by-id-external	START	1782227813722
+USER	obtener-oferta-by-id-external	START	1782227813722
+USER	obtener-oferta-by-id-external	START	1782227813723
+USER	obtener-oferta-by-id-external	START	1782227813723
+USER	obtener-oferta-by-id-external	START	1782227813723
+USER	obtener-oferta-by-id-external	START	1782227813723
+USER	obtener-oferta-by-id-external	START	1782227813723
+USER	obtener-oferta-by-id-external	END	1782227813718
+USER	obtener-oferta-by-id-external	END	1782227813719
+USER	obtener-oferta-by-id-external	START	1782227813725
+USER	obtener-oferta-by-id-external	START	1782227813725
+USER	obtener-oferta-by-id-external	START	1782227813725
+USER	obtener-oferta-by-id-external	END	1782227813719
+USER	obtener-oferta-by-id-external	END	1782227813719
+USER	obtener-oferta-by-id-external	END	1782227813719
+USER	obtener-oferta-by-id-external	END	1782227813719
+USER	obtener-oferta-by-id-external	END	1782227813719
+USER	obtener-oferta-by-id-external	END	1782227813719
+USER	obtener-oferta-by-id-external	END	1782227813719
+USER	obtener-oferta-by-id-external	END	1782227813719
+USER	obtener-oferta-by-id-external	END	1782227813719
+USER	obtener-oferta-by-id-external	END	1782227813722
+USER	obtener-oferta-by-id-external	END	1782227813722
+USER	obtener-oferta-by-id-external	END	1782227813722
+USER	obtener-oferta-by-id-external	END	1782227813722
+USER	obtener-oferta-by-id-external	END	1782227813722
+USER	obtener-oferta-by-id-external	END	1782227813722
+USER	obtener-oferta-by-id-external	END	1782227813722
+USER	obtener-oferta-by-id-external	END	1782227813724
+USER	obtener-oferta-by-id-external	END	1782227813724
+USER	obtener-oferta-by-id-external	END	1782227813724
+USER	obtener-oferta-by-id-external	END	1782227813724
+USER	obtener-oferta-by-id-external	END	1782227813724
+USER	obtener-oferta-by-id-external	END	1782227813725
+USER	obtener-oferta-by-id-external	END	1782227813725
+USER	obtener-oferta-by-id-external	END	1782227813725
+USER	users-get-offer-slug	START	1782227814717
+USER	users-get-offer-slug	START	1782227814717
+USER	users-get-offer-slug	START	1782227814717
+USER	users-get-offer-slug	START	1782227814717
+USER	users-get-offer-slug	START	1782227814717
+USER	users-get-offer-slug	START	1782227814717
+USER	users-get-offer-slug	START	1782227814719
+USER	users-get-offer-slug	START	1782227815864
+USER	users-get-offer-slug	START	1782227815871
+USER	users-get-offer-slug	START	1782227815873
+USER	users-get-offer-slug	START	1782227814718
+USER	users-get-offer-slug	START	1782227815895
+USER	users-get-offer-slug	START	1782227815861
+USER	users-get-offer-slug	START	1782227815863
+USER	users-get-offer-slug	START	1782227815906
+USER	users-get-offer-slug	START	1782227815878
+USER	users-get-offer-slug	START	1782227815919
+USER	users-get-offer-slug	START	1782227815922
+USER	users-get-offer-slug	START	1782227815871
+USER	users-get-offer-slug	START	1782227815925
+USER	users-get-offer-slug	START	1782227815940
+USER	users-get-offer-slug	START	1782227815927
+USER	users-get-offer-slug	START	1782227815929
+USER	users-get-offer-slug	START	1782227815947
+USER	users-get-offer-slug	START	1782227815951
+USER	users-get-offer-slug	START	1782227815964
+USER	users-get-offer-slug	START	1782227815969
+USER	users-get-offer-slug	START	1782227815961
+USER	users-get-offer-slug	START	1782227815965
+USER	users-get-offer-slug	START	1782227815947
+USER	users-get-offer-slug	START	1782227815951
+USER	users-get-offer-slug	START	1782227815973
+USER	users-get-offer-slug	START	1782227815987
+USER	users-get-offer-slug	START	1782227815968
+USER	users-get-offer-slug	START	1782227815984
+USER	users-get-offer-slug	START	1782227815981
+USER	users-get-offer-slug	START	1782227815986
+USER	users-get-offer-slug	START	1782227815989
+USER	users-get-offer-slug	START	1782227815989
+USER	users-get-offer-slug	START	1782227815989
+USER	users-get-offer-slug	START	1782227816004
+USER	users-get-offer-slug	START	1782227816001
+USER	users-get-offer-slug	START	1782227816008
+USER	users-get-offer-slug	START	1782227816006
+USER	users-get-offer-slug	START	1782227816001
+USER	users-get-offer-slug	START	1782227816010
+USER	users-get-offer-slug	START	1782227816003
+USER	users-get-offer-slug	START	1782227816017
+USER	users-get-offer-slug	START	1782227816025
+USER	users-get-offer-slug	START	1782227816031
+USER	users-get-offer-slug	START	1782227816024
+USER	users-get-offer-slug	START	1782227816032
+USER	users-get-offer-slug	START	1782227816029
+USER	users-get-offer-slug	START	1782227816026
+USER	users-get-offer-slug	START	1782227816036
+USER	users-get-offer-slug	START	1782227816040
+USER	users-get-offer-slug	START	1782227816050
+USER	users-get-offer-slug	START	1782227816051
+USER	users-get-offer-slug	START	1782227816055
+USER	users-get-offer-slug	START	1782227816062
+REQUEST		GET /ECOAzDevOps/ECOAzureDevOps/_apis/distributedtask/variablegroups?groupName=testing-crt	1782227817969	1782227818386	OK	 
+REQUEST		POST /e5dea286-ff90-4426-9fe5-a29cb8192882/oauth2/v2.0/token	1782227818580	1782227819831	OK	 
+REQUEST		users-get-offer-slug	1782227819869	1782227822319	OK	 
+REQUEST		users-get-offer-slug	1782227819872	1782227822320	OK	 
+REQUEST		users-get-offer-slug	1782227819870	1782227822320	OK	 
+REQUEST		users-get-offer-slug	1782227819872	1782227822321	OK	 
+REQUEST		users-get-offer-slug	1782227819878	1782227822322	OK	 
+REQUEST		users-get-offer-slug	1782227819871	1782227822323	OK	 
+REQUEST		users-get-offer-slug	1782227819869	1782227822324	OK	 
+REQUEST		users-get-offer-slug	1782227819877	1782227822340	OK	 
+REQUEST		users-get-offer-slug	1782227822345	1782227822784	OK	 
+REQUEST		users-get-offer-slug	1782227822373	1782227822824	OK	 
+REQUEST		users-get-offer-slug	1782227822419	1782227822846	OK	 
+REQUEST		users-get-offer-slug	1782227822397	1782227823153	OK	 
+REQUEST		users-get-offer-slug	1782227822414	1782227823153	OK	 
+REQUEST		users-get-offer-slug	1782227822434	1782227823194	OK	 
+REQUEST		users-get-offer-slug	1782227822364	1782227823411	OK	 
+REQUEST		users-get-offer-slug	1782227823178	1782227823619	OK	 
+REQUEST		users-get-offer-slug	1782227822356	1782227823625	OK	 
+REQUEST		users-get-offer-slug	1782227822800	1782227823634	OK	 
+REQUEST		users-get-offer-slug	1782227823219	1782227823692	OK	 
+REQUEST		users-get-offer-slug	1782227822860	1782227823701	OK	 
+REQUEST		users-get-offer-slug	1782227822853	1782227823707	OK	 
+REQUEST		users-get-offer-slug	1782227823425	1782227823851	OK	 
+REQUEST		users-get-offer-slug	1782227823176	1782227823920	OK	 
+REQUEST		users-get-offer-slug	1782227823649	1782227824050	OK	 
+REQUEST		users-get-offer-slug	1782227823646	1782227824399	OK	 
+REQUEST		users-get-offer-slug	1782227823652	1782227824409	OK	 
+REQUEST		users-get-offer-slug	1782227824068	1782227824465	OK	 
+REQUEST		users-get-offer-slug	1782227823705	1782227824474	OK	 
+REQUEST		users-get-offer-slug	1782227823725	1782227824499	OK	 
+REQUEST		users-get-offer-slug	1782227823718	1782227824813	OK	 
+REQUEST		users-get-offer-slug	1782227824410	1782227824815	OK	 
+REQUEST		users-get-offer-slug	1782227823862	1782227824888	OK	 
+REQUEST		users-get-offer-slug	1782227824505	1782227824890	OK	 
+REQUEST		users-get-offer-slug	1782227823930	1782227824928	OK	 
+REQUEST		users-get-offer-slug	1782227824516	1782227824939	OK	 
+REQUEST		users-get-offer-slug	1782227824487	1782227825158	OK	 
+REQUEST		users-get-offer-slug	1782227824422	1782227825188	OK	 
+REQUEST		users-get-offer-slug	1782227824906	1782227825328	OK	 
+REQUEST		users-get-offer-slug	1782227824950	1782227825350	OK	 
+REQUEST		users-get-offer-slug	1782227824829	1782227825451	OK	 
+REQUEST		users-get-offer-slug	1782227824830	1782227825561	OK	 
+REQUEST		users-get-offer-slug	1782227825203	1782227825621	OK	 
+REQUEST		users-get-offer-slug	1782227824908	1782227825662	OK	 
+REQUEST		users-get-offer-slug	1782227824957	1782227825674	OK	 
+REQUEST		users-get-offer-slug	1782227825336	1782227825734	OK	 
+REQUEST		users-get-offer-slug	1782227825364	1782227825783	OK	 
+REQUEST		users-get-offer-slug	1782227825167	1782227825878	OK	 
+REQUEST		users-get-offer-slug	1782227825575	1782227825960	OK	 
+REQUEST		users-get-offer-slug	1782227825460	1782227826120	OK	 
+REQUEST		users-get-offer-slug	1782227825755	1782227826144	OK	 
+REQUEST		users-get-offer-slug	1782227825633	1782227826251	OK	 
+REQUEST		users-get-offer-slug	1782227825689	1782227826315	OK	 
+REQUEST		users-get-offer-slug	1782227825901	1782227826409	OK	 
+REQUEST		users-get-offer-slug	1782227826018	1782227826420	OK	 
+REQUEST		users-get-offer-slug	1782227825683	1782227826426	OK	 
+REQUEST		users-get-offer-slug	1782227825802	1782227826501	OK	 
+REQUEST		users-get-offer-slug	1782227826338	1782227826767	OK	 
+REQUEST		users-get-offer-slug	1782227826437	1782227826814	OK	 
+REQUEST		users-get-offer-slug	1782227826144	1782227826819	OK	 
+REQUEST		users-get-offer-slug	1782227826440	1782227826840	OK	 
+REQUEST		users-get-offer-slug	1782227826183	1782227826926	OK	 
+REQUEST		users-get-offer-slug	1782227826512	1782227826927	OK	 
+REQUEST		users-get-offer-slug	1782227826264	1782227827026	OK	 
+REQUEST		users-get-offer-slug	1782227826774	1782227827150	OK	 
+REQUEST		users-get-offer-slug	1782227826427	1782227827155	OK	 
+REQUEST		users-get-offer-slug	1782227826828	1782227827200	OK	 
+REQUEST		users-get-offer-slug	1782227826849	1782227827223	OK	 
+REQUEST		users-get-offer-slug	1782227826940	1782227827295	OK	 
+REQUEST		users-get-offer-slug	1782227826934	1782227827327	OK	 
+REQUEST		users-get-offer-slug	1782227826828	1782227827434	OK	 
+REQUEST		users-get-offer-slug	1782227827157	1782227827572	OK	 
+REQUEST		users-get-offer-slug	1782227827210	1782227827613	OK	 
+REQUEST		users-get-offer-slug	1782227827233	1782227827613	OK	 
+REQUEST		users-get-offer-slug	1782227827037	1782227827677	OK	 
+REQUEST		users-get-offer-slug	1782227827336	1782227827725	OK	 
+REQUEST		users-get-offer-slug	1782227827441	1782227827849	OK	 
+REQUEST		users-get-offer-slug	1782227827165	1782227827873	OK	 
+REQUEST		users-get-offer-slug	1782227827303	1782227827973	OK	 
+REQUEST		users-get-offer-slug	1782227827620	1782227827992	OK	 
+REQUEST		users-get-offer-slug	1782227827625	1782227828035	OK	 
+REQUEST		users-get-offer-slug	1782227827687	1782227828096	OK	 
+REQUEST		users-get-offer-slug	1782227827732	1782227828116	OK	 
+REQUEST		users-get-offer-slug	1782227827857	1782227828221	OK	 
+REQUEST		users-get-offer-slug	1782227827581	1782227828243	OK	 
+REQUEST		users-get-offer-slug	1782227827887	1782227828325	OK	 
+REQUEST		users-get-offer-slug	1782227827980	1782227828360	OK	 
+REQUEST		users-get-offer-slug	1782227828002	1782227828372	OK	 
+REQUEST		users-get-offer-slug	1782227828042	1782227828457	OK	 
+REQUEST		users-get-offer-slug	1782227828103	1782227828495	OK	 
+REQUEST		users-get-offer-slug	1782227828227	1782227828589	OK	 
+REQUEST		users-get-offer-slug	1782227828249	1782227828615	OK	 
+REQUEST		users-get-offer-slug	1782227828332	1782227828737	OK	 
+REQUEST		users-get-offer-slug	1782227828378	1782227828739	OK	 
+REQUEST		users-get-offer-slug	1782227828131	1782227828804	OK	 
+REQUEST		users-get-offer-slug	1782227828501	1782227828932	OK	 
+REQUEST		users-get-offer-slug	1782227828463	1782227828954	OK	 
+REQUEST		users-get-offer-slug	1782227828366	1782227828983	OK	 
+REQUEST		users-get-offer-slug	1782227828621	1782227829009	OK	 
+REQUEST		users-get-offer-slug	1782227828743	1782227829108	OK	 
+REQUEST		users-get-offer-slug	1782227828746	1782227829164	OK	 
+REQUEST		users-get-offer-slug	1782227828813	1782227829178	OK	 
+REQUEST		users-get-offer-slug	1782227828596	1782227829211	OK	 
+REQUEST		users-get-offer-slug	1782227828938	1782227829323	OK	 
+REQUEST		users-get-offer-slug	1782227828992	1782227829382	OK	 
+REQUEST		users-get-offer-slug	1782227829114	1782227829493	OK	 
+REQUEST		users-get-offer-slug	1782227829183	1782227829547	OK	 
+REQUEST		users-get-offer-slug	1782227828960	1782227829582	OK	 
+REQUEST		users-get-offer-slug	1782227829014	1782227830506	OK	 
+REQUEST		users-get-offer-slug	1782227829217	1782227830506	OK	 
+REQUEST		users-get-offer-slug	1782227829170	1782227830596	OK	 
+REQUEST		users-get-offer-slug	1782227829392	1782227830650	OK	 
+REQUEST		users-get-offer-slug	1782227829499	1782227830650	OK	 
+REQUEST		users-get-offer-slug	1782227829330	1782227830650	OK	 
+REQUEST		users-get-offer-slug	1782227829588	1782227830826	OK	 
+REQUEST		users-get-offer-slug	1782227829554	1782227830830	OK	 
+REQUEST		users-get-offer-slug	1782227830515	1782227830902	OK	 
+REQUEST		users-get-offer-slug	1782227830516	1782227830922	OK	 
+REQUEST		users-get-offer-slug	1782227830602	1782227830962	OK	 
+REQUEST		users-get-offer-slug	1782227830665	1782227831035	OK	 
+REQUEST		users-get-offer-slug	1782227830660	1782227831067	OK	 
+REQUEST		users-get-offer-slug	1782227830663	1782227831068	OK	 
+REQUEST		users-get-offer-slug	1782227830833	1782227831191	OK	 
+REQUEST		users-get-offer-slug	1782227830908	1782227831267	OK	 
+REQUEST		users-get-offer-slug	1782227830927	1782227831291	OK	 
+REQUEST		users-get-offer-slug	1782227830968	1782227831359	OK	 
+REQUEST		users-get-offer-slug	1782227831042	1782227831425	OK	 
+REQUEST		users-get-offer-slug	1782227831080	1782227831442	OK	 
+REQUEST		users-get-offer-slug	1782227831082	1782227831486	OK	 
+REQUEST		users-get-offer-slug	1782227830836	1782227831511	OK	 
+REQUEST		users-get-offer-slug	1782227831199	1782227831580	OK	 
+REQUEST		users-get-offer-slug	1782227831274	1782227831709	OK	 
+REQUEST		users-get-offer-slug	1782227831374	1782227831757	OK	 
+REQUEST		users-get-offer-slug	1782227831431	1782227831795	OK	 
+REQUEST		users-get-offer-slug	1782227831449	1782227831848	OK	 
+REQUEST		users-get-offer-slug	1782227831492	1782227831861	OK	 
+REQUEST		users-get-offer-slug	1782227831516	1782227831884	OK	 
+REQUEST		users-get-offer-slug	1782227831304	1782227831920	OK	 
+REQUEST		users-get-offer-slug	1782227831585	1782227831956	OK	 
+REQUEST		users-get-offer-slug	1782227831765	1782227832159	OK	 
+REQUEST		users-get-offer-slug	1782227831859	1782227832255	OK	 
+REQUEST		users-get-offer-slug	1782227831834	1782227832261	OK	 
+REQUEST		users-get-offer-slug	1782227831884	1782227832279	OK	 
+REQUEST		users-get-offer-slug	1782227831716	1782227832332	OK	 
+REQUEST		users-get-offer-slug	1782227831972	1782227832343	OK	 
+REQUEST		users-get-offer-slug	1782227831948	1782227832347	OK	 
+REQUEST		users-get-offer-slug	1782227832180	1782227832552	OK	 
+REQUEST		users-get-offer-slug	1782227831903	1782227832624	OK	 
+REQUEST		users-get-offer-slug	1782227832261	1782227832638	OK	 
+REQUEST		users-get-offer-slug	1782227832269	1782227832651	OK	 
+REQUEST		users-get-offer-slug	1782227832284	1782227832674	OK	 
+REQUEST		users-get-offer-slug	1782227832351	1782227832795	OK	 
+REQUEST		users-get-offer-slug	1782227832354	1782227832884	OK	 
+REQUEST		users-get-offer-slug	1782227832558	1782227832963	OK	 
+REQUEST		users-get-offer-slug	1782227832634	1782227833050	OK	 
+REQUEST		users-get-offer-slug	1782227832662	1782227833070	OK	 
+REQUEST		users-get-offer-slug	1782227832343	1782227833080	OK	 
+REQUEST		users-get-offer-slug	1782227832679	1782227833082	OK	 
+REQUEST		users-get-offer-slug	1782227832802	1782227833156	OK	 
+REQUEST		users-get-offer-slug	1782227832891	1782227833322	OK	 
+REQUEST		users-get-offer-slug	1782227832643	1782227833326	OK	 
+REQUEST		users-get-offer-slug	1782227832970	1782227833360	OK	 
+REQUEST		users-get-offer-slug	1782227833091	1782227833453	OK	 
+REQUEST		users-get-offer-slug	1782227833076	1782227833461	OK	 
+REQUEST		users-get-offer-slug	1782227833162	1782227833539	OK	 
+REQUEST		users-get-offer-slug	1782227833056	1782227833602	OK	 
+REQUEST		users-get-offer-slug	1782227833328	1782227833709	OK	 
+REQUEST		users-get-offer-slug	1782227833334	1782227833721	OK	 
+REQUEST		users-get-offer-slug	1782227833365	1782227833770	OK	 
+REQUEST		users-get-offer-slug	1782227833091	1782227833789	OK	 
+REQUEST		users-get-offer-slug	1782227833467	1782227833873	OK	 
+REQUEST		users-get-offer-slug	1782227833546	1782227833911	OK	 
+REQUEST		users-get-offer-slug	1782227833608	1782227833984	OK	 
+REQUEST		users-get-offer-slug	1782227833715	1782227834103	OK	 
+REQUEST		users-get-offer-slug	1782227833727	1782227834108	OK	 
+REQUEST		users-get-offer-slug	1782227833458	1782227834110	OK	 
+REQUEST		users-get-offer-slug	1782227833776	1782227834154	OK	 
+REQUEST		users-get-offer-slug	1782227833794	1782227834158	OK	 
+REQUEST		users-get-offer-slug	1782227833879	1782227834281	OK	 
+REQUEST		users-get-offer-slug	1782227833916	1782227834313	OK	 
+REQUEST		users-get-offer-slug	1782227833989	1782227834355	OK	 
+REQUEST		users-get-offer-slug	1782227834115	1782227834487	OK	 
+REQUEST		users-get-offer-slug	1782227834116	1782227834491	OK	 
+REQUEST		users-get-offer-slug	1782227834118	1782227834505	OK	 
+REQUEST		users-get-offer-slug	1782227834163	1782227834533	OK	 
+REQUEST		users-get-offer-slug	1782227834159	1782227834558	OK	 
+REQUEST		users-get-offer-slug	1782227834286	1782227834666	OK	 
+REQUEST		users-get-offer-slug	1782227834359	1782227834712	OK	 
+REQUEST		users-get-offer-slug	1782227834498	1782227834873	OK	 
+REQUEST		users-get-offer-slug	1782227834495	1782227834940	OK	 
+REQUEST		users-get-offer-slug	1782227834511	1782227834940	OK	 
+REQUEST		users-get-offer-slug	1782227834563	1782227834948	OK	 
+REQUEST		users-get-offer-slug	1782227834539	1782227834989	OK	 
+REQUEST		users-get-offer-slug	1782227834324	1782227834990	OK	 
+REQUEST		users-get-offer-slug	1782227834672	1782227835034	OK	 
+REQUEST		users-get-offer-slug	1782227834718	1782227835101	OK	 
+REQUEST		users-get-offer-slug	1782227834880	1782227835246	OK	 
+REQUEST		users-get-offer-slug	1782227834953	1782227835314	OK	 
+REQUEST		users-get-offer-slug	1782227834951	1782227835326	OK	 
+REQUEST		users-get-offer-slug	1782227835000	1782227835372	OK	 
+REQUEST		users-get-offer-slug	1782227834999	1782227835377	OK	 
+REQUEST		users-get-offer-slug	1782227835038	1782227835425	OK	 
+REQUEST		users-get-offer-slug	1782227835110	1782227835510	OK	 
+REQUEST		users-get-offer-slug	1782227834947	1782227835573	OK	 
+REQUEST		users-get-offer-slug	1782227835320	1782227835674	OK	 
+REQUEST		users-get-offer-slug	1782227835333	1782227835730	OK	 
+REQUEST		users-get-offer-slug	1782227835378	1782227835758	OK	 
+REQUEST		users-get-offer-slug	1782227835383	1782227835798	OK	 
+REQUEST		users-get-offer-slug	1782227835431	1782227835827	OK	 
+REQUEST		users-get-offer-slug	1782227835514	1782227835899	OK	 
+REQUEST		users-get-offer-slug	1782227835252	1782227835919	OK	 
+REQUEST		users-get-offer-slug	1782227835578	1782227835949	OK	 
+REQUEST		users-get-offer-slug	1782227835680	1782227836149	OK	 
+REQUEST		users-get-offer-slug	1782227835737	1782227836168	OK	 
+REQUEST		users-get-offer-slug	1782227835804	1782227836184	OK	 
+REQUEST		users-get-offer-slug	1782227835770	1782227836190	OK	 
+REQUEST		users-get-offer-slug	1782227835832	1782227836228	OK	 
+REQUEST		users-get-offer-slug	1782227835929	1782227836287	OK	 
+REQUEST		users-get-offer-slug	1782227835904	1782227836287	OK	 
+REQUEST		users-get-offer-slug	1782227835955	1782227836311	OK	 
+REQUEST		users-get-offer-slug	1782227836172	1782227836524	OK	 
+REQUEST		users-get-offer-slug	1782227836189	1782227836547	OK	 
+REQUEST		users-get-offer-slug	1782227836196	1782227836549	OK	 
+REQUEST		users-get-offer-slug	1782227836156	1782227836562	OK	 
+REQUEST		users-get-offer-slug	1782227836233	1782227836600	OK	 
+REQUEST		users-get-offer-slug	1782227836294	1782227836646	OK	 
+REQUEST		users-get-offer-slug	1782227836294	1782227836647	OK	 
+REQUEST		users-get-offer-slug	1782227836318	1782227836688	OK	 
+REQUEST		users-get-offer-slug	1782227836554	1782227836935	OK	 
+REQUEST		users-get-offer-slug	1782227836552	1782227836944	OK	 
+REQUEST		users-get-offer-slug	1782227836567	1782227836962	OK	 
+REQUEST		users-get-offer-slug	1782227836605	1782227836992	OK	 
+REQUEST		users-get-offer-slug	1782227836652	1782227837601	OK	 
+REQUEST		users-get-offer-slug	1782227836651	1782227837601	OK	 
+REQUEST		users-get-offer-slug	1782227836948	1782227837699	OK	 
+REQUEST		users-get-offer-slug	1782227836693	1782227837699	OK	 
+REQUEST		users-get-offer-slug	1782227836529	1782227837702	OK	 
+REQUEST		users-get-offer-slug	1782227836940	1782227837711	OK	 
+REQUEST		users-get-offer-slug	1782227836966	1782227837914	OK	 
+REQUEST		users-get-offer-slug	1782227836996	1782227837918	OK	 
+REQUEST		users-get-offer-slug	1782227837606	1782227837996	OK	 
+REQUEST		users-get-offer-slug	1782227837609	1782227838019	OK	 
+REQUEST		users-get-offer-slug	1782227837707	1782227838101	OK	 
+REQUEST		users-get-offer-slug	1782227837707	1782227838107	OK	 
+REQUEST		users-get-offer-slug	1782227837710	1782227838145	OK	 
+REQUEST		users-get-offer-slug	1782227837921	1782227838272	OK	 
+REQUEST		users-get-offer-slug	1782227837924	1782227838314	OK	 
+REQUEST		users-get-offer-slug	1782227837717	1782227838326	OK	 
+REQUEST		users-get-offer-slug	1782227838002	1782227838353	OK	 
+REQUEST		users-get-offer-slug	1782227838024	1782227838389	OK	 
+REQUEST		users-get-offer-slug	1782227838113	1782227838486	OK	 
+REQUEST		users-get-offer-slug	1782227838150	1782227838559	OK	 
+REQUEST		users-get-offer-slug	1782227838277	1782227838656	OK	 
+REQUEST		users-get-offer-slug	1782227838320	1782227838673	OK	 
+REQUEST		users-get-offer-slug	1782227838332	1782227838694	OK	 
+REQUEST		users-get-offer-slug	1782227838358	1782227838775	OK	 
+REQUEST		users-get-offer-slug	1782227838397	1782227838794	OK	 
+REQUEST		users-get-offer-slug	1782227838107	1782227838807	OK	 
+REQUEST		users-get-offer-slug	1782227838491	1782227838862	OK	 
+REQUEST		users-get-offer-slug	1782227838564	1782227838949	OK	 
+REQUEST		users-get-offer-slug	1782227838662	1782227839030	OK	 
+REQUEST		users-get-offer-slug	1782227838699	1782227839084	OK	 
+REQUEST		users-get-offer-slug	1782227838812	1782227839161	OK	 
+REQUEST		users-get-offer-slug	1782227838799	1782227839177	OK	 
+REQUEST		users-get-offer-slug	1782227838866	1782227839231	OK	 
+REQUEST		users-get-offer-slug	1782227838678	1782227839312	OK	 
+REQUEST		users-get-offer-slug	1782227838955	1782227839326	OK	 
+REQUEST		users-get-offer-slug	1782227839037	1782227840151	OK	 
+REQUEST		users-get-offer-slug	1782227839235	1782227840221	OK	 
+REQUEST		users-get-offer-slug	1782227839166	1782227840233	OK	 
+REQUEST		users-get-offer-slug	1782227838783	1782227840292	OK	 
+REQUEST		users-get-offer-slug	1782227839089	1782227840297	OK	 
+REQUEST		users-get-offer-slug	1782227839182	1782227840306	OK	 
+REQUEST		users-get-offer-slug	1782227839316	1782227840467	OK	 
+REQUEST		users-get-offer-slug	1782227839332	1782227840468	OK	 
+REQUEST		users-get-offer-slug	1782227840157	1782227840543	OK	 
+REQUEST		users-get-offer-slug	1782227840226	1782227840601	OK	 
+REQUEST		users-get-offer-slug	1782227840238	1782227840613	OK	 
+REQUEST		users-get-offer-slug	1782227840298	1782227840680	OK	 
+REQUEST		users-get-offer-slug	1782227840302	1782227840681	OK	 
+REQUEST		users-get-offer-slug	1782227840311	1782227840688	OK	 
+REQUEST		users-get-offer-slug	1782227840475	1782227840833	OK	 
+REQUEST		users-get-offer-slug	1782227840476	1782227840844	OK	 
+REQUEST		users-get-offer-slug	1782227840550	1782227840904	OK	 
+REQUEST		users-get-offer-slug	1782227840617	1782227840972	OK	 
+REQUEST		users-get-offer-slug	1782227840605	1782227841003	OK	 
+REQUEST		users-get-offer-slug	1782227840687	1782227841086	OK	 
+REQUEST		users-get-offer-slug	1782227840685	1782227841088	OK	 
+REQUEST		users-get-offer-slug	1782227840693	1782227841111	OK	 
+REQUEST		users-get-offer-slug	1782227840838	1782227841211	OK	 
+REQUEST		users-get-offer-slug	1782227840849	1782227841255	OK	 
+REQUEST		users-get-offer-slug	1782227840909	1782227841288	OK	 
+REQUEST		users-get-offer-slug	1782227840978	1782227841395	OK	 
+REQUEST		users-get-offer-slug	1782227841016	1782227841428	OK	 
+REQUEST		users-get-offer-slug	1782227841094	1782227841480	OK	 
+REQUEST		users-get-offer-slug	1782227841092	1782227841490	OK	 
+REQUEST		users-get-offer-slug	1782227841115	1782227841492	OK	 
+REQUEST		users-get-offer-slug	1782227841217	1782227841601	OK	 
+REQUEST		users-get-offer-slug	1782227841260	1782227841645	OK	 
+REQUEST		users-get-offer-slug	1782227841293	1782227841664	OK	 
+REQUEST		users-get-offer-slug	1782227841401	1782227841784	OK	 
+REQUEST		users-get-offer-slug	1782227841433	1782227841796	OK	 
+REQUEST		users-get-offer-slug	1782227841484	1782227841853	OK	 
+REQUEST		users-get-offer-slug	1782227841497	1782227841870	OK	 
+REQUEST		users-get-offer-slug	1782227841495	1782227841876	OK	 
+REQUEST		users-get-offer-slug	1782227841608	1782227842023	OK	 
+REQUEST		users-get-offer-slug	1782227841650	1782227842026	OK	 
+REQUEST		users-get-offer-slug	1782227841800	1782227842165	OK	 
+REQUEST		users-get-offer-slug	1782227841790	1782227842178	OK	 
+REQUEST		users-get-offer-slug	1782227841858	1782227842226	OK	 
+REQUEST		users-get-offer-slug	1782227841875	1782227842247	OK	 
+REQUEST		users-get-offer-slug	1782227841880	1782227842257	OK	 
+REQUEST		users-get-offer-slug	1782227841668	1782227842281	OK	 
+REQUEST		users-get-offer-slug	1782227842030	1782227842383	OK	 
+REQUEST		users-get-offer-slug	1782227842029	1782227842419	OK	 
+REQUEST		users-get-offer-slug	1782227842230	1782227842590	OK	 
+REQUEST		users-get-offer-slug	1782227842169	1782227842591	OK	 
+REQUEST		users-get-offer-slug	1782227842183	1782227842593	OK	 
+REQUEST		users-get-offer-slug	1782227842250	1782227842635	OK	 
+REQUEST		users-get-offer-slug	1782227842286	1782227842645	OK	 
+REQUEST		users-get-offer-slug	1782227842262	1782227842654	OK	 
+REQUEST		users-get-offer-slug	1782227842390	1782227842764	OK	 
+REQUEST		users-get-offer-slug	1782227842423	1782227842789	OK	 
+REQUEST		users-get-offer-slug	1782227842602	1782227842964	OK	 
+REQUEST		users-get-offer-slug	1782227842601	1782227842981	OK	 
+REQUEST		users-get-offer-slug	1782227842640	1782227843020	OK	 
+REQUEST		users-get-offer-slug	1782227842602	1782227843028	OK	 
+REQUEST		users-get-offer-slug	1782227842649	1782227843047	OK	 
+REQUEST		users-get-offer-slug	1782227842769	1782227843151	OK	 
+REQUEST		users-get-offer-slug	1782227842795	1782227843159	OK	 
+REQUEST		users-get-offer-slug	1782227842658	1782227843219	OK	 
+REQUEST		users-get-offer-slug	1782227842969	1782227843338	OK	 
+REQUEST		users-get-offer-slug	1782227842985	1782227843391	OK	 
+REQUEST		users-get-offer-slug	1782227843030	1782227843405	OK	 
+REQUEST		users-get-offer-slug	1782227843051	1782227843434	OK	 
+REQUEST		users-get-offer-slug	1782227843033	1782227843435	OK	 
+REQUEST		users-get-offer-slug	1782227843166	1782227843553	OK	 
+REQUEST		users-get-offer-slug	1782227843162	1782227843573	OK	 
+REQUEST		users-get-offer-slug	1782227843225	1782227843585	OK	 
+REQUEST		users-get-offer-slug	1782227843343	1782227843743	OK	 
+REQUEST		users-get-offer-slug	1782227843397	1782227843777	OK	 
+REQUEST		users-get-offer-slug	1782227843410	1782227843782	OK	 
+REQUEST		users-get-offer-slug	1782227843440	1782227843808	OK	 
+REQUEST		users-get-offer-slug	1782227843439	1782227843822	OK	 
+REQUEST		users-get-offer-slug	1782227843559	1782227843954	OK	 
+REQUEST		users-get-offer-slug	1782227843592	1782227843959	OK	 
+REQUEST		users-get-offer-slug	1782227843579	1782227843981	OK	 
+REQUEST		users-get-offer-slug	1782227843749	1782227844117	OK	 
+REQUEST		users-get-offer-slug	1782227843787	1782227844200	OK	 
+REQUEST		users-get-offer-slug	1782227843781	1782227844205	OK	 
+REQUEST		users-get-offer-slug	1782227843826	1782227844209	OK	 
+REQUEST		users-get-offer-slug	1782227843813	1782227844234	OK	 
+REQUEST		users-get-offer-slug	1782227843960	1782227844334	OK	 
+REQUEST		users-get-offer-slug	1782227843964	1782227844334	OK	 
+REQUEST		users-get-offer-slug	1782227843985	1782227844352	OK	 
+REQUEST		users-get-offer-slug	1782227844124	1782227844490	OK	 
+REQUEST		users-get-offer-slug	1782227844211	1782227844575	OK	 
+REQUEST		users-get-offer-slug	1782227844214	1782227844580	OK	 
+REQUEST		users-get-offer-slug	1782227844215	1782227844617	OK	 
+REQUEST		users-get-offer-slug	1782227844238	1782227844620	OK	 
+REQUEST		users-get-offer-slug	1782227844340	1782227844694	OK	 
+REQUEST		users-get-offer-slug	1782227844355	1782227844707	OK	 
+REQUEST		users-get-offer-slug	1782227844339	1782227844718	OK	 
+REQUEST		users-get-offer-slug	1782227844495	1782227844901	OK	 
+REQUEST		users-get-offer-slug	1782227844581	1782227845789	OK	 
+REQUEST		users-get-offer-slug	1782227844585	1782227845793	OK	 
+REQUEST		users-get-offer-slug	1782227844722	1782227845798	OK	 
+REQUEST		users-get-offer-slug	1782227844621	1782227845800	OK	 
+REQUEST		users-get-offer-slug	1782227844627	1782227845804	OK	 
+REQUEST		users-get-offer-slug	1782227844711	1782227845806	OK	 
+REQUEST		users-get-offer-slug	1782227844699	1782227845811	OK	 
+REQUEST		users-get-offer-slug	1782227844906	1782227846103	OK	 
+REQUEST		users-get-offer-slug	1782227845802	1782227846156	OK	 
+REQUEST		users-get-offer-slug	1782227845817	1782227846208	OK	 
+REQUEST		users-get-offer-slug	1782227845795	1782227846210	OK	 
+REQUEST		users-get-offer-slug	1782227845820	1782227846222	OK	 
+REQUEST		users-get-offer-slug	1782227845803	1782227846224	OK	 
+REQUEST		users-get-offer-slug	1782227845813	1782227846227	OK	 
+REQUEST		users-get-offer-slug	1782227845819	1782227846243	OK	 
+REQUEST		users-get-offer-slug	1782227846110	1782227846497	OK	 
+REQUEST		users-get-offer-slug	1782227846161	1782227846566	OK	 
+REQUEST		users-get-offer-slug	1782227846217	1782227846585	OK	 
+REQUEST		users-get-offer-slug	1782227846226	1782227846591	OK	 
+REQUEST		users-get-offer-slug	1782227846216	1782227846591	OK	 
+REQUEST		users-get-offer-slug	1782227846229	1782227846609	OK	 
+REQUEST		users-get-offer-slug	1782227846231	1782227846623	OK	 
+REQUEST		users-get-offer-slug	1782227846250	1782227846634	OK	 
+REQUEST		users-get-offer-slug	1782227846501	1782227846874	OK	 
+USER	users-get-offer-slug	END	1782227843745
+USER	users-get-offer-slug	END	1782227844120
+USER	users-get-offer-slug	END	1782227844334
+USER	users-get-offer-slug	END	1782227844354
+USER	users-get-offer-slug	END	1782227844490
+USER	users-get-offer-slug	END	1782227844581
+USER	users-get-offer-slug	END	1782227844694
+USER	users-get-offer-slug	END	1782227844707
+USER	users-get-offer-slug	END	1782227844901
+USER	users-get-offer-slug	END	1782227845796
+USER	users-get-offer-slug	END	1782227845806
+USER	users-get-offer-slug	END	1782227845806
+USER	users-get-offer-slug	END	1782227845812
+USER	users-get-offer-slug	END	1782227846106
+USER	users-get-offer-slug	END	1782227846156
+USER	users-get-offer-slug	END	1782227846222
+USER	users-get-offer-slug	END	1782227846225
+USER	users-get-offer-slug	END	1782227846228
+USER	users-get-offer-slug	END	1782227846244
+USER	users-get-offer-slug	END	1782227846497
+USER	users-get-offer-slug	END	1782227846566
+USER	users-get-offer-slug	END	1782227846585
+USER	users-get-offer-slug	END	1782227846591
+USER	users-get-offer-slug	END	1782227846610
+USER	users-get-offer-slug	END	1782227846626
+USER	users-get-offer-slug	END	1782227846634
+USER	users-get-offer-slug	END	1782227846874
+REQUEST		users-get-offer-slug	1782227846570	1782227846952	OK	 
+REQUEST		users-get-offer-slug	1782227846595	1782227846970	OK	 
+REQUEST		users-get-offer-slug	1782227846589	1782227846973	OK	 
+REQUEST		users-get-offer-slug	1782227846596	1782227846982	OK	 
+REQUEST		users-get-offer-slug	1782227846639	1782227846993	OK	 
+REQUEST		users-get-offer-slug	1782227846614	1782227846996	OK	 
+REQUEST		users-get-offer-slug	1782227846628	1782227847007	OK	 
+REQUEST		users-get-offer-slug	1782227846879	1782227847313	OK	 
+REQUEST		users-get-offer-slug	1782227846956	1782227847334	OK	 
+REQUEST		users-get-offer-slug	1782227846973	1782227847349	OK	 
+REQUEST		users-get-offer-slug	1782227846986	1782227847352	OK	 
+REQUEST		users-get-offer-slug	1782227846999	1782227847352	OK	 
+REQUEST		users-get-offer-slug	1782227846997	1782227847370	OK	 
+REQUEST		users-get-offer-slug	1782227847011	1782227847377	OK	 
+REQUEST		users-get-offer-slug	1782227846976	1782227847377	OK	 
+REQUEST		users-get-offer-slug	1782227847337	1782227847691	OK	 
+REQUEST		users-get-offer-slug	1782227847318	1782227847692	OK	 
+REQUEST		users-get-offer-slug	1782227847381	1782227847737	OK	 
+REQUEST		users-get-offer-slug	1782227847353	1782227847737	OK	 
+REQUEST		users-get-offer-slug	1782227847356	1782227847737	OK	 
+REQUEST		users-get-offer-slug	1782227847356	1782227847739	OK	 
+REQUEST		users-get-offer-slug	1782227847374	1782227847744	OK	 
+REQUEST		users-get-offer-slug	1782227847381	1782227847760	OK	 
+REQUEST		users-get-offer-slug	1782227847697	1782227848095	OK	 
+REQUEST		users-get-offer-slug	1782227847698	1782227848095	OK	 
+USER	users-get-offer-slug	END	1782227846952
+USER	users-get-offer-slug	END	1782227846970
+USER	users-get-offer-slug	END	1782227846973
+USER	users-get-offer-slug	END	1782227846982
+USER	users-get-offer-slug	END	1782227846993
+USER	users-get-offer-slug	END	1782227846996
+USER	users-get-offer-slug	END	1782227847007
+USER	users-get-offer-slug	END	1782227847313
+USER	users-get-offer-slug	END	1782227847334
+USER	users-get-offer-slug	END	1782227847349
+USER	users-get-offer-slug	END	1782227847352
+USER	users-get-offer-slug	END	1782227847354
+USER	users-get-offer-slug	END	1782227847370
+USER	users-get-offer-slug	END	1782227847377
+USER	users-get-offer-slug	END	1782227847379
+USER	users-get-offer-slug	END	1782227847692
+USER	users-get-offer-slug	END	1782227847694
+USER	users-get-offer-slug	END	1782227847739
+USER	users-get-offer-slug	END	1782227847742
+USER	users-get-offer-slug	END	1782227847743
+USER	users-get-offer-slug	END	1782227847744
+USER	users-get-offer-slug	END	1782227847745
+USER	users-get-offer-slug	END	1782227847760
+USER	users-get-offer-slug	END	1782227848095
+USER	users-get-offer-slug	END	1782227848095
+REQUEST		users-get-offer-slug	1782227847759	1782227848123	OK	 
+USER	users-get-offer-slug	END	1782227848122
+REQUEST		users-get-offer-slug	1782227847768	1782227848135	OK	 
+USER	users-get-offer-slug	END	1782227848135
+REQUEST		users-get-offer-slug	1782227847769	1782227848140	OK	 
+REQUEST		users-get-offer-slug	1782227847780	1782227848140	OK	 
+USER	users-get-offer-slug	END	1782227848140
+USER	users-get-offer-slug	END	1782227848141
+REQUEST		users-get-offer-slug	1782227847771	1782227848146	OK	 
+USER	users-get-offer-slug	END	1782227848146
+REQUEST		users-get-offer-slug	1782227847770	1782227848156	OK	 
+USER	users-get-offer-slug	END	1782227848156
+REQUEST		users-get-offer-slug	1782227848106	1782227848509	OK	 
+USER	users-get-offer-slug	END	1782227848509
+REQUEST		users-get-offer-slug	1782227848105	1782227848510	OK	 
+USER	users-get-offer-slug	END	1782227848510
+USER	users-get-offers-recomendadas	START	1782227848717
+USER	users-get-offers-recomendadas	START	1782227848717
+USER	users-get-offers-recomendadas	START	1782227848717
+USER	users-get-offers-recomendadas	START	1782227848717
+USER	users-get-offers-recomendadas	START	1782227848717
+USER	users-get-offers-recomendadas	START	1782227848717
+USER	users-get-offers-recomendadas	START	1782227848717
+USER	users-get-offers-recomendadas	START	1782227848717
+USER	users-get-offers-recomendadas	START	1782227848717
+USER	users-get-offers-recomendadas	START	1782227848717
+USER	users-get-offers-recomendadas	START	1782227848717
+USER	users-get-offers-recomendadas	START	1782227848717
+USER	users-get-offers-recomendadas	START	1782227848717
+USER	users-get-offers-recomendadas	START	1782227848717
+USER	users-get-offers-recomendadas	START	1782227848717
+USER	users-get-offers-recomendadas	START	1782227848717
+USER	users-get-offers-recomendadas	START	1782227848717
+USER	users-get-offers-recomendadas	START	1782227848718
+USER	users-get-offers-recomendadas	START	1782227848718
+USER	users-get-offers-recomendadas	START	1782227848718
+USER	users-get-offers-recomendadas	END	1782227848717
+USER	users-get-offers-recomendadas	END	1782227848717
+USER	users-get-offers-recomendadas	END	1782227848717
+USER	users-get-offers-recomendadas	END	1782227848717
+USER	users-get-offers-recomendadas	END	1782227848717
+USER	users-get-offers-recomendadas	END	1782227848717
+USER	users-get-offers-recomendadas	END	1782227848717
+USER	users-get-offers-recomendadas	END	1782227848717
+USER	users-get-offers-recomendadas	END	1782227848717
+USER	users-get-offers-recomendadas	END	1782227848717
+USER	users-get-offers-recomendadas	END	1782227848717
+USER	users-get-offers-recomendadas	END	1782227848717
+USER	users-get-offers-recomendadas	END	1782227848717
+USER	users-get-offers-recomendadas	END	1782227848717
+USER	users-get-offers-recomendadas	END	1782227848717
+USER	users-get-offers-recomendadas	END	1782227848717
+USER	users-get-offers-recomendadas	END	1782227848717
+USER	users-get-offers-recomendadas	END	1782227848718
+USER	users-get-offers-recomendadas	END	1782227848718
+USER	users-get-offers-recomendadas	END	1782227848718
+USER	users-get-offers-recomendadas	START	1782227848718
+USER	users-get-offers-recomendadas	START	1782227848718
+USER	users-get-offers-recomendadas	START	1782227848718
+USER	users-get-offers-recomendadas	START	1782227848718
+USER	users-get-offers-recomendadas	START	1782227848718
+USER	users-get-offers-recomendadas	START	1782227848718
+USER	users-get-offers-recomendadas	START	1782227848718
+USER	users-get-offers-recomendadas	START	1782227848718
+USER	users-get-offers-recomendadas	END	1782227848719
+USER	users-get-offers-recomendadas	END	1782227848719
+USER	users-get-offers-recomendadas	END	1782227848719
+USER	users-get-offers-recomendadas	END	1782227848719
+USER	users-get-offers-recomendadas	END	1782227848719
+USER	users-get-offers-recomendadas	END	1782227848719
+USER	users-get-offers-recomendadas	END	1782227848719
+USER	users-get-offers-recomendadas	END	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848719
+USER	users-get-offers-recomendadas	END	1782227848719
+USER	users-get-offers-recomendadas	END	1782227848719
+USER	users-get-offers-recomendadas	END	1782227848719
+USER	users-get-offers-recomendadas	END	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848719
+USER	users-get-offers-recomendadas	END	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848719
+USER	users-get-offers-recomendadas	END	1782227848719
+USER	users-get-offers-recomendadas	END	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848719
+USER	users-get-offers-recomendadas	END	1782227848719
+USER	users-get-offers-recomendadas	END	1782227848719
+USER	users-get-offers-recomendadas	END	1782227848719
+USER	users-get-offers-recomendadas	END	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848719
+USER	users-get-offers-recomendadas	END	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848719
+USER	users-get-offers-recomendadas	START	1782227848720
+USER	users-get-offers-recomendadas	START	1782227848720
+USER	users-get-offers-recomendadas	START	1782227848720
+USER	users-get-offers-recomendadas	START	1782227848720
+USER	users-get-offers-recomendadas	START	1782227848720
+USER	users-get-offers-recomendadas	START	1782227848720
+USER	users-get-offers-recomendadas	START	1782227848720
+USER	users-get-offers-recomendadas	START	1782227848720
+USER	users-get-offers-recomendadas	START	1782227848720
+USER	users-get-offers-recomendadas	START	1782227848720
+USER	users-get-offers-recomendadas	START	1782227848720
+USER	users-get-offers-recomendadas	START	1782227848720
+USER	users-get-offers-recomendadas	END	1782227848720
+USER	users-get-offers-recomendadas	END	1782227848720
+USER	users-get-offers-recomendadas	END	1782227848720
+USER	users-get-offers-recomendadas	END	1782227848720
+USER	users-get-offers-recomendadas	END	1782227848720
+USER	users-get-offers-recomendadas	END	1782227848720
+USER	users-get-offers-recomendadas	END	1782227848720
+USER	users-get-offers-recomendadas	END	1782227848720
+USER	users-get-offers-recomendadas	END	1782227848721
+USER	users-get-offers-recomendadas	END	1782227848721
+USER	users-get-offers-recomendadas	END	1782227848721
+USER	users-get-offers-recomendadas	END	1782227848721
+USER	users-get-offers-recomendadas	END	1782227848721
+USER	users-get-offers-recomendadas	END	1782227848721
+USER	users-get-offers-recomendadas	END	1782227848721
+USER	users-get-offers-recomendadas	END	1782227848721
+USER	users-get-offers-recomendadas	END	1782227848721
+USER	users-get-offers-recomendadas	END	1782227848721
+USER	users-get-offers-recomendadas	END	1782227848721
+USER	users-get-offers-recomendadas	END	1782227848721
+USER	obtener-ofertas-visibles	START	1782227849717
+USER	obtener-ofertas-visibles	START	1782227849717
+USER	obtener-ofertas-visibles	START	1782227849722
+USER	obtener-ofertas-visibles	START	1782227849717
+USER	obtener-ofertas-visibles	START	1782227849717
+REQUEST		POST /e5dea286-ff90-4426-9fe5-a29cb8192882/oauth2/v2.0/token	1782227849741	1782227850410	OK	 
+REQUEST		obtener-ofertas-visibles	1782227850434	1782227853486	OK	 
+REQUEST		obtener-ofertas-visibles	1782227850431	1782227853491	OK	 
+REQUEST		obtener-ofertas-visibles	1782227850432	1782227853487	OK	 
+REQUEST		obtener-ofertas-visibles	1782227850431	1782227853492	OK	 
+REQUEST		obtener-ofertas-visibles	1782227850435	1782227853502	OK	 
+REQUEST		obtener-ofertas-visibles	1782227853518	1782227854011	OK	 
+REQUEST		obtener-ofertas-visibles	1782227853516	1782227854021	OK	 
+REQUEST		obtener-ofertas-visibles	1782227853518	1782227854050	OK	 
+REQUEST		obtener-ofertas-visibles	1782227853516	1782227854108	OK	 
+REQUEST		obtener-ofertas-visibles	1782227853531	1782227854145	OK	 
+REQUEST		obtener-ofertas-visibles	1782227854032	1782227854541	OK	 
+REQUEST		obtener-ofertas-visibles	1782227854069	1782227854602	OK	 
+REQUEST		obtener-ofertas-visibles	1782227854023	1782227854622	OK	 
+REQUEST		obtener-ofertas-visibles	1782227854124	1782227854630	OK	 
+REQUEST		obtener-ofertas-visibles	1782227854156	1782227854646	OK	 
+REQUEST		obtener-ofertas-visibles	1782227854551	1782227854976	OK	 
+REQUEST		obtener-ofertas-visibles	1782227854612	1782227855126	OK	 
+REQUEST		obtener-ofertas-visibles	1782227854638	1782227855184	OK	 
+REQUEST		obtener-ofertas-visibles	1782227854652	1782227855201	OK	 
+REQUEST		obtener-ofertas-visibles	1782227854660	1782227855206	OK	 
+REQUEST		obtener-ofertas-visibles	1782227854986	1782227855409	OK	 
+USER	obtener-ofertas-visibles	END	1782227855410
+REQUEST		obtener-ofertas-visibles	1782227855134	1782227855552	OK	 
+USER	obtener-ofertas-visibles	END	1782227855553
+REQUEST		obtener-ofertas-visibles	1782227855203	1782227855658	OK	 
+REQUEST		obtener-ofertas-visibles	1782227855224	1782227855661	OK	 
+USER	obtener-ofertas-visibles	END	1782227855661
+USER	obtener-ofertas-visibles	END	1782227855662
+REQUEST		obtener-ofertas-visibles	1782227855220	1782227855718	OK	 
+USER	obtener-ofertas-visibles	END	1782227855719
+USER	users-get-offers-edc-con-rut	START	1782227856717
+USER	users-get-offers-edc-con-rut	START	1782227856717
+USER	users-get-offers-edc-con-rut	START	1782227856717
+USER	users-get-offers-edc-con-rut	START	1782227856717
+USER	users-get-offers-edc-con-rut	START	1782227856717
+USER	users-get-offers-edc-con-rut	END	1782227856717
+USER	users-get-offers-edc-con-rut	END	1782227856717
+USER	users-get-offers-edc-con-rut	END	1782227856717
+USER	users-get-offers-edc-con-rut	END	1782227856717
+USER	users-get-offers-edc-con-rut	END	1782227856717
+USER	users-get-offers-edc-sin-rut	START	1782227857720
+USER	users-get-offers-edc-sin-rut	START	1782227857723
+USER	users-get-offers-edc-sin-rut	START	1782227857720
+USER	users-get-offers-edc-sin-rut	START	1782227857717
+USER	users-get-offers-edc-sin-rut	START	1782227857720
+USER	users-get-offers-edc-sin-rut	START	1782227857721
+USER	users-get-offers-edc-sin-rut	START	1782227857720
+USER	users-get-offers-edc-sin-rut	START	1782227857730
+USER	users-get-offers-edc-sin-rut	START	1782227857732
+USER	users-get-offers-edc-sin-rut	START	1782227857738
+USER	users-get-offers-edc-sin-rut	START	1782227857736
+USER	users-get-offers-edc-sin-rut	START	1782227857747
+USER	users-get-offers-edc-sin-rut	START	1782227857751
+USER	users-get-offers-edc-sin-rut	START	1782227857737
+USER	users-get-offers-edc-sin-rut	START	1782227857721
+USER	users-get-offers-edc-sin-rut	START	1782227857736
+USER	users-get-offers-edc-sin-rut	START	1782227857748
+USER	users-get-offers-edc-sin-rut	START	1782227857730
+USER	users-get-offers-edc-sin-rut	START	1782227857762
+USER	users-get-offers-edc-sin-rut	START	1782227857760
+REQUEST		POST /e5dea286-ff90-4426-9fe5-a29cb8192882/oauth2/v2.0/token	1782227857768	1782227858429	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227858439	1782227858934	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227858437	1782227858936	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227858434	1782227858937	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227858443	1782227858938	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227858435	1782227858938	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227858443	1782227858939	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227858439	1782227858939	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227858437	1782227858942	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227858948	1782227859314	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227858958	1782227859347	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227858951	1782227859358	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227858956	1782227859366	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227858955	1782227859368	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227858951	1782227859372	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227858946	1782227859373	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227858954	1782227859390	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227859319	1782227859688	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227859364	1782227859734	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227859385	1782227859745	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227859393	1782227859755	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227859358	1782227859758	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227859384	1782227859760	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227859404	1782227859770	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227859391	1782227859786	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227859759	1782227860163	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227859693	1782227860167	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227859791	1782227860168	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227859738	1782227860171	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227859768	1782227860173	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227859765	1782227860175	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227859749	1782227860184	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227859779	1782227860186	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227860182	1782227860536	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227860177	1782227860545	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227860168	1782227860546	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227860173	1782227860552	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227860185	1782227860570	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227860180	1782227860574	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227860196	1782227860587	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227860201	1782227860593	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227860540	1782227860900	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227860552	1782227860945	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227860549	1782227861167	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227860559	1782227861170	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227860587	1782227861207	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227860597	1782227861314	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227860591	1782227861314	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227860586	1782227861332	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227860905	1782227861865	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227860952	1782227861883	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227861178	1782227861883	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227861214	1782227861905	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227861180	1782227861907	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227861319	1782227862079	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227861321	1782227862079	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227861338	1782227862088	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227861913	1782227862546	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227861916	1782227862546	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227861890	1782227862546	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227861873	1782227862547	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227861890	1782227862547	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227862085	1782227862717	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227862086	1782227862719	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227862095	1782227862728	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227862562	1782227863047	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227862572	1782227863049	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227862564	1782227863051	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227862570	1782227863058	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227862556	1782227863060	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227862732	1782227863253	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227862726	1782227863257	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227862724	1782227863317	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227863066	1782227863494	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227863052	1782227863497	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227863066	1782227863507	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227863063	1782227863508	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227863064	1782227863512	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227863258	1782227863735	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227863261	1782227863737	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227863322	1782227863759	OK	 
+USER	users-get-offers-edc-sin-rut	END	1782227863494
+REQUEST		users-get-offers-edc-sin-rut	1782227863516	1782227863894	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227863512	1782227863895	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227863499	1782227863900	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227863512	1782227863901	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227863501	1782227863902	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227863741	1782227864177	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227863762	1782227864177	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227863740	1782227864195	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227863898	1782227864257	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227863902	1782227864270	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227863909	1782227864274	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227863909	1782227864321	OK	 
+USER	users-get-offers-edc-sin-rut	END	1782227863900
+USER	users-get-offers-edc-sin-rut	END	1782227864177
+USER	users-get-offers-edc-sin-rut	END	1782227864321
+REQUEST		users-get-offers-edc-sin-rut	1782227863906	1782227864397	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227864182	1782227864559	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227864198	1782227864576	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227864182	1782227864623	OK	 
+USER	users-get-offers-edc-sin-rut	END	1782227864397
+USER	users-get-offers-edc-sin-rut	END	1782227864623
+REQUEST		users-get-offers-edc-sin-rut	1782227864278	1782227864688	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227864274	1782227864703	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227864327	1782227864716	OK	 
+USER	users-get-offers-edc-sin-rut	END	1782227864704
+REQUEST		users-get-offers-edc-sin-rut	1782227864261	1782227864728	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227864401	1782227864809	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227864583	1782227864948	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227864564	1782227864948	OK	 
+USER	users-get-offers-edc-sin-rut	END	1782227864717
+USER	users-get-offers-edc-sin-rut	END	1782227864948
+REQUEST		users-get-offers-edc-sin-rut	1782227864628	1782227864992	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227864693	1782227865063	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227864733	1782227865100	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227864710	1782227865103	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227864725	1782227865109	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227864813	1782227865169	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227864955	1782227865312	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227864954	1782227865312	OK	 
+USER	users-get-offers-edc-sin-rut	END	1782227865101
+REQUEST		users-get-offers-edc-sin-rut	1782227864997	1782227865367	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227865068	1782227865453	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227865105	1782227865468	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227865108	1782227865479	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227865113	1782227865483	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227865178	1782227865529	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227865318	1782227865680	OK	 
+USER	users-get-offers-edc-sin-rut	END	1782227865532
+REQUEST		users-get-offers-edc-sin-rut	1782227865319	1782227865698	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227865371	1782227865765	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227865474	1782227865870	OK	 
+USER	users-get-offers-edc-sin-rut	END	1782227865765
+USER	users-get-offers-edc-sin-rut	END	1782227865870
+REQUEST		users-get-offers-edc-sin-rut	1782227865459	1782227865874	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227865484	1782227865893	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227865491	1782227865894	OK	 
+USER	users-get-offers-edc-sin-rut	END	1782227865894
+REQUEST		users-get-offers-edc-sin-rut	1782227865534	1782227865903	OK	 
+USER	users-get-offers-edc-sin-rut	END	1782227865904
+REQUEST		users-get-offers-edc-sin-rut	1782227865690	1782227866059	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227865708	1782227866076	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227865771	1782227866147	OK	 
+USER	users-get-offers-edc-sin-rut	END	1782227866147
+REQUEST		users-get-offers-edc-sin-rut	1782227865881	1782227866253	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227865902	1782227866301	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227866071	1782227866428	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227866086	1782227866459	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227866310	1782227867589	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227866437	1782227867589	OK	 
+USER	users-get-offers-edc-sin-rut	END	1782227867590
+REQUEST		users-get-offers-edc-sin-rut	1782227866264	1782227867600	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227866471	1782227867794	OK	 
+USER	users-get-offers-edc-sin-rut	END	1782227867794
+REQUEST		users-get-offers-edc-sin-rut	1782227867604	1782227867979	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227867607	1782227867983	OK	 
+REQUEST		users-get-offers-edc-sin-rut	1782227867986	1782227868352	OK	 
+USER	users-get-offers-edc-sin-rut	END	1782227868353
+REQUEST		users-get-offers-edc-sin-rut	1782227867990	1782227868355	OK	 
+USER	users-get-offers-edc-sin-rut	END	1782227868355
+USER	users-get-offers-edc-rut-con-tyc	START	1782227868709
+USER	users-get-offers-edc-rut-con-tyc	START	1782227868709
+USER	users-get-offers-edc-rut-con-tyc	START	1782227868711
+USER	users-get-offers-edc-rut-con-tyc	START	1782227868713
+USER	users-get-offers-edc-rut-con-tyc	START	1782227868707
+USER	users-get-offers-edc-rut-con-tyc	START	1782227868710
+USER	users-get-offers-edc-rut-con-tyc	START	1782227868713
+USER	users-get-offers-edc-rut-con-tyc	START	1782227868717
+USER	users-get-offers-edc-rut-con-tyc	START	1782227868707
+USER	users-get-offers-edc-rut-con-tyc	START	1782227868715
+USER	users-get-offers-edc-rut-con-tyc	START	1782227868713
+USER	users-get-offers-edc-rut-con-tyc	START	1782227868707
+USER	users-get-offers-edc-rut-con-tyc	START	1782227868711
+USER	users-get-offers-edc-rut-con-tyc	START	1782227868721
+USER	users-get-offers-edc-rut-con-tyc	START	1782227868722
+USER	users-get-offers-edc-rut-con-tyc	START	1782227868714
+USER	users-get-offers-edc-rut-con-tyc	START	1782227868723
+USER	users-get-offers-edc-rut-con-tyc	START	1782227868720
+USER	users-get-offers-edc-rut-con-tyc	START	1782227868726
+USER	users-get-offers-edc-rut-con-tyc	START	1782227868720
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227868729	1782227871319	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227868738	1782227871320	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227868725	1782227871326	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227868730	1782227871338	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227868735	1782227871420	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227868735	1782227871431	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227868737	1782227871434	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227868735	1782227871437	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227871326	1782227872230	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227871330	1782227872438	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227871324	1782227872442	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227871425	1782227872448	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227871344	1782227872452	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227871436	1782227872453	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227871441	1782227872650	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227871439	1782227872656	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227872235	1782227872842	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227872452	1782227873226	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227872443	1782227873229	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227872446	1782227873238	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227872457	1782227873334	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227872455	1782227873349	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227872660	1782227873357	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227872655	1782227873442	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227872847	1782227873525	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227873231	1782227873829	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227873242	1782227873932	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227873233	1782227873942	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227873361	1782227874048	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227873529	1782227875103	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227873354	1782227875103	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227873338	1782227875103	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227873447	1782227875105	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227873834	1782227875326	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227873947	1782227875330	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227873938	1782227875336	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227874053	1782227875549	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227875109	1782227875660	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227875116	1782227875757	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227875113	1782227875941	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227875111	1782227875945	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227875332	1782227876127	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227875342	1782227876147	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227875335	1782227876149	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227875555	1782227876252	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227875667	1782227876341	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227875764	1782227876432	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227875945	1782227876734	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227875952	1782227876838	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227876153	1782227876949	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227876256	1782227877034	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227876152	1782227877037	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227876130	1782227877039	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227876346	1782227877135	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227876436	1782227877152	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227876739	1782227877329	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227876842	1782227877347	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227876953	1782227877460	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227877042	1782227877641	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227877041	1782227877643	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227877140	1782227877747	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227877045	1782227877750	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227877157	1782227877934	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227877350	1782227877940	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227877333	1782227878033	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227877464	1782227878051	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227877647	1782227878156	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227877645	1782227878251	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227877754	1782227878360	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227877752	1782227878369	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227877944	1782227878524	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227877939	1782227878642	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227878037	1782227878642	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227878054	1782227878727	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227878160	1782227878738	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227878256	1782227878930	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227878374	1782227878937	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227878364	1782227878938	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227878527	1782227879054	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227878646	1782227879156	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227878741	1782227879346	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227878647	1782227879363	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227878731	1782227879366	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227878934	1782227879530	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227878943	1782227879546	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227878941	1782227879557	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227879058	1782227879628	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227879184	1782227879663	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227879374	1782227879776	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227879373	1782227879865	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227879355	1782227879943	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227879564	1782227880053	OK	 
+USER	users-get-offers-edc-rut-con-tyc	END	1782227879556
+USER	users-get-offers-edc-rut-con-tyc	END	1782227879663
+USER	users-get-offers-edc-rut-con-tyc	END	1782227880053
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227879540	1782227880130	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227879555	1782227880158	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227879636	1782227880244	OK	 
+USER	users-get-offers-edc-rut-con-tyc	END	1782227880158
+USER	users-get-offers-edc-rut-con-tyc	END	1782227880244
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227879670	1782227880350	OK	 
+USER	users-get-offers-edc-rut-con-tyc	END	1782227880350
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227879780	1782227880354	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227879870	1782227880439	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227879947	1782227880453	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227880058	1782227880554	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227880135	1782227880641	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227880163	1782227880732	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227880248	1782227880744	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227880359	1782227880854	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227880356	1782227880932	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227880442	1782227880964	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227880457	1782227881132	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227880558	1782227881141	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227880739	1782227882188	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227880748	1782227882189	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227880645	1782227882189	OK	 
+USER	users-get-offers-edc-rut-con-tyc	END	1782227880554
+USER	users-get-offers-edc-rut-con-tyc	END	1782227880641
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227880969	1782227882325	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227880858	1782227882333	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227880936	1782227882334	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227881145	1782227882627	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227881137	1782227882650	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227882193	1782227882848	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227882196	1782227882850	OK	 
+USER	users-get-offers-edc-rut-con-tyc	END	1782227882191
+USER	users-get-offers-edc-rut-con-tyc	END	1782227882325
+USER	users-get-offers-edc-rut-con-tyc	END	1782227882333
+USER	users-get-offers-edc-rut-con-tyc	END	1782227882848
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227882197	1782227882855	OK	 
+USER	users-get-offers-edc-rut-con-tyc	END	1782227882854
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227882338	1782227883033	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227882337	1782227883035	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227882330	1782227883044	OK	 
+USER	users-get-offers-edc-rut-con-tyc	END	1782227883044
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227882635	1782227883062	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227882856	1782227883262	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227882654	1782227883332	OK	 
+USER	users-get-offers-edc-rut-con-tyc	END	1782227883332
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227882853	1782227883428	OK	 
+USER	users-get-offers-edc-rut-con-tyc	END	1782227883429
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227883041	1782227883547	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227883044	1782227883553	OK	 
+USER	users-get-offers-edc-rut-con-tyc	END	1782227883553
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227883068	1782227883637	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227883268	1782227883763	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227883553	1782227884037	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227883643	1782227884072	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227883771	1782227884172	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227884047	1782227884502	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227884079	1782227884509	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227884178	1782227884668	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227884508	1782227884937	OK	 
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227884514	1782227884969	OK	 
+USER	users-get-offers-edc-rut-con-tyc	END	1782227884969
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227884674	1782227885085	OK	 
+USER	users-get-offers-edc-rut-con-tyc	END	1782227885085
+REQUEST		users-get-offers-edc-rut-con-tyc	1782227884945	1782227885350	OK	 
+USER	users-get-offers-edc-rut-con-tyc	END	1782227885350
+USER	create-offer-segmented-cashback-online	START	1782227885717
+USER	create-offer-segmented-cashback-online	START	1782227885717
+USER	create-offer-segmented-cashback-online	START	1782227885717
+USER	create-offer-segmented-cashback-online	START	1782227885717
+USER	create-offer-segmented-cashback-online	START	1782227885717
+USER	create-offer-segmented-cashback-online	START	1782227885717
+USER	create-offer-segmented-cashback-online	START	1782227885717
+USER	create-offer-segmented-cashback-online	START	1782227885717
+USER	create-offer-segmented-cashback-online	START	1782227885717
+USER	create-offer-segmented-cashback-online	END	1782227885717
+USER	create-offer-segmented-cashback-online	END	1782227885717
+USER	create-offer-segmented-cashback-online	END	1782227885717
+USER	create-offer-segmented-cashback-online	END	1782227885717
+USER	create-offer-segmented-cashback-online	END	1782227885717
+USER	create-offer-segmented-cashback-online	END	1782227885717
+USER	create-offer-segmented-cashback-online	END	1782227885717
+USER	create-offer-segmented-cashback-online	END	1782227885717
+USER	create-offer-segmented-cashback-online	END	1782227885717
+USER	create-offer-segmented-cashback-online	START	1782227885718
+USER	create-offer-segmented-cashback-online	START	1782227885718
+USER	create-offer-segmented-cashback-online	START	1782227885718
+USER	create-offer-segmented-cashback-online	END	1782227885718
+USER	create-offer-segmented-cashback-online	END	1782227885718
+USER	create-offer-segmented-cashback-online	END	1782227885718
+USER	create-offer-segmented-cashback-online	START	1782227885718
+USER	create-offer-segmented-cashback-online	START	1782227885718
+USER	create-offer-segmented-cashback-online	END	1782227885718
+USER	create-offer-segmented-cashback-online	START	1782227885718
+USER	create-offer-segmented-cashback-online	END	1782227885718
+USER	create-offer-segmented-cashback-online	END	1782227885718
+USER	create-offer-segmented-cashback-online	START	1782227885718
+USER	create-offer-segmented-cashback-online	START	1782227885718
+USER	create-offer-segmented-cashback-online	END	1782227885718
+USER	create-offer-segmented-cashback-online	END	1782227885718
+USER	create-offer-segmented-cashback-online	START	1782227885719
+USER	create-offer-segmented-cashback-online	START	1782227885719
+USER	create-offer-segmented-cashback-online	END	1782227885719
+USER	create-offer-segmented-cashback-online	END	1782227885719
+USER	create-offer-segmented-cashback-online	START	1782227885720
+USER	create-offer-segmented-cashback-online	END	1782227885720
+USER	update-offer-segmented-cashback-online	START	1782227886717
+USER	update-offer-segmented-cashback-online	START	1782227886717
+USER	update-offer-segmented-cashback-online	START	1782227886717
+USER	update-offer-segmented-cashback-online	START	1782227886717
+USER	update-offer-segmented-cashback-online	START	1782227886717
+USER	update-offer-segmented-cashback-online	START	1782227886717
+USER	update-offer-segmented-cashback-online	START	1782227886717
+USER	update-offer-segmented-cashback-online	START	1782227886717
+USER	update-offer-segmented-cashback-online	START	1782227886717
+USER	update-offer-segmented-cashback-online	START	1782227886717
+USER	update-offer-segmented-cashback-online	START	1782227886717
+USER	update-offer-segmented-cashback-online	START	1782227886717
+USER	update-offer-segmented-cashback-online	END	1782227886717
+USER	update-offer-segmented-cashback-online	END	1782227886717
+USER	update-offer-segmented-cashback-online	END	1782227886717
+USER	update-offer-segmented-cashback-online	END	1782227886717
+USER	update-offer-segmented-cashback-online	END	1782227886717
+USER	update-offer-segmented-cashback-online	START	1782227886717
+USER	update-offer-segmented-cashback-online	END	1782227886717
+USER	update-offer-segmented-cashback-online	END	1782227886717
+USER	update-offer-segmented-cashback-online	START	1782227886718
+USER	update-offer-segmented-cashback-online	END	1782227886717
+USER	update-offer-segmented-cashback-online	END	1782227886717
+USER	update-offer-segmented-cashback-online	END	1782227886717
+USER	update-offer-segmented-cashback-online	END	1782227886717
+USER	update-offer-segmented-cashback-online	END	1782227886718
+USER	update-offer-segmented-cashback-online	END	1782227886718
+USER	update-offer-segmented-cashback-online	START	1782227886718
+USER	update-offer-segmented-cashback-online	START	1782227886718
+USER	update-offer-segmented-cashback-online	START	1782227886718
+USER	update-offer-segmented-cashback-online	END	1782227886718
+USER	update-offer-segmented-cashback-online	START	1782227886718
+USER	update-offer-segmented-cashback-online	END	1782227886718
+USER	update-offer-segmented-cashback-online	END	1782227886718
+USER	update-offer-segmented-cashback-online	END	1782227886718
+USER	update-offer-segmented-cashback-online	END	1782227886718
+USER	update-offer-segmented-cashback-online	START	1782227886718
+USER	update-offer-segmented-cashback-online	START	1782227886718
+USER	update-offer-segmented-cashback-online	END	1782227886718
+USER	update-offer-segmented-cashback-online	END	1782227886718
+USER	get-offers-filtered	START	1782227887719
+USER	get-offers-filtered	START	1782227887721
+USER	get-offers-filtered	START	1782227887723
+USER	get-offers-filtered	START	1782227887725
+USER	get-offers-filtered	START	1782227887726
+USER	get-offers-filtered	START	1782227887729
+USER	get-offers-filtered	START	1782227887727
+USER	get-offers-filtered	START	1782227887732
+USER	get-offers-filtered	START	1782227887732
+USER	get-offers-filtered	START	1782227887735
+USER	get-offers-filtered	START	1782227887735
+USER	get-offers-filtered	START	1782227887737
+USER	get-offers-filtered	START	1782227887724
+USER	get-offers-filtered	START	1782227887724
+USER	get-offers-filtered	START	1782227887734
+USER	get-offers-filtered	START	1782227887749
+USER	get-offers-filtered	START	1782227887731
+USER	get-offers-filtered	START	1782227887751
+USER	get-offers-filtered	START	1782227887749
+USER	get-offers-filtered	START	1782227887751
+USER	get-offers-filtered	START	1782227887756
+USER	get-offers-filtered	START	1782227887754
+USER	get-offers-filtered	START	1782227887720
+USER	get-offers-filtered	START	1782227887749
+USER	get-offers-filtered	START	1782227887760
+USER	get-offers-filtered	START	1782227887737
+USER	get-offers-filtered	START	1782227887763
+USER	get-offers-filtered	START	1782227887762
+USER	get-offers-filtered	START	1782227887763
+USER	get-offers-filtered	START	1782227887761
+USER	get-offers-filtered	START	1782227887764
+USER	get-offers-filtered	START	1782227887766
+USER	get-offers-filtered	START	1782227887766
+USER	get-offers-filtered	START	1782227887761
+USER	get-offers-filtered	START	1782227887765
+USER	get-offers-filtered	START	1782227887769
+USER	get-offers-filtered	START	1782227887769
+USER	get-offers-filtered	START	1782227887728
+USER	get-offers-filtered	START	1782227887770
+USER	get-offers-filtered	START	1782227887767
+USER	get-offers-filtered	START	1782227887771
+USER	get-offers-filtered	START	1782227887765
+USER	get-offers-filtered	START	1782227887755
+USER	get-offers-filtered	START	1782227887772
+USER	get-offers-filtered	START	1782227887773
+USER	get-offers-filtered	START	1782227887773
+USER	get-offers-filtered	START	1782227887773
+USER	get-offers-filtered	START	1782227887774
+USER	get-offers-filtered	START	1782227887771
+USER	get-offers-filtered	START	1782227887740
+USER	get-offers-filtered	START	1782227887775
+USER	get-offers-filtered	START	1782227887774
+USER	get-offers-filtered	START	1782227887777
+USER	get-offers-filtered	START	1782227887775
+USER	get-offers-filtered	START	1782227887773
+USER	get-offers-filtered	START	1782227887779
+USER	get-offers-filtered	START	1782227887780
+USER	get-offers-filtered	START	1782227887778
+USER	get-offers-filtered	START	1782227887781
+USER	get-offers-filtered	START	1782227887784
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1782227887755	1782227888290	OK	 
+REQUEST		get-offers-filtered	1782227888297	1782227891640	OK	 
+REQUEST		get-offers-filtered	1782227888299	1782227891646	OK	 
+REQUEST		get-offers-filtered	1782227888297	1782227891648	OK	 
+REQUEST		get-offers-filtered	1782227888293	1782227891651	OK	 
+REQUEST		get-offers-filtered	1782227888295	1782227891651	OK	 
+REQUEST		get-offers-filtered	1782227888293	1782227891653	OK	 
+REQUEST		get-offers-filtered	1782227888299	1782227891724	OK	 
+REQUEST		get-offers-filtered	1782227888294	1782227891726	OK	 
+REQUEST		get-offers-filtered	1782227891649	1782227892251	OK	 
+REQUEST		get-offers-filtered	1782227891645	1782227892443	OK	 
+REQUEST		get-offers-filtered	1782227891657	1782227892446	OK	 
+REQUEST		get-offers-filtered	1782227891658	1782227892448	OK	 
+REQUEST		get-offers-filtered	1782227891656	1782227892553	OK	 
+REQUEST		get-offers-filtered	1782227891660	1782227892633	OK	 
+REQUEST		get-offers-filtered	1782227891738	1782227892662	OK	 
+REQUEST		get-offers-filtered	1782227891735	1782227892771	OK	 
+REQUEST		get-offers-filtered	1782227892256	1782227892945	OK	 
+REQUEST		get-offers-filtered	1782227892448	1782227893189	OK	 
+REQUEST		get-offers-filtered	1782227892451	1782227893214	OK	 
+REQUEST		get-offers-filtered	1782227892452	1782227893237	OK	 
+REQUEST		get-offers-filtered	1782227892565	1782227893318	OK	 
+REQUEST		get-offers-filtered	1782227892642	1782227893448	OK	 
+REQUEST		get-offers-filtered	1782227892669	1782227893464	OK	 
+REQUEST		get-offers-filtered	1782227892776	1782227893510	OK	 
+REQUEST		get-offers-filtered	1782227892949	1782227893550	OK	 
+REQUEST		get-offers-filtered	1782227893196	1782227893796	OK	 
+REQUEST		get-offers-filtered	1782227893219	1782227893830	OK	 
+REQUEST		get-offers-filtered	1782227893241	1782227893841	OK	 
+REQUEST		get-offers-filtered	1782227893322	1782227893913	OK	 
+REQUEST		get-offers-filtered	1782227893453	1782227894138	OK	 
+REQUEST		get-offers-filtered	1782227893471	1782227894140	OK	 
+REQUEST		get-offers-filtered	1782227893516	1782227894221	OK	 
+REQUEST		get-offers-filtered	1782227893556	1782227894290	OK	 
+REQUEST		get-offers-filtered	1782227893801	1782227894389	OK	 
+REQUEST		get-offers-filtered	1782227893835	1782227894439	OK	 
+REQUEST		get-offers-filtered	1782227893846	1782227894508	OK	 
+REQUEST		get-offers-filtered	1782227893917	1782227894534	OK	 
+REQUEST		get-offers-filtered	1782227894142	1782227894634	OK	 
+REQUEST		get-offers-filtered	1782227894225	1782227894826	OK	 
+REQUEST		get-offers-filtered	1782227894294	1782227894832	OK	 
+REQUEST		get-offers-filtered	1782227894145	1782227894842	OK	 
+REQUEST		get-offers-filtered	1782227894394	1782227894935	OK	 
+REQUEST		get-offers-filtered	1782227894513	1782227895036	OK	 
+REQUEST		get-offers-filtered	1782227894443	1782227895055	OK	 
+REQUEST		get-offers-filtered	1782227894538	1782227895086	OK	 
+REQUEST		get-offers-filtered	1782227894637	1782227895214	OK	 
+REQUEST		get-offers-filtered	1782227894845	1782227895392	OK	 
+REQUEST		get-offers-filtered	1782227894835	1782227895435	OK	 
+REQUEST		get-offers-filtered	1782227894830	1782227895490	OK	 
+REQUEST		get-offers-filtered	1782227895058	1782227895525	OK	 
+REQUEST		get-offers-filtered	1782227894939	1782227895585	OK	 
+REQUEST		get-offers-filtered	1782227895092	1782227895628	OK	 
+REQUEST		get-offers-filtered	1782227895040	1782227895682	OK	 
+REQUEST		get-offers-filtered	1782227895218	1782227895738	OK	 
+REQUEST		get-offers-filtered	1782227895396	1782227895847	OK	 
+REQUEST		get-offers-filtered	1782227895439	1782227895895	OK	 
+REQUEST		get-offers-filtered	1782227895530	1782227896040	OK	 
+REQUEST		get-offers-filtered	1782227895494	1782227896042	OK	 
+REQUEST		get-offers-filtered	1782227895589	1782227896137	OK	 
+REQUEST		get-offers-filtered	1782227895634	1782227896147	OK	 
+REQUEST		get-offers-filtered	1782227895689	1782227896226	OK	 
+REQUEST		get-offers-filtered	1782227895743	1782227896241	OK	 
+REQUEST		get-offers-filtered	1782227895855	1782227896354	OK	 
+REQUEST		get-offers-filtered	1782227895900	1782227896499	OK	 
+REQUEST		get-offers-filtered	1782227896046	1782227896519	OK	 
+REQUEST		get-offers-filtered	1782227896045	1782227896593	OK	 
+REQUEST		get-offers-filtered	1782227896150	1782227896736	OK	 
+REQUEST		get-offers-filtered	1782227896142	1782227896817	OK	 
+REQUEST		get-offers-filtered	1782227896229	1782227896929	OK	 
+REQUEST		get-offers-filtered	1782227896244	1782227896940	OK	 
+REQUEST		get-offers-filtered	1782227896358	1782227896957	OK	 
+REQUEST		get-offers-filtered	1782227896523	1782227897311	OK	 
+REQUEST		get-offers-filtered	1782227896596	1782227897323	OK	 
+REQUEST		get-offers-filtered	1782227896503	1782227897334	OK	 
+REQUEST		get-offers-filtered	1782227896739	1782227897338	OK	 
+REQUEST		get-offers-filtered	1782227896820	1782227897617	OK	 
+REQUEST		get-offers-filtered	1782227896933	1782227897723	OK	 
+REQUEST		get-offers-filtered	1782227896943	1782227897821	OK	 
+REQUEST		get-offers-filtered	1782227896960	1782227897828	OK	 
+REQUEST		get-offers-filtered	1782227897342	1782227897992	OK	 
+REQUEST		get-offers-filtered	1782227897315	1782227897996	OK	 
+REQUEST		get-offers-filtered	1782227897336	1782227898016	OK	 
+REQUEST		get-offers-filtered	1782227897326	1782227898018	OK	 
+REQUEST		get-offers-filtered	1782227897622	1782227898088	OK	 
+REQUEST		get-offers-filtered	1782227897730	1782227898186	OK	 
+REQUEST		get-offers-filtered	1782227897831	1782227898246	OK	 
+REQUEST		get-offers-filtered	1782227897832	1782227898320	OK	 
+REQUEST		get-offers-filtered	1782227897995	1782227898433	OK	 
+REQUEST		get-offers-filtered	1782227898000	1782227898523	OK	 
+REQUEST		get-offers-filtered	1782227898020	1782227898619	OK	 
+REQUEST		get-offers-filtered	1782227898021	1782227898685	OK	 
+REQUEST		get-offers-filtered	1782227898092	1782227898698	OK	 
+REQUEST		get-offers-filtered	1782227898190	1782227898819	OK	 
+REQUEST		get-offers-filtered	1782227898250	1782227898824	OK	 
+REQUEST		get-offers-filtered	1782227898324	1782227898826	OK	 
+REQUEST		get-offers-filtered	1782227898437	1782227898992	OK	 
+REQUEST		get-offers-filtered	1782227898527	1782227899026	OK	 
+REQUEST		get-offers-filtered	1782227898622	1782227899119	OK	 
+REQUEST		get-offers-filtered	1782227898688	1782227899233	OK	 
+REQUEST		get-offers-filtered	1782227898701	1782227899279	OK	 
+REQUEST		get-offers-filtered	1782227898823	1782227899393	OK	 
+REQUEST		get-offers-filtered	1782227898832	1782227899394	OK	 
+REQUEST		get-offers-filtered	1782227898829	1782227899433	OK	 
+REQUEST		get-offers-filtered	1782227898996	1782227899487	OK	 
+REQUEST		get-offers-filtered	1782227899035	1782227899532	OK	 
+REQUEST		get-offers-filtered	1782227899122	1782227899596	OK	 
+REQUEST		get-offers-filtered	1782227899237	1782227899725	OK	 
+REQUEST		get-offers-filtered	1782227899282	1782227899739	OK	 
+REQUEST		get-offers-filtered	1782227899437	1782227899922	OK	 
+REQUEST		get-offers-filtered	1782227899398	1782227899925	OK	 
+REQUEST		get-offers-filtered	1782227899398	1782227899927	OK	 
+REQUEST		get-offers-filtered	1782227899491	1782227899987	OK	 
+REQUEST		get-offers-filtered	1782227899536	1782227900032	OK	 
+REQUEST		get-offers-filtered	1782227899600	1782227900040	OK	 
+REQUEST		get-offers-filtered	1782227899743	1782227900239	OK	 
+REQUEST		get-offers-filtered	1782227899730	1782227900242	OK	 
+REQUEST		get-offers-filtered	1782227899926	1782227900370	OK	 
+REQUEST		get-offers-filtered	1782227899930	1782227900381	OK	 
+REQUEST		get-offers-filtered	1782227899931	1782227900531	OK	 
+REQUEST		get-offers-filtered	1782227900045	1782227900584	OK	 
+REQUEST		get-offers-filtered	1782227899992	1782227900591	OK	 
+REQUEST		get-offers-filtered	1782227900035	1782227900610	OK	 
+REQUEST		get-offers-filtered	1782227900246	1782227900736	OK	 
+REQUEST		get-offers-filtered	1782227900243	1782227900746	OK	 
+REQUEST		get-offers-filtered	1782227900374	1782227900851	OK	 
+REQUEST		get-offers-filtered	1782227900385	1782227900853	OK	 
+REQUEST		get-offers-filtered	1782227900535	1782227900990	OK	 
+REQUEST		get-offers-filtered	1782227900595	1782227901096	OK	 
+REQUEST		get-offers-filtered	1782227900587	1782227901097	OK	 
+REQUEST		get-offers-filtered	1782227900613	1782227901131	OK	 
+REQUEST		get-offers-filtered	1782227900744	1782227901233	OK	 
+REQUEST		get-offers-filtered	1782227900750	1782227901234	OK	 
+REQUEST		get-offers-filtered	1782227900857	1782227901357	OK	 
+REQUEST		get-offers-filtered	1782227900855	1782227901368	OK	 
+REQUEST		get-offers-filtered	1782227900994	1782227901485	OK	 
+REQUEST		get-offers-filtered	1782227901100	1782227901619	OK	 
+REQUEST		get-offers-filtered	1782227901101	1782227901634	OK	 
+REQUEST		get-offers-filtered	1782227901134	1782227901641	OK	 
+REQUEST		get-offers-filtered	1782227901238	1782227901830	OK	 
+REQUEST		get-offers-filtered	1782227901237	1782227901911	OK	 
+REQUEST		get-offers-filtered	1782227901360	1782227901943	OK	 
+REQUEST		get-offers-filtered	1782227901371	1782227902016	OK	 
+REQUEST		get-offers-filtered	1782227901490	1782227902032	OK	 
+USER	get-offers-filtered	END	1782227901096
+USER	get-offers-filtered	END	1782227901235
+USER	get-offers-filtered	END	1782227901487
+USER	get-offers-filtered	END	1782227901619
+USER	get-offers-filtered	END	1782227901830
+REQUEST		get-offers-filtered	1782227901624	1782227902138	OK	 
+USER	get-offers-filtered	END	1782227902033
+REQUEST		get-offers-filtered	1782227901638	1782227902385	OK	 
+REQUEST		get-offers-filtered	1782227901644	1782227902415	OK	 
+REQUEST		get-offers-filtered	1782227901834	1782227902581	OK	 
+USER	get-offers-filtered	END	1782227902138
+REQUEST		get-offers-filtered	1782227902020	1782227902712	OK	 
+REQUEST		get-offers-filtered	1782227902035	1782227902718	OK	 
+REQUEST		get-offers-filtered	1782227901915	1782227902719	OK	 
+REQUEST		get-offers-filtered	1782227901949	1782227902725	OK	 
+REQUEST		get-offers-filtered	1782227902142	1782227902785	OK	 
+REQUEST		get-offers-filtered	1782227902391	1782227902924	OK	 
+REQUEST		get-offers-filtered	1782227902419	1782227902930	OK	 
+REQUEST		get-offers-filtered	1782227902584	1782227903034	OK	 
+REQUEST		get-offers-filtered	1782227902723	1782227903222	OK	 
+REQUEST		get-offers-filtered	1782227902717	1782227903229	OK	 
+REQUEST		get-offers-filtered	1782227902722	1782227903232	OK	 
+REQUEST		get-offers-filtered	1782227902729	1782227903233	OK	 
+REQUEST		get-offers-filtered	1782227902791	1782227903312	OK	 
+REQUEST		get-offers-filtered	1782227902929	1782227903385	OK	 
+REQUEST		get-offers-filtered	1782227902934	1782227903413	OK	 
+REQUEST		get-offers-filtered	1782227903038	1782227903525	OK	 
+REQUEST		get-offers-filtered	1782227903226	1782227903730	OK	 
+REQUEST		get-offers-filtered	1782227903236	1782227903730	OK	 
+REQUEST		get-offers-filtered	1782227903232	1782227903818	OK	 
+REQUEST		get-offers-filtered	1782227903236	1782227903828	OK	 
+REQUEST		get-offers-filtered	1782227903316	1782227903842	OK	 
+REQUEST		get-offers-filtered	1782227903390	1782227903924	OK	 
+REQUEST		get-offers-filtered	1782227903416	1782227903927	OK	 
+REQUEST		get-offers-filtered	1782227903529	1782227904019	OK	 
+REQUEST		get-offers-filtered	1782227903735	1782227904141	OK	 
+REQUEST		get-offers-filtered	1782227903735	1782227904239	OK	 
+REQUEST		get-offers-filtered	1782227903845	1782227904419	OK	 
+REQUEST		get-offers-filtered	1782227903832	1782227904420	OK	 
+REQUEST		get-offers-filtered	1782227903823	1782227904429	OK	 
+REQUEST		get-offers-filtered	1782227903930	1782227904465	OK	 
+REQUEST		get-offers-filtered	1782227903928	1782227904486	OK	 
+REQUEST		get-offers-filtered	1782227904023	1782227904547	OK	 
+REQUEST		get-offers-filtered	1782227904242	1782227904682	OK	 
+REQUEST		get-offers-filtered	1782227904147	1782227904687	OK	 
+REQUEST		get-offers-filtered	1782227904423	1782227904830	OK	 
+REQUEST		get-offers-filtered	1782227904424	1782227904887	OK	 
+REQUEST		get-offers-filtered	1782227904432	1782227904890	OK	 
+REQUEST		get-offers-filtered	1782227904490	1782227904991	OK	 
+REQUEST		get-offers-filtered	1782227904469	1782227904999	OK	 
+REQUEST		get-offers-filtered	1782227904552	1782227905026	OK	 
+REQUEST		get-offers-filtered	1782227904686	1782227905124	OK	 
+REQUEST		get-offers-filtered	1782227904690	1782227905126	OK	 
+REQUEST		get-offers-filtered	1782227904834	1782227906196	OK	 
+REQUEST		get-offers-filtered	1782227904891	1782227906200	OK	 
+REQUEST		get-offers-filtered	1782227905003	1782227906207	OK	 
+REQUEST		get-offers-filtered	1782227904894	1782227906214	OK	 
+REQUEST		get-offers-filtered	1782227905030	1782227906217	OK	 
+REQUEST		get-offers-filtered	1782227904995	1782227906227	OK	 
+REQUEST		get-offers-filtered	1782227905128	1782227906394	OK	 
+REQUEST		get-offers-filtered	1782227905129	1782227906394	OK	 
+REQUEST		get-offers-filtered	1782227906203	1782227906695	OK	 
+REQUEST		get-offers-filtered	1782227906216	1782227906724	OK	 
+REQUEST		get-offers-filtered	1782227906210	1782227906726	OK	 
+REQUEST		get-offers-filtered	1782227906200	1782227906731	OK	 
+REQUEST		get-offers-filtered	1782227906221	1782227906782	OK	 
+REQUEST		get-offers-filtered	1782227906231	1782227906794	OK	 
+REQUEST		get-offers-filtered	1782227906400	1782227906882	OK	 
+REQUEST		get-offers-filtered	1782227906398	1782227906892	OK	 
+REQUEST		get-offers-filtered	1782227906728	1782227907392	OK	 
+REQUEST		get-offers-filtered	1782227906729	1782227907424	OK	 
+REQUEST		get-offers-filtered	1782227906886	1782227907596	OK	 
+REQUEST		get-offers-filtered	1782227906733	1782227907599	OK	 
+REQUEST		get-offers-filtered	1782227906698	1782227907613	OK	 
+REQUEST		get-offers-filtered	1782227906786	1782227907641	OK	 
+REQUEST		get-offers-filtered	1782227906797	1782227907654	OK	 
+REQUEST		get-offers-filtered	1782227906895	1782227907659	OK	 
+REQUEST		get-offers-filtered	1782227907395	1782227907795	OK	 
+REQUEST		get-offers-filtered	1782227907427	1782227907889	OK	 
+REQUEST		get-offers-filtered	1782227907601	1782227908121	OK	 
+REQUEST		get-offers-filtered	1782227907616	1782227908127	OK	 
+REQUEST		get-offers-filtered	1782227907602	1782227908129	OK	 
+REQUEST		get-offers-filtered	1782227907645	1782227908133	OK	 
+REQUEST		get-offers-filtered	1782227907662	1782227908201	OK	 
+REQUEST		get-offers-filtered	1782227907657	1782227908202	OK	 
+REQUEST		get-offers-filtered	1782227907799	1782227908228	OK	 
+REQUEST		get-offers-filtered	1782227907894	1782227908318	OK	 
+REQUEST		get-offers-filtered	1782227908125	1782227908585	OK	 
+REQUEST		get-offers-filtered	1782227908131	1782227908600	OK	 
+REQUEST		get-offers-filtered	1782227908136	1782227908611	OK	 
+REQUEST		get-offers-filtered	1782227908132	1782227908616	OK	 
+REQUEST		get-offers-filtered	1782227908205	1782227908720	OK	 
+REQUEST		get-offers-filtered	1782227908205	1782227908722	OK	 
+REQUEST		get-offers-filtered	1782227908235	1782227908723	OK	 
+REQUEST		get-offers-filtered	1782227908321	1782227908750	OK	 
+REQUEST		get-offers-filtered	1782227908590	1782227909014	OK	 
+REQUEST		get-offers-filtered	1782227908604	1782227909061	OK	 
+REQUEST		get-offers-filtered	1782227908619	1782227909082	OK	 
+REQUEST		get-offers-filtered	1782227908614	1782227909135	OK	 
+REQUEST		get-offers-filtered	1782227908754	1782227909242	OK	 
+REQUEST		get-offers-filtered	1782227908726	1782227909287	OK	 
+REQUEST		get-offers-filtered	1782227908728	1782227909308	OK	 
+REQUEST		get-offers-filtered	1782227908725	1782227909312	OK	 
+REQUEST		get-offers-filtered	1782227909017	1782227909471	OK	 
+REQUEST		get-offers-filtered	1782227909065	1782227909484	OK	 
+REQUEST		get-offers-filtered	1782227909086	1782227909559	OK	 
+REQUEST		get-offers-filtered	1782227909140	1782227909632	OK	 
+REQUEST		get-offers-filtered	1782227909246	1782227909752	OK	 
+REQUEST		get-offers-filtered	1782227909290	1782227909815	OK	 
+REQUEST		get-offers-filtered	1782227909315	1782227909830	OK	 
+REQUEST		get-offers-filtered	1782227909312	1782227909832	OK	 
+REQUEST		get-offers-filtered	1782227909488	1782227909933	OK	 
+REQUEST		get-offers-filtered	1782227909475	1782227909938	OK	 
+REQUEST		get-offers-filtered	1782227909563	1782227910022	OK	 
+REQUEST		get-offers-filtered	1782227909635	1782227910058	OK	 
+REQUEST		get-offers-filtered	1782227909755	1782227910172	OK	 
+REQUEST		get-offers-filtered	1782227909818	1782227910262	OK	 
+REQUEST		get-offers-filtered	1782227909835	1782227910341	OK	 
+REQUEST		get-offers-filtered	1782227909834	1782227910346	OK	 
+REQUEST		get-offers-filtered	1782227909937	1782227910455	OK	 
+REQUEST		get-offers-filtered	1782227909942	1782227910465	OK	 
+REQUEST		get-offers-filtered	1782227910042	1782227910515	OK	 
+REQUEST		get-offers-filtered	1782227910067	1782227910591	OK	 
+REQUEST		get-offers-filtered	1782227910180	1782227910631	OK	 
+REQUEST		get-offers-filtered	1782227910270	1782227910727	OK	 
+REQUEST		get-offers-filtered	1782227910351	1782227910788	OK	 
+REQUEST		get-offers-filtered	1782227910354	1782227910794	OK	 
+REQUEST		get-offers-filtered	1782227910463	1782227910913	OK	 
+REQUEST		get-offers-filtered	1782227910471	1782227910929	OK	 
+REQUEST		get-offers-filtered	1782227910522	1782227911007	OK	 
+REQUEST		get-offers-filtered	1782227910595	1782227911060	OK	 
+REQUEST		get-offers-filtered	1782227910636	1782227911091	OK	 
+REQUEST		get-offers-filtered	1782227910731	1782227911181	OK	 
+REQUEST		get-offers-filtered	1782227910917	1782227911419	OK	 
+REQUEST		get-offers-filtered	1782227910791	1782227911515	OK	 
+REQUEST		get-offers-filtered	1782227910933	1782227911516	OK	 
+REQUEST		get-offers-filtered	1782227910797	1782227911517	OK	 
+REQUEST		get-offers-filtered	1782227911095	1782227911588	OK	 
+REQUEST		get-offers-filtered	1782227911063	1782227911697	OK	 
+REQUEST		get-offers-filtered	1782227911186	1782227911762	OK	 
+REQUEST		get-offers-filtered	1782227911011	1782227911765	OK	 
+REQUEST		get-offers-filtered	1782227911423	1782227911927	OK	 
+REQUEST		get-offers-filtered	1782227911521	1782227912193	OK	 
+REQUEST		get-offers-filtered	1782227911522	1782227912248	OK	 
+REQUEST		get-offers-filtered	1782227911591	1782227912258	OK	 
+REQUEST		get-offers-filtered	1782227911519	1782227912274	OK	 
+REQUEST		get-offers-filtered	1782227911701	1782227912314	OK	 
+REQUEST		get-offers-filtered	1782227911769	1782227912339	OK	 
+REQUEST		get-offers-filtered	1782227911766	1782227912376	OK	 
+REQUEST		get-offers-filtered	1782227911931	1782227912409	OK	 
+REQUEST		get-offers-filtered	1782227912196	1782227912616	OK	 
+REQUEST		get-offers-filtered	1782227912255	1782227912690	OK	 
+REQUEST		get-offers-filtered	1782227912264	1782227912714	OK	 
+USER	get-offers-filtered	END	1782227902581
+USER	get-offers-filtered	END	1782227904682
+USER	get-offers-filtered	END	1782227904887
+USER	get-offers-filtered	END	1782227904890
+USER	get-offers-filtered	END	1782227905124
+USER	get-offers-filtered	END	1782227906200
+USER	get-offers-filtered	END	1782227906214
+USER	get-offers-filtered	END	1782227906395
+USER	get-offers-filtered	END	1782227906695
+USER	get-offers-filtered	END	1782227910787
+USER	get-offers-filtered	END	1782227911515
+USER	get-offers-filtered	END	1782227911588
+USER	get-offers-filtered	END	1782227912260
+USER	get-offers-filtered	END	1782227912274
+USER	get-offers-filtered	END	1782227912714
+REQUEST		get-offers-filtered	1782227912318	1782227912780	OK	 
+REQUEST		get-offers-filtered	1782227912343	1782227912827	OK	 
+REQUEST		get-offers-filtered	1782227912278	1782227912827	OK	 
+REQUEST		get-offers-filtered	1782227912416	1782227912890	OK	 
+REQUEST		get-offers-filtered	1782227912383	1782227912892	OK	 
+REQUEST		get-offers-filtered	1782227912620	1782227913040	OK	 
+REQUEST		get-offers-filtered	1782227912717	1782227913158	OK	 
+REQUEST		get-offers-filtered	1782227912694	1782227913172	OK	 
+REQUEST		get-offers-filtered	1782227912783	1782227913234	OK	 
+REQUEST		get-offers-filtered	1782227912831	1782227913391	OK	 
+REQUEST		get-offers-filtered	1782227912832	1782227913391	OK	 
+REQUEST		get-offers-filtered	1782227912895	1782227913451	OK	 
+REQUEST		get-offers-filtered	1782227912894	1782227913483	OK	 
+REQUEST		get-offers-filtered	1782227913044	1782227913547	OK	 
+REQUEST		get-offers-filtered	1782227913175	1782227913604	OK	 
+REQUEST		get-offers-filtered	1782227913163	1782227913611	OK	 
+REQUEST		get-offers-filtered	1782227913237	1782227913679	OK	 
+REQUEST		get-offers-filtered	1782227913395	1782227913833	OK	 
+USER	get-offers-filtered	END	1782227912827
+USER	get-offers-filtered	END	1782227913391
+USER	get-offers-filtered	END	1782227913391
+USER	get-offers-filtered	END	1782227913483
+USER	get-offers-filtered	END	1782227913604
+USER	get-offers-filtered	END	1782227913833
+REQUEST		get-offers-filtered	1782227913395	1782227913906	OK	 
+REQUEST		get-offers-filtered	1782227913455	1782227913914	OK	 
+REQUEST		get-offers-filtered	1782227913486	1782227913918	OK	 
+USER	get-offers-filtered	END	1782227913907
+USER	get-offers-filtered	END	1782227913918
+REQUEST		get-offers-filtered	1782227913551	1782227914031	OK	 
+REQUEST		get-offers-filtered	1782227913614	1782227914081	OK	 
+REQUEST		get-offers-filtered	1782227913607	1782227914083	OK	 
+REQUEST		get-offers-filtered	1782227913683	1782227914173	OK	 
+REQUEST		get-offers-filtered	1782227913838	1782227914258	OK	 
+REQUEST		get-offers-filtered	1782227913921	1782227914331	OK	 
+REQUEST		get-offers-filtered	1782227913918	1782227914382	OK	 
+REQUEST		get-offers-filtered	1782227913911	1782227914399	OK	 
+REQUEST		get-offers-filtered	1782227914035	1782227914500	OK	 
+REQUEST		get-offers-filtered	1782227914086	1782227914585	OK	 
+REQUEST		get-offers-filtered	1782227914084	1782227914617	OK	 
+REQUEST		get-offers-filtered	1782227914177	1782227914632	OK	 
+REQUEST		get-offers-filtered	1782227914261	1782227914717	OK	 
+REQUEST		get-offers-filtered	1782227914335	1782227914801	OK	 
+REQUEST		get-offers-filtered	1782227914386	1782227914827	OK	 
+REQUEST		get-offers-filtered	1782227914402	1782227914849	OK	 
+REQUEST		get-offers-filtered	1782227914504	1782227914921	OK	 
+REQUEST		get-offers-filtered	1782227914588	1782227915024	OK	 
+REQUEST		get-offers-filtered	1782227914620	1782227915044	OK	 
+REQUEST		get-offers-filtered	1782227914635	1782227915123	OK	 
+REQUEST		get-offers-filtered	1782227914721	1782227915138	OK	 
+REQUEST		get-offers-filtered	1782227914830	1782227915223	OK	 
+REQUEST		get-offers-filtered	1782227914805	1782227915231	OK	 
+REQUEST		get-offers-filtered	1782227914853	1782227915314	OK	 
+REQUEST		get-offers-filtered	1782227914925	1782227915336	OK	 
+REQUEST		get-offers-filtered	1782227915027	1782227915497	OK	 
+REQUEST		get-offers-filtered	1782227915047	1782227915506	OK	 
+REQUEST		get-offers-filtered	1782227915141	1782227915590	OK	 
+REQUEST		get-offers-filtered	1782227915127	1782227915611	OK	 
+REQUEST		get-offers-filtered	1782227915226	1782227915727	OK	 
+REQUEST		get-offers-filtered	1782227915234	1782227915734	OK	 
+REQUEST		get-offers-filtered	1782227915317	1782227915823	OK	 
+REQUEST		get-offers-filtered	1782227915340	1782227915923	OK	 
+REQUEST		get-offers-filtered	1782227915509	1782227916190	OK	 
+REQUEST		get-offers-filtered	1782227915502	1782227916236	OK	 
+REQUEST		get-offers-filtered	1782227915615	1782227916288	OK	 
+REQUEST		get-offers-filtered	1782227915593	1782227916324	OK	 
+REQUEST		get-offers-filtered	1782227915738	1782227916413	OK	 
+REQUEST		get-offers-filtered	1782227915730	1782227916435	OK	 
+USER	get-offers-filtered	END	1782227915497
+USER	get-offers-filtered	END	1782227915590
+USER	get-offers-filtered	END	1782227915727
+USER	get-offers-filtered	END	1782227916236
+USER	get-offers-filtered	END	1782227916323
+USER	get-offers-filtered	END	1782227916435
+REQUEST		get-offers-filtered	1782227915927	1782227916436	OK	 
+REQUEST		get-offers-filtered	1782227915829	1782227916444	OK	 
+REQUEST		get-offers-filtered	1782227916194	1782227916693	OK	 
+REQUEST		get-offers-filtered	1782227916239	1782227916774	OK	 
+REQUEST		get-offers-filtered	1782227916291	1782227916776	OK	 
+REQUEST		get-offers-filtered	1782227916326	1782227916795	OK	 
+USER	get-offers-filtered	END	1782227916774
+USER	get-offers-filtered	END	1782227916795
+REQUEST		get-offers-filtered	1782227916417	1782227916849	OK	 
+REQUEST		get-offers-filtered	1782227916439	1782227916857	OK	 
+REQUEST		get-offers-filtered	1782227916439	1782227916938	OK	 
+REQUEST		get-offers-filtered	1782227916447	1782227916940	OK	 
+REQUEST		get-offers-filtered	1782227916697	1782227917113	OK	 
+REQUEST		get-offers-filtered	1782227916779	1782227917182	OK	 
+REQUEST		get-offers-filtered	1782227916778	1782227917196	OK	 
+REQUEST		get-offers-filtered	1782227916797	1782227917237	OK	 
+REQUEST		get-offers-filtered	1782227916861	1782227917287	OK	 
+REQUEST		get-offers-filtered	1782227916854	1782227917336	OK	 
+REQUEST		get-offers-filtered	1782227916942	1782227917432	OK	 
+REQUEST		get-offers-filtered	1782227916943	1782227918129	OK	 
+REQUEST		get-offers-filtered	1782227917339	1782227918245	OK	 
+REQUEST		get-offers-filtered	1782227917185	1782227918279	OK	 
+REQUEST		get-offers-filtered	1782227917291	1782227918280	OK	 
+REQUEST		get-offers-filtered	1782227917116	1782227918318	OK	 
+REQUEST		get-offers-filtered	1782227917241	1782227918319	OK	 
+REQUEST		get-offers-filtered	1782227917199	1782227918321	OK	 
+REQUEST		get-offers-filtered	1782227917437	1782227918521	OK	 
+REQUEST		get-offers-filtered	1782227918147	1782227918621	OK	 
+USER	get-offers-filtered	END	1782227917433
+USER	get-offers-filtered	END	1782227918133
+USER	get-offers-filtered	END	1782227918247
+USER	get-offers-filtered	END	1782227918279
+USER	get-offers-filtered	END	1782227918282
+USER	get-offers-filtered	END	1782227918319
+USER	get-offers-filtered	END	1782227918320
+USER	get-offers-filtered	END	1782227918520
+USER	get-offers-filtered	END	1782227918620
+REQUEST		get-offers-filtered	1782227918250	1782227918688	OK	 
+USER	get-offers-filtered	END	1782227918688
+REQUEST		get-offers-filtered	1782227918287	1782227918784	OK	 
+USER	get-offers-filtered	END	1782227918784
+REQUEST		get-offers-filtered	1782227918285	1782227918816	OK	 
+USER	get-offers-filtered	END	1782227918818
+REQUEST		get-offers-filtered	1782227918326	1782227918820	OK	 
+REQUEST		get-offers-filtered	1782227918327	1782227918891	OK	 
+USER	get-offers-filtered	END	1782227918822
+USER	get-offers-filtered	END	1782227918891
+REQUEST		get-offers-filtered	1782227918327	1782227918893	OK	 
+REQUEST		get-offers-filtered	1782227918524	1782227918999	OK	 
+USER	get-offers-filtered	END	1782227919000
+REQUEST		get-offers-filtered	1782227918626	1782227919042	OK	 
+REQUEST		get-offers-filtered	1782227918692	1782227919184	OK	 
+REQUEST		get-offers-filtered	1782227918823	1782227919288	OK	 
+REQUEST		get-offers-filtered	1782227918789	1782227919296	OK	 
+REQUEST		get-offers-filtered	1782227918828	1782227919298	OK	 
+REQUEST		get-offers-filtered	1782227918899	1782227919335	OK	 
+REQUEST		get-offers-filtered	1782227918897	1782227919343	OK	 
+REQUEST		get-offers-filtered	1782227919051	1782227919481	OK	 
+REQUEST		get-offers-filtered	1782227919199	1782227919630	OK	 
+REQUEST		get-offers-filtered	1782227919297	1782227919757	OK	 
+REQUEST		get-offers-filtered	1782227919319	1782227919772	OK	 
+REQUEST		get-offers-filtered	1782227919319	1782227919777	OK	 
+REQUEST		get-offers-filtered	1782227919357	1782227919787	OK	 
+REQUEST		get-offers-filtered	1782227919362	1782227919849	OK	 
+REQUEST		get-offers-filtered	1782227919502	1782227919942	OK	 
+REQUEST		get-offers-filtered	1782227919640	1782227920070	OK	 
+REQUEST		get-offers-filtered	1782227919773	1782227920188	OK	 
+REQUEST		get-offers-filtered	1782227919798	1782227920231	OK	 
+REQUEST		get-offers-filtered	1782227919795	1782227920315	OK	 
+REQUEST		get-offers-filtered	1782227919859	1782227920386	OK	 
+REQUEST		get-offers-filtered	1782227919794	1782227920395	OK	 
+REQUEST		get-offers-filtered	1782227919970	1782227920441	OK	 
+REQUEST		get-offers-filtered	1782227920081	1782227920557	OK	 
+REQUEST		get-offers-filtered	1782227920208	1782227920726	OK	 
+REQUEST		get-offers-filtered	1782227920241	1782227920744	OK	 
+REQUEST		get-offers-filtered	1782227920326	1782227920762	OK	 
+REQUEST		get-offers-filtered	1782227920402	1782227920832	OK	 
+REQUEST		get-offers-filtered	1782227920407	1782227920857	OK	 
+REQUEST		get-offers-filtered	1782227920451	1782227920917	OK	 
+REQUEST		get-offers-filtered	1782227920568	1782227920993	OK	 
+REQUEST		get-offers-filtered	1782227920753	1782227921155	OK	 
+USER	get-offers-filtered	END	1782227921155
+REQUEST		get-offers-filtered	1782227920741	1782227921217	OK	 
+USER	get-offers-filtered	END	1782227921217
+REQUEST		get-offers-filtered	1782227920768	1782227921218	OK	 
+USER	get-offers-filtered	END	1782227921218
+REQUEST		get-offers-filtered	1782227920836	1782227921249	OK	 
+USER	get-offers-filtered	END	1782227921249
+REQUEST		get-offers-filtered	1782227920865	1782227921320	OK	 
+REQUEST		get-offers-filtered	1782227920923	1782227921353	OK	 
+USER	get-offers-filtered	END	1782227921353
+REQUEST		get-offers-filtered	1782227921000	1782227921414	OK	 
+USER	get-offers-filtered	END	1782227921417
+REQUEST		get-offers-filtered	1782227921336	1782227921736	OK	 
+USER	get-offers-filtered	END	1782227921736
+USER	offer-detail-by-id-200	START	1782227922717
+USER	offer-detail-by-id-200	START	1782227922719
+USER	offer-detail-by-id-200	START	1782227922730
+USER	offer-detail-by-id-200	START	1782227922717
+USER	offer-detail-by-id-200	START	1782227922723
+USER	offer-detail-by-id-200	START	1782227922726
+USER	offer-detail-by-id-200	START	1782227922717
+USER	offer-detail-by-id-200	START	1782227922726
+USER	offer-detail-by-id-200	START	1782227922811
+USER	offer-detail-by-id-200	START	1782227922809
+USER	offer-detail-by-id-200	START	1782227922815
+USER	offer-detail-by-id-200	START	1782227922818
+USER	offer-detail-by-id-200	START	1782227922830
+USER	offer-detail-by-id-200	START	1782227922822
+USER	offer-detail-by-id-200	START	1782227922834
+USER	offer-detail-by-id-200	START	1782227922814
+USER	offer-detail-by-id-200	START	1782227922863
+USER	offer-detail-by-id-200	START	1782227922852
+USER	offer-detail-by-id-200	START	1782227922862
+USER	offer-detail-by-id-200	START	1782227922856
+USER	offer-detail-by-id-200	START	1782227922865
+USER	offer-detail-by-id-200	START	1782227922865
+USER	offer-detail-by-id-200	START	1782227922851
+USER	offer-detail-by-id-200	START	1782227922864
+USER	offer-detail-by-id-200	START	1782227922884
+USER	offer-detail-by-id-200	START	1782227922871
+USER	offer-detail-by-id-200	START	1782227922872
+USER	offer-detail-by-id-200	START	1782227922876
+USER	offer-detail-by-id-200	START	1782227922876
+USER	offer-detail-by-id-200	START	1782227922883
+USER	offer-detail-by-id-200	START	1782227922890
+USER	offer-detail-by-id-200	START	1782227922882
+USER	offer-detail-by-id-200	START	1782227922897
+USER	offer-detail-by-id-200	START	1782227922896
+USER	offer-detail-by-id-200	START	1782227922900
+USER	offer-detail-by-id-200	START	1782227922898
+USER	offer-detail-by-id-200	START	1782227922905
+USER	offer-detail-by-id-200	START	1782227922917
+USER	offer-detail-by-id-200	START	1782227922904
+USER	offer-detail-by-id-200	START	1782227922903
+USER	offer-detail-by-id-200	START	1782227922911
+USER	offer-detail-by-id-200	START	1782227922920
+USER	offer-detail-by-id-200	START	1782227922896
+USER	offer-detail-by-id-200	START	1782227922914
+USER	offer-detail-by-id-200	START	1782227922933
+USER	offer-detail-by-id-200	START	1782227922937
+USER	offer-detail-by-id-200	START	1782227922913
+USER	offer-detail-by-id-200	START	1782227922948
+USER	offer-detail-by-id-200	START	1782227922950
+USER	offer-detail-by-id-200	START	1782227922962
+USER	offer-detail-by-id-200	START	1782227922958
+USER	offer-detail-by-id-200	START	1782227922945
+USER	offer-detail-by-id-200	START	1782227922966
+USER	offer-detail-by-id-200	START	1782227922960
+USER	offer-detail-by-id-200	START	1782227922972
+USER	offer-detail-by-id-200	START	1782227922933
+USER	offer-detail-by-id-200	START	1782227922982
+USER	offer-detail-by-id-200	START	1782227922984
+USER	offer-detail-by-id-200	START	1782227922988
+USER	offer-detail-by-id-200	START	1782227922999
+REQUEST		POST /api-oauth-b2b/v1/oauth2/token	1782227922875	1782227923638	OK	 
+REQUEST		offer-detail-by-id-200	1782227923647	1782227924206	OK	 
+REQUEST		offer-detail-by-id-200	1782227923661	1782227924205	OK	 
+REQUEST		offer-detail-by-id-200	1782227923662	1782227924206	OK	 
+REQUEST		offer-detail-by-id-200	1782227923643	1782227924204	OK	 
+REQUEST		offer-detail-by-id-200	1782227923655	1782227924204	OK	 
+REQUEST		offer-detail-by-id-200	1782227923648	1782227924193	OK	 
+REQUEST		offer-detail-by-id-200	1782227923650	1782227924206	OK	 
+REQUEST		offer-detail-by-id-200	1782227923645	1782227924228	OK	 
+REQUEST		offer-detail-by-id-200	1782227924377	1782227924807	OK	 
+REQUEST		offer-detail-by-id-200	1782227924434	1782227924874	OK	 
+REQUEST		offer-detail-by-id-200	1782227924395	1782227924883	OK	 
+REQUEST		offer-detail-by-id-200	1782227924426	1782227924899	OK	 
+REQUEST		offer-detail-by-id-200	1782227924428	1782227924900	OK	 
+REQUEST		offer-detail-by-id-200	1782227924399	1782227924906	OK	 
+REQUEST		offer-detail-by-id-200	1782227924424	1782227924927	OK	 
+REQUEST		offer-detail-by-id-200	1782227924426	1782227924985	OK	 
+REQUEST		offer-detail-by-id-200	1782227924856	1782227925344	OK	 
+REQUEST		offer-detail-by-id-200	1782227924890	1782227925379	OK	 
+REQUEST		offer-detail-by-id-200	1782227924962	1782227925410	OK	 
+REQUEST		offer-detail-by-id-200	1782227924949	1782227925485	OK	 
+REQUEST		offer-detail-by-id-200	1782227924960	1782227925538	OK	 
+REQUEST		offer-detail-by-id-200	1782227924952	1782227925509	OK	 
+REQUEST		offer-detail-by-id-200	1782227924920	1782227925525	OK	 
+REQUEST		offer-detail-by-id-200	1782227925050	1782227925592	OK	 
+REQUEST		offer-detail-by-id-200	1782227925374	1782227925837	OK	 
+REQUEST		offer-detail-by-id-200	1782227925450	1782227925934	OK	 
+REQUEST		offer-detail-by-id-200	1782227925435	1782227925997	OK	 
+REQUEST		offer-detail-by-id-200	1782227925566	1782227926031	OK	 
+REQUEST		offer-detail-by-id-200	1782227925580	1782227926075	OK	 
+REQUEST		offer-detail-by-id-200	1782227925582	1782227926086	OK	 
+REQUEST		offer-detail-by-id-200	1782227925578	1782227926087	OK	 
+REQUEST		offer-detail-by-id-200	1782227925637	1782227926112	OK	 
+REQUEST		offer-detail-by-id-200	1782227925875	1782227926309	OK	 
+REQUEST		offer-detail-by-id-200	1782227925944	1782227926388	OK	 
+REQUEST		offer-detail-by-id-200	1782227926004	1782227926441	OK	 
+REQUEST		offer-detail-by-id-200	1782227926130	1782227926534	OK	 
+REQUEST		offer-detail-by-id-200	1782227926102	1782227926587	OK	 
+REQUEST		offer-detail-by-id-200	1782227926096	1782227926595	OK	 
+REQUEST		offer-detail-by-id-200	1782227926040	1782227926602	OK	 
+REQUEST		offer-detail-by-id-200	1782227926338	1782227926776	OK	 
+REQUEST		offer-detail-by-id-200	1782227926451	1782227926823	OK	 
+REQUEST		offer-detail-by-id-200	1782227926396	1782227926831	OK	 
+REQUEST		offer-detail-by-id-200	1782227926617	1782227927038	OK	 
+REQUEST		offer-detail-by-id-200	1782227926539	1782227927076	OK	 
+REQUEST		offer-detail-by-id-200	1782227926618	1782227927093	OK	 
+REQUEST		offer-detail-by-id-200	1782227926617	1782227927142	OK	 
+REQUEST		offer-detail-by-id-200	1782227926851	1782227927252	OK	 
+REQUEST		offer-detail-by-id-200	1782227926800	1782227927292	OK	 
+REQUEST		offer-detail-by-id-200	1782227926848	1782227927390	OK	 
+REQUEST		offer-detail-by-id-200	1782227927106	1782227927535	OK	 
+REQUEST		offer-detail-by-id-200	1782227927048	1782227927582	OK	 
+REQUEST		offer-detail-by-id-200	1782227927091	1782227927577	OK	 
+REQUEST		offer-detail-by-id-200	1782227926101	1782227927604	OK	 
+REQUEST		offer-detail-by-id-200	1782227927164	1782227927613	OK	 
+REQUEST		offer-detail-by-id-200	1782227927268	1782227927653	OK	 
+REQUEST		offer-detail-by-id-200	1782227927313	1782227927820	OK	 
+REQUEST		offer-detail-by-id-200	1782227927404	1782227927857	OK	 
+REQUEST		offer-detail-by-id-200	1782227927642	1782227928049	OK	 
+REQUEST		offer-detail-by-id-200	1782227927583	1782227928077	OK	 
+REQUEST		offer-detail-by-id-200	1782227927686	1782227928121	OK	 
+REQUEST		offer-detail-by-id-200	1782227927654	1782227928164	OK	 
+REQUEST		offer-detail-by-id-200	1782227927655	1782227928161	OK	 
+REQUEST		offer-detail-by-id-200	1782227927650	1782227928187	OK	 
+REQUEST		offer-detail-by-id-200	1782227927843	1782227928278	OK	 
+REQUEST		offer-detail-by-id-200	1782227927945	1782227928327	OK	 
+REQUEST		offer-detail-by-id-200	1782227928123	1782227928585	OK	 
+REQUEST		offer-detail-by-id-200	1782227928154	1782227928593	OK	 
+REQUEST		offer-detail-by-id-200	1782227928196	1782227928630	OK	 
+REQUEST		offer-detail-by-id-200	1782227928218	1782227928632	OK	 
+REQUEST		offer-detail-by-id-200	1782227928088	1782227928665	OK	 
+REQUEST		offer-detail-by-id-200	1782227928297	1782227928683	OK	 
+REQUEST		offer-detail-by-id-200	1782227928193	1782227928695	OK	 
+REQUEST		offer-detail-by-id-200	1782227928334	1782227928814	OK	 
+REQUEST		offer-detail-by-id-200	1782227928604	1782227929018	OK	 
+REQUEST		offer-detail-by-id-200	1782227928593	1782227929035	OK	 
+REQUEST		offer-detail-by-id-200	1782227928640	1782227929071	OK	 
+REQUEST		offer-detail-by-id-200	1782227928647	1782227929079	OK	 
+REQUEST		offer-detail-by-id-200	1782227928707	1782227929126	OK	 
+REQUEST		offer-detail-by-id-200	1782227928695	1782227929133	OK	 
+REQUEST		offer-detail-by-id-200	1782227928672	1782227929138	OK	 
+REQUEST		offer-detail-by-id-200	1782227928828	1782227929243	OK	 
+REQUEST		offer-detail-by-id-200	1782227929042	1782227929407	OK	 
+REQUEST		offer-detail-by-id-200	1782227929085	1782227929461	OK	 
+REQUEST		offer-detail-by-id-200	1782227929025	1782227929463	OK	 
+REQUEST		offer-detail-by-id-200	1782227929079	1782227929468	OK	 
+REQUEST		offer-detail-by-id-200	1782227929155	1782227929515	OK	 
+REQUEST		offer-detail-by-id-200	1782227929156	1782227929570	OK	 
+REQUEST		offer-detail-by-id-200	1782227929146	1782227929597	OK	 
+REQUEST		offer-detail-by-id-200	1782227929264	1782227929637	OK	 
+REQUEST		offer-detail-by-id-200	1782227929412	1782227929772	OK	 
+REQUEST		offer-detail-by-id-200	1782227929472	1782227929853	OK	 
+REQUEST		offer-detail-by-id-200	1782227929518	1782227929877	OK	 
+REQUEST		offer-detail-by-id-200	1782227929470	1782227929894	OK	 
+REQUEST		offer-detail-by-id-200	1782227929467	1782227929913	OK	 
+REQUEST		offer-detail-by-id-200	1782227929573	1782227929974	OK	 
+REQUEST		offer-detail-by-id-200	1782227929601	1782227930018	OK	 
+REQUEST		offer-detail-by-id-200	1782227929642	1782227930052	OK	 
+REQUEST		offer-detail-by-id-200	1782227929777	1782227930145	OK	 
+REQUEST		offer-detail-by-id-200	1782227929899	1782227930269	OK	 
+REQUEST		offer-detail-by-id-200	1782227929863	1782227930270	OK	 
+REQUEST		offer-detail-by-id-200	1782227929888	1782227930290	OK	 
+REQUEST		offer-detail-by-id-200	1782227929917	1782227930353	OK	 
+REQUEST		offer-detail-by-id-200	1782227929982	1782227930406	OK	 
+REQUEST		offer-detail-by-id-200	1782227930033	1782227930422	OK	 
+REQUEST		offer-detail-by-id-200	1782227930057	1782227930446	OK	 
+REQUEST		offer-detail-by-id-200	1782227930153	1782227930533	OK	 
+REQUEST		offer-detail-by-id-200	1782227930277	1782227930675	OK	 
+REQUEST		offer-detail-by-id-200	1782227930288	1782227930682	OK	 
+REQUEST		offer-detail-by-id-200	1782227930363	1782227930738	OK	 
+REQUEST		offer-detail-by-id-200	1782227930416	1782227930770	OK	 
+REQUEST		offer-detail-by-id-200	1782227930317	1782227930790	OK	 
+REQUEST		offer-detail-by-id-200	1782227930430	1782227930816	OK	 
+REQUEST		offer-detail-by-id-200	1782227930463	1782227930828	OK	 
+REQUEST		offer-detail-by-id-200	1782227930539	1782227930940	OK	 
+REQUEST		offer-detail-by-id-200	1782227930682	1782227931085	OK	 
+REQUEST		offer-detail-by-id-200	1782227930693	1782227931099	OK	 
+REQUEST		offer-detail-by-id-200	1782227930744	1782227931122	OK	 
+REQUEST		offer-detail-by-id-200	1782227930776	1782227931151	OK	 
+REQUEST		offer-detail-by-id-200	1782227930799	1782227931216	OK	 
+REQUEST		offer-detail-by-id-200	1782227930835	1782227931222	OK	 
+REQUEST		offer-detail-by-id-200	1782227930829	1782227931253	OK	 
+REQUEST		offer-detail-by-id-200	1782227930946	1782227931326	OK	 
+REQUEST		offer-detail-by-id-200	1782227931093	1782227931465	OK	 
+REQUEST		offer-detail-by-id-200	1782227931128	1782227931511	OK	 
+REQUEST		offer-detail-by-id-200	1782227931107	1782227931519	OK	 
+REQUEST		offer-detail-by-id-200	1782227931155	1782227931562	OK	 
+REQUEST		offer-detail-by-id-200	1782227931229	1782227931634	OK	 
+REQUEST		offer-detail-by-id-200	1782227931276	1782227931684	OK	 
+REQUEST		offer-detail-by-id-200	1782227931246	1782227931707	OK	 
+REQUEST		offer-detail-by-id-200	1782227931353	1782227931784	OK	 
+REQUEST		offer-detail-by-id-200	1782227931478	1782227931863	OK	 
+REQUEST		offer-detail-by-id-200	1782227931518	1782227931910	OK	 
+REQUEST		offer-detail-by-id-200	1782227931526	1782227931940	OK	 
+REQUEST		offer-detail-by-id-200	1782227931574	1782227931939	OK	 
+REQUEST		offer-detail-by-id-200	1782227931650	1782227932073	OK	 
+REQUEST		offer-detail-by-id-200	1782227931739	1782227932104	OK	 
+REQUEST		offer-detail-by-id-200	1782227931721	1782227932127	OK	 
+REQUEST		offer-detail-by-id-200	1782227931807	1782227932221	OK	 
+REQUEST		offer-detail-by-id-200	1782227931881	1782227932266	OK	 
+REQUEST		offer-detail-by-id-200	1782227931935	1782227932341	OK	 
+REQUEST		offer-detail-by-id-200	1782227931969	1782227932360	OK	 
+REQUEST		offer-detail-by-id-200	1782227931968	1782227932383	OK	 
+REQUEST		offer-detail-by-id-200	1782227932085	1782227932507	OK	 
+REQUEST		offer-detail-by-id-200	1782227932128	1782227932519	OK	 
+REQUEST		offer-detail-by-id-200	1782227932229	1782227932604	OK	 
+REQUEST		offer-detail-by-id-200	1782227932154	1782227932606	OK	 
+REQUEST		offer-detail-by-id-200	1782227932280	1782227932650	OK	 
+REQUEST		offer-detail-by-id-200	1782227932347	1782227932754	OK	 
+REQUEST		offer-detail-by-id-200	1782227932371	1782227932759	OK	 
+REQUEST		offer-detail-by-id-200	1782227932389	1782227932769	OK	 
+REQUEST		offer-detail-by-id-200	1782227932520	1782227932890	OK	 
+REQUEST		offer-detail-by-id-200	1782227932527	1782227932918	OK	 
+REQUEST		offer-detail-by-id-200	1782227932617	1782227932997	OK	 
+REQUEST		offer-detail-by-id-200	1782227932616	1782227933003	OK	 
+REQUEST		offer-detail-by-id-200	1782227932670	1782227933066	OK	 
+REQUEST		offer-detail-by-id-200	1782227932776	1782227933140	OK	 
+REQUEST		offer-detail-by-id-200	1782227932770	1782227933145	OK	 
+REQUEST		offer-detail-by-id-200	1782227932768	1782227933166	OK	 
+REQUEST		offer-detail-by-id-200	1782227932903	1782227933284	OK	 
+REQUEST		offer-detail-by-id-200	1782227932924	1782227933310	OK	 
+REQUEST		offer-detail-by-id-200	1782227933008	1782227933386	OK	 
+REQUEST		offer-detail-by-id-200	1782227933004	1782227933386	OK	 
+REQUEST		offer-detail-by-id-200	1782227933087	1782227933499	OK	 
+REQUEST		offer-detail-by-id-200	1782227933144	1782227933515	OK	 
+REQUEST		offer-detail-by-id-200	1782227933149	1782227933536	OK	 
+REQUEST		offer-detail-by-id-200	1782227933170	1782227933550	OK	 
+REQUEST		offer-detail-by-id-200	1782227933290	1782227933685	OK	 
+REQUEST		offer-detail-by-id-200	1782227933315	1782227933685	OK	 
+REQUEST		offer-detail-by-id-200	1782227933393	1782227933744	OK	 
+REQUEST		offer-detail-by-id-200	1782227933393	1782227933772	OK	 
+REQUEST		offer-detail-by-id-200	1782227933509	1782227933887	OK	 
+REQUEST		offer-detail-by-id-200	1782227933520	1782227933908	OK	 
+REQUEST		offer-detail-by-id-200	1782227933543	1782227933919	OK	 
+REQUEST		offer-detail-by-id-200	1782227933558	1782227933956	OK	 
+REQUEST		offer-detail-by-id-200	1782227933692	1782227934067	OK	 
+REQUEST		offer-detail-by-id-200	1782227933692	1782227934078	OK	 
+REQUEST		offer-detail-by-id-200	1782227933751	1782227934131	OK	 
+REQUEST		offer-detail-by-id-200	1782227933789	1782227934199	OK	 
+REQUEST		offer-detail-by-id-200	1782227933892	1782227934253	OK	 
+REQUEST		offer-detail-by-id-200	1782227933930	1782227934278	OK	 
+REQUEST		offer-detail-by-id-200	1782227933914	1782227934298	OK	 
+REQUEST		offer-detail-by-id-200	1782227933962	1782227934339	OK	 
+REQUEST		offer-detail-by-id-200	1782227934072	1782227934456	OK	 
+REQUEST		offer-detail-by-id-200	1782227934087	1782227934535	OK	 
+REQUEST		offer-detail-by-id-200	1782227934136	1782227934551	OK	 
+REQUEST		offer-detail-by-id-200	1782227934211	1782227934574	OK	 
+REQUEST		offer-detail-by-id-200	1782227934284	1782227934661	OK	 
+REQUEST		offer-detail-by-id-200	1782227934257	1782227934664	OK	 
+REQUEST		offer-detail-by-id-200	1782227934307	1782227934684	OK	 
+REQUEST		offer-detail-by-id-200	1782227934344	1782227934722	OK	 
+REQUEST		offer-detail-by-id-200	1782227934462	1782227934819	OK	 
+REQUEST		offer-detail-by-id-200	1782227934579	1782227934930	OK	 
+REQUEST		offer-detail-by-id-200	1782227934559	1782227934936	OK	 
+REQUEST		offer-detail-by-id-200	1782227934539	1782227934957	OK	 
+REQUEST		offer-detail-by-id-200	1782227934671	1782227935036	OK	 
+REQUEST		offer-detail-by-id-200	1782227934688	1782227935062	OK	 
+REQUEST		offer-detail-by-id-200	1782227934666	1782227935071	OK	 
+REQUEST		offer-detail-by-id-200	1782227934731	1782227935103	OK	 
+REQUEST		offer-detail-by-id-200	1782227934825	1782227935197	OK	 
+REQUEST		offer-detail-by-id-200	1782227934967	1782227935339	OK	 
+REQUEST		offer-detail-by-id-200	1782227934952	1782227935352	OK	 
+REQUEST		offer-detail-by-id-200	1782227934953	1782227935402	OK	 
+REQUEST		offer-detail-by-id-200	1782227935045	1782227935423	OK	 
+REQUEST		offer-detail-by-id-200	1782227935073	1782227935451	OK	 
+REQUEST		offer-detail-by-id-200	1782227935082	1782227935460	OK	 
+REQUEST		offer-detail-by-id-200	1782227935126	1782227935498	OK	 
+REQUEST		offer-detail-by-id-200	1782227935211	1782227935627	OK	 
+REQUEST		offer-detail-by-id-200	1782227935352	1782227935758	OK	 
+REQUEST		offer-detail-by-id-200	1782227935363	1782227935763	OK	 
+REQUEST		offer-detail-by-id-200	1782227935408	1782227935791	OK	 
+REQUEST		offer-detail-by-id-200	1782227935443	1782227935825	OK	 
+REQUEST		offer-detail-by-id-200	1782227935478	1782227935874	OK	 
+REQUEST		offer-detail-by-id-200	1782227935483	1782227935891	OK	 
+REQUEST		offer-detail-by-id-200	1782227935507	1782227935897	OK	 
+REQUEST		offer-detail-by-id-200	1782227935638	1782227936024	OK	 
+REQUEST		offer-detail-by-id-200	1782227935772	1782227936134	OK	 
+REQUEST		offer-detail-by-id-200	1782227935771	1782227936166	OK	 
+REQUEST		offer-detail-by-id-200	1782227935796	1782227936213	OK	 
+REQUEST		offer-detail-by-id-200	1782227935850	1782227936284	OK	 
+REQUEST		offer-detail-by-id-200	1782227935877	1782227936294	OK	 
+REQUEST		offer-detail-by-id-200	1782227935927	1782227936297	OK	 
+REQUEST		offer-detail-by-id-200	1782227935927	1782227936357	OK	 
+REQUEST		offer-detail-by-id-200	1782227936043	1782227936414	OK	 
+REQUEST		offer-detail-by-id-200	1782227936145	1782227936521	OK	 
+REQUEST		offer-detail-by-id-200	1782227936187	1782227936582	OK	 
+REQUEST		offer-detail-by-id-200	1782227936221	1782227936594	OK	 
+REQUEST		offer-detail-by-id-200	1782227936289	1782227936661	OK	 
+REQUEST		offer-detail-by-id-200	1782227936307	1782227936673	OK	 
+REQUEST		offer-detail-by-id-200	1782227936304	1782227936676	OK	 
+REQUEST		offer-detail-by-id-200	1782227936370	1782227936742	OK	 
+REQUEST		offer-detail-by-id-200	1782227936418	1782227936778	OK	 
+REQUEST		offer-detail-by-id-200	1782227936527	1782227936882	OK	 
+REQUEST		offer-detail-by-id-200	1782227936594	1782227936963	OK	 
+REQUEST		offer-detail-by-id-200	1782227936605	1782227936982	OK	 
+REQUEST		offer-detail-by-id-200	1782227936666	1782227937096	OK	 
+REQUEST		offer-detail-by-id-200	1782227936684	1782227937098	OK	 
+REQUEST		offer-detail-by-id-200	1782227936741	1782227937135	OK	 
+REQUEST		offer-detail-by-id-200	1782227936772	1782227937157	OK	 
+REQUEST		offer-detail-by-id-200	1782227936823	1782227937202	OK	 
+REQUEST		offer-detail-by-id-200	1782227936900	1782227937270	OK	 
+REQUEST		offer-detail-by-id-200	1782227936976	1782227937348	OK	 
+REQUEST		offer-detail-by-id-200	1782227936994	1782227937357	OK	 
+REQUEST		offer-detail-by-id-200	1782227937122	1782227937508	OK	 
+REQUEST		offer-detail-by-id-200	1782227937119	1782227937511	OK	 
+REQUEST		offer-detail-by-id-200	1782227937156	1782227937545	OK	 
+REQUEST		offer-detail-by-id-200	1782227937169	1782227937570	OK	 
+REQUEST		offer-detail-by-id-200	1782227937208	1782227937571	OK	 
+REQUEST		offer-detail-by-id-200	1782227937279	1782227937660	OK	 
+REQUEST		offer-detail-by-id-200	1782227937357	1782227937717	OK	 
+REQUEST		offer-detail-by-id-200	1782227937365	1782227937743	OK	 
+REQUEST		offer-detail-by-id-200	1782227937525	1782227937903	OK	 
+REQUEST		offer-detail-by-id-200	1782227937518	1782227937904	OK	 
+REQUEST		offer-detail-by-id-200	1782227937583	1782227937939	OK	 
+REQUEST		offer-detail-by-id-200	1782227937577	1782227937945	OK	 
+REQUEST		offer-detail-by-id-200	1782227937554	1782227937965	OK	 
+REQUEST		offer-detail-by-id-200	1782227937664	1782227938049	OK	 
+REQUEST		offer-detail-by-id-200	1782227937733	1782227938151	OK	 
+REQUEST		offer-detail-by-id-200	1782227937752	1782227938161	OK	 
+REQUEST		offer-detail-by-id-200	1782227937913	1782227938309	OK	 
+REQUEST		offer-detail-by-id-200	1782227937950	1782227938319	OK	 
+REQUEST		offer-detail-by-id-200	1782227937915	1782227938320	OK	 
+REQUEST		offer-detail-by-id-200	1782227937954	1782227938341	OK	 
+REQUEST		offer-detail-by-id-200	1782227937972	1782227938370	OK	 
+REQUEST		offer-detail-by-id-200	1782227938057	1782227938418	OK	 
+REQUEST		offer-detail-by-id-200	1782227938175	1782227938556	OK	 
+REQUEST		offer-detail-by-id-200	1782227938171	1782227938568	OK	 
+REQUEST		offer-detail-by-id-200	1782227938317	1782227938692	OK	 
+REQUEST		offer-detail-by-id-200	1782227938349	1782227938715	OK	 
+REQUEST		offer-detail-by-id-200	1782227938328	1782227938717	OK	 
+REQUEST		offer-detail-by-id-200	1782227938331	1782227938719	OK	 
+REQUEST		offer-detail-by-id-200	1782227938388	1782227938776	OK	 
+REQUEST		offer-detail-by-id-200	1782227938437	1782227938804	OK	 
+REQUEST		offer-detail-by-id-200	1782227938572	1782227938961	OK	 
+REQUEST		offer-detail-by-id-200	1782227938734	1782227939111	OK	 
+REQUEST		offer-detail-by-id-200	1782227938697	1782227939133	OK	 
+REQUEST		offer-detail-by-id-200	1782227938792	1782227939151	OK	 
+REQUEST		offer-detail-by-id-200	1782227938740	1782227939158	OK	 
+REQUEST		offer-detail-by-id-200	1782227938745	1782227939174	OK	 
+REQUEST		offer-detail-by-id-200	1782227938821	1782227939201	OK	 
+REQUEST		offer-detail-by-id-200	1782227938562	1782227939303	OK	 
+REQUEST		offer-detail-by-id-200	1782227938977	1782227939333	OK	 
+REQUEST		offer-detail-by-id-200	1782227939155	1782227939549	OK	 
+REQUEST		offer-detail-by-id-200	1782227939148	1782227939551	OK	 
+REQUEST		offer-detail-by-id-200	1782227939166	1782227939560	OK	 
+REQUEST		offer-detail-by-id-200	1782227939191	1782227939591	OK	 
+REQUEST		offer-detail-by-id-200	1782227939212	1782227939601	OK	 
+REQUEST		offer-detail-by-id-200	1782227939345	1782227939710	OK	 
+REQUEST		offer-detail-by-id-200	1782227939332	1782227939725	OK	 
+REQUEST		offer-detail-by-id-200	1782227939124	1782227939832	OK	 
+REQUEST		offer-detail-by-id-200	1782227939556	1782227939941	OK	 
+REQUEST		offer-detail-by-id-200	1782227939580	1782227939977	OK	 
+REQUEST		offer-detail-by-id-200	1782227939603	1782227939988	OK	 
+REQUEST		offer-detail-by-id-200	1782227939633	1782227940006	OK	 
+USER	offer-detail-by-id-200	END	1782227939134
+USER	offer-detail-by-id-200	END	1782227939209
+USER	offer-detail-by-id-200	END	1782227939559
+USER	offer-detail-by-id-200	END	1782227939605
+USER	offer-detail-by-id-200	END	1782227939978
+REQUEST		offer-detail-by-id-200	1782227939720	1782227940069	OK	 
+REQUEST		offer-detail-by-id-200	1782227939739	1782227940114	OK	 
+REQUEST		offer-detail-by-id-200	1782227939842	1782227940229	OK	 
+REQUEST		offer-detail-by-id-200	1782227939574	1782227940333	OK	 
+REQUEST		offer-detail-by-id-200	1782227939958	1782227940354	OK	 
+REQUEST		offer-detail-by-id-200	1782227939983	1782227940365	OK	 
+USER	offer-detail-by-id-200	END	1782227940008
+USER	offer-detail-by-id-200	END	1782227940366
+REQUEST		offer-detail-by-id-200	1782227940000	1782227940368	OK	 
+REQUEST		offer-detail-by-id-200	1782227940011	1782227940408	OK	 
+REQUEST		offer-detail-by-id-200	1782227940077	1782227940487	OK	 
+REQUEST		offer-detail-by-id-200	1782227940134	1782227940548	OK	 
+REQUEST		offer-detail-by-id-200	1782227940244	1782227940629	OK	 
+REQUEST		offer-detail-by-id-200	1782227940366	1782227940752	OK	 
+REQUEST		offer-detail-by-id-200	1782227940340	1782227940753	OK	 
+REQUEST		offer-detail-by-id-200	1782227940377	1782227940769	OK	 
+REQUEST		offer-detail-by-id-200	1782227940373	1782227940772	OK	 
+REQUEST		offer-detail-by-id-200	1782227940426	1782227940786	OK	 
+REQUEST		offer-detail-by-id-200	1782227940503	1782227940855	OK	 
+REQUEST		offer-detail-by-id-200	1782227940551	1782227940927	OK	 
+REQUEST		offer-detail-by-id-200	1782227940634	1782227941013	OK	 
+REQUEST		offer-detail-by-id-200	1782227940761	1782227941125	OK	 
+REQUEST		offer-detail-by-id-200	1782227940783	1782227941142	OK	 
+REQUEST		offer-detail-by-id-200	1782227940759	1782227941156	OK	 
+REQUEST		offer-detail-by-id-200	1782227940794	1782227941157	OK	 
+REQUEST		offer-detail-by-id-200	1782227940783	1782227941168	OK	 
+REQUEST		offer-detail-by-id-200	1782227940864	1782227941266	OK	 
+REQUEST		offer-detail-by-id-200	1782227941018	1782227941425	OK	 
+REQUEST		offer-detail-by-id-200	1782227940937	1782227941450	OK	 
+REQUEST		offer-detail-by-id-200	1782227941132	1782227941522	OK	 
+REQUEST		offer-detail-by-id-200	1782227941146	1782227941543	OK	 
+REQUEST		offer-detail-by-id-200	1782227941173	1782227941556	OK	 
+REQUEST		offer-detail-by-id-200	1782227941166	1782227941565	OK	 
+REQUEST		offer-detail-by-id-200	1782227941165	1782227941621	OK	 
+REQUEST		offer-detail-by-id-200	1782227941276	1782227941652	OK	 
+REQUEST		offer-detail-by-id-200	1782227941431	1782227941826	OK	 
+REQUEST		offer-detail-by-id-200	1782227941456	1782227941835	OK	 
+REQUEST		offer-detail-by-id-200	1782227941554	1782227941919	OK	 
+REQUEST		offer-detail-by-id-200	1782227941576	1782227941957	OK	 
+REQUEST		offer-detail-by-id-200	1782227941577	1782227941961	OK	 
+REQUEST		offer-detail-by-id-200	1782227941535	1782227941961	OK	 
+REQUEST		offer-detail-by-id-200	1782227941642	1782227942035	OK	 
+REQUEST		offer-detail-by-id-200	1782227941665	1782227942054	OK	 
+REQUEST		offer-detail-by-id-200	1782227941856	1782227942219	OK	 
+REQUEST		offer-detail-by-id-200	1782227941857	1782227942246	OK	 
+REQUEST		offer-detail-by-id-200	1782227941924	1782227942309	OK	 
+REQUEST		offer-detail-by-id-200	1782227941962	1782227942353	OK	 
+REQUEST		offer-detail-by-id-200	1782227941972	1782227942358	OK	 
+REQUEST		offer-detail-by-id-200	1782227941969	1782227942371	OK	 
+REQUEST		offer-detail-by-id-200	1782227942044	1782227942413	OK	 
+USER	offer-detail-by-id-200	END	1782227941920
+USER	offer-detail-by-id-200	END	1782227941959
+USER	offer-detail-by-id-200	END	1782227942038
+USER	offer-detail-by-id-200	END	1782227942313
+USER	offer-detail-by-id-200	END	1782227942357
+USER	offer-detail-by-id-200	END	1782227942368
+USER	offer-detail-by-id-200	END	1782227942373
+USER	offer-detail-by-id-200	END	1782227942421
+REQUEST		offer-detail-by-id-200	1782227942060	1782227942453	OK	 
+REQUEST		offer-detail-by-id-200	1782227942224	1782227942611	OK	 
+REQUEST		offer-detail-by-id-200	1782227942254	1782227942619	OK	 
+REQUEST		offer-detail-by-id-200	1782227942322	1782227942751	OK	 
+USER	offer-detail-by-id-200	END	1782227942753
+REQUEST		offer-detail-by-id-200	1782227942376	1782227942760	OK	 
+REQUEST		offer-detail-by-id-200	1782227942385	1782227942776	OK	 
+REQUEST		offer-detail-by-id-200	1782227942392	1782227942795	OK	 
+REQUEST		offer-detail-by-id-200	1782227942473	1782227942849	OK	 
+REQUEST		offer-detail-by-id-200	1782227942443	1782227942862	OK	 
+REQUEST		offer-detail-by-id-200	1782227942636	1782227943017	OK	 
+REQUEST		offer-detail-by-id-200	1782227942761	1782227943147	OK	 
+REQUEST		offer-detail-by-id-200	1782227942790	1782227943193	OK	 
+REQUEST		offer-detail-by-id-200	1782227942767	1782227943193	OK	 
+REQUEST		offer-detail-by-id-200	1782227942814	1782227943217	OK	 
+REQUEST		offer-detail-by-id-200	1782227942858	1782227943251	OK	 
+REQUEST		offer-detail-by-id-200	1782227942616	1782227943308	OK	 
+REQUEST		offer-detail-by-id-200	1782227942876	1782227943312	OK	 
+REQUEST		offer-detail-by-id-200	1782227943203	1782227944061	OK	 
+REQUEST		offer-detail-by-id-200	1782227943029	1782227944061	OK	 
+REQUEST		offer-detail-by-id-200	1782227943225	1782227944063	OK	 
+REQUEST		offer-detail-by-id-200	1782227943152	1782227944065	OK	 
+REQUEST		offer-detail-by-id-200	1782227943202	1782227944065	OK	 
+REQUEST		offer-detail-by-id-200	1782227943261	1782227944356	OK	 
+REQUEST		offer-detail-by-id-200	1782227943344	1782227944373	OK	 
+REQUEST		offer-detail-by-id-200	1782227944072	1782227944433	OK	 
+REQUEST		offer-detail-by-id-200	1782227944069	1782227944436	OK	 
+REQUEST		offer-detail-by-id-200	1782227944071	1782227944440	OK	 
+REQUEST		offer-detail-by-id-200	1782227944068	1782227944451	OK	 
+REQUEST		offer-detail-by-id-200	1782227944072	1782227944458	OK	 
+REQUEST		offer-detail-by-id-200	1782227943317	1782227944592	OK	 
+REQUEST		offer-detail-by-id-200	1782227944360	1782227944720	OK	 
+REQUEST		offer-detail-by-id-200	1782227944378	1782227944759	OK	 
+REQUEST		offer-detail-by-id-200	1782227944444	1782227944799	OK	 
+REQUEST		offer-detail-by-id-200	1782227944441	1782227944809	OK	 
+REQUEST		offer-detail-by-id-200	1782227944455	1782227944815	OK	 
+REQUEST		offer-detail-by-id-200	1782227944437	1782227944817	OK	 
+REQUEST		offer-detail-by-id-200	1782227944597	1782227945570	OK	 
+REQUEST		offer-detail-by-id-200	1782227944729	1782227945574	OK	 
+REQUEST		offer-detail-by-id-200	1782227944763	1782227945575	OK	 
+REQUEST		offer-detail-by-id-200	1782227944463	1782227945587	OK	 
+REQUEST		offer-detail-by-id-200	1782227944818	1782227945866	OK	 
+REQUEST		offer-detail-by-id-200	1782227944803	1782227945866	OK	 
+USER	offer-detail-by-id-200	END	1782227942761
+USER	offer-detail-by-id-200	END	1782227942781
+USER	offer-detail-by-id-200	END	1782227942798
+USER	offer-detail-by-id-200	END	1782227943195
+USER	offer-detail-by-id-200	END	1782227943219
+USER	offer-detail-by-id-200	END	1782227944061
+USER	offer-detail-by-id-200	END	1782227944062
+USER	offer-detail-by-id-200	END	1782227944063
+USER	offer-detail-by-id-200	END	1782227944067
+USER	offer-detail-by-id-200	END	1782227944373
+USER	offer-detail-by-id-200	END	1782227944438
+USER	offer-detail-by-id-200	END	1782227944440
+USER	offer-detail-by-id-200	END	1782227944451
+USER	offer-detail-by-id-200	END	1782227944458
+USER	offer-detail-by-id-200	END	1782227944759
+USER	offer-detail-by-id-200	END	1782227944800
+USER	offer-detail-by-id-200	END	1782227944809
+USER	offer-detail-by-id-200	END	1782227944815
+USER	offer-detail-by-id-200	END	1782227945591
+USER	offer-detail-by-id-200	END	1782227945867
+REQUEST		offer-detail-by-id-200	1782227944813	1782227945877	OK	 
+REQUEST		offer-detail-by-id-200	1782227944820	1782227945879	OK	 
+REQUEST		offer-detail-by-id-200	1782227945604	1782227945970	OK	 
+REQUEST		offer-detail-by-id-200	1782227945582	1782227945992	OK	 
+REQUEST		offer-detail-by-id-200	1782227945610	1782227946006	OK	 
+REQUEST		offer-detail-by-id-200	1782227945609	1782227946002	OK	 
+REQUEST		offer-detail-by-id-200	1782227945872	1782227946248	OK	 
+REQUEST		offer-detail-by-id-200	1782227945874	1782227946266	OK	 
+REQUEST		offer-detail-by-id-200	1782227945881	1782227946268	OK	 
+REQUEST		offer-detail-by-id-200	1782227945901	1782227946309	OK	 
+USER	offer-detail-by-id-200	END	1782227945877
+USER	offer-detail-by-id-200	END	1782227945887
+USER	offer-detail-by-id-200	END	1782227945995
+USER	offer-detail-by-id-200	END	1782227946249
+USER	offer-detail-by-id-200	END	1782227946267
+USER	offer-detail-by-id-200	END	1782227946313
+REQUEST		offer-detail-by-id-200	1782227946256	1782227947100	OK	 
+REQUEST		offer-detail-by-id-200	1782227946000	1782227947111	OK	 
+USER	offer-detail-by-id-200	END	1782227947101
+REQUEST		offer-detail-by-id-200	1782227946272	1782227947115	OK	 
+REQUEST		offer-detail-by-id-200	1782227946020	1782227947115	OK	 
+REQUEST		offer-detail-by-id-200	1782227946012	1782227947119	OK	 
+REQUEST		offer-detail-by-id-200	1782227946022	1782227947121	OK	 
+REQUEST		offer-detail-by-id-200	1782227946329	1782227947389	OK	 
+REQUEST		offer-detail-by-id-200	1782227946274	1782227947402	OK	 
+REQUEST		offer-detail-by-id-200	1782227947119	1782227947514	OK	 
+REQUEST		offer-detail-by-id-200	1782227947131	1782227947518	OK	 
+REQUEST		offer-detail-by-id-200	1782227947140	1782227947519	OK	 
+REQUEST		offer-detail-by-id-200	1782227947133	1782227947537	OK	 
+REQUEST		offer-detail-by-id-200	1782227947134	1782227947539	OK	 
+REQUEST		offer-detail-by-id-200	1782227947137	1782227947541	OK	 
+REQUEST		offer-detail-by-id-200	1782227947394	1782227948121	OK	 
+REQUEST		offer-detail-by-id-200	1782227947413	1782227948122	OK	 
+REQUEST		offer-detail-by-id-200	1782227947545	1782227948405	OK	 
+REQUEST		offer-detail-by-id-200	1782227947544	1782227948418	OK	 
+REQUEST		offer-detail-by-id-200	1782227947546	1782227948421	OK	 
+REQUEST		offer-detail-by-id-200	1782227947520	1782227948429	OK	 
+USER	offer-detail-by-id-200	END	1782227947119
+USER	offer-detail-by-id-200	END	1782227947119
+USER	offer-detail-by-id-200	END	1782227947537
+USER	offer-detail-by-id-200	END	1782227947546
+USER	offer-detail-by-id-200	END	1782227948122
+USER	offer-detail-by-id-200	END	1782227948122
+USER	offer-detail-by-id-200	END	1782227948412
+USER	offer-detail-by-id-200	END	1782227948421
+USER	offer-detail-by-id-200	END	1782227948423
+USER	offer-detail-by-id-200	END	1782227948429
+REQUEST		offer-detail-by-id-200	1782227947524	1782227948434	OK	 
+REQUEST		offer-detail-by-id-200	1782227947525	1782227948435	OK	 
+USER	offer-detail-by-id-200	END	1782227948435
+USER	offer-detail-by-id-200	END	1782227948436
+REQUEST		offer-detail-by-id-200	1782227948129	1782227948498	OK	 
+USER	offer-detail-by-id-200	END	1782227948499
+REQUEST		offer-detail-by-id-200	1782227948127	1782227948507	OK	 
+USER	offer-detail-by-id-200	END	1782227948507
+REQUEST		offer-detail-by-id-200	1782227948432	1782227948798	OK	 
+USER	offer-detail-by-id-200	END	1782227948801
+REQUEST		offer-detail-by-id-200	1782227948425	1782227948811	OK	 
+USER	offer-detail-by-id-200	END	1782227948814
+REQUEST		offer-detail-by-id-200	1782227948414	1782227948865	OK	 
+USER	offer-detail-by-id-200	END	1782227948865
+USER	offer-detail-by-slug-200	START	1782227949719
+USER	offer-detail-by-slug-200	START	1782227949722
+USER	offer-detail-by-slug-200	START	1782227949724
+USER	offer-detail-by-slug-200	START	1782227949717
+USER	offer-detail-by-slug-200	START	1782227949717
+USER	offer-detail-by-slug-200	START	1782227949726
+USER	offer-detail-by-slug-200	START	1782227949734
+USER	offer-detail-by-slug-200	START	1782227949730
+USER	offer-detail-by-slug-200	START	1782227949750
+USER	offer-detail-by-slug-200	START	1782227949725
+USER	offer-detail-by-slug-200	START	1782227949729
+USER	offer-detail-by-slug-200	START	1782227949757
+USER	offer-detail-by-slug-200	START	1782227949717
+USER	offer-detail-by-slug-200	START	1782227949731
+USER	offer-detail-by-slug-200	START	1782227949759
+USER	offer-detail-by-slug-200	START	1782227949771
+USER	offer-detail-by-slug-200	START	1782227949756
+USER	offer-detail-by-slug-200	START	1782227949772
+USER	offer-detail-by-slug-200	START	1782227949744
+USER	offer-detail-by-slug-200	START	1782227949749
+USER	offer-detail-by-slug-200	START	1782227949764
+USER	offer-detail-by-slug-200	START	1782227949775
+USER	offer-detail-by-slug-200	START	1782227949785
+USER	offer-detail-by-slug-200	START	1782227949804
+USER	offer-detail-by-slug-200	START	1782227949810
+USER	offer-detail-by-slug-200	START	1782227949804
+USER	offer-detail-by-slug-200	START	1782227949818
+USER	offer-detail-by-slug-200	START	1782227949839
+USER	offer-detail-by-slug-200	START	1782227949845
+USER	offer-detail-by-slug-200	START	1782227949794
+USER	offer-detail-by-slug-200	START	1782227949968
+USER	offer-detail-by-slug-200	START	1782227949942
+USER	offer-detail-by-slug-200	START	1782227949974
+USER	offer-detail-by-slug-200	START	1782227949956
+USER	offer-detail-by-slug-200	START	1782227949948
+USER	offer-detail-by-slug-200	START	1782227949798
+USER	offer-detail-by-slug-200	START	1782227949838
+USER	offer-detail-by-slug-200	START	1782227949983
+USER	offer-detail-by-slug-200	START	1782227949826
+USER	offer-detail-by-slug-200	START	1782227949991
+USER	offer-detail-by-slug-200	START	1782227949969
+USER	offer-detail-by-slug-200	START	1782227949995
+USER	offer-detail-by-slug-200	START	1782227949998
+USER	offer-detail-by-slug-200	START	1782227950009
+USER	offer-detail-by-slug-200	START	1782227950016
+USER	offer-detail-by-slug-200	START	1782227950008
+USER	offer-detail-by-slug-200	START	1782227950012
+USER	offer-detail-by-slug-200	START	1782227950032
+USER	offer-detail-by-slug-200	START	1782227950039
+USER	offer-detail-by-slug-200	START	1782227950042
+USER	offer-detail-by-slug-200	START	1782227950034
+USER	offer-detail-by-slug-200	START	1782227950024
+USER	offer-detail-by-slug-200	START	1782227950066
+USER	offer-detail-by-slug-200	START	1782227950055
+USER	offer-detail-by-slug-200	START	1782227950054
+USER	offer-detail-by-slug-200	START	1782227950077
+USER	offer-detail-by-slug-200	START	1782227950069
+USER	offer-detail-by-slug-200	START	1782227950078
+USER	offer-detail-by-slug-200	START	1782227950085
+USER	offer-detail-by-slug-200	START	1782227950095
+REQUEST		offer-detail-by-slug-200	1782227949741	1782227950649	OK	 
+REQUEST		offer-detail-by-slug-200	1782227949740	1782227950920	OK	 
+REQUEST		offer-detail-by-slug-200	1782227949774	1782227950919	OK	 
+REQUEST		offer-detail-by-slug-200	1782227949785	1782227950928	OK	 
+REQUEST		offer-detail-by-slug-200	1782227949801	1782227950935	OK	 
+REQUEST		offer-detail-by-slug-200	1782227949780	1782227950934	OK	 
+REQUEST		offer-detail-by-slug-200	1782227949764	1782227950966	OK	 
+REQUEST		offer-detail-by-slug-200	1782227949772	1782227950958	OK	 
+REQUEST		offer-detail-by-slug-200	1782227950664	1782227951058	OK	 
+REQUEST		offer-detail-by-slug-200	1782227950933	1782227951304	OK	 
+REQUEST		offer-detail-by-slug-200	1782227950942	1782227951312	OK	 
+REQUEST		offer-detail-by-slug-200	1782227950971	1782227951359	OK	 
+REQUEST		offer-detail-by-slug-200	1782227950982	1782227951368	OK	 
+REQUEST		offer-detail-by-slug-200	1782227950985	1782227951382	OK	 
+REQUEST		offer-detail-by-slug-200	1782227950986	1782227951383	OK	 
+REQUEST		offer-detail-by-slug-200	1782227951001	1782227951388	OK	 
+REQUEST		offer-detail-by-slug-200	1782227951065	1782227951428	OK	 
+REQUEST		offer-detail-by-slug-200	1782227951318	1782227951698	OK	 
+REQUEST		offer-detail-by-slug-200	1782227951312	1782227951707	OK	 
+REQUEST		offer-detail-by-slug-200	1782227951387	1782227951749	OK	 
+REQUEST		offer-detail-by-slug-200	1782227951368	1782227951761	OK	 
+REQUEST		offer-detail-by-slug-200	1782227951397	1782227951764	OK	 
+REQUEST		offer-detail-by-slug-200	1782227951374	1782227951767	OK	 
+REQUEST		offer-detail-by-slug-200	1782227951404	1782227951780	OK	 
+REQUEST		offer-detail-by-slug-200	1782227951448	1782227951818	OK	 
+REQUEST		offer-detail-by-slug-200	1782227951720	1782227952094	OK	 
+REQUEST		offer-detail-by-slug-200	1782227951719	1782227952105	OK	 
+REQUEST		offer-detail-by-slug-200	1782227951793	1782227952166	OK	 
+REQUEST		offer-detail-by-slug-200	1782227951786	1782227952169	OK	 
+REQUEST		offer-detail-by-slug-200	1782227951807	1782227952174	OK	 
+REQUEST		offer-detail-by-slug-200	1782227951808	1782227952180	OK	 
+REQUEST		offer-detail-by-slug-200	1782227951802	1782227952194	OK	 
+REQUEST		offer-detail-by-slug-200	1782227951837	1782227952212	OK	 
+REQUEST		offer-detail-by-slug-200	1782227952098	1782227952453	OK	 
+REQUEST		offer-detail-by-slug-200	1782227952112	1782227952489	OK	 
+REQUEST		offer-detail-by-slug-200	1782227952180	1782227952583	OK	 
+REQUEST		offer-detail-by-slug-200	1782227952193	1782227952586	OK	 
+REQUEST		offer-detail-by-slug-200	1782227952189	1782227952597	OK	 
+REQUEST		offer-detail-by-slug-200	1782227952226	1782227952597	OK	 
+REQUEST		offer-detail-by-slug-200	1782227952201	1782227952603	OK	 
+REQUEST		offer-detail-by-slug-200	1782227952188	1782227952605	OK	 
+REQUEST		offer-detail-by-slug-200	1782227952460	1782227952834	OK	 
+REQUEST		offer-detail-by-slug-200	1782227952495	1782227952900	OK	 
+REQUEST		offer-detail-by-slug-200	1782227952594	1782227952963	OK	 
+REQUEST		offer-detail-by-slug-200	1782227952596	1782227952970	OK	 
+REQUEST		offer-detail-by-slug-200	1782227952614	1782227952997	OK	 
+REQUEST		offer-detail-by-slug-200	1782227952612	1782227953005	OK	 
+REQUEST		offer-detail-by-slug-200	1782227952616	1782227953010	OK	 
+REQUEST		offer-detail-by-slug-200	1782227952609	1782227953033	OK	 
+REQUEST		offer-detail-by-slug-200	1782227952839	1782227953205	OK	 
+REQUEST		offer-detail-by-slug-200	1782227952907	1782227953268	OK	 
+REQUEST		offer-detail-by-slug-200	1782227952974	1782227953331	OK	 
+REQUEST		offer-detail-by-slug-200	1782227952967	1782227953373	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953012	1782227953376	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953014	1782227953386	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953037	1782227953388	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953018	1782227953393	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953210	1782227953586	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953274	1782227953684	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953335	1782227953693	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953380	1782227953726	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953378	1782227953749	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953390	1782227953749	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953392	1782227953778	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953396	1782227953784	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953590	1782227953948	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953697	1782227954048	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953692	1782227954052	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953732	1782227954098	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953757	1782227954114	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953759	1782227954139	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953788	1782227954149	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953792	1782227954162	OK	 
+REQUEST		offer-detail-by-slug-200	1782227953952	1782227954341	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954052	1782227954427	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954056	1782227954462	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954118	1782227954466	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954148	1782227954509	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954153	1782227954519	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954166	1782227954546	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954345	1782227954748	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954101	1782227954751	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954432	1782227954796	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954470	1782227954825	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954466	1782227954856	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954522	1782227954869	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954557	1782227954937	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954527	1782227955083	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954756	1782227955119	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954759	1782227955122	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954800	1782227955190	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954835	1782227955194	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954874	1782227955237	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954864	1782227955240	OK	 
+REQUEST		offer-detail-by-slug-200	1782227954941	1782227955317	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955086	1782227955431	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955128	1782227955486	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955123	1782227955509	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955201	1782227955580	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955195	1782227955585	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955252	1782227955606	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955250	1782227955617	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955322	1782227955701	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955436	1782227955811	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955489	1782227955865	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955513	1782227955931	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955592	1782227955946	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955584	1782227955958	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955610	1782227955984	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955621	1782227956068	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955707	1782227956096	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955818	1782227956199	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955871	1782227956244	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955935	1782227956322	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955950	1782227956339	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955962	1782227956350	OK	 
+REQUEST		offer-detail-by-slug-200	1782227955989	1782227956387	OK	 
+REQUEST		offer-detail-by-slug-200	1782227956078	1782227956432	OK	 
+REQUEST		offer-detail-by-slug-200	1782227956104	1782227956478	OK	 
+REQUEST		offer-detail-by-slug-200	1782227956203	1782227956567	OK	 
+REQUEST		offer-detail-by-slug-200	1782227956247	1782227956624	OK	 
+REQUEST		offer-detail-by-slug-200	1782227956326	1782227956690	OK	 
+REQUEST		offer-detail-by-slug-200	1782227956354	1782227956707	OK	 
+REQUEST		offer-detail-by-slug-200	1782227956342	1782227956725	OK	 
+REQUEST		offer-detail-by-slug-200	1782227956392	1782227956770	OK	 
+REQUEST		offer-detail-by-slug-200	1782227956443	1782227956804	OK	 
+REQUEST		offer-detail-by-slug-200	1782227956484	1782227956849	OK	 
+REQUEST		offer-detail-by-slug-200	1782227956571	1782227956943	OK	 
+REQUEST		offer-detail-by-slug-200	1782227956645	1782227957000	OK	 
+REQUEST		offer-detail-by-slug-200	1782227956715	1782227957081	OK	 
+REQUEST		offer-detail-by-slug-200	1782227956695	1782227957082	OK	 
+REQUEST		offer-detail-by-slug-200	1782227956737	1782227957108	OK	 
+REQUEST		offer-detail-by-slug-200	1782227956775	1782227957134	OK	 
+REQUEST		offer-detail-by-slug-200	1782227956812	1782227957173	OK	 
+REQUEST		offer-detail-by-slug-200	1782227956854	1782227957200	OK	 
+REQUEST		offer-detail-by-slug-200	1782227956950	1782227957334	OK	 
+REQUEST		offer-detail-by-slug-200	1782227957004	1782227957378	OK	 
+REQUEST		offer-detail-by-slug-200	1782227957086	1782227957443	OK	 
+USER	offer-detail-by-slug-200	END	1782227956807
+USER	offer-detail-by-slug-200	END	1782227957083
+USER	offer-detail-by-slug-200	END	1782227957173
+USER	offer-detail-by-slug-200	END	1782227957202
+USER	offer-detail-by-slug-200	END	1782227957444
+REQUEST		offer-detail-by-slug-200	1782227957085	1782227957449	OK	 
+REQUEST		offer-detail-by-slug-200	1782227957115	1782227957496	OK	 
+REQUEST		offer-detail-by-slug-200	1782227957138	1782227957514	OK	 
+REQUEST		offer-detail-by-slug-200	1782227957177	1782227957532	OK	 
+REQUEST		offer-detail-by-slug-200	1782227957338	1782227957703	OK	 
+REQUEST		offer-detail-by-slug-200	1782227957203	1782227957738	OK	 
+USER	offer-detail-by-slug-200	END	1782227957534
+USER	offer-detail-by-slug-200	END	1782227957738
+REQUEST		offer-detail-by-slug-200	1782227957383	1782227957746	OK	 
+REQUEST		offer-detail-by-slug-200	1782227957448	1782227957808	OK	 
+USER	offer-detail-by-slug-200	END	1782227957809
+REQUEST		offer-detail-by-slug-200	1782227957455	1782227957819	OK	 
+REQUEST		offer-detail-by-slug-200	1782227957522	1782227957874	OK	 
+REQUEST		offer-detail-by-slug-200	1782227957536	1782227957893	OK	 
+REQUEST		offer-detail-by-slug-200	1782227957500	1782227957911	OK	 
+REQUEST		offer-detail-by-slug-200	1782227957711	1782227958090	OK	 
+REQUEST		offer-detail-by-slug-200	1782227957742	1782227958095	OK	 
+REQUEST		offer-detail-by-slug-200	1782227957749	1782227958106	OK	 
+REQUEST		offer-detail-by-slug-200	1782227957813	1782227958160	OK	 
+REQUEST		offer-detail-by-slug-200	1782227957826	1782227958188	OK	 
+REQUEST		offer-detail-by-slug-200	1782227957879	1782227958259	OK	 
+REQUEST		offer-detail-by-slug-200	1782227957915	1782227958281	OK	 
+REQUEST		offer-detail-by-slug-200	1782227957902	1782227958293	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958095	1782227958461	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958115	1782227958471	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958107	1782227958471	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958171	1782227958545	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958193	1782227958551	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958264	1782227958618	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958285	1782227958663	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958295	1782227958666	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958475	1782227958842	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958476	1782227958864	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958550	1782227958902	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958555	1782227958911	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958467	1782227958980	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958623	1782227958995	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958668	1782227959019	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958674	1782227959066	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958869	1782227959247	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958908	1782227959287	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958878	1782227959299	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958921	1782227959302	OK	 
+REQUEST		offer-detail-by-slug-200	1782227958991	1782227959355	OK	 
+REQUEST		offer-detail-by-slug-200	1782227959025	1782227959383	OK	 
+REQUEST		offer-detail-by-slug-200	1782227959072	1782227959448	OK	 
+REQUEST		offer-detail-by-slug-200	1782227959004	1782227959458	OK	 
+REQUEST		offer-detail-by-slug-200	1782227959254	1782227959640	OK	 
+REQUEST		offer-detail-by-slug-200	1782227959291	1782227959657	OK	 
+REQUEST		offer-detail-by-slug-200	1782227959309	1782227959683	OK	 
+REQUEST		offer-detail-by-slug-200	1782227959303	1782227959694	OK	 
+REQUEST		offer-detail-by-slug-200	1782227959363	1782227959770	OK	 
+REQUEST		offer-detail-by-slug-200	1782227959388	1782227959818	OK	 
+REQUEST		offer-detail-by-slug-200	1782227959452	1782227959823	OK	 
+REQUEST		offer-detail-by-slug-200	1782227959461	1782227959857	OK	 
+REQUEST		offer-detail-by-slug-200	1782227959644	1782227960007	OK	 
+REQUEST		offer-detail-by-slug-200	1782227959661	1782227960012	OK	 
+REQUEST		offer-detail-by-slug-200	1782227959689	1782227960042	OK	 
+REQUEST		offer-detail-by-slug-200	1782227959698	1782227960060	OK	 
+REQUEST		offer-detail-by-slug-200	1782227959774	1782227960163	OK	 
+REQUEST		offer-detail-by-slug-200	1782227959821	1782227960222	OK	 
+REQUEST		offer-detail-by-slug-200	1782227959826	1782227960228	OK	 
+REQUEST		offer-detail-by-slug-200	1782227959861	1782227960252	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960011	1782227960386	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960048	1782227960401	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960016	1782227960408	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960065	1782227960449	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960172	1782227960545	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960236	1782227960603	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960232	1782227960610	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960256	1782227960628	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960390	1782227960755	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960412	1782227960770	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960407	1782227960784	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960453	1782227960851	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960550	1782227960920	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960614	1782227960978	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960609	1782227960980	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960639	1782227961007	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960779	1782227961136	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960759	1782227961149	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960794	1782227961168	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960857	1782227961221	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960924	1782227961295	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960987	1782227961351	OK	 
+REQUEST		offer-detail-by-slug-200	1782227960986	1782227961361	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961012	1782227961411	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961141	1782227961505	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961161	1782227961536	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961175	1782227961545	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961225	1782227961592	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961299	1782227961659	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961364	1782227961744	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961355	1782227961751	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961417	1782227961790	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961509	1782227961905	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961541	1782227961908	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961549	1782227961922	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961596	1782227961974	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961663	1782227962062	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961761	1782227962172	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961798	1782227962176	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961751	1782227962176	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961915	1782227962277	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961912	1782227962280	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961929	1782227962289	OK	 
+REQUEST		offer-detail-by-slug-200	1782227961980	1782227962354	OK	 
+REQUEST		offer-detail-by-slug-200	1782227962066	1782227962444	OK	 
+REQUEST		offer-detail-by-slug-200	1782227962184	1782227962552	OK	 
+REQUEST		offer-detail-by-slug-200	1782227962182	1782227962559	OK	 
+REQUEST		offer-detail-by-slug-200	1782227962288	1782227962675	OK	 
+REQUEST		offer-detail-by-slug-200	1782227962361	1782227962721	OK	 
+REQUEST		offer-detail-by-slug-200	1782227962289	1782227962722	OK	 
+REQUEST		offer-detail-by-slug-200	1782227962177	1782227962774	OK	 
+REQUEST		offer-detail-by-slug-200	1782227962295	1782227962780	OK	 
+REQUEST		offer-detail-by-slug-200	1782227962451	1782227962840	OK	 
+REQUEST		offer-detail-by-slug-200	1782227962726	1782227963196	OK	 
+REQUEST		offer-detail-by-slug-200	1782227962727	1782227963211	OK	 
+REQUEST		offer-detail-by-slug-200	1782227962577	1782227963214	OK	 
+REQUEST		offer-detail-by-slug-200	1782227962679	1782227963232	OK	 
+REQUEST		offer-detail-by-slug-200	1782227962779	1782227963262	OK	 
+REQUEST		offer-detail-by-slug-200	1782227962848	1782227963263	OK	 
+REQUEST		offer-detail-by-slug-200	1782227962787	1782227963278	OK	 
+REQUEST		offer-detail-by-slug-200	1782227962558	1782227963287	OK	 
+REQUEST		offer-detail-by-slug-200	1782227963218	1782227963618	OK	 
+REQUEST		offer-detail-by-slug-200	1782227963200	1782227963621	OK	 
+REQUEST		offer-detail-by-slug-200	1782227963266	1782227963631	OK	 
+REQUEST		offer-detail-by-slug-200	1782227963215	1782227963648	OK	 
+REQUEST		offer-detail-by-slug-200	1782227963291	1782227963701	OK	 
+USER	offer-detail-by-slug-200	END	1782227962553
+USER	offer-detail-by-slug-200	END	1782227962723
+USER	offer-detail-by-slug-200	END	1782227963196
+USER	offer-detail-by-slug-200	END	1782227963288
+USER	offer-detail-by-slug-200	END	1782227963625
+REQUEST		offer-detail-by-slug-200	1782227963268	1782227963707	OK	 
+REQUEST		offer-detail-by-slug-200	1782227963286	1782227963712	OK	 
+REQUEST		offer-detail-by-slug-200	1782227963236	1782227963744	OK	 
+REQUEST		offer-detail-by-slug-200	1782227963628	1782227964829	OK	 
+USER	offer-detail-by-slug-200	END	1782227963702
+REQUEST		offer-detail-by-slug-200	1782227963635	1782227964835	OK	 
+REQUEST		offer-detail-by-slug-200	1782227963622	1782227964835	OK	 
+REQUEST		offer-detail-by-slug-200	1782227963749	1782227964837	OK	 
+REQUEST		offer-detail-by-slug-200	1782227963705	1782227964838	OK	 
+REQUEST		offer-detail-by-slug-200	1782227963718	1782227964840	OK	 
+REQUEST		offer-detail-by-slug-200	1782227963654	1782227964840	OK	 
+REQUEST		offer-detail-by-slug-200	1782227963716	1782227964841	OK	 
+REQUEST		offer-detail-by-slug-200	1782227964834	1782227965199	OK	 
+REQUEST		offer-detail-by-slug-200	1782227964847	1782227965201	OK	 
+REQUEST		offer-detail-by-slug-200	1782227964841	1782227965209	OK	 
+REQUEST		offer-detail-by-slug-200	1782227964851	1782227965222	OK	 
+REQUEST		offer-detail-by-slug-200	1782227964853	1782227965223	OK	 
+REQUEST		offer-detail-by-slug-200	1782227964844	1782227965231	OK	 
+REQUEST		offer-detail-by-slug-200	1782227964854	1782227965241	OK	 
+REQUEST		offer-detail-by-slug-200	1782227964849	1782227965244	OK	 
+REQUEST		offer-detail-by-slug-200	1782227965205	1782227965593	OK	 
+REQUEST		offer-detail-by-slug-200	1782227965238	1782227965599	OK	 
+REQUEST		offer-detail-by-slug-200	1782227965207	1782227965602	OK	 
+REQUEST		offer-detail-by-slug-200	1782227965247	1782227965612	OK	 
+REQUEST		offer-detail-by-slug-200	1782227965218	1782227965613	OK	 
+REQUEST		offer-detail-by-slug-200	1782227965232	1782227965625	OK	 
+REQUEST		offer-detail-by-slug-200	1782227965254	1782227965628	OK	 
+REQUEST		offer-detail-by-slug-200	1782227965233	1782227965656	OK	 
+REQUEST		offer-detail-by-slug-200	1782227965597	1782227965962	OK	 
+REQUEST		offer-detail-by-slug-200	1782227965620	1782227965983	OK	 
+REQUEST		offer-detail-by-slug-200	1782227965606	1782227965992	OK	 
+REQUEST		offer-detail-by-slug-200	1782227965604	1782227965992	OK	 
+REQUEST		offer-detail-by-slug-200	1782227965615	1782227966007	OK	 
+REQUEST		offer-detail-by-slug-200	1782227965633	1782227966008	OK	 
+REQUEST		offer-detail-by-slug-200	1782227965634	1782227966020	OK	 
+REQUEST		offer-detail-by-slug-200	1782227965668	1782227966036	OK	 
+REQUEST		offer-detail-by-slug-200	1782227965966	1782227966351	OK	 
+REQUEST		offer-detail-by-slug-200	1782227965994	1782227966356	OK	 
+REQUEST		offer-detail-by-slug-200	1782227966012	1782227966373	OK	 
+REQUEST		offer-detail-by-slug-200	1782227965998	1782227966374	OK	 
+REQUEST		offer-detail-by-slug-200	1782227966013	1782227966387	OK	 
+REQUEST		offer-detail-by-slug-200	1782227966024	1782227966394	OK	 
+REQUEST		offer-detail-by-slug-200	1782227966046	1782227966422	OK	 
+REQUEST		offer-detail-by-slug-200	1782227965996	1782227966427	OK	 
+REQUEST		offer-detail-by-slug-200	1782227966355	1782227966720	OK	 
+REQUEST		offer-detail-by-slug-200	1782227966360	1782227966725	OK	 
+REQUEST		offer-detail-by-slug-200	1782227966377	1782227966739	OK	 
+REQUEST		offer-detail-by-slug-200	1782227966392	1782227966778	OK	 
+REQUEST		offer-detail-by-slug-200	1782227966380	1782227966778	OK	 
+REQUEST		offer-detail-by-slug-200	1782227966436	1782227966805	OK	 
+REQUEST		offer-detail-by-slug-200	1782227966436	1782227966806	OK	 
+REQUEST		offer-detail-by-slug-200	1782227966729	1782227967076	OK	 
+REQUEST		offer-detail-by-slug-200	1782227966726	1782227967094	OK	 
+USER	offer-detail-by-slug-200	END	1782227964830
+USER	offer-detail-by-slug-200	END	1782227964836
+USER	offer-detail-by-slug-200	END	1782227964838
+USER	offer-detail-by-slug-200	END	1782227965201
+USER	offer-detail-by-slug-200	END	1782227965236
+USER	offer-detail-by-slug-200	END	1782227965242
+USER	offer-detail-by-slug-200	END	1782227965599
+USER	offer-detail-by-slug-200	END	1782227965604
+USER	offer-detail-by-slug-200	END	1782227965612
+USER	offer-detail-by-slug-200	END	1782227965625
+USER	offer-detail-by-slug-200	END	1782227965632
+USER	offer-detail-by-slug-200	END	1782227965992
+USER	offer-detail-by-slug-200	END	1782227965992
+USER	offer-detail-by-slug-200	END	1782227966008
+USER	offer-detail-by-slug-200	END	1782227966009
+USER	offer-detail-by-slug-200	END	1782227966023
+USER	offer-detail-by-slug-200	END	1782227966040
+USER	offer-detail-by-slug-200	END	1782227966373
+USER	offer-detail-by-slug-200	END	1782227966387
+USER	offer-detail-by-slug-200	END	1782227966394
+USER	offer-detail-by-slug-200	END	1782227966422
+USER	offer-detail-by-slug-200	END	1782227966723
+USER	offer-detail-by-slug-200	END	1782227966726
+USER	offer-detail-by-slug-200	END	1782227966739
+USER	offer-detail-by-slug-200	END	1782227966779
+USER	offer-detail-by-slug-200	END	1782227966806
+USER	offer-detail-by-slug-200	END	1782227967076
+USER	offer-detail-by-slug-200	END	1782227967094
+REQUEST		offer-detail-by-slug-200	1782227966743	1782227967102	OK	 
+REQUEST		offer-detail-by-slug-200	1782227966784	1782227967156	OK	 
+REQUEST		offer-detail-by-slug-200	1782227966783	1782227967165	OK	 
+REQUEST		offer-detail-by-slug-200	1782227966811	1782227967171	OK	 
+REQUEST		offer-detail-by-slug-200	1782227966809	1782227967182	OK	 
+REQUEST		offer-detail-by-slug-200	1782227966399	1782227967186	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967080	1782227967451	OK	 
+USER	offer-detail-by-slug-200	END	1782227967171
+USER	offer-detail-by-slug-200	END	1782227967188
+REQUEST		offer-detail-by-slug-200	1782227967098	1782227967470	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967107	1782227967480	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967168	1782227967523	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967185	1782227967543	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967160	1782227967544	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967192	1782227967559	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967174	1782227967581	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967456	1782227967819	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967474	1782227967844	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967483	1782227967875	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967527	1782227967891	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967549	1782227967927	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967548	1782227967938	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967562	1782227967946	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967591	1782227968109	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967824	1782227968187	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967851	1782227968208	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967898	1782227968258	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967884	1782227968269	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967937	1782227968303	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967953	1782227968309	OK	 
+REQUEST		offer-detail-by-slug-200	1782227967942	1782227968444	OK	 
+REQUEST		offer-detail-by-slug-200	1782227968115	1782227968479	OK	 
+REQUEST		offer-detail-by-slug-200	1782227968192	1782227968568	OK	 
+REQUEST		offer-detail-by-slug-200	1782227968211	1782227968589	OK	 
+REQUEST		offer-detail-by-slug-200	1782227968261	1782227968618	OK	 
+REQUEST		offer-detail-by-slug-200	1782227968273	1782227968655	OK	 
+REQUEST		offer-detail-by-slug-200	1782227968307	1782227968672	OK	 
+REQUEST		offer-detail-by-slug-200	1782227968313	1782227968680	OK	 
+REQUEST		offer-detail-by-slug-200	1782227968447	1782227968821	OK	 
+REQUEST		offer-detail-by-slug-200	1782227968483	1782227968855	OK	 
+REQUEST		offer-detail-by-slug-200	1782227968572	1782227968927	OK	 
+REQUEST		offer-detail-by-slug-200	1782227968593	1782227968971	OK	 
+REQUEST		offer-detail-by-slug-200	1782227968669	1782227969020	OK	 
+REQUEST		offer-detail-by-slug-200	1782227968676	1782227969027	OK	 
+REQUEST		offer-detail-by-slug-200	1782227968685	1782227969035	OK	 
+REQUEST		offer-detail-by-slug-200	1782227968622	1782227969090	OK	 
+REQUEST		offer-detail-by-slug-200	1782227968826	1782227969185	OK	 
+REQUEST		offer-detail-by-slug-200	1782227968859	1782227969207	OK	 
+REQUEST		offer-detail-by-slug-200	1782227968931	1782227969306	OK	 
+REQUEST		offer-detail-by-slug-200	1782227968979	1782227969335	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969024	1782227969383	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969041	1782227969423	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969031	1782227969453	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969094	1782227969464	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969189	1782227969536	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969212	1782227969562	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969310	1782227969660	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969339	1782227969687	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969400	1782227969756	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969463	1782227969814	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969446	1782227969822	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969473	1782227969828	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969564	1782227969931	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969580	1782227969949	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969675	1782227970061	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969724	1782227970102	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969774	1782227970168	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969837	1782227970206	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969829	1782227970219	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969820	1782227970222	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969936	1782227970310	OK	 
+REQUEST		offer-detail-by-slug-200	1782227969953	1782227970328	OK	 
+REQUEST		offer-detail-by-slug-200	1782227970066	1782227970423	OK	 
+REQUEST		offer-detail-by-slug-200	1782227970106	1782227970485	OK	 
+REQUEST		offer-detail-by-slug-200	1782227970173	1782227970523	OK	 
+REQUEST		offer-detail-by-slug-200	1782227970228	1782227970571	OK	 
+REQUEST		offer-detail-by-slug-200	1782227970209	1782227970581	OK	 
+REQUEST		offer-detail-by-slug-200	1782227970224	1782227970597	OK	 
+REQUEST		offer-detail-by-slug-200	1782227970314	1782227970701	OK	 
+REQUEST		offer-detail-by-slug-200	1782227970333	1782227970726	OK	 
+REQUEST		offer-detail-by-slug-200	1782227970426	1782227970808	OK	 
+USER	offer-detail-by-slug-200	END	1782227967453
+USER	offer-detail-by-slug-200	END	1782227970571
+USER	offer-detail-by-slug-200	END	1782227970701
+USER	offer-detail-by-slug-200	END	1782227970726
+USER	offer-detail-by-slug-200	END	1782227970809
+REQUEST		offer-detail-by-slug-200	1782227970489	1782227970868	OK	 
+REQUEST		offer-detail-by-slug-200	1782227970528	1782227970935	OK	 
+REQUEST		offer-detail-by-slug-200	1782227970584	1782227970937	OK	 
+REQUEST		offer-detail-by-slug-200	1782227970575	1782227970955	OK	 
+USER	offer-detail-by-slug-200	END	1782227970936
+USER	offer-detail-by-slug-200	END	1782227970955
+REQUEST		offer-detail-by-slug-200	1782227970600	1782227970968	OK	 
+REQUEST		offer-detail-by-slug-200	1782227970704	1782227971062	OK	 
+REQUEST		offer-detail-by-slug-200	1782227970730	1782227971108	OK	 
+USER	offer-detail-by-slug-200	END	1782227971063
+USER	offer-detail-by-slug-200	END	1782227971109
+REQUEST		offer-detail-by-slug-200	1782227970812	1782227971173	OK	 
+REQUEST		offer-detail-by-slug-200	1782227970871	1782227971252	OK	 
+REQUEST		offer-detail-by-slug-200	1782227970941	1782227971299	OK	 
+REQUEST		offer-detail-by-slug-200	1782227970939	1782227971300	OK	 
+REQUEST		offer-detail-by-slug-200	1782227970959	1782227971318	OK	 
+REQUEST		offer-detail-by-slug-200	1782227970973	1782227971329	OK	 
+REQUEST		offer-detail-by-slug-200	1782227971067	1782227971558	OK	 
+REQUEST		offer-detail-by-slug-200	1782227971182	1782227971568	OK	 
+REQUEST		offer-detail-by-slug-200	1782227971261	1782227971651	OK	 
+REQUEST		offer-detail-by-slug-200	1782227971307	1782227971670	OK	 
+REQUEST		offer-detail-by-slug-200	1782227971308	1782227971670	OK	 
+REQUEST		offer-detail-by-slug-200	1782227971323	1782227971698	OK	 
+USER	offer-detail-by-slug-200	END	1782227971698
+REQUEST		offer-detail-by-slug-200	1782227971335	1782227971721	OK	 
+USER	offer-detail-by-slug-200	END	1782227971721
+REQUEST		offer-detail-by-slug-200	1782227971574	1782227971924	OK	 
+USER	offer-detail-by-slug-200	END	1782227971925
+REQUEST		offer-detail-by-slug-200	1782227971566	1782227971963	OK	 
+USER	offer-detail-by-slug-200	END	1782227971964
+REQUEST		offer-detail-by-slug-200	1782227971681	1782227972039	OK	 
+USER	offer-detail-by-slug-200	END	1782227972040
+REQUEST		offer-detail-by-slug-200	1782227971679	1782227972056	OK	 
+USER	offer-detail-by-slug-200	END	1782227972056
+REQUEST		offer-detail-by-slug-200	1782227971659	1782227972075	OK	 
+USER	offer-detail-by-slug-200	END	1782227972075

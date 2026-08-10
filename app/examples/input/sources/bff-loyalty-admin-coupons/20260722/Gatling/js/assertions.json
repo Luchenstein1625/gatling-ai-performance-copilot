@@ -1,0 +1,27 @@
+{
+  "simulation": "cl.bci.ecodig.performance.test.ParametricSimulation",
+  "simulationId": "parametricsimulation",
+  "start": 1784818398210,
+  "description": "",
+  "scenarios": ["obtencion-lista-cupones", "actualizar-lista-cupones", "obtener-configuracion-cupones", "obtener-configuracion-cupones-por-id", "crear-configuracion-cupones", "actualizar-configuracion-cupones"],
+  "assertions": [
+{
+  "path": "Global",
+  "target": "percentage of successful events",
+  "condition": "is greater than or equal to",
+  "expectedValues": [100.0],
+  "result": false,
+  "message": "Global: percentage of successful events is greater than or equal to 100.0",
+  "actualValue": [11.970074812967582]
+},
+{
+  "path": "obtencion-lista-cupones",
+  "target": "99th percentile of response time",
+  "condition": "is less than",
+  "expectedValues": [3000.0],
+  "result": false,
+  "message": "obtencion-lista-cupones: 99th percentile of response time is less than 3000.0",
+  "actualValue": [15600.0]
+}
+  ]
+}

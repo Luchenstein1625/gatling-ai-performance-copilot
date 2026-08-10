@@ -69,6 +69,72 @@ pde pipeline `
   --train
 ```
 
+## Importación histórica (batch)
+
+Si tus ejecuciones históricas están en `examples/input/sources`, el comando usa esa ruta por defecto:
+
+- En cada ejecución se crea automáticamente una carpeta `run_YYYYMMDD_HHMMSS` dentro del directorio base del `--output`.
+- El dataset CSV y el reporte JSON quedan dentro de esa carpeta para evitar sobreescrituras.
+
+```powershell
+pde dataset-batch `
+  --output examples/output/historical_dataset.csv `
+  --report examples/output/historical_batch_report.json `
+  --replace
+```
+
+Ejemplo de resultado:
+
+```text
+examples/output/run_20260803_184501/historical_dataset.csv
+examples/output/run_20260803_184501/historical_batch_report.json
+```
+
+Si quieres usar otra carpeta fuente:
+
+```powershell
+pde dataset-batch `
+  --source <ruta_fuente> `
+  --output examples/output/historical_dataset.csv `
+  --report examples/output/historical_batch_report.json `
+  --replace
+```
+
+## Evaluación automática completa (general + semillas)
+
+Para no ejecutar paso a paso, este comando genera todo en una sola corrida:
+
+- Crea carpeta `run_YYYYMMDD_HHMMSS`.
+- Importa dataset histórico.
+- Genera reportes generales (calidad, entrenamiento, explicación, evaluación multiseed).
+- Genera reportes individuales por semilla en `seed_reports/seed_XX.json`.
+- Actualiza un índice central de corridas en `examples/output/runs_index.json`.
+- Genera comparador consolidado en `examples/output/runs_comparison_latest.json`.
+- Genera informe de validez estadística en `statistical_validity_report.json` (IC 95% y evidencia por comparación).
+
+```powershell
+pde auto-evaluate `
+  --source examples/input/sources `
+  --output-base examples/output `
+  --seeds 30 `
+  --feature-profile operational_core
+```
+
+Regenerar el comparador consolidado desde el índice:
+
+```powershell
+pde compare-runs `
+  --output-base examples/output
+```
+
+## API de corridas
+
+Endpoints para consultar trazabilidad y ranking sin revisar archivos manualmente:
+
+- `GET /runs/index`: devuelve `runs_index.json`.
+- `GET /runs/comparison`: devuelve `runs_comparison_latest.json`.
+- `GET /runs/top?limit=5`: ranking de corridas por `operational_core_macro_f1`.
+
 ## Flujo integrado
 
 ```text

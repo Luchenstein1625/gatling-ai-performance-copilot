@@ -1,0 +1,11 @@
+loadType: sequence
+features:
+- name: obtener-habilitadores
+  feature: classpath:cl/bci/ecodig/acceptance/obtener-habilitadores.feature@name=obtener-habilitadores
+  performance: true
+  reason: "Se requiere performance"
+  reason_detail: ""
+  concurrency: very_low
+  iterations: low
+  response_time: very_high
+  operation_id: "HabilitadoresFinancierosController_obtenerHabilitadores"
