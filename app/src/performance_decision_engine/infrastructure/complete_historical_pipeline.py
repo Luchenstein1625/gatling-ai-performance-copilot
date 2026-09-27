@@ -121,8 +121,7 @@ class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
 
         action_counts = Counter(str(item["action"]) for item in recommendations)
         safety_violations = sum(
-            item["action"] == "review"
-            and item["proposed_parameters"] != item["current_parameters"]
+            item["action"] == "review" and item["proposed_parameters"] != item["current_parameters"]
             for item in recommendations
         )
         report: dict[str, object] = {
@@ -207,7 +206,9 @@ class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
         return report
 
     @staticmethod
-    def _predict_with_threshold(model: Any, features: list[list[object]], threshold: float) -> list[str]:
+    def _predict_with_threshold(
+        model: Any, features: list[list[object]], threshold: float
+    ) -> list[str]:
         probabilities = model.predict_proba(features)
         classes = list(model.classes_)
         positive_index = classes.index(NOT_APPLIES)
@@ -342,7 +343,9 @@ class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
     def _eda_summary(self, rows: list[dict[str, str]], labels: list[str]) -> dict[str, object]:
         by_class: dict[str, object] = {}
         for label in (NOT_APPLIES, APPLIES):
-            selected = [row for row, item_label in zip(rows, labels, strict=True) if item_label == label]
+            selected = [
+                row for row, item_label in zip(rows, labels, strict=True) if item_label == label
+            ]
             p95_values = [
                 value for row in selected if (value := self._number(row.get("p95"))) is not None
             ]
@@ -353,7 +356,9 @@ class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
                 "rows": len(selected),
                 "median_p95_ms": median(p95_values) if p95_values else None,
                 "median_rps": median(rps_values) if rps_values else None,
-                "error_rate_rows": sum((self._number(row.get("errorCount")) or 0) > 0 for row in selected)
+                "error_rate_rows": sum(
+                    (self._number(row.get("errorCount")) or 0) > 0 for row in selected
+                )
                 / len(selected),
             }
         return {
@@ -362,7 +367,10 @@ class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
                 name: sum(not row.get(name, "").strip() for row in rows) / len(rows)
                 for name in (*FEATURES, "p95", "rps", "errorCount")
             },
-            "warning": "EDA result fields describe the observed label; they are excluded from model inputs.",
+            "warning": (
+                "EDA result fields describe the observed label; "
+                "they are excluded from model inputs."
+            ),
         }
 
     @staticmethod
@@ -375,8 +383,13 @@ class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
     @staticmethod
     def _write_segment_metrics(rows: list[dict[str, object]], path: Path) -> None:
         fieldnames = [
-            "dimension", "segment", "rows", "not_applies_rate",
-            "not_applies_f1", "not_applies_recall", "accuracy",
+            "dimension",
+            "segment",
+            "rows",
+            "not_applies_rate",
+            "not_applies_f1",
+            "not_applies_recall",
+            "accuracy",
         ]
         with path.open("w", encoding="utf-8", newline="") as target:
             writer = csv.DictWriter(target, fieldnames=fieldnames)
@@ -449,9 +462,7 @@ class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
             "not_applies_recall": recall_score(
                 expected, predicted, pos_label=NOT_APPLIES, zero_division=0
             ),
-            "not_applies_f1": f1_score(
-                expected, predicted, pos_label=NOT_APPLIES, zero_division=0
-            ),
+            "not_applies_f1": f1_score(expected, predicted, pos_label=NOT_APPLIES, zero_division=0),
             "confusion_matrix_labels": labels,
             "confusion_matrix": confusion_matrix(expected, predicted, labels=labels).tolist(),
             "classification_report": classification_report(
@@ -470,7 +481,9 @@ class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
 
     @staticmethod
     def _peer_key(row: dict[str, str]) -> tuple[str, str, str]:
-        return tuple(row.get(name, "").strip().lower() for name in ("pilar", "Tcomponente", "Metodo"))
+        return tuple(
+            row.get(name, "").strip().lower() for name in ("pilar", "Tcomponente", "Metodo")
+        )
 
     def _profile(self, rows: list[dict[str, str]]) -> dict[str, str]:
         profile: dict[str, str] = {}
@@ -515,7 +528,9 @@ class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
             "current_parameters": current,
             "proposed_parameters": proposed,
             "human_approval_required": action != "maintain",
-            "online_validation_status": "pending_new_execution" if action == "upgrade" else "not_required",
+            "online_validation_status": (
+                "pending_new_execution" if action == "upgrade" else "not_required"
+            ),
             "rationale": rationale,
         }
 
