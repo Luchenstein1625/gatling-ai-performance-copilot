@@ -35,6 +35,11 @@ DEFAULT_ERROR_COSTS = {
     "manual_review": 1.0,
 }
 THRESHOLDS = tuple(round(value / 20, 2) for value in range(2, 19))
+REFERENCE_THRESHOLD = 0.50
+ANNUAL_ATTENTIONS = 144
+AVERAGE_ATTENTION_COST_CLP = 224_000
+ECONOMIC_COVERAGE_RATES = (0.25, 0.50, 0.75)
+ECONOMIC_EFFORT_REDUCTION_RATES = (0.50, 0.75)
 
 
 class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
@@ -117,6 +122,12 @@ class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
         self._write_thresholds(
             threshold_analysis["thresholds"], output_dir / "threshold_cost_analysis.csv"
         )
+        threshold_comparison = self._threshold_comparison(
+            threshold_analysis["thresholds"], selected_threshold
+        )
+        self._write_rows(threshold_comparison, output_dir / "threshold_comparison.csv")
+        economic_sensitivity = self._economic_sensitivity()
+        self._write_rows(economic_sensitivity, output_dir / "economic_sensitivity.csv")
         self._write_segment_metrics(segment_metrics, output_dir / "segment_metrics.csv")
 
         action_counts = Counter(str(item["action"]) for item in recommendations)
@@ -185,6 +196,19 @@ class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
                 "train_groups": len({groups[index] for index in train_indexes}),
                 "test_groups": len({groups[index] for index in test_indexes}),
             },
+            "economic_evaluation": {
+                "annual_attentions": ANNUAL_ATTENTIONS,
+                "average_attention_cost_clp": AVERAGE_ATTENTION_COST_CLP,
+                "annual_current_cost_clp": ANNUAL_ATTENTIONS * AVERAGE_ATTENTION_COST_CLP,
+                "base_case": {
+                    "coverage_rate": 0.50,
+                    "effort_reduction_rate": 0.75,
+                    "gross_benefit_potential_clp": 12_096_000,
+                },
+                "interpretation": (
+                    "Scenario-based gross benefit potential; not a demonstrated saving or ROI."
+                ),
+            },
             "artifacts": [
                 "layer1_applicability_model.joblib",
                 "decision_tree.dot",
@@ -192,6 +216,8 @@ class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
                 "layered_recommendations.csv",
                 "complete_pipeline_evaluation.json",
                 "threshold_cost_analysis.csv",
+                "threshold_comparison.csv",
+                "economic_sensitivity.csv",
                 "segment_metrics.csv",
             ],
             "limitations": [
@@ -269,6 +295,60 @@ class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
             "selected_result": selected,
             "thresholds": rows,
         }
+
+    @staticmethod
+    def _threshold_comparison(
+        rows: list[dict[str, object]], selected_threshold: float
+    ) -> list[dict[str, object]]:
+        by_threshold = {float(row["threshold"]): row for row in rows}
+        reference = by_threshold[REFERENCE_THRESHOLD]
+        selected = by_threshold[selected_threshold]
+        reference_cost = float(reference["total_cost_units"])
+        selected_cost = float(selected["total_cost_units"])
+
+        comparison: list[dict[str, object]] = []
+        for scenario, row in (("reference", reference), ("selected", selected)):
+            comparison.append(
+                {
+                    "scenario": scenario,
+                    "threshold": row["threshold"],
+                    "not_applies_recall": row["not_applies_recall"],
+                    "not_applies_precision": row["not_applies_precision"],
+                    "not_applies_f1": row["not_applies_f1"],
+                    "false_applies": row["false_applies"],
+                    "false_not_applies": row["false_not_applies"],
+                    "manual_reviews": row["manual_reviews"],
+                    "total_cost_units": row["total_cost_units"],
+                    "cost_difference_vs_reference": float(row["total_cost_units"]) - reference_cost,
+                    "cost_reduction_vs_reference_pct": (
+                        (reference_cost - float(row["total_cost_units"])) / reference_cost
+                    ),
+                }
+            )
+        if selected_cost > reference_cost:
+            raise ValueError("Selected threshold must not cost more than the reference threshold.")
+        return comparison
+
+    @staticmethod
+    def _economic_sensitivity() -> list[dict[str, object]]:
+        annual_cost = ANNUAL_ATTENTIONS * AVERAGE_ATTENTION_COST_CLP
+        rows: list[dict[str, object]] = []
+        for coverage in ECONOMIC_COVERAGE_RATES:
+            for reduction in ECONOMIC_EFFORT_REDUCTION_RATES:
+                addressable = annual_cost * coverage
+                benefit = addressable * reduction
+                rows.append(
+                    {
+                        "coverage_rate": coverage,
+                        "effort_reduction_rate": reduction,
+                        "annual_current_cost_clp": annual_cost,
+                        "addressable_cost_clp": addressable,
+                        "gross_benefit_potential_clp": benefit,
+                        "residual_annual_cost_clp": annual_cost - benefit,
+                        "is_base_case": coverage == 0.50 and reduction == 0.75,
+                    }
+                )
+        return rows
 
     def _grouped_cross_validation(
         self,
@@ -377,6 +457,13 @@ class CompleteHistoricalPipeline(HistoricalBinaryEvaluator):
     def _write_thresholds(rows: list[dict[str, object]], path: Path) -> None:
         with path.open("w", encoding="utf-8", newline="") as target:
             writer = csv.DictWriter(target, fieldnames=list(rows[0]))
+            writer.writeheader()
+            writer.writerows(rows)
+
+    @staticmethod
+    def _write_rows(rows: list[dict[str, object]], path: Path) -> None:
+        with path.open("w", encoding="utf-8", newline="") as target:
+            writer = csv.DictWriter(target, fieldnames=list(rows[0]), lineterminator="\n")
             writer.writeheader()
             writer.writerows(rows)
 

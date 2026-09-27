@@ -33,12 +33,59 @@ def test_complete_pipeline_implements_four_layers(tmp_path: Path) -> None:
     assert (output / "layered_recommendations.csv").exists()
     assert (output / "layer1_applicability_model.joblib").exists()
     assert (output / "threshold_cost_analysis.csv").exists()
+    assert (output / "threshold_comparison.csv").exists()
+    assert (output / "economic_sensitivity.csv").exists()
     assert (output / "segment_metrics.csv").exists()
     layer1 = report["layers"]["1_applicability"]
     assert 0.1 <= layer1["decision_threshold"] <= 0.9
     assert len(layer1["threshold_selection"]["thresholds"]) == 17
     assert len(layer1["grouped_cross_validation"]["folds"]) == 5
     assert layer1["threshold_selection"]["costs_are_configurable_assumptions"] is True
+    assert report["economic_evaluation"]["annual_current_cost_clp"] == 32_256_000
+    assert report["economic_evaluation"]["base_case"]["gross_benefit_potential_clp"] == 12_096_000
+
+
+def test_threshold_comparison_quantifies_selected_tradeoff() -> None:
+    rows = [
+        {
+            "threshold": 0.35,
+            "not_applies_recall": 0.88,
+            "not_applies_precision": 0.74,
+            "not_applies_f1": 0.81,
+            "false_applies": 90,
+            "false_not_applies": 230,
+            "manual_reviews": 895,
+            "total_cost_units": 2255.0,
+        },
+        {
+            "threshold": 0.50,
+            "not_applies_recall": 0.71,
+            "not_applies_precision": 0.80,
+            "not_applies_f1": 0.75,
+            "false_applies": 221,
+            "false_not_applies": 137,
+            "manual_reviews": 671,
+            "total_cost_units": 3155.0,
+        },
+    ]
+
+    comparison = CompleteHistoricalPipeline._threshold_comparison(rows, 0.35)
+
+    assert comparison[0]["scenario"] == "reference"
+    assert comparison[1]["scenario"] == "selected"
+    assert comparison[1]["cost_difference_vs_reference"] == -900.0
+    assert round(comparison[1]["cost_reduction_vs_reference_pct"], 4) == 0.2853
+
+
+def test_economic_sensitivity_contains_auditable_base_case() -> None:
+    rows = CompleteHistoricalPipeline._economic_sensitivity()
+
+    assert len(rows) == 6
+    base_case = next(row for row in rows if row["is_base_case"])
+    assert base_case["annual_current_cost_clp"] == 32_256_000
+    assert base_case["addressable_cost_clp"] == 16_128_000
+    assert base_case["gross_benefit_potential_clp"] == 12_096_000
+    assert base_case["residual_annual_cost_clp"] == 20_160_000
 
 
 def test_review_never_changes_configuration() -> None:
