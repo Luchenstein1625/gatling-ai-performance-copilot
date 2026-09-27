@@ -4,11 +4,11 @@ from typing import Annotated
 import typer
 from rich.console import Console
 
-from performance_decision_engine.infrastructure.historical_binary_evaluator import (
-    HistoricalBinaryEvaluator,
-)
 from performance_decision_engine.infrastructure.complete_historical_pipeline import (
     CompleteHistoricalPipeline,
+)
+from performance_decision_engine.infrastructure.historical_binary_evaluator import (
+    HistoricalBinaryEvaluator,
 )
 
 

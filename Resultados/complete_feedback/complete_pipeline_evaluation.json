@@ -882,6 +882,17 @@
     "train_groups": 408,
     "test_groups": 136
   },
+  "economic_evaluation": {
+    "annual_attentions": 144,
+    "average_attention_cost_clp": 224000,
+    "annual_current_cost_clp": 32256000,
+    "base_case": {
+      "coverage_rate": 0.5,
+      "effort_reduction_rate": 0.75,
+      "gross_benefit_potential_clp": 12096000
+    },
+    "interpretation": "Scenario-based gross benefit potential; not a demonstrated saving or ROI."
+  },
   "artifacts": [
     "layer1_applicability_model.joblib",
     "decision_tree.dot",
@@ -889,6 +900,8 @@
     "layered_recommendations.csv",
     "complete_pipeline_evaluation.json",
     "threshold_cost_analysis.csv",
+    "threshold_comparison.csv",
+    "economic_sensitivity.csv",
     "segment_metrics.csv"
   ],
   "limitations": [

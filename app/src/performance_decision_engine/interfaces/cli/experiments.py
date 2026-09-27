@@ -1,10 +1,10 @@
+import csv
+import hashlib
 import json
+import math
 from collections import Counter
 from collections.abc import Mapping
 from datetime import datetime
-import csv
-import hashlib
-import math
 from pathlib import Path
 from typing import Annotated
 
@@ -19,10 +19,13 @@ from performance_decision_engine.application.use_cases.evaluate_evolution import
     EvolutionObservation,
     load_evolution_history,
 )
+from performance_decision_engine.application.use_cases.explain_model import ExplainModel
+from performance_decision_engine.application.use_cases.generate_dataset import (
+    GenerateDatasetRow,
+)
 from performance_decision_engine.application.use_cases.normalize_execution import (
     NormalizeExecution,
 )
-from performance_decision_engine.application.use_cases.train_model import TrainModel
 from performance_decision_engine.application.use_cases.plan_quadrant_action import (
     PlanQuadrantAction,
 )
@@ -32,17 +35,14 @@ from performance_decision_engine.application.use_cases.predict_execution import 
 from performance_decision_engine.application.use_cases.recommend_execution import (
     RecommendExecution,
 )
+from performance_decision_engine.application.use_cases.train_model import TrainModel
 from performance_decision_engine.domain.entities.recommendation import Recommendation
-from performance_decision_engine.infrastructure.decision_tree_training_backend import (
-    DecisionTreeTrainingBackend,
-)
-from performance_decision_engine.application.use_cases.explain_model import ExplainModel
-from performance_decision_engine.application.use_cases.generate_dataset import (
-    GenerateDatasetRow,
-)
 from performance_decision_engine.infrastructure.batch_execution_discovery import (
     BatchExecutionDiscovery,
     ExecutionFiles,
+)
+from performance_decision_engine.infrastructure.decision_tree_training_backend import (
+    DecisionTreeTrainingBackend,
 )
 from performance_decision_engine.infrastructure.model_evaluator import ModelEvaluator
 from performance_decision_engine.infrastructure.parsers.gatling_metrics_reader import (
@@ -232,7 +232,10 @@ def _build_statistical_validity_report(
             "summary": (
                 "Operational core behaves similarly to proxy-rich variants."
                 if conclusion in {"weak", "inconclusive"}
-                else "Proxy-rich variants outperform operational core with statistically directional gap."
+                else (
+                    "Proxy-rich variants outperform operational core with "
+                    "statistically directional gap."
+                )
             ),
         },
     }
@@ -299,9 +302,7 @@ def _build_run_record(
     evaluation_payload: dict[str, object],
 ) -> dict[str, object]:
     training_metrics_value = training_result.get("metrics")
-    training_metrics = (
-        training_metrics_value if isinstance(training_metrics_value, dict) else {}
-    )
+    training_metrics = training_metrics_value if isinstance(training_metrics_value, dict) else {}
 
     return {
         "run_id": run_directory.name,
