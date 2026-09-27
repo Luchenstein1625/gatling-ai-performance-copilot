@@ -18,6 +18,8 @@ REQUIRED_ARTIFACTS = {
     "layered_recommendations.csv",
     "segment_metrics.csv",
     "threshold_cost_analysis.csv",
+    "threshold_comparison.csv",
+    "economic_sensitivity.csv",
 }
 
 
@@ -53,6 +55,21 @@ def main() -> None:
     if int(selected["manual_reviews"]) != int(expected_distribution["review"]):
         fail("manual review count differs from the layer-2 review distribution")
 
+    with (RESULTS / "threshold_comparison.csv").open(encoding="utf-8", newline="") as source:
+        comparison = {row["scenario"]: row for row in csv.DictReader(source)}
+    reference_cost = float(comparison["reference"]["total_cost_units"])
+    selected_cost = float(comparison["selected"]["total_cost_units"])
+    if selected_cost >= reference_cost:
+        fail("selected threshold does not improve cost over the 0.50 reference")
+
+    with (RESULTS / "economic_sensitivity.csv").open(encoding="utf-8", newline="") as source:
+        economic_rows = list(csv.DictReader(source))
+    base_cases = [row for row in economic_rows if row["is_base_case"] == "True"]
+    if len(base_cases) != 1:
+        fail("economic sensitivity must contain exactly one base case")
+    if float(base_cases[0]["gross_benefit_potential_clp"]) != 12_096_000:
+        fail("unexpected gross benefit potential in the economic base case")
+
     folds = layer1["grouped_cross_validation"]["folds"]
     if len(folds) != 5:
         fail(f"expected five grouped folds, found {len(folds)}")
@@ -67,6 +84,13 @@ def main() -> None:
     print(f"Decision threshold: {threshold:.2f}")
     print(f"Threshold F1 not_applies: {float(selected['not_applies_f1']):.4f}")
     print(f"Expected cost units: {float(selected['total_cost_units']):.0f}")
+    print(
+        f"Cost reduction vs threshold 0.50: {(reference_cost - selected_cost) / reference_cost:.1%}"
+    )
+    print(
+        "Gross benefit potential (base case): "
+        f"CLP {float(base_cases[0]['gross_benefit_potential_clp']):,.0f}"
+    )
     print(
         "Decision distribution: "
         f"review={expected_distribution['review']}, "
