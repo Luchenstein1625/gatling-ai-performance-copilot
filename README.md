@@ -1,375 +1,236 @@
 # Gatling AI Performance Copilot
 
-## Descripción del proyecto y resultados obtenidos
+Proyecto Capstone del Magíster en Inteligencia Artificial de la Universidad Adolfo Ibáñez.
 
-**Proyecto Capstone — Magíster en Inteligencia Artificial**  
-**Universidad Adolfo Ibáñez**  
-**Autores:** Luis Araya, Rodrigo González y Hernán Medina
+**Autores:** Luis Araya, Rodrigo González y Hernán Medina.
 
----
+## Resumen
 
-## 1. Resumen ejecutivo
+Gatling AI Performance Copilot transforma resultados históricos de pruebas de rendimiento en una recomendación técnica explicable. La solución:
 
-Gatling AI Performance Copilot es una prueba de concepto que automatiza el análisis de configuraciones y resultados de pruebas de rendimiento ejecutadas con Gatling.
+- normaliza evidencia Gatling;
+- determina si una configuración `applies` o `not_applies`;
+- traduce la clasificación en `review`, `maintain` o `upgrade`;
+- propone parámetros de forma controlada;
+- exige aprobación humana y una nueva ejecución Gatling antes de validar un cambio.
 
-El proyecto transforma archivos técnicos dispersos en una recomendación explicable para apoyar la decisión sobre la siguiente prueba. La solución combina:
+La POC no modifica infraestructura ni ejecuta cambios autónomos.
 
-- Reglas expertas basadas en criterios técnicos.
-- Procesamiento de resultados históricos.
-- Ingeniería de atributos.
-- Un modelo de machine learning explicable.
-- Comparación con ejecuciones anteriores.
-- Generación de reportes y artefactos auditables.
+## Problema y decisión apoyada
 
-El sistema no reemplaza al especialista ni modifica automáticamente una prueba. Su salida debe ser revisada y aprobada por una persona.
+El proceso actual requiere consolidar archivos, revisar errores y métricas, comparar antecedentes y justificar la siguiente acción. El proyecto apoya esta decisión:
 
----
-
-## 2. Problema abordado
-
-La ejecución de una prueba de rendimiento genera información en diferentes formatos y ubicaciones. Antes de decidir si una configuración puede mantenerse o debe revisarse, el especialista necesita:
-
-1. Revisar la configuración de la prueba.
-2. Consolidar métricas de rendimiento.
-3. Verificar errores y criterios de aceptación.
-4. Comparar la ejecución con antecedentes históricos.
-5. Interpretar los resultados.
-6. Justificar la siguiente acción.
-
-Este proceso es principalmente manual, depende de conocimiento especializado y puede dificultar la trazabilidad de la decisión.
-
-El proyecto busca reducir ese trabajo de preparación analítica, entregando una recomendación reproducible acompañada por la evidencia que la originó.
-
----
-
-## 3. Objetivo
-
-Automatizar el análisis de configuraciones, resultados e historial de pruebas Gatling para generar, en minutos, una recomendación técnica explicable sobre la siguiente acción.
-
-Las recomendaciones consideradas por el diseño son:
-
-| Recomendación | Interpretación |
+| Salida | Acción operacional |
 |---|---|
-| `maintain` | Mantener la configuración evaluada. |
-| `review` | Revisar la configuración o los resultados antes de continuar. |
-| `evolve` | Evaluar una evolución controlada de la prueba. |
+| `review` | Conservar la configuración y solicitar revisión especializada. |
+| `maintain` | Mantener la configuración vigente. |
+| `upgrade` | Proponer un aumento controlado de un nivel y validarlo con otra ejecución. |
 
-En el dataset utilizado para el primer experimento solo existieron casos reales etiquetados como `maintain` y `review`. Por esta razón, `evolve` no fue entrenada como clase del modelo.
+Ante fallas, evidencia insuficiente o incertidumbre, `review` tiene prioridad.
 
----
+## Dataset vigente
 
-## 4. Entradas y salidas
+La evaluación Pres3 utiliza [`datasaet/resultadoPruebasGatling.txt`](datasaet/resultadoPruebasGatling.txt), un archivo histórico de ancho fijo.
 
-### Entradas principales
+| Elemento | Resultado |
+|---|---:|
+| Filas de origen | 6.445 |
+| Registros utilizables | 6.444 |
+| `not_applies` | 3.781 (58,7 %) |
+| `applies` | 2.663 (41,3 %) |
+| Entrenamiento | 5.114 registros, 408 `Build_Id` |
+| Holdout | 1.330 registros, 136 `Build_Id` |
+| `Build_Id` compartidos entre train y test | 0 |
 
-- `performance.yaml`: definición general de la prueba.
-- `parametricConfigurationValues.yaml`: parámetros de ejecución.
-- `global_stats.json`: métricas globales obtenidas por Gatling.
-- `stats.json`: estadísticas detalladas de la ejecución.
-- `assertions.json`: resultados de los criterios de aceptación.
-- `simulation.log`: registro técnico de la simulación.
-- Histórico de ejecuciones comparables.
+La unidad de análisis es un registro histórico. La partición se realiza por `Build_Id` para evitar que registros relacionados aparezcan simultáneamente en entrenamiento y prueba.
 
-### Salidas principales
+## Variables y prevención de fuga
 
-- Recomendación: `maintain`, `review` o `evolve`.
-- Explicación de las señales utilizadas.
-- Dataset normalizado.
-- Reporte del entrenamiento.
-- Explicación del modelo.
-- Reporte HTML del pipeline.
-- Artefactos para auditoría y reproducción del análisis.
+Los modelos usan información disponible antes de emitir la decisión, incluyendo configuración, componente, método y niveles operacionales de concurrencia, iteraciones y tiempo de respuesta.
 
----
+Las métricas posteriores que revelarían directamente la etiqueta se excluyen de los predictores. RPS, p95 y errores se conservan para análisis y validación, no como entradas que permitan memorizar el resultado.
 
-## 5. Flujo de funcionamiento
+Las etiquetas se derivan de evidencia auditable de ejecución; todavía no corresponden a decisiones independientes asignadas por especialistas. Esta limitación debe mantenerse explícita al interpretar las métricas.
 
-```mermaid
-flowchart TD
-    A[Configuración YAML] --> D[Ingesta y validación]
-    B[Resultados Gatling] --> D
-    C[Historial de ejecuciones] --> D
-    D --> E[Normalización y ETL]
-    E --> F[Ingeniería de atributos]
-    F --> G[Reglas expertas H6]
-    F --> H[Árbol de decisión]
-    C --> I[Evaluación histórica]
-    G --> J[Motor de decisión]
-    H --> J
-    I --> J
-    J --> K[Recomendación explicable]
-    K --> L[Validación humana]
-```
+## Comparación de modelos
 
-El flujo implementado integra la configuración, los parámetros, los resultados y el histórico en un pipeline reproducible. La recomendación final conserva la intervención humana como control obligatorio.
+Se comparan tres soluciones de clasificación y un baseline mayoritario:
 
----
+| Modelo | Accuracy test | F1 `not_applies` | Recall `not_applies` |
+|---|---:|---:|---:|
+| Baseline mayoritario | 0,5677 | 0,7242* | 1,0000* |
+| Árbol de decisión | 0,6579 | 0,6486 | 0,5563 |
+| Regresión logística | 0,6895 | 0,7165 | 0,6914 |
+| **Random Forest** | **0,7308** | **0,7489** | **0,7073** |
 
-## 6. Preparación de los datos
+\* El baseline predice siempre `not_applies`: no identifica ningún caso `applies` y no participa en la selección.
 
-### 6.1 Construcción del dataset
+Random Forest se selecciona por el mayor F1 de `not_applies`; el recall se utiliza para desempatar.
 
-El levantamiento histórico detectó 59 ejecuciones. El proceso de depuración produjo el siguiente embudo:
+## Sobreajuste y validación agrupada
 
-| Etapa | Ejecuciones | Resultado |
-|---|---:|---|
-| Ejecuciones históricas detectadas | 59 | Universo inicial encontrado. |
-| Ejecuciones con estructura completa | 29 | Contenían los artefactos requeridos. |
-| Ejecuciones excluidas | 1 | Ejecución abortada o no comparable. |
-| Registros finales válidos | 28 | Dataset utilizado en el experimento. |
+Random Forest presenta una brecha entre entrenamiento y holdout, por lo que su uso se limita a apoyo de una revisión humana.
 
-El dataset inicial tenía 27 columnas. Después del tratamiento de calidad se conservaron 26 variables disponibles.
+La validación `GroupKFold` de cinco particiones, agrupada por `Build_Id`, produjo:
 
-### 6.2 Distribución de la variable objetivo
+| Métrica | Media | Mínimo | Máximo |
+|---|---:|---:|---:|
+| F1 `not_applies` | 0,8049 | 0,7682 | 0,8363 |
+| Recall `not_applies` | 0,7779 | 0,7274 | 0,8285 |
+| Accuracy | 0,7793 | 0,7564 | 0,8261 |
 
-| Clase | Registros | Proporción |
-|---|---:|---:|
-| `maintain` | 20 | 71,4 % |
-| `review` | 8 | 28,6 % |
-| **Total** | **28** | **100 %** |
+Estas cifras no demuestran generalización fuera del histórico ni sustituyen una validación experta independiente.
 
-Esta distribución presenta desbalance de clases. Por ello, la evaluación no se basó únicamente en accuracy; se utilizaron principalmente Macro-F1 y balanced accuracy.
+## Sensibilidad y costo del error
 
-### 6.3 Calidad de datos
+El análisis evalúa 17 cut-offs entre 0,10 y 0,90. Los costos relativos son supuestos configurables:
 
-Los principales resultados del proceso de calidad fueron:
+- falso `applies`: 10 unidades;
+- falso `not_applies`: 2 unidades;
+- revisión manual: 1 unidad.
 
-- 0 registros duplicados detectados.
-- 0 % de filas eliminadas por valores atípicos.
-- 1 ejecución excluida por no ser comparable.
-- `p90_response_time_ms` presentó 28 de 28 valores nulos y fue excluida.
-- Los valores extremos se conservaron porque en rendimiento pueden representar degradaciones reales y no necesariamente errores de medición.
+No representan pesos del modelo ni costos monetarios demostrados.
 
----
+El cut-off seleccionado es **0,35**:
 
-## 7. Variables analizadas
+| Resultado en holdout | Valor |
+|---|---:|
+| Recall `not_applies` | 0,8808 |
+| Precision `not_applies` | 0,7430 |
+| F1 `not_applies` | 0,8061 |
+| Falsos `applies` | 90 |
+| Falsos `not_applies` | 230 |
+| Revisiones manuales | 895 |
+| Costo esperado | 2.255 unidades |
 
-El modelo evaluó información proveniente tanto de la configuración como de los resultados de la prueba.
+La salida operacional resultante contiene 895 casos `review`, 217 `maintain` y 218 candidatos `upgrade`.
 
-| Grupo | Ejemplos | Propósito |
-|---|---|---|
-| Carga | Usuarios, concurrencia y tipo de carga | Representar la presión aplicada durante la prueba. |
-| Rendimiento | TPS y volumen de solicitudes | Medir capacidad y trabajo procesado. |
-| Latencia | p95 y margen respecto del SLA | Medir tiempos de respuesta y cumplimiento. |
-| Errores | Tasa de error | Identificar fallas durante la ejecución. |
-| Criterios técnicos | Assertions fallidas y advertencias | Registrar incumplimientos detectados. |
-| Contexto | Historial comparable | Relacionar la ejecución actual con antecedentes. |
+### Comparación contra el cut-off de referencia
 
-Las variables de carga, concurrencia, TPS, volumen e historial comparable sí fueron evaluadas. En el árbol entrenado con esta muestra no aportaron separación adicional, pero esto no permite concluir que sean irrelevantes en otros escenarios o en un dataset de mayor tamaño.
+El cut-off `0,50` se utiliza como referencia técnica; no representa el proceso operacional
+actual. La comparación hace explícito el costo de la recomendación:
 
-### Atributos derivados
+| Indicador | Referencia 0,50 | Seleccionado 0,35 | Diferencia |
+|---|---:|---:|---:|
+| F1 `not_applies` | 0,7489 | 0,8061 | +0,0571 |
+| Recall `not_applies` | 0,7073 | 0,8808 | +0,1735 |
+| Falsos `applies` | 221 | 90 | -131 |
+| Falsos `not_applies` | 137 | 230 | +93 |
+| Revisiones manuales | 671 | 895 | +224 |
+| Costo esperado | 3.155 | 2.255 | **-900 (-28,5 %)** |
 
-Durante la ingeniería de atributos se generaron señales con significado técnico, entre ellas:
+Se recomienda `0,35` porque reduce 131 falsos `applies` y el costo esperado en 28,5 %.
+La contrapartida es aumentar en 224 las revisiones manuales y en 93 los falsos
+`not_applies`. La política prioriza evitar recomendaciones incorrectas de aplicabilidad,
+cuyo costo relativo supuesto es mayor.
 
-- Cumplimiento del SLA.
-- Cantidad de assertions fallidas.
-- Margen entre la latencia observada y el SLA.
-- Disponibilidad de historial comparable.
-- Indicadores derivados de advertencias y validaciones.
+## Pipeline por capas
 
----
+1. **Aplicabilidad:** clasifica `applies` o `not_applies`.
+2. **Decisión:** traduce la evidencia en `review`, `maintain` o `upgrade`.
+3. **Optimización:** aprende perfiles robustos de casos exitosos y propone concurrencia, iteraciones y tiempo de respuesta.
+4. **Validación:** exige una nueva ejecución Gatling y compara errores, p95, RPS, éxitos y estado.
 
-## 8. Enfoque de inteligencia
+Una propuesta `upgrade` permanece en `pending_new_execution` hasta disponer de esa nueva prueba. Si la ejecución falla o presenta regresión, vuelve a `review`.
 
-La solución utiliza un enfoque híbrido.
+## Ejecución reproducible
 
-### Reglas expertas
-
-Representan criterios técnicos explícitos y auditables. Permiten mantener controles conservadores ante fallas, incumplimientos de SLA o resultados que requieren revisión.
-
-### Machine learning
-
-Se entrenó un árbol de decisión por su interpretabilidad. El objetivo experimental fue evaluar si un modelo sencillo podía aprender patrones presentes en el histórico y reproducir las decisiones etiquetadas.
-
-### Evaluación histórica
-
-La recomendación actual se contrasta con ejecuciones anteriores comparables. Un buen historial no anula una falla presente: ante incumplimientos actuales, el diseño prioriza la revisión.
-
-### Validación humana
-
-La recomendación funciona como apoyo a la decisión. La aprobación definitiva continúa bajo responsabilidad del especialista.
-
----
-
-## 9. Evaluación del modelo
-
-### 9.1 Protocolo
-
-- Modelo: árbol de decisión.
-- Dataset: 28 ejecuciones.
-- Clases: 20 `maintain` y 8 `review`.
-- Evaluación: 10 particiones estratificadas con semillas diferentes.
-- Por repetición: 21 registros de entrenamiento y 7 de prueba.
-- Baseline: clasificador que siempre predice la clase mayoritaria.
-
-### 9.2 Resultados agregados
-
-| Métrica | Árbol de decisión | Baseline mayoritario |
-|---|---:|---:|
-| Macro-F1 observado | 1,0000 | 0,4167 |
-| Accuracy del baseline | — | 0,7143 |
-| Semillas evaluadas | 10 | — |
-| Desviación del Macro-F1 | 0,0000 | — |
-| Macro-F1 mínimo | 1,0000 | — |
-| Macro-F1 máximo | 1,0000 | — |
-
-El resultado se mantuvo estable en las diez particiones evaluadas. Sin embargo, debe interpretarse dentro del alcance de la muestra disponible.
-
-### 9.3 Interpretación correcta
-
-El Macro-F1 observado de 1,0000 no demuestra que el modelo generalice a nuevas organizaciones, microservicios o condiciones operacionales.
-
-Las etiquetas fueron generadas a partir del motor experto H6 y algunas variables predictoras contienen señales relacionadas con ese mismo proceso. Por lo tanto, el resultado mide principalmente la capacidad del árbol para reproducir las etiquetas históricas disponibles.
-
-La ausencia de dispersión entre semillas tampoco elimina esta limitación: las particiones provienen del mismo dataset pequeño y de una única fuente de verdad.
-
-En consecuencia, este resultado debe entenderse como:
-
-> Evidencia experimental de fidelidad interna respecto del histórico etiquetado, no como garantía de generalización ni como reemplazo del criterio experto.
-
----
-
-## 10. Hallazgos principales
-
-1. **Fue posible automatizar el flujo completo.**  
-   La prueba de concepto procesa configuración, parámetros, resultados e historial hasta producir una recomendación explicable.
-
-2. **La calidad de los datos históricos es una restricción relevante.**  
-   Solo 29 de 59 ejecuciones tenían la estructura completa y una de ellas debió excluirse.
-
-3. **Existe desbalance de clases.**  
-   La muestra contiene 20 casos `maintain` y 8 `review`; no existen casos reales suficientes para entrenar `evolve`.
-
-4. **El árbol reproduce las decisiones históricas de la muestra.**  
-   El modelo obtuvo un Macro-F1 observado de 1,0000 en las diez particiones, frente a 0,4167 del baseline mayoritario.
-
-5. **El resultado perfecto requiere cautela.**  
-   El tamaño reducido del dataset, el origen de las etiquetas y la posible presencia de variables proxy impiden afirmar generalización.
-
-6. **Las variables sin importancia en esta muestra no deben descartarse.**  
-   Carga, concurrencia, TPS, volumen e historial pueden adquirir valor cuando se incorporen más ejecuciones, fuentes y decisiones independientes.
-
-7. **El valor actual está en la trazabilidad.**  
-   El sistema centraliza evidencia, aplica criterios consistentes y explica por qué propone mantener o revisar una prueba.
-
----
-
-## 11. Caso de validación
-
-En el caso utilizado para validar la integración, la ejecución presentó assertions fallidas:
-
-- Las reglas expertas recomendaron `review`.
-- El árbol de decisión también recomendó `review`.
-- La evaluación histórica conservó la recomendación.
-- El sistema bloqueó una evolución de carga mientras existieran incumplimientos actuales.
-
-La salida final fue revisar la configuración antes de continuar. El caso demostró la integración entre reglas, modelo e historial, además de la generación de una explicación trazable.
-
----
-
-## 12. Resultados técnicos del proyecto
-
-La implementación logró:
-
-- Consolidar resultados históricos de Gatling.
-- Validar la presencia y estructura de los archivos requeridos.
-- Normalizar métricas provenientes de diferentes ejecuciones.
-- Construir un dataset reutilizable.
-- Ejecutar ingeniería de atributos.
-- Entrenar y evaluar un árbol de decisión explicable.
-- Comparar el modelo con un baseline mayoritario.
-- Ejecutar una evaluación multisemilla.
-- Generar recomendaciones mediante un enfoque híbrido.
-- Producir reportes y artefactos de auditoría.
-- Integrar el proceso mediante una interfaz de línea de comandos.
-- Ejecutar un pipeline local desde los archivos de entrada hasta el reporte final.
-
-Comandos disponibles en la CLI del proyecto:
-
-```text
-pde doctor
-pde quadrant
-pde normalize
-pde recommend
-pde dataset
-pde dataset-batch
-pde train-model
-pde explain-model
-pde pipeline
-```
-
-Ejemplo del pipeline integrado:
+Desde `app`:
 
 ```powershell
-pde pipeline `
-  --performance .\examples\input\performance.yaml `
-  --parameters .\examples\input\parametricConfigurationValues.yaml `
-  --results .\examples\input\global_stats.json `
-  --output-dir .\examples\output\pipeline
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -e ".[dev]"
+
+pde evaluate-complete `
+  --source "..\datasaet\resultadoPruebasGatling.txt" `
+  --output-dir "..\Resultados\complete_feedback"
 ```
 
-En la ejecución local validada, el pipeline completó el proceso, generó una recomendación `maintain` y produjo el reporte `report.html`.
+Resultado esperado:
 
----
+```text
+Rows evaluated: 6444
+Selected model: random_forest
+Future online validation: pending new Gatling execution
+```
 
-## 13. Impacto esperado
+## Evidencia versionada
 
-El proyecto busca reducir el tiempo dedicado a consolidar resultados y preparar una recomendación técnica.
+La carpeta [`Resultados/complete_feedback`](Resultados/complete_feedback) contiene:
 
-La hipótesis operacional es llevar esa etapa desde un proceso manual a una generación en minutos, manteniendo la validación humana.
+- `complete_pipeline_evaluation.json`;
+- `threshold_cost_analysis.csv`;
+- `threshold_comparison.csv`;
+- `economic_sensitivity.csv`;
+- `segment_metrics.csv`;
+- `layered_recommendations.csv`;
+- `decision_tree.dot`;
+- `decision_tree_rules.txt`;
+- `layer1_applicability_model.joblib`.
 
-Se estimó un beneficio bruto potencial cercano a **$12,1 millones CLP anuales**, utilizando los siguientes supuestos:
+El JSON es la fuente principal de métricas. Los CSV permiten auditar sensibilidad, costos, segmentos y recomendaciones.
 
-- 12 atenciones mensuales.
-- 144 atenciones anuales.
-- Costo promedio ponderado cercano a $224.000 CLP por atención.
-- Cobertura inicial del 50 %.
-- Meta preliminar de reducción del esfuerzo abordado del 75 %.
+## Verificación
 
-Esta cifra es referencial. No representa un ahorro demostrado y deberá validarse mediante un piloto que mida tiempo, retrabajo y costo antes y después de utilizar la solución.
+Desde `app`:
 
----
+```powershell
+pytest -v
+ruff check .
+black --check .
+python scripts/verify_pres3_evidence.py
+```
 
-## 14. Limitaciones
+El chequeo estático con `mypy src` aún reporta deuda de tipado en el evaluador histórico
+y en algunos comandos experimentales. No afecta las 100 pruebas automatizadas, pero se
+mantiene como mejora técnica pendiente y no se declara como control aprobado.
 
-- Dataset reducido: 28 ejecuciones válidas.
-- Clases desbalanceadas.
-- Ausencia de casos reales para entrenar `evolve`.
-- Etiquetas originadas por una única fuente de verdad: el motor H6.
-- Posible fuga de información o presencia de variables proxy.
-- Evaluación realizada con particiones del mismo histórico.
-- Falta de validación temporal y externa.
-- Falta de etiquetas independientes revisadas por especialistas.
-- El detalle completo de cada partición multisemilla no quedó preservado en el artefacto agregado disponible.
-- El impacto económico aún no ha sido validado mediante un piloto operacional.
+## Evaluación económica
 
----
+El escenario preliminar considera:
 
-## 15. Próximos pasos
+- 12 atenciones mensuales;
+- 144 atenciones anuales;
+- costo promedio ponderado cercano a $224.000 CLP por atención;
+- cobertura inicial supuesta de 50 %;
+- reducción supuesta del esfuerzo abordado de 75 %.
 
-1. Incorporar nuevas ejecuciones de diferentes microservicios y escenarios.
-2. Obtener etiquetas revisadas de forma independiente por especialistas.
-3. Separar temporalmente entrenamiento y evaluación para simular uso futuro.
-4. Eliminar o controlar variables que puedan actuar como proxy de la etiqueta.
-5. Registrar las métricas, predicciones y particiones de cada semilla.
-6. Evaluar el desempeño por microservicio, tipo de carga y condición operacional.
-7. Incorporar casos reales de la clase `evolve` cuando existan suficientes ejemplos.
-8. Comparar nuevas alternativas de modelo solo cuando el volumen y diversidad de datos lo justifiquen.
-9. Ejecutar un piloto con medición antes/después del tiempo de análisis y las reejecuciones.
-10. Mantener auditoría, versionado y aprobación humana antes de una integración productiva.
+El beneficio bruto potencial estimado es cercano a **$12,1 millones CLP anuales**. No es un ahorro demostrado. Debe validarse con un piloto que mida tiempos, reejecuciones, cobertura efectiva y costos reales de error.
 
----
+El cálculo base queda trazable:
 
-## 16. Conclusión
+```text
+Costo anual actual = 144 atenciones x $224.000 = $32.256.000 CLP
+Costo abordable = $32.256.000 x 50 % = $16.128.000 CLP
+Beneficio bruto potencial = $16.128.000 x 75 % = $12.096.000 CLP
+```
 
-Gatling AI Performance Copilot demuestra que es posible convertir configuraciones, métricas e historial de pruebas de rendimiento en una recomendación reproducible, explicable y auditable.
+La sensibilidad evita sostener la evaluación económica en un único supuesto:
 
-El principal aporte actual no es afirmar que el modelo resuelve universalmente la decisión, sino establecer un pipeline técnico completo que:
+| Cobertura | Reducción de esfuerzo 50 % | Reducción de esfuerzo 75 % |
+|---:|---:|---:|
+| 25 % | $4,032 millones | $6,048 millones |
+| 50 % | $8,064 millones | **$12,096 millones** |
+| 75 % | $12,096 millones | $18,144 millones |
 
-- Ordena evidencia dispersa.
-- Aplica criterios consistentes.
-- Conserva trazabilidad.
-- Permite experimentar con machine learning explicable.
-- Mantiene al especialista como responsable de la decisión final.
+La comparación operacional no afirma que la POC ya haya generado ahorro. El proceso
+actual consolida y revisa casos manualmente; la propuesta automatiza la recomendación,
+pero mantiene la aprobación humana y exige una nueva ejecución Gatling. Para calcular ROI
+faltan el costo de implementación y mediciones reales del piloto.
 
-Los resultados del modelo son prometedores como prueba de fidelidad interna, pero todavía requieren más datos, etiquetas independientes y validación externa para demostrar generalización. La evolución del proyecto debe enfocarse en mejorar esa evidencia y medir su impacto operacional mediante un piloto controlado.
+## Limitaciones
+
+- Las etiquetas provienen de evidencia de ejecución y no de una evaluación experta independiente.
+- La brecha train-test muestra sobreajuste moderado.
+- El costo del error utiliza unidades relativas configurables.
+- La criticidad de negocio no está disponible en la fuente y no se infiere.
+- Los candidatos `upgrade` aún requieren validación mediante una nueva ejecución Gatling.
+- La POC no reemplaza la decisión del especialista.
+
+## Estado actual
+
+La POC implementa el pipeline offline completo y deja la validación online en estado `pending_new_execution`. Su aporte demostrado es una recomendación reproducible, explicable y auditable; la mejora operacional y económica debe confirmarse mediante un piloto controlado.
+
+La documentación técnica detallada está disponible en [`app/README.md`](app/README.md).
