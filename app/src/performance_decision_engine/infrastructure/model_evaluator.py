@@ -51,11 +51,7 @@ class ModelEvaluator:
         rows = self._read_rows(dataset_path)
         labels = [row[LABEL_COLUMN] for row in rows]
         class_counts = Counter(labels)
-        if (
-            len(rows) < MINIMUM_ROWS
-            or len(class_counts) < 2
-            or min(class_counts.values()) < 2
-        ):
+        if len(rows) < MINIMUM_ROWS or len(class_counts) < 2 or min(class_counts.values()) < 2:
             raise ValueError("Dataset does not meet the H8 minimum evaluation safeguards.")
 
         all_features = [
@@ -65,12 +61,8 @@ class ModelEvaluator:
         ]
         variants = {
             "all_features": all_features,
-            "without_assertions": [
-                name for name in all_features if name not in ASSERTION_COLUMNS
-            ],
-            "operational_core": [
-                name for name in all_features if name not in PROXY_COLUMNS
-            ],
+            "without_assertions": [name for name in all_features if name not in ASSERTION_COLUMNS],
+            "operational_core": [name for name in all_features if name not in PROXY_COLUMNS],
         }
         results = {
             name: self._evaluate_variant(
@@ -100,7 +92,8 @@ class ModelEvaluator:
             "variants": results,
             "interpretation": (
                 "Compare variants to separate rule replication (all_features) from "
-                "operational generalization (operational_core without assertions and warning proxies)."
+                "operational generalization (operational_core without assertions "
+                "and warning proxies)."
             ),
             "limitations": [
                 "Small datasets produce high metric variability.",
@@ -164,9 +157,7 @@ class ModelEvaluator:
                         "balanced_accuracy": float(
                             balanced_accuracy_score(test_y, prediction_labels)
                         ),
-                        "macro_f1": float(
-                            f1_score(test_y, prediction_labels, average="macro")
-                        ),
+                        "macro_f1": float(f1_score(test_y, prediction_labels, average="macro")),
                         "review_f1": float(
                             f1_score(
                                 test_y,
@@ -187,9 +178,7 @@ class ModelEvaluator:
                 }
             )
 
-        split_metrics = [
-            cast(dict[str, float], result["metrics"]) for result in split_results
-        ]
+        split_metrics = [cast(dict[str, float], result["metrics"]) for result in split_results]
         metric_names = tuple(split_metrics[0])
         return {
             "feature_columns": columns,
@@ -199,9 +188,7 @@ class ModelEvaluator:
                 - {LABEL_COLUMN}
             ),
             "metrics": {
-                metric: self._summary(
-                    [result[metric] for result in split_metrics]
-                )
+                metric: self._summary([result[metric] for result in split_metrics])
                 for metric in metric_names
             },
             "splits": split_results,

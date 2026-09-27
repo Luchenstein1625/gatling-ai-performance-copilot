@@ -1,9 +1,10 @@
 from pathlib import Path
 
+from test_historical_binary_evaluator import _dataset
+
 from performance_decision_engine.infrastructure.complete_historical_pipeline import (
     CompleteHistoricalPipeline,
 )
-from test_historical_binary_evaluator import _dataset
 
 
 def test_complete_pipeline_implements_four_layers(tmp_path: Path) -> None:

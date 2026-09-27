@@ -13,11 +13,11 @@ import typer
 from rich.console import Console
 
 from performance_decision_engine import __version__
-from performance_decision_engine.application.use_cases.explain_model import ExplainModel
 from performance_decision_engine.application.use_cases.evaluate_evolution import (
     EvaluateEvolution,
     EvolutionObservation,
 )
+from performance_decision_engine.application.use_cases.explain_model import ExplainModel
 from performance_decision_engine.application.use_cases.generate_dataset import (
     GenerateDatasetRow,
 )
@@ -408,7 +408,10 @@ def train_model(
         str,
         typer.Option(
             "--feature-profile",
-            help="Feature profile: all_features (replicates rules) or operational_core (excludes assertions and warning proxy).",
+            help=(
+                "Feature profile: all_features (replicates rules) or "
+                "operational_core (excludes assertions and warning proxy)."
+            ),
         ),
     ] = "operational_core",
 ) -> None:
