@@ -30,10 +30,11 @@ POSITIVE_CLASS = "review"
 CLASSES = ("review", "maintain", "upgrade")
 
 # Deliberately excludes post-result and business-decision columns that disclose the target.
+# Is_In_Prod is also excluded: it only records whether the microservice was already
+# promoted to production and is not a technical property of the Gatling test.
 NUMERIC_FEATURES = (
     "CpruebasCarga",
     "CpruebasAcep",
-    "Is_In_Prod",
 )
 CATEGORICAL_FEATURES = (
     "pilar",
