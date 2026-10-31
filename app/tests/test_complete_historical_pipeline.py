@@ -33,7 +33,9 @@ def test_complete_pipeline_implements_four_layers(tmp_path: Path) -> None:
     assert (output / "layered_recommendations.csv").exists()
     assert (output / "layer1_applicability_model.joblib").exists()
     assert (output / "threshold_cost_analysis.csv").exists()
+    assert (output / "threshold_oof_analysis.csv").exists()
     assert (output / "threshold_comparison.csv").exists()
+    assert (output / "paired_model_comparison.csv").exists()
     assert (output / "economic_sensitivity.csv").exists()
     assert (output / "segment_metrics.csv").exists()
     layer1 = report["layers"]["1_applicability"]
@@ -41,8 +43,13 @@ def test_complete_pipeline_implements_four_layers(tmp_path: Path) -> None:
     assert len(layer1["threshold_selection"]["thresholds"]) == 17
     assert len(layer1["grouped_cross_validation"]["folds"]) == 5
     assert layer1["threshold_selection"]["costs_are_configurable_assumptions"] is True
+    assert layer1["threshold_selection"]["evaluation_set"] == "train_oof_groupkfold"
+    assert layer1["threshold_holdout_evaluation"]["evaluation_set"] == "untouched_holdout"
+    assert "holdout" not in layer1["selection_rule"]
     assert report["economic_evaluation"]["annual_current_cost_clp"] == 32_256_000
     assert report["economic_evaluation"]["base_case"]["gross_benefit_potential_clp"] == 12_096_000
+    assert report["economic_evaluation"]["base_case"]["annual_operating_cost_clp"] == 1_296_240
+    assert report["economic_evaluation"]["base_case"]["net_benefit_potential_clp"] == 10_799_760
 
 
 def test_threshold_comparison_quantifies_selected_tradeoff() -> None:
@@ -113,14 +120,40 @@ def test_review_never_changes_configuration() -> None:
 
 
 def test_upgrade_is_limited_to_one_level() -> None:
-    assert CompleteHistoricalPipeline._one_step_higher("low", "very_high") == "medium"
-    assert CompleteHistoricalPipeline._one_step_higher("very_high", "very_high") == "very_high"
+    assert CompleteHistoricalPipeline._one_step_higher("Concurrency", "low") == "medium"
+    assert CompleteHistoricalPipeline._one_step_higher("Concurrency", "high") == "very_high"
+    assert CompleteHistoricalPipeline._one_step_higher("Iterations", "medium") == "high"
+    assert CompleteHistoricalPipeline._one_step_higher("ResponseTime", "medium") == "low"
+    assert CompleteHistoricalPipeline._one_step_higher("ResponseTime", "low") == "low"
+
+
+def test_upgrade_changes_only_concurrency_when_high_high_low_has_headroom() -> None:
+    pipeline = CompleteHistoricalPipeline()
+    current = {
+        "Concurrency": "high",
+        "Iterations": "high",
+        "ResponseTime": "low",
+    }
+
+    proposed, changed = pipeline._propose_one_controlled_step(current, current)
+
+    assert changed == "Concurrency"
+    assert proposed == {
+        "Concurrency": "very_high",
+        "Iterations": "high",
+        "ResponseTime": "low",
+    }
+
+
+def test_response_time_intensity_is_inverse_to_milliseconds() -> None:
+    assert CompleteHistoricalPipeline._one_step_higher("ResponseTime", "high") == "medium"
+    assert CompleteHistoricalPipeline._one_step_higher("ResponseTime", "medium") == "low"
 
 
 def test_layer_four_validates_a_real_reexecution() -> None:
     proposal = {
         "action": "upgrade",
-        "proposed_parameters": {"Concurrency": "high"},
+        "proposed_parameters": {"Concurrency": "very_high", "ResponseTime": "low"},
     }
     new_result = {
         "Estado": "Success",
@@ -137,7 +170,10 @@ def test_layer_four_validates_a_real_reexecution() -> None:
 
 
 def test_failed_reexecution_returns_to_review() -> None:
-    proposal = {"action": "upgrade", "proposed_parameters": {"Concurrency": "high"}}
+    proposal = {
+        "action": "upgrade",
+        "proposed_parameters": {"Concurrency": "very_high", "ResponseTime": "low"},
+    }
     new_result = {
         "Estado": "Failed",
         "errorCount": "2",
