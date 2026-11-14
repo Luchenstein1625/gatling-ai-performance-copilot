@@ -1,0 +1,5 @@
+cause,rows,builds,percentage_rows
+applies_complete,2663,398,0.4132526381129733
+not_applies_execution_error,2133,244,0.33100558659217877
+not_applies_multiple_causes,57,7,0.008845437616387336
+not_applies_not_executed,1591,260,0.2468963376784606

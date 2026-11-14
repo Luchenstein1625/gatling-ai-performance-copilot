@@ -1,0 +1,42 @@
+{
+  "source_rows": 6445,
+  "usable_rows": 6444,
+  "discarded_rows": 1,
+  "distinct_builds": 544,
+  "binary_distribution": {
+    "applies": 2663,
+    "not_applies": 3781
+  },
+  "cause_distribution": [
+    {
+      "cause": "applies_complete",
+      "rows": 2663,
+      "builds": 398,
+      "percentage_rows": 0.4132526381129733
+    },
+    {
+      "cause": "not_applies_execution_error",
+      "rows": 2133,
+      "builds": 244,
+      "percentage_rows": 0.33100558659217877
+    },
+    {
+      "cause": "not_applies_multiple_causes",
+      "rows": 57,
+      "builds": 7,
+      "percentage_rows": 0.008845437616387336
+    },
+    {
+      "cause": "not_applies_not_executed",
+      "rows": 1591,
+      "builds": 260,
+      "percentage_rows": 0.2468963376784606
+    }
+  ],
+  "interpretation": {
+    "not_executed": "Performance=0 means the test did not execute; it is not a measured failure.",
+    "incomplete_evidence": "Required result evidence is missing; do not recommend load changes.",
+    "execution_error": "The execution ran and contains failed status, errors or no successes.",
+    "recommendation_guardrail": "Parameter recommendations require complete evidence; otherwise the system abstains."
+  }
+}
