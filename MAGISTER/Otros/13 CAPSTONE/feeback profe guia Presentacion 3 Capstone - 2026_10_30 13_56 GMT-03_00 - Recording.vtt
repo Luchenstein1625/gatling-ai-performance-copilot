@@ -1,0 +1,626 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:30.000
+No, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no, no
+
+00:00:30.000 --> 00:00:30.840
+yo voy avanzando.
+
+00:00:31.180 --> 00:00:33.540
+No sé, si quiere revisamos como los highlights,
+
+00:00:33.880 --> 00:00:36.180
+cada lámina, cuál es el mensaje clave rápidamente
+
+00:00:36.180 --> 00:00:37.180
+y ver la estructura,
+
+00:00:37.460 --> 00:00:39.860
+y un foco más en los resultados finales del modelo.
+
+00:00:40.680 --> 00:00:41.260
+Ya, perfecto.
+
+00:00:41.380 --> 00:00:43.720
+Esta es la cortada de presentación,
+
+00:00:43.900 --> 00:00:44.660
+no hay mucho que ver,
+
+00:00:44.800 --> 00:00:46.460
+es un proyecto para Banco BCI, etc.
+
+00:00:46.860 --> 00:00:47.260
+Adelante.
+
+00:00:48.400 --> 00:00:48.500
+Ya.
+
+00:00:49.020 --> 00:00:50.540
+¿Qué es lo que nosotros estamos haciendo acá?
+
+00:00:50.540 --> 00:00:53.260
+Básicamente tomar resultados de ejecuciones de pruebas.
+
+00:00:54.200 --> 00:00:54.260
+¿Ya?
+
+00:00:55.580 --> 00:00:57.520
+Y esas ejecuciones de las pruebas,
+
+00:00:57.680 --> 00:00:59.380
+lo que nosotros tenemos que determinar
+
+00:00:59.380 --> 00:01:03.900
+es si una prueba está subdimensionada o sobredimensionada
+
+00:01:03.900 --> 00:01:06.780
+para poder determinar si puede avanzar o puede seguir.
+
+00:01:07.400 --> 00:01:10.000
+Luis, si yo me estoy equivocando en algo, tú ahí me vas a ir corrigiendo.
+
+00:01:10.020 --> 00:01:11.060
+No, sí, está todo bien.
+
+00:01:11.960 --> 00:01:12.440
+Perfecto.
+
+00:01:13.020 --> 00:01:16.880
+Como es un cliente en torno bancario, el acceso al dataset fue un poco restringido,
+
+00:01:16.980 --> 00:01:21.980
+pero logramos conseguir 6.444 registros que corresponden a 544,
+
+00:01:22.280 --> 00:01:24.420
+llamémoslo así, ejecuciones de pruebas.
+
+00:01:24.420 --> 00:01:35.500
+Y de hecho este campo es súper importante tenerlo en cuenta más adelante cuando hablemos del tratamiento de la información, porque hay que hacer un split para poder dividir la información.
+
+00:01:36.460 --> 00:01:42.900
+Inicialmente tenemos una clasificación binaria para poder saber si aplica o no aplica una prueba.
+
+00:01:45.230 --> 00:01:51.090
+Bien, perfecto. Ideal que cuando arranquen, arranquen explicando el problema. Así que está perfecto.
+
+00:01:51.090 --> 00:02:16.170
+Ya, ok, listo. Bueno, los objetivos, básicamente construir una prueba de concepto que le anticipe a un conjunto de analistas de pruebas adecuadas si su prueba va a aplicar o no va a aplicar y también agregar un poquito que aquí hay una modificación que usted nos pidió, que es el valor principal, que es la recomendación de parámetro,
+
+00:02:16.170 --> 00:02:19.070
+queda como de forma secundaria
+
+00:02:19.070 --> 00:02:21.230
+sino que básicamente es poder decirle a las personas
+
+00:02:21.230 --> 00:02:23.310
+cómo tienen que ordenar la revisión técnica
+
+00:02:23.310 --> 00:02:25.230
+y que siempre hay que tener un guardarail humano
+
+00:02:25.230 --> 00:02:27.430
+¿ok? para poder ejecutar una prueba
+
+00:02:27.430 --> 00:02:29.330
+cuatro pasos
+
+00:02:29.330 --> 00:02:30.830
+clasificación, priorización
+
+00:02:30.830 --> 00:02:32.730
+recomendación y validación
+
+00:02:32.730 --> 00:02:35.330
+¿ya? la validación obviamente
+
+00:02:35.330 --> 00:02:37.130
+nos queda un poquito pendiente
+
+00:02:37.130 --> 00:02:38.370
+obviamente
+
+00:02:38.370 --> 00:02:40.910
+y es como difícil ejecutar
+
+00:02:40.910 --> 00:02:42.770
+producto del entorno bancario
+
+00:02:42.770 --> 00:02:45.470
+¿ya? por lo tanto aquí hay como una parte de hipótesis
+
+00:02:45.470 --> 00:02:51.880
+Luis, no sé si querías explicarte un poquito también
+
+00:02:51.880 --> 00:02:57.060
+Ya, la lámina 4
+
+00:02:57.060 --> 00:02:58.500
+4, la metodología
+
+00:02:58.500 --> 00:03:03.370
+Ya, el flujo técnico lo dividimos en 5 pasos
+
+00:03:03.370 --> 00:03:06.250
+Primero leemos todo el archivo de configuración de la prueba
+
+00:03:06.250 --> 00:03:10.870
+Luego le agregamos estos datos por corrida para no mezclar pruebas
+
+00:03:10.870 --> 00:03:11.610
+¿Qué quiere decir esto?
+
+00:03:12.170 --> 00:03:13.730
+Los agrupamos por...
+
+00:03:13.730 --> 00:03:17.370
+Porque si bien son 6.000 registros, los agrupamos a nivel de ID
+
+00:03:17.370 --> 00:03:19.790
+Para asociarlos a un microservicio en sí
+
+00:03:19.790 --> 00:03:28.990
+y para que el entrenamiento esté asociado al microservicio y no se desordene con otros componentes que pertenecen a otros microservicios que están dentro de la misma prueba.
+
+00:03:29.770 --> 00:03:33.630
+El algoritmo Random Forest calcula la probabilidad de falla.
+
+00:03:34.490 --> 00:03:37.670
+Un motor de regla de negocio traduce esa probabilidad en tres acciones.
+
+00:03:38.630 --> 00:03:46.950
+Revisar, que es revisar la configuración de la prueba, mantener la prueba tal como está porque la prueba está bien dimensionada,
+
+00:03:46.950 --> 00:04:00.250
+O subir la exigencia que es el upgrade, que es cuando ocurre y que detectamos casos en donde la prueba se le definió, por ejemplo, un usuario de PitBall para que corra y la prueba en realidad da basto para mucho más.
+
+00:04:02.710 --> 00:04:12.010
+Y finalmente un human in loop que garantiza que ningún cambio se apruebe sin la aprobación de un especialista.
+
+00:04:13.730 --> 00:04:14.370
+Perfecto.
+
+00:04:14.370 --> 00:04:32.920
+Ya, acá respecto desde el dataset, bueno, se muestra en pantalla un poquitito cuáles son los archivos de configuración que nosotros tomamos para poder generar el dataset y después hacer la limpieza y después hacer el entrenamiento del modelo.
+
+00:04:32.920 --> 00:04:38.200
+Se muestra un poco el diccionario de datos resumido por campo, que eso es lo más importante
+
+00:04:38.200 --> 00:04:46.020
+Trabajamos inicialmente con 6.440 registros, que representa 544 agrupamientos de prueba
+
+00:04:46.020 --> 00:04:54.300
+Donde inicialmente hay un pequeño desbalanceo de clases, donde hay un 58% que no aplica la prueba
+
+00:04:54.300 --> 00:04:56.940
+Y un 41% que sí aplicó exitosamente la prueba
+
+00:04:56.940 --> 00:05:01.200
+Claro, igual es leve, no impacta, no debería
+
+00:05:01.200 --> 00:05:06.320
+Ya, respecto, aquí hay una modificación importante, ¿por qué?
+
+00:05:06.360 --> 00:05:09.780
+Porque una de sus observaciones tenía que ver con respecto a la calidad de la etiqueta,
+
+00:05:10.560 --> 00:05:15.180
+ya donde usted nos preguntaba si en este entrenamiento inicial
+
+00:05:15.180 --> 00:05:18.940
+nosotros le habíamos indicado al modelo si lo habíamos limpiado
+
+00:05:18.940 --> 00:05:23.620
+respecto a aquellos conjuntos de datos que podían categorizarse como ausencia de datos.
+
+00:05:24.520 --> 00:05:28.340
+Y efectivamente, no lo teníamos implementado y eso generaba el riesgo
+
+00:05:28.340 --> 00:05:31.120
+de que el modelo estuviera aprendiendo a predecir ausencia
+
+00:05:31.120 --> 00:05:33.000
+más que una configuración que no aplicaba.
+
+00:05:33.220 --> 00:05:36.360
+Hicimos esa limpieza y finalmente quedamos trabajando
+
+00:05:36.360 --> 00:05:41.100
+e hicimos un reentrenamiento completo con 4.796 registros.
+
+00:05:41.740 --> 00:05:43.220
+Esa fue una primera observación.
+
+00:05:43.700 --> 00:05:46.220
+Y eso obviamente impacta los indicadores antiguos
+
+00:05:46.220 --> 00:05:48.260
+con respecto a estos que se muestran en el EDA.
+
+00:05:53.870 --> 00:05:56.990
+Acá, básicamente esto es como bien de flujo,
+
+00:05:57.150 --> 00:06:00.370
+como hicimos el preprocesamiento, los features, etc.,
+
+00:06:00.370 --> 00:06:28.390
+Que es tomar la información cruda, hicimos la validación del split por un ID válido, hicimos la limpieza que usted nos dijo respecto de sacar los faltantes, hicimos un mismo build ID unido, principalmente para poder evitar que registros se segmentaran al momento de hacer el split para cuántos datos voy a ocupar para entrenar y cuántos voy a ocupar para validar, si no eso sería un error, ¿ya?
+
+00:06:28.390 --> 00:06:32.450
+Bueno, y el data set final quedamos con nuevos validadores
+
+00:06:32.450 --> 00:06:36.850
+Los 6.544 registros y el objetivo de clasificación binaria
+
+00:06:36.850 --> 00:06:46.190
+Acá en el 8 se actualizaron valores principalmente profesor
+
+00:06:46.190 --> 00:06:50.830
+La lámina no cayó mucho, pero sí el reentrenamiento hizo que esto se variara
+
+00:06:50.830 --> 00:06:55.030
+¿Su mejor modelo es Random Forest?
+
+00:06:56.630 --> 00:06:59.410
+Nuestro mejor modelo es Random Forest, el seleccionado
+
+00:06:59.410 --> 00:07:01.330
+Por poquito, pero sí
+
+00:07:01.330 --> 00:07:17.250
+Sí, solamente porque cuando lo van a preguntar por qué fue Random Forest, recuerdan revisar la estructura, cómo funciona Random Forest, porque por defecto, como árboles sobre árboles, va ocultando y hace hasta modificaciones en los datos para poder aumentar la precisión.
+
+00:07:17.950 --> 00:07:27.330
+Así que solamente esta respuesta, revísenla bien, no el número solamente, sino cómo funciona Random Forest, porque esa es una pregunta que siempre se hace y a veces pillan a los alumnos.
+
+00:07:27.410 --> 00:07:28.310
+A los alumnos, gracias.
+
+00:07:28.310 --> 00:07:29.190
+Muchas gracias.
+
+00:07:31.330 --> 00:07:37.850
+Ok, comparación de soluciones de IA, bueno aquí es donde se justifica un poco la selección del random forest,
+
+00:07:44.300 --> 00:07:49.200
+la 10 que corresponde a la explicabilidad del modelo anterior,
+
+00:07:53.520 --> 00:07:59.440
+sí, acá teníamos una observación donde nos indicaba que la explicación anterior o la lámina anterior se apoyaba demasiado en el árbol,
+
+00:08:00.280 --> 00:08:02.020
+pero el modelo principal era el random forest.
+
+00:08:02.020 --> 00:08:08.720
+Y aquí nos pidió incorporar el permutation important sobre el RF final del experimento principal.
+
+00:08:11.410 --> 00:08:13.790
+Y eso también hizo que los datos cambiaran un poco.
+
+00:08:16.560 --> 00:08:16.900
+Está bien.
+
+00:08:22.040 --> 00:08:32.630
+En la 11, que está acá, acá en la 11, déjenme acordar,
+
+00:08:32.630 --> 00:08:41.530
+Ah, la vez anterior teníamos, si no me equivoco, teníamos muy alto el threshold, si no me equivoco, ¿no?
+
+00:08:41.730 --> 00:08:45.630
+Algo teníamos acá que usted nos dijo que no debía presentarse como solución operacional.
+
+00:08:47.450 --> 00:08:50.630
+Si enviaba el 95% y eso después nos cambió.
+
+00:08:53.390 --> 00:08:54.730
+Claro, algo así me recuerdo, es verdad.
+
+00:08:56.090 --> 00:09:03.090
+Sí. Bueno, y este objeto también que dijo que se echaba de menos, que era básicamente la gráfica que mostraba el record versus la precisión.
+
+00:09:04.230 --> 00:09:05.430
+Excelente.
+
+00:09:08.710 --> 00:09:10.510
+La lámina 12.
+
+00:09:13.610 --> 00:09:16.710
+No, acá no teníamos muchas observaciones, profesor.
+
+00:09:19.610 --> 00:09:23.790
+No sé si de acá hay alguna pregunta clave que podría venir.
+
+00:09:25.450 --> 00:09:26.230
+Aquí está.
+
+00:09:27.410 --> 00:09:31.630
+O sea, aquí debería comenzar ya el cálculo de costo-sensibilidad.
+
+00:09:31.630 --> 00:09:31.730
+¿Qué es lo que está?
+
+00:09:32.150 --> 00:09:37.190
+Real, apply, no apply, falsos positivos.
+
+00:09:37.190 --> 00:09:38.390
+Se sacaron la matriz
+
+00:09:38.390 --> 00:09:40.290
+Pasado en esto hicieron cálculo
+
+00:09:40.290 --> 00:09:45.750
+Por ejemplo, aquí
+
+00:09:45.750 --> 00:09:47.410
+Esta matriz está pasada
+
+00:09:47.410 --> 00:09:49.990
+En los resultados de Random Forest
+
+00:09:49.990 --> 00:09:50.350
+¿Cierto?
+
+00:09:50.510 --> 00:09:53.330
+Bien, entonces aquí están diciendo
+
+00:09:53.330 --> 00:09:55.950
+La cantidad de los falsos, positivos, negativos
+
+00:09:55.950 --> 00:09:56.490
+Etcétera
+
+00:09:56.490 --> 00:09:59.610
+Pasado en esto hicieron el cálculo
+
+00:09:59.610 --> 00:10:01.010
+De costo por pérdida
+
+00:10:01.010 --> 00:10:04.070
+Por ejemplo, el momento cuando el modelo etiqueta mal
+
+00:10:04.070 --> 00:10:05.950
+¿Cuánto se pierde?
+
+00:10:06.630 --> 00:10:07.110
+Ah, ok
+
+00:10:07.110 --> 00:10:08.990
+No, así que agregarlo
+
+00:10:08.990 --> 00:10:11.430
+Así que hay que agregarlo. Ya, buena observación por eso.
+
+00:10:12.150 --> 00:10:14.130
+Claro, eso es muy bueno, poder cerrar el caso.
+
+00:10:14.910 --> 00:10:21.130
+Y podemos resumir, recuperar espacio y podemos colocar esa matriz que es más interesante.
+
+00:10:21.270 --> 00:10:22.090
+Bien, muchas gracias.
+
+00:10:24.770 --> 00:10:30.130
+Ya, esto que está acá habla un poquito más de la situación actual y el impacto económico.
+
+00:10:30.210 --> 00:10:31.730
+Esta es la mina más de economía.
+
+00:10:31.730 --> 00:10:42.740
+Acá su observación
+
+00:10:42.740 --> 00:10:45.140
+Apuntaba principalmente a descubrir
+
+00:10:45.140 --> 00:10:47.080
+Qué es lo que significaba en estas 144
+
+00:10:47.080 --> 00:10:48.880
+Atenciones que salían ahí
+
+00:10:48.880 --> 00:10:51.400
+Una pregunta Hernán
+
+00:10:51.400 --> 00:10:52.840
+Sobre el modelo también
+
+00:10:52.840 --> 00:10:53.860
+La curva ROC
+
+00:10:53.860 --> 00:10:56.520
+Bajo la curva
+
+00:10:56.520 --> 00:10:58.660
+Esta parte como de evaluación de rendimiento modelo
+
+00:10:58.660 --> 00:10:59.420
+Visual
+
+00:10:59.420 --> 00:11:01.900
+Porque veo que tiene muchos números y texto
+
+00:11:01.900 --> 00:11:04.240
+pero no tanta gráfica
+
+00:11:04.240 --> 00:11:06.120
+han hecho alguna evaluación de curva ROC
+
+00:11:06.120 --> 00:11:07.840
+AUC, etcétera, a ver si el modelo
+
+00:11:07.840 --> 00:11:10.160
+está también
+
+00:11:10.160 --> 00:11:12.160
+sobreajustado o no, aparte del
+
+00:11:12.160 --> 00:11:12.600
+fine tuning
+
+00:11:12.600 --> 00:11:15.920
+eso es bien relevante
+
+00:11:15.920 --> 00:11:17.140
+ya, bien
+
+00:11:17.140 --> 00:11:21.700
+vamos a pasar esta
+
+00:11:21.700 --> 00:11:24.020
+esta es la
+
+00:11:24.020 --> 00:11:25.080
+lámina 14
+
+00:11:25.080 --> 00:11:28.320
+la lámina 14
+
+00:11:28.320 --> 00:11:30.080
+no, la lámina 14
+
+00:11:30.080 --> 00:11:31.980
+no recibimos ninguna observación, lo único que
+
+00:11:31.980 --> 00:11:35.420
+si le gustó de esta lámina, es que hablaba del guardrail humano.
+
+00:11:40.860 --> 00:11:44.680
+Y acá sí había una observación, disculpe, que acá salía
+
+00:11:44.680 --> 00:11:49.560
+cero validación pendiente, aparecía el número cero,
+
+00:11:49.640 --> 00:11:54.200
+y ahí usted no había anticipado que eso se podía interpretar como un riesgo,
+
+00:11:54.260 --> 00:11:58.080
+porque el lector podría decir que esto falló, y no es que esto falló,
+
+00:11:58.160 --> 00:12:00.340
+sino que la validación final está pendiente principalmente
+
+00:12:00.340 --> 00:12:02.100
+por el entorno del cliente bancario.
+
+00:12:02.900 --> 00:12:05.660
+¿Eso se entiende finalmente, profesor, cuando uno se lo indica a ustedes?
+
+00:12:06.560 --> 00:12:09.780
+que hay cierta complejidad respecto de ejecutar.
+
+00:12:11.980 --> 00:12:22.730
+O sea, se entiende, sí, pero, a ver, ¿se le ocurre alguna otra forma que puede dejar el mensaje un poco más claro?
+
+00:12:25.460 --> 00:12:26.660
+Validación pendiente.
+
+00:12:28.240 --> 00:12:35.680
+Pero, ¿hay el riesgo que quede pendiente o eso no impacta? Es como la forma en que se presenta, ¿no?
+
+00:12:35.680 --> 00:12:42.620
+O sea, la palabra pendiente, al darle al ojo, se va a entender como pendiente en el proyecto, que no fue hecho
+
+00:12:42.620 --> 00:12:53.440
+Claro, porque finalmente lo que esa pequeña caja, o de repente la volamos, pero quizá es necesaria
+
+00:12:53.440 --> 00:12:59.240
+Porque lo que quiere decir de esa pequeña caja es que finalmente cuando el modelo corrió y entregó una recomendación
+
+00:12:59.240 --> 00:13:04.140
+Se levantó el buen reino humano y que dijo, ok, ejecútese para ver qué es lo que resulta de eso
+
+00:13:04.140 --> 00:13:06.320
+A esa parte, profesor, no le hemos podido llegar
+
+00:13:06.320 --> 00:13:16.400
+Ya, entonces es más fácil que lo dibujan como un ciclo, como un flujo, con flechas y nodos, para que se entienda que es parte del proceso, pendiente, que se revisa, etc.
+
+00:13:17.180 --> 00:13:18.060
+Ah, perfecto.
+
+00:13:18.060 --> 00:13:18.960
+Es el ciclo de ejecución.
+
+00:13:19.500 --> 00:13:21.560
+Ya, listo. Súper.
+
+00:13:21.560 --> 00:13:28.860
+Y la última lámina que ya básicamente acá teníamos una sola observación que era,
+
+00:13:35.420 --> 00:13:39.220
+sí era como lo mismo, que aquí fue donde lo dijo Chiquillo, gracias por la honestidad,
+
+00:13:39.660 --> 00:13:43.220
+hay que indicar que el Gatling va a quedar como siguiente etapa experimental,
+
+00:13:43.400 --> 00:13:46.280
+que básicamente sería como esta parte de acá.
+
+00:13:49.000 --> 00:13:49.440
+Perfecto.
+
+00:13:49.500 --> 00:13:53.400
+Mira, mirando el entorno, están súper bien, ajustamos lo que hablamos,
+
+00:13:53.400 --> 00:13:56.160
+Tratan de generar un poquito más de cosas visuales
+
+00:13:56.160 --> 00:13:57.700
+Y tratan de controlar
+
+00:13:57.700 --> 00:14:00.240
+El tono de color que viene en la presentación
+
+00:14:00.240 --> 00:14:01.860
+Porque se ve demasiado y ya
+
+00:14:01.860 --> 00:14:04.180
+Así que colocan un tono único
+
+00:14:04.180 --> 00:14:06.020
+Nomás de colores para que no aparezca demasiado
+
+00:14:06.020 --> 00:14:07.760
+Ah, ok, sí
+
+00:14:07.760 --> 00:14:08.680
+Ya, ok
+
+00:14:08.680 --> 00:14:11.340
+Yo tengo una pequeña explicación nomás
+
+00:14:11.340 --> 00:14:13.120
+Pero es porque se basó en los colores
+
+00:14:13.120 --> 00:14:15.600
+Sí, eso, fíjale nomás
+
+00:14:15.600 --> 00:14:17.620
+Fíjale, los mismos tonos de color de la primera lámina
+
+00:14:17.620 --> 00:14:20.000
+Es exactamente el que corre así hasta el final
+
+00:14:20.000 --> 00:14:21.720
+Perfecto
+
+00:14:21.720 --> 00:14:22.460
+¿Listo, profesor?
+
+00:14:22.700 --> 00:14:23.800
+Ya, muchas gracias, profe.
+
+00:14:23.840 --> 00:14:24.620
+No se olviden.
+
+00:14:25.420 --> 00:14:26.200
+Listo, no se olviden.
+
+00:14:26.460 --> 00:14:27.600
+Cualquier cosa me escriban.
+
+00:14:28.060 --> 00:14:28.440
+Un abrazo.
+
+00:14:28.560 --> 00:14:29.600
+Te pasó, agradecido.
+

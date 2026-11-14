@@ -1,0 +1,2732 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.980
+vamos. Buenas tardes, profes, buenas tardes, compañeros. Somos el grupo 16, compuesto por
+
+00:00:05.980 --> 00:00:10.960
+André, Fabián y Alejandro, que les habla. Hoy presentamos un score que estima, antes del embarque,
+
+00:00:11.080 --> 00:00:15.920
+el riesgo de que cada lote de exportación de Valtahaz llegue con defecto a destino y ahora
+
+00:00:15.920 --> 00:00:22.280
+vamos a usarlo para priorizar revisiones, conviene económicamente. La presentación está organizada
+
+00:00:22.280 --> 00:00:27.160
+en cinco capítulos, siguiendo el mismo orden de la rúbrica, partimos con el problema. Hoy,
+
+00:00:27.160 --> 00:00:29.240
+la compañía exportadora conoce la calidad
+
+00:00:29.240 --> 00:00:31.100
+de un lote de exportación recién
+
+00:00:31.100 --> 00:00:33.260
+en la inspección en destino, cuando ya no puede
+
+00:00:33.260 --> 00:00:35.260
+actuar. Despacha en promedio 8.420
+
+00:00:35.960 --> 00:00:37.160
+lotes por temporada y
+
+00:00:37.160 --> 00:00:39.380
+de los 14.736
+
+00:00:39.380 --> 00:00:41.100
+inspeccionados en 7 temporadas, el
+
+00:00:41.100 --> 00:00:43.200
+6.3% llegó con defecto,
+
+00:00:43.300 --> 00:00:45.100
+unos 530 lotes por temporada.
+
+00:00:45.860 --> 00:00:47.220
+Siguiendo el feedback de la
+
+00:00:47.220 --> 00:00:49.160
+P2, el target ya no es el
+
+00:00:49.160 --> 00:00:51.240
+reclamo, que ocurre cerca del 1% de los
+
+00:00:51.240 --> 00:00:53.180
+casos y depende un poco de la
+
+00:00:53.180 --> 00:00:54.900
+relación comercial, sino que la
+
+00:00:54.900 --> 00:00:59.520
+llegada con defecto, que es un evento físico y observable.
+
+00:01:00.840 --> 00:01:05.280
+Y la pregunta de negocio es, ¿qué lotes conviene realizar antes del embarque?
+
+00:01:05.360 --> 00:01:08.900
+¿Y por qué importa? Porque con nuestro supuesto de 15.000 dólares por lote,
+
+00:01:09.060 --> 00:01:12.600
+la pérdida potencial es de unos 8 millones de dólares por temporada.
+
+00:01:13.240 --> 00:01:18.980
+La innovación es entonces pasar de un control reactivo en destino a priorizar en el origen
+
+00:01:18.980 --> 00:01:21.060
+con datos que la compañía ya registra
+
+00:01:21.060 --> 00:01:23.420
+y traducir el riesgo en una decisión
+
+00:01:23.420 --> 00:01:25.800
+con un costo económico claro.
+
+00:01:26.420 --> 00:01:27.380
+Última lámina, por favor.
+
+00:01:28.760 --> 00:01:31.080
+Y el objetivo comercial es anticipar
+
+00:01:31.080 --> 00:01:31.740
+antes del embarque
+
+00:01:31.740 --> 00:01:33.780
+que lotes tienen alta probabilidad
+
+00:01:33.780 --> 00:01:35.680
+de llegar en mal estado
+
+00:01:35.680 --> 00:01:37.380
+para priorizar las revisiones.
+
+00:01:37.880 --> 00:01:40.340
+Y lo bajamos a cinco objetivos específicos.
+
+00:01:40.700 --> 00:01:41.600
+Entender el negocio,
+
+00:01:41.960 --> 00:01:43.560
+integrar los datos preembarque,
+
+00:01:44.180 --> 00:01:46.220
+entender que variables aumentan la probabilidad,
+
+00:01:46.600 --> 00:01:47.960
+desarrollar los modelos
+
+00:01:47.960 --> 00:01:50.400
+y comparar los modelos
+
+00:01:50.400 --> 00:01:52.520
+y evaluar el valor económico
+
+00:01:52.520 --> 00:01:53.600
+y la implementación.
+
+00:01:53.860 --> 00:01:55.440
+Cada objetivo tiene un KPI
+
+00:01:55.440 --> 00:01:56.940
+al que vamos a volver a encerrar
+
+00:01:56.940 --> 00:01:59.100
+en el punto 5 con André.
+
+00:02:00.140 --> 00:02:01.060
+Se me va la mano, por favor.
+
+00:02:02.340 --> 00:02:04.140
+Y los dejo ahora con André
+
+00:02:04.140 --> 00:02:05.520
+quien nos va a contar
+
+00:02:05.520 --> 00:02:07.200
+sobre la descripción del dato.
+
+00:02:08.000 --> 00:02:08.780
+Claro, vale.
+
+00:02:09.240 --> 00:02:10.200
+Puede pasar, por favor.
+
+00:02:10.320 --> 00:02:11.120
+Fabián, gracias.
+
+00:02:11.880 --> 00:02:13.040
+Como pueden ver,
+
+00:02:13.040 --> 00:02:15.480
+nosotros tenemos casi 59.000 lotes
+
+00:02:15.480 --> 00:02:17.400
+de exportación en 7 temporadas
+
+00:02:17.400 --> 00:02:20.220
+respecto a P2 lo que cambiamos fueron dos cosas
+
+00:02:20.220 --> 00:02:22.000
+la unidad de análisis
+
+00:02:22.000 --> 00:02:24.400
+pasó a ser el lote de exportación
+
+00:02:24.400 --> 00:02:26.540
+y el objetivo dejó de ser el reclamo
+
+00:02:26.540 --> 00:02:28.760
+como comentó Alejandro
+
+00:02:28.760 --> 00:02:30.440
+hoy tenemos casi 15.000
+
+00:02:30.440 --> 00:02:31.620
+lotes etiquetados
+
+00:02:31.620 --> 00:02:33.980
+y al cierre de la temporada vamos a tener
+
+00:02:33.980 --> 00:02:36.060
+el 100% con los reportes de calidad
+
+00:02:36.060 --> 00:02:38.420
+y destino que vamos a
+
+00:02:38.420 --> 00:02:39.980
+recopilar, de esos lotes
+
+00:02:39.980 --> 00:02:42.020
+928 llegan en mal estado
+
+00:02:42.020 --> 00:02:43.720
+un 6% y ese es nuestro
+
+00:02:43.720 --> 00:02:45.220
+variable objetivo
+
+00:02:45.220 --> 00:03:00.420
+¿Por qué dejamos de modelar el reclamo? Porque el reclamo depende de factores comerciales, como comentó Alejandro, y la llegada con defecto, en cambio, es un evento físico, observable y que ocurre antes.
+
+00:03:00.420 --> 00:03:02.160
+entonces sí o sí lo tenemos que hacer
+
+00:03:02.160 --> 00:03:03.960
+para llegar al reclamo
+
+00:03:03.960 --> 00:03:06.060
+esa fue una de las conclusiones que llegamos
+
+00:03:06.060 --> 00:03:08.120
+la tasa
+
+00:03:08.120 --> 00:03:10.040
+estable entre una temporada y otra
+
+00:03:10.040 --> 00:03:11.580
+entre 5 a 7%
+
+00:03:11.580 --> 00:03:14.440
+comparatazas usando pruebas de chi cuadrado
+
+00:03:14.440 --> 00:03:16.140
+con 5% de significancia
+
+00:03:16.140 --> 00:03:18.020
+y la validación nos permitió hacer una
+
+00:03:18.020 --> 00:03:20.080
+parción temporal, lo que les voy a comentar
+
+00:03:20.080 --> 00:03:22.380
+un poquito más adelante, puede avanzar por favor
+
+00:03:22.380 --> 00:03:24.280
+bueno, para construir
+
+00:03:24.280 --> 00:03:24.980
+ese modelo
+
+00:03:24.980 --> 00:03:27.920
+o la base, integramos 5 fuentes
+
+00:03:27.920 --> 00:03:30.360
+en BigQuery, siguiendo la hierarquía
+
+00:03:30.360 --> 00:03:32.920
+de la otra exportación.
+
+00:03:33.040 --> 00:03:34.260
+El maestro de cuarteles
+
+00:03:34.260 --> 00:03:36.500
+aporta origen, el suelo,
+
+00:03:37.200 --> 00:03:38.940
+cierta información del sector,
+
+00:03:39.540 --> 00:03:40.540
+de la especie,
+
+00:03:40.760 --> 00:03:42.560
+el clima aporta condiciones
+
+00:03:42.560 --> 00:03:44.660
+de cosecha, la cosecha
+
+00:03:44.660 --> 00:03:46.700
+aporta madurez de la fruta
+
+00:03:46.700 --> 00:03:48.640
+y con materia seca,
+
+00:03:48.740 --> 00:03:50.820
+firmeza y calidad. El packing aporta
+
+00:03:50.820 --> 00:03:52.160
+el proceso, el frío
+
+00:03:52.160 --> 00:03:54.880
+y embarque.
+
+00:03:55.380 --> 00:03:56.400
+Y la quinta fuente
+
+00:03:56.400 --> 00:03:58.860
+son las inspecciones en destino, que son los PDF
+
+00:03:58.860 --> 00:04:01.260
+que lo estructuramos. Posterior al despacho,
+
+00:04:01.740 --> 00:04:03.360
+ahí salen los datos etiquetados.
+
+00:04:03.700 --> 00:04:04.880
+Por eso son la puerta
+
+00:04:04.880 --> 00:04:06.820
+a la etiqueta. Nunca lo usamos en el modelo.
+
+00:04:07.040 --> 00:04:08.420
+Nosotros dividimos el T0,
+
+00:04:08.940 --> 00:04:11.020
+que miramos todo y el modelo
+
+00:04:11.020 --> 00:04:12.620
+trabaja con todo antes
+
+00:04:12.620 --> 00:04:15.080
+del T0. Todo que después, básicamente
+
+00:04:15.080 --> 00:04:17.160
+lo eliminamos. Y por eso, como resultado
+
+00:04:17.160 --> 00:04:19.160
+tenemos los 14.736
+
+00:04:20.040 --> 00:04:20.480
+con
+
+00:04:20.480 --> 00:04:22.220
+140 variables.
+
+00:04:23.000 --> 00:04:25.360
+Pero vamos a terminar con 9. ¿Puede avanzar, por favor?
+
+00:04:25.360 --> 00:04:29.620
+los datos venían en cinco sistemas distintos
+
+00:04:29.620 --> 00:04:30.540
+lo que les comenté
+
+00:04:30.540 --> 00:04:34.540
+incluido el informe de calidad
+
+00:04:34.540 --> 00:04:37.940
+en limpieza validamos los IDs, target
+
+00:04:37.940 --> 00:04:39.800
+eliminamos los valores faltantes
+
+00:04:39.800 --> 00:04:43.300
+principalmente excluimos todo lo posterior al embarque
+
+00:04:43.300 --> 00:04:45.920
+posterior al tercero fue ese punto que aproximó
+
+00:04:45.920 --> 00:04:47.860
+como reclamo, nota de crédito, nota
+
+00:04:47.860 --> 00:04:51.520
+valores que podrían influenciar el modelo
+
+00:04:51.520 --> 00:04:54.560
+en Outliers los extremos son reales
+
+00:04:54.560 --> 00:05:02.640
+y se conserva, entonces solo eliminamos los errores de captura y los casos raros que no entendíamos o que no hacíamos, lo validamos con expertos.
+
+00:05:03.340 --> 00:05:14.320
+Probamos muchas variables, pero al fin de la análisis el modelo no lograba mejorar si metíamos más información, menos de más.
+
+00:05:14.320 --> 00:05:33.600
+Bueno, la selección fue un embudo que partimos de 140, probando distintos grupos, hasta llegar con el experto que decía, tú tienes que mirar las 12, pero el modelo igual llegó a 9, o sea, 9 de las 12, había 3 que no agregaban ningún valor.
+
+00:05:33.600 --> 00:05:56.900
+¿Puede avanzar, por favor, Fabián? Bueno, como evidencia estadística, un poco ilusa, un poco lo que comenté de 12 a 9, por ejemplo, en la izquierda, el tiempo de frío, sobre los 20 días del almacenamiento, la tasa casi duplica de 5 a 9, y sobre los 30, llega a 13.
+
+00:05:56.900 --> 00:05:59.880
+y en ambos casos el p-valor está muy por debajo
+
+00:05:59.880 --> 00:06:01.720
+de 0.05, incluso
+
+00:06:01.720 --> 00:06:03.720
+aplicando la corrección de ohm
+
+00:06:03.720 --> 00:06:05.700
+pero ojo, esa es asociación
+
+00:06:05.700 --> 00:06:07.800
+no es causalidad, pero es una variable
+
+00:06:07.800 --> 00:06:09.160
+que aporta mucho al modelo
+
+00:06:09.160 --> 00:06:11.440
+por otro lado, a la derecha
+
+00:06:11.440 --> 00:06:13.540
+tenemos el destino, el destino
+
+00:06:13.540 --> 00:06:15.900
+por más que muestre una correlación cuando lo metemos
+
+00:06:15.900 --> 00:06:17.380
+el modelo no aporta nada
+
+00:06:17.380 --> 00:06:19.400
+entonces al final fue una de las variables
+
+00:06:19.400 --> 00:06:21.000
+que por más que
+
+00:06:21.000 --> 00:06:23.900
+el experto decía, tiene que usarla
+
+00:06:23.900 --> 00:06:25.060
+el modelo
+
+00:06:25.060 --> 00:06:27.620
+con la variable y sin la variable
+
+00:06:27.620 --> 00:06:29.240
+no cambiaba absolutamente nada
+
+00:06:29.240 --> 00:06:30.960
+lo que pesa el modelo
+
+00:06:30.960 --> 00:06:32.500
+lo vamos a mostrar más adelante
+
+00:06:32.500 --> 00:06:37.340
+y acá un poco la partición
+
+00:06:37.340 --> 00:06:38.060
+temporal
+
+00:06:38.060 --> 00:06:41.100
+con los datos que en realidad
+
+00:06:41.100 --> 00:06:43.080
+fue lo primero que hicimos
+
+00:06:43.080 --> 00:06:44.520
+fue separar los test
+
+00:06:44.520 --> 00:06:46.760
+la temporada 23, 24 y 25
+
+00:06:46.760 --> 00:06:48.300
+completas
+
+00:06:48.300 --> 00:06:51.380
+4207 lotes
+
+00:06:51.380 --> 00:06:53.060
+y bueno
+
+00:06:53.060 --> 00:06:54.900
+el entrenamiento y los hype parámetros
+
+00:06:54.900 --> 00:06:56.920
+usan solo el histórico
+
+00:06:56.920 --> 00:06:59.280
+y de ese histórico el 95%
+
+00:06:59.280 --> 00:07:01.180
+es tren y el 5% es restante
+
+00:07:01.180 --> 00:07:03.000
+es validación que recomienda el profe
+
+00:07:03.000 --> 00:07:05.500
+y también nos ha dado muy buenos resultados
+
+00:07:05.500 --> 00:07:06.960
+aleatorios y
+
+00:07:06.960 --> 00:07:08.820
+estratificados y se usó
+
+00:07:08.820 --> 00:07:11.040
+Optuna como recomendación del profesor
+
+00:07:11.040 --> 00:07:12.480
+Guía para elegir el umbral
+
+00:07:12.480 --> 00:07:15.160
+¿por qué temporal? porque también probamos
+
+00:07:15.160 --> 00:07:17.120
+de no hacerlo temporal porque simula
+
+00:07:17.120 --> 00:07:18.780
+un poco el uso real del modelo
+
+00:07:18.780 --> 00:07:20.560
+es decir, entro con
+
+00:07:20.560 --> 00:07:23.060
+temporadas pasadas y voy a
+
+00:07:23.060 --> 00:07:25.100
+predecir temporadas que el modelo todavía
+
+00:07:25.100 --> 00:07:26.280
+no conoce
+
+00:07:26.280 --> 00:07:28.840
+con la misma prueba de chi cuadrada
+
+00:07:28.840 --> 00:07:31.340
+entonces, bueno, y ahora paso la palabra
+
+00:07:31.340 --> 00:07:32.780
+a mi compañero Fabián
+
+00:07:32.780 --> 00:07:34.520
+que les va a explicar un poco
+
+00:07:34.520 --> 00:07:36.900
+los modelos y cómo llegamos a eso
+
+00:07:36.900 --> 00:07:39.320
+Vale, gracias André
+
+00:07:39.320 --> 00:07:41.640
+Bueno, profesor, en la comparación
+
+00:07:41.640 --> 00:07:42.940
+de las soluciones de IA, nosotros
+
+00:07:42.940 --> 00:07:44.340
+en la P2
+
+00:07:44.340 --> 00:07:46.960
+veníamos trabajando con un modelo
+
+00:07:46.960 --> 00:07:48.840
+de regresión logística y
+
+00:07:48.840 --> 00:07:51.220
+un challenger de modelos, de varios modelos
+
+00:07:51.220 --> 00:07:57.740
+Por lo tanto, en base a su recomendación, nosotros nos concentramos y comparamos tres algoritmos de complejidad creciente.
+
+00:07:57.980 --> 00:08:04.240
+El primer de ellos fue el árbol de decisión, que cambió nuestro baseline completamente, el diseño de nuestra solución.
+
+00:08:05.540 --> 00:08:17.260
+Y en base a eso también aplicamos un modelo de random forest que promedia cientos de árboles y el XGBoost que los construye en secuencia y cada uno corrigiendo el anterior.
+
+00:08:17.260 --> 00:08:32.600
+En base a eso, los hiperparámetros se buscaron con una validación cruzada dentro del train, y la validación también la cambiamos, teníamos un 25% antes y ahora trabajamos solamente con un 5%, que es una recomendación que en 2000 la tomamos.
+
+00:08:32.600 --> 00:08:37.460
+y por lo tanto solo se eligió entre 10 finalistas, 10 variables finalistas
+
+00:08:37.460 --> 00:08:40.540
+y todo quedó congelado antes de abril este.
+
+00:08:40.540 --> 00:08:43.540
+Así que en resumen, tomamos los tres modelos, mismo protocolo
+
+00:08:44.080 --> 00:08:47.480
+y empecemos por revisar el modelo más simple.
+
+00:08:48.140 --> 00:08:51.380
+Este es el árbol Baseline completo, son 5 niveles con 23 hojas.
+
+00:08:52.040 --> 00:08:56.000
+La primera pregunta que nos hicimos fue cuántos días pasan entre cosecha y embarque.
+
+00:08:56.000 --> 00:09:02.620
+que es el grupo más riesgoso, que tiene 17,5, casi 18 días de trayecto y fruta blanda,
+
+00:09:02.960 --> 00:09:08.080
+con respecto al 27% de defecto, que es cuatro veces más que el promedio,
+
+00:09:08.740 --> 00:09:12.320
+y por lo tanto el ARPOL nos ayudó simplemente a ordenar los lotes por riesgo,
+
+00:09:12.480 --> 00:09:16.360
+no a clasificar si es sano o defecto, sino que el lote por riesgo es lo que estábamos buscando.
+
+00:09:17.440 --> 00:09:22.560
+Y en base a esto, los ensambles también requieren una búsqueda más cuidadosa,
+
+00:09:22.560 --> 00:09:41.880
+Como dijo Andrés, optamos por Optuna, Valga la redundancia, como framework para utilizar este, que nos ayudó a optimizar los objetivos a la vez que ordenar bien el modelo medido con el promedio de precisión y ganar en base a un valor económico que lo vamos a revisar más adelante en base a esa revisión.
+
+00:09:41.880 --> 00:09:45.180
+las configuraciones que no pueden mejorar
+
+00:09:45.180 --> 00:09:46.940
+uno sin empeorar el otro
+
+00:09:46.940 --> 00:09:48.600
+forman parte de la frontera de Pareto
+
+00:09:48.600 --> 00:09:50.980
+que son las 10 variables finalistas
+
+00:09:50.980 --> 00:09:51.340
+y que tienen
+
+00:09:51.340 --> 00:09:55.020
+difieren un 0,005
+
+00:09:55.020 --> 00:09:56.520
+del promedio
+
+00:09:56.520 --> 00:09:58.180
+de precisión
+
+00:09:58.180 --> 00:09:59.800
+veamos ahora
+
+00:09:59.800 --> 00:10:01.880
+cuáles son
+
+00:10:01.880 --> 00:10:04.560
+los modelos con los lotes reales en test
+
+00:10:04.560 --> 00:10:06.400
+acá cada matriz
+
+00:10:06.400 --> 00:10:08.640
+cruza lo real con lo
+
+00:10:08.640 --> 00:10:10.420
+alertado, Randolph Forest alerta
+
+00:10:10.420 --> 00:10:20.560
+1.234 lotes, el 29% se encuentra de 126 de los 258 defectos, tiene un récord de un 49%
+
+00:10:20.560 --> 00:10:25.660
+con una precisión de un poco más del 10%, frente al 6,1 de revisar al azar.
+
+00:10:26.180 --> 00:10:32.460
+El árbol encuentra más, encuentra 138, pero revisando 255 lotes más.
+
+00:10:33.240 --> 00:10:37.080
+Y aquí lo relevante no es cuántos casos detectamos, sino que cuántas revisiones necesitamos.
+
+00:10:37.080 --> 00:10:40.360
+así que detectar para nosotros la mitad de los defectos
+
+00:10:40.360 --> 00:10:42.180
+revisando un tercio era nuestro umbral
+
+00:10:42.180 --> 00:10:43.620
+hacia arriba que es lo que teníamos que dar
+
+00:10:43.620 --> 00:10:45.820
+así que independiente de esto nosotros
+
+00:10:45.820 --> 00:10:48.140
+revisamos y nos preguntamos, bueno, ¿cuál es el umbral?
+
+00:10:49.080 --> 00:10:50.000
+tanto los
+
+00:10:50.000 --> 00:10:51.980
+modelos y la revisión de los gráficos de área
+
+00:10:51.980 --> 00:10:54.200
+bajo la curva nos permiten detectar
+
+00:10:54.200 --> 00:10:55.780
+el recall frente a la tasa de
+
+00:10:55.780 --> 00:10:57.800
+los falsos positivos, acá Random Forest
+
+00:10:57.800 --> 00:11:00.180
+supera el árbol al modelo
+
+00:11:00.180 --> 00:11:01.360
+Equibus
+
+00:11:01.360 --> 00:11:04.100
+y la prueba de Long que la hicimos
+
+00:11:04.100 --> 00:11:06.000
+también es significativa en ambos casos
+
+00:11:06.000 --> 00:11:07.920
+no hay un sobreajuste que es preocupante
+
+00:11:07.920 --> 00:11:10.620
+y la brecha de la precisión se mantiene
+
+00:11:10.620 --> 00:11:12.200
+entre un 0,03 y 0,05
+
+00:11:12.200 --> 00:11:15.060
+y nuestra meta que nos pusimos
+
+00:11:15.060 --> 00:11:16.580
+era un 0,10
+
+00:11:16.580 --> 00:11:17.940
+así que
+
+00:11:17.940 --> 00:11:20.360
+para nosotros ordenar no bastaba
+
+00:11:20.360 --> 00:11:22.780
+así que decidimos también valorar esto
+
+00:11:22.780 --> 00:11:24.560
+desde el punto de vista económico
+
+00:11:24.560 --> 00:11:26.820
+acá la calibración la podemos
+
+00:11:26.820 --> 00:11:28.220
+ver que está muy nítida
+
+00:11:28.220 --> 00:11:30.740
+el árbol se encuentra calibrado sin ningún
+
+00:11:30.740 --> 00:11:33.000
+ajuste y con una probabilidad exactamente
+
+00:11:33.000 --> 00:11:34.320
+de lo que están buscando
+
+00:11:34.320 --> 00:11:37.000
+si hay un score de un 10% significa que hay un 10%
+
+00:11:37.000 --> 00:11:37.600
+de riesgo real
+
+00:11:37.600 --> 00:11:39.780
+así que los scores están
+
+00:11:39.780 --> 00:11:43.140
+ya no buscan, son probabilidades
+
+00:11:43.140 --> 00:11:44.780
+no son calibraciones
+
+00:11:44.780 --> 00:11:46.220
+que vayan a
+
+00:11:46.220 --> 00:11:48.120
+hacer algún defecto
+
+00:11:48.120 --> 00:11:49.560
+y acá jugamos
+
+00:11:49.560 --> 00:11:52.840
+una caracterización que es
+
+00:11:52.840 --> 00:11:54.500
+flat y el BRD random fresh
+
+00:11:54.500 --> 00:11:56.800
+bajó de un porcentaje
+
+00:11:56.800 --> 00:11:58.720
+un poco alto a un porcentaje
+
+00:11:58.720 --> 00:12:00.240
+menor con unas pruebas
+
+00:12:00.240 --> 00:12:02.440
+que se llama spillage harder
+
+00:12:02.440 --> 00:12:04.600
+que la ocupamos también para que nos dimos cuenta
+
+00:12:04.600 --> 00:12:06.120
+que no rechaza la calibración
+
+00:12:06.120 --> 00:12:08.520
+en ninguno de los tres modelos, así que ocupamos
+
+00:12:08.520 --> 00:12:10.880
+bastantes fórmulas en este aspecto y la calibración
+
+00:12:10.880 --> 00:12:12.780
+nos quedó bastante bien
+
+00:12:12.780 --> 00:12:14.700
+si comparamos las tres
+
+00:12:14.700 --> 00:12:16.780
+soluciones, a lo largo de este
+
+00:12:16.780 --> 00:12:18.580
+mundo, vemos que el
+
+00:12:18.580 --> 00:12:20.580
+TresCol se mantiene, él tiene
+
+00:12:20.580 --> 00:12:23.120
+un promedio alrededor de 6,4 o 6,5
+
+00:12:23.120 --> 00:12:24.420
+con Bootstrap
+
+00:12:24.420 --> 00:12:26.520
+pareado por cuartel, la ventaja
+
+00:12:26.520 --> 00:12:28.480
+del promedio está en el árbol
+
+00:12:28.480 --> 00:12:30.300
+y en el Equilibus es significativo
+
+00:12:30.300 --> 00:12:35.200
+nosotros aquí distinguimos significativamente el impacto económico
+
+00:12:35.200 --> 00:12:37.560
+tanto con nuestro cliente como la empresa
+
+00:12:37.560 --> 00:12:40.520
+estamos buscando el impacto económico
+
+00:12:40.520 --> 00:12:42.980
+o sea el beneficio neto que tiene para la empresa
+
+00:12:42.980 --> 00:12:46.140
+y Random Forest supera por 73 mil dólares
+
+00:12:46.140 --> 00:12:47.340
+frente al árbol
+
+00:12:47.340 --> 00:12:50.920
+tampoco la diferencia es muy significativa
+
+00:12:50.920 --> 00:12:54.420
+así que la pregunta natural que nos hicimos en este momento
+
+00:12:54.420 --> 00:12:56.320
+es cómo aumentamos el riesgo
+
+00:12:56.320 --> 00:13:23.740
+En base a esto, CHAP descompone el modelo explicando las variables que tienen mayor riesgo, en este caso la materia seca, la firmeza de la pulpa y los días de cosecha son los que más tienen una madurez y un tiempo, suben el riesgo correspondientemente, y aquí después de esta investigación revisamos si nuestra versión inicial era más estable con respecto a la final que tuvimos.
+
+00:13:23.740 --> 00:13:31.140
+Así que en base a esto podemos ver y comparamos la versión que ninguna diferencia es muy significativa en realidad,
+
+00:13:31.460 --> 00:13:34.720
+pero que el resultado se sostiene por un protocolo que es más estricto.
+
+00:13:34.720 --> 00:13:39.480
+Aquí, como decía Alejandro, existe una señal que es predictiva.
+
+00:13:39.720 --> 00:13:46.140
+Nuestro modelo lo encontramos que ya tiene robustez y esto nos permite definir ya económicamente
+
+00:13:46.140 --> 00:13:51.720
+para ver qué modelo nos conviene desde el punto de vista del modelo económico.
+
+00:13:51.720 --> 00:13:55.020
+en base a nuestros puntos 4 de la rúbrica
+
+00:13:55.020 --> 00:13:56.540
+en el análisis de sensibilidad podemos
+
+00:13:56.540 --> 00:13:58.100
+revisar que la matriz de
+
+00:13:58.100 --> 00:14:00.640
+sensibilidad tiene desde un
+
+00:14:00.640 --> 00:14:02.620
+37,5% en promedio
+
+00:14:02.620 --> 00:14:05.140
+desde ahí hacia arriba tiene un
+
+00:14:05.140 --> 00:14:06.500
+cruce de
+
+00:14:06.500 --> 00:14:08.040
+beneficio económico
+
+00:14:08.040 --> 00:14:10.500
+ocupando un costo de
+
+00:14:10.500 --> 00:14:12.420
+revisión de container aproximadamente
+
+00:14:12.420 --> 00:14:14.420
+de 500 dólares, nosotros hicimos un
+
+00:14:14.420 --> 00:14:16.240
+barrido que lo vamos a mostrar más adelante
+
+00:14:16.240 --> 00:14:18.660
+pero el valor depende del coste y la eficacia
+
+00:14:18.660 --> 00:14:20.640
+entonces tenemos el valor, la eficacia y el
+
+00:14:20.640 --> 00:14:21.560
+modelo, son las tres
+
+00:14:21.560 --> 00:14:24.700
+el conjunto de variables
+
+00:14:24.700 --> 00:14:26.700
+reales que forman parte del proyecto
+
+00:14:26.700 --> 00:14:28.720
+y en este caso nosotros fijamos
+
+00:14:28.720 --> 00:14:30.580
+un caso base para poder
+
+00:14:30.580 --> 00:14:32.500
+revisar el cálculo, tomamos las
+
+00:14:32.500 --> 00:14:34.380
+fórmulas correspondientes, tomamos los
+
+00:14:34.380 --> 00:14:36.060
+supuestos que veníamos trabajando con
+
+00:14:36.060 --> 00:14:38.600
+nuestra empresa y también
+
+00:14:38.600 --> 00:14:40.600
+esos supuestos los validamos en el
+
+00:14:40.600 --> 00:14:42.000
+escenario en presentaciones con ellos
+
+00:14:42.000 --> 00:14:44.380
+así que por lo tanto en base a esto
+
+00:14:44.380 --> 00:14:46.780
+porcentajes que nos entregan
+
+00:14:46.780 --> 00:14:48.720
+nuestros costos van desde la revisión
+
+00:14:48.720 --> 00:14:51.120
+desde 500 dólares hasta 1.500 dólares.
+
+00:14:52.520 --> 00:14:57.060
+En la próxima voy a mostrar qué significa desde 500 a 1.500,
+
+00:14:57.320 --> 00:15:03.680
+pero nuestro óptimo de 6,4% queda cercano teórico a los 500 dólares
+
+00:15:03.680 --> 00:15:08.740
+dividido por los 7.500, ya que nuestra eficacia de revisión
+
+00:15:08.740 --> 00:15:12.660
+en base a los 15.000 dólares de castigo por cada lote que se encuentre malo
+
+00:15:12.660 --> 00:15:15.480
+se nota un promedio de 6,7%.
+
+00:15:15.480 --> 00:15:20.720
+Entonces, ¿cómo mejora esto en frente a lo que tenemos hoy en día en promedio?
+
+00:15:20.820 --> 00:15:27.560
+Nosotros tenemos un óptimo que nos deja alrededor de 377.000 dólares,
+
+00:15:27.880 --> 00:15:32.240
+que frente al azar es mucho mayor que el esfuerzo,
+
+00:15:32.740 --> 00:15:36.700
+y en base a esto podemos determinar que hay valores que pueden ser negativos,
+
+00:15:36.820 --> 00:15:38.220
+que el azar lo toma como negativo,
+
+00:15:38.420 --> 00:15:42.260
+y Random Forest toma el mayor porcentaje con el recall correspondiente.
+
+00:15:42.260 --> 00:15:44.940
+también nos preguntamos
+
+00:15:44.940 --> 00:15:46.760
+cuánto puede costar una revisión
+
+00:15:46.760 --> 00:15:48.700
+ese es el punto, o sea, no tan solo
+
+00:15:48.700 --> 00:15:50.180
+significa la ganancia, sino que también
+
+00:15:50.180 --> 00:15:52.680
+cuánto es el mínimo, ok, o el máximo
+
+00:15:52.680 --> 00:15:54.740
+perdón, que podemos tomar en relación
+
+00:15:54.740 --> 00:15:55.480
+a nuestro
+
+00:15:55.480 --> 00:15:58.740
+valor por revisión y en promedio
+
+00:15:58.740 --> 00:16:00.320
+el promedio es más o menos
+
+00:16:00.320 --> 00:16:02.660
+700 dólares desde los 500
+
+00:16:02.660 --> 00:16:03.720
+a 1.500 para tener
+
+00:16:03.720 --> 00:16:06.760
+un proyecto con un beneficio
+
+00:16:06.760 --> 00:16:07.640
+neto positivo
+
+00:16:07.640 --> 00:16:09.440
+en base a nuestro BAN
+
+00:16:09.440 --> 00:16:14.720
+nuestro ROI y la recuperación de la inversión que se quiere hacer.
+
+00:16:15.220 --> 00:16:18.960
+Tenemos un beneficio neto de 656.000 dólares
+
+00:16:18.960 --> 00:16:23.860
+con un BAN a tres años calculado una tasa de 10% de 1,5 millones de dólares.
+
+00:16:24.760 --> 00:16:27.440
+Calculamos, fuimos muy optimistas, pero la recuperación de la inversión
+
+00:16:27.440 --> 00:16:33.060
+aproximadamente de dos meses con un ROI de 22,7 veces entre años.
+
+00:16:33.820 --> 00:16:37.440
+Por lo tanto, nuestro BAN positivo está condicionado con los supuestos.
+
+00:16:37.560 --> 00:16:39.260
+Al principio revisamos.
+
+00:16:39.440 --> 00:16:47.480
+Y si nos damos cuenta aquí, el escenario que tenemos es que si en Randolph Forest con un costo de beneficio,
+
+00:16:48.120 --> 00:16:54.020
+un costo de revisión de 500 dólares con un 50% de eficacia, tenemos un banque positivo,
+
+00:16:54.020 --> 00:17:02.620
+a nivel pesimista también conviene con un ICA de 95%, a nivel de eficacia del 25% no nos conviene implementar el proyecto
+
+00:17:02.620 --> 00:17:06.280
+y la revisión de 1.000 dólares es muy marginal lo que ha ganado,
+
+00:17:06.380 --> 00:17:11.400
+así que la revisión también a 1.500 dólares no forma parte de lo que tenemos que revisar.
+
+00:17:12.420 --> 00:17:16.520
+Bueno, por lo tanto nuestra recomendación operacional en base al proyecto,
+
+00:17:17.400 --> 00:17:21.280
+queremos tomar y entregamos a nuestro cliente el mejor ranking con significancia,
+
+00:17:21.280 --> 00:17:30.680
+que es el promedio del árbol a un IC95, pero con un costo de 750 dólares aproximadamente,
+
+00:17:30.680 --> 00:17:36.820
+con una capacidad sobre el 33% para poder realizar 2.500 revisiones por temporada.
+
+00:17:37.700 --> 00:17:41.960
+Si la revisión cuesta más de 1.000 dólares, hay que tomar ciertas decisiones
+
+00:17:41.960 --> 00:17:48.560
+y si el área de operaciones de nuestro cliente necesita optimizar los procesos
+
+00:17:48.560 --> 00:17:53.500
+en base a la logística, en base al beneficio, tenemos el Randofore,
+
+00:17:53.700 --> 00:17:59.100
+pero el árbol de precisión nos permite dar mucho más detalle en nuestra explicación
+
+00:17:59.100 --> 00:18:01.500
+del proyecto ya que está calificado y con reglas
+
+00:18:01.500 --> 00:18:03.440
+más simples y normales que ronda.
+
+00:18:04.280 --> 00:18:05.620
+Bueno, dejo a Andrés ahora que
+
+00:18:05.620 --> 00:18:07.420
+entregue las conclusiones y el trabajo
+
+00:18:07.420 --> 00:18:09.140
+futuro que trabajamos.
+
+00:18:10.600 --> 00:18:11.720
+Sí, gracias
+
+00:18:11.720 --> 00:18:13.720
+a bien, dale, mira, y en general
+
+00:18:13.720 --> 00:18:15.680
+en términos de evaluación de los objetivos
+
+00:18:15.680 --> 00:18:16.940
+se cumplieron,
+
+00:18:17.280 --> 00:18:19.180
+tenemos que documentar, documentamos,
+
+00:18:19.320 --> 00:18:21.220
+tenemos que integrar los datos, lo integramos,
+
+00:18:21.320 --> 00:18:23.500
+lo islanzamos, las variables que
+
+00:18:23.500 --> 00:18:25.360
+suben el riesgo, que bajan,
+
+00:18:25.480 --> 00:18:27.300
+logramos desarrollar y comparar
+
+00:18:27.300 --> 00:18:29.640
+modelos y el valor económico
+
+00:18:29.640 --> 00:18:31.400
+que todavía estamos ajustando, pero
+
+00:18:31.400 --> 00:18:33.580
+que se cumplió. ¿Puede avanzar, porfa?
+
+00:18:34.500 --> 00:18:35.920
+Dale. Bueno, ¿qué funcionó
+
+00:18:35.920 --> 00:18:37.800
+en general? Integrar y encadenar
+
+00:18:37.800 --> 00:18:39.480
+las cinco fuentes de datos. Funcionó muy bien.
+
+00:18:39.640 --> 00:18:41.340
+Cambiar el target a llegada
+
+00:18:41.340 --> 00:18:43.400
+con defecto, por más que la empresa quería
+
+00:18:43.400 --> 00:18:45.480
+el reclamo. A ellos les interesa el reclamo
+
+00:18:45.480 --> 00:18:47.480
+más que el defecto, pero también
+
+00:18:47.480 --> 00:18:49.340
+funcionó. El protocolo final,
+
+00:18:49.560 --> 00:18:51.380
+la prueba estadística, comparar entre
+
+00:18:51.380 --> 00:18:53.260
+expertos, buenas prácticas y modelos, está
+
+00:18:53.260 --> 00:18:54.800
+más o menos bien.
+
+00:18:54.800 --> 00:18:57.920
+hoy la empresa, no me acuerdo si dije o no
+
+00:18:57.920 --> 00:18:59.700
+pero ellos despachan
+
+00:18:59.700 --> 00:19:01.680
+con FIFO, primero que entra
+
+00:19:01.680 --> 00:19:03.920
+primero que sale, y el modelo no necesariamente
+
+00:19:03.920 --> 00:19:05.540
+va a seguir eso pero
+
+00:19:05.540 --> 00:19:07.020
+también va a considerar otras variables
+
+00:19:07.020 --> 00:19:09.460
+que sería mejor de lo que tenemos
+
+00:19:09.460 --> 00:19:11.360
+que podemos mejorar
+
+00:19:11.360 --> 00:19:13.080
+afinar la pérdida por lote
+
+00:19:13.080 --> 00:19:15.320
+porque un lote que llega en defecto
+
+00:19:15.320 --> 00:19:16.460
+no necesariamente termina
+
+00:19:16.460 --> 00:19:20.620
+en un reclamo
+
+00:19:20.620 --> 00:19:22.100
+pero por los tipos
+
+00:19:22.100 --> 00:19:24.000
+de defectos se puede
+
+00:19:24.000 --> 00:19:25.080
+más o menos dimensional.
+
+00:19:25.980 --> 00:19:28.640
+Pasar de un braille único a un semáforo,
+
+00:19:28.760 --> 00:19:28.900
+¿vale?
+
+00:19:29.480 --> 00:19:32.320
+Porque un solo corte obliga sí o no
+
+00:19:32.320 --> 00:19:34.400
+y con pocos defectos
+
+00:19:34.400 --> 00:19:36.220
+a poco estar. Entonces, tres niveles,
+
+00:19:36.340 --> 00:19:38.340
+rojo, revisión, amarillo,
+
+00:19:38.460 --> 00:19:40.480
+que pensé en el verde, flujo normal,
+
+00:19:40.940 --> 00:19:42.760
+ajusta la revisión a la capacidad
+
+00:19:42.760 --> 00:19:44.720
+que tiene la empresa también de revisar.
+
+00:19:45.680 --> 00:19:46.540
+Ahí es donde el modelo
+
+00:19:46.540 --> 00:19:48.400
+se convierte
+
+00:19:50.040 --> 00:19:50.660
+en un partner
+
+00:19:50.660 --> 00:19:52.500
+de negocio, ¿vale? El problema acá
+
+00:19:52.500 --> 00:19:55.680
+es que al hacer el semáforo, lo que estamos hablando,
+
+00:19:56.320 --> 00:20:00.820
+atrapamos más casos, pero generamos más falsas alarmas.
+
+00:20:00.940 --> 00:20:02.560
+Y la falsa alarma es puro costo,
+
+00:20:02.620 --> 00:20:04.760
+porque más de investigar algo que al fin termina bien.
+
+00:20:05.220 --> 00:20:07.500
+Mantener una fracción de inspección aleatoria,
+
+00:20:08.620 --> 00:20:10.720
+así el modelo puede decidir.
+
+00:20:11.160 --> 00:20:12.500
+Y bueno, ¿y qué hemos aprendido?
+
+00:20:13.340 --> 00:20:15.500
+La empresa pedía predecir reclamo
+
+00:20:16.080 --> 00:20:17.780
+y partimos con lo otro y con defectos
+
+00:20:17.780 --> 00:20:19.000
+y resultó mucho mejor.
+
+00:20:19.000 --> 00:20:20.700
+menos de más
+
+00:20:20.700 --> 00:20:22.500
+partimos con muchas variables
+
+00:20:22.500 --> 00:20:23.800
+y al final
+
+00:20:23.800 --> 00:20:26.340
+menos variables
+
+00:20:26.340 --> 00:20:28.480
+son el protocolo de validación
+
+00:20:28.480 --> 00:20:30.720
+y el valor depende del costo
+
+00:20:30.720 --> 00:20:32.680
+y explícale el aborto
+
+00:20:32.680 --> 00:20:35.220
+y por último tenemos una recomendación
+
+00:20:35.220 --> 00:20:37.460
+de cómo llevar eso con los pasos productivos
+
+00:20:37.460 --> 00:20:39.240
+¿me puedo avanzar Fabián?
+
+00:20:40.060 --> 00:20:41.100
+eso sería, gracias
+
+00:20:41.100 --> 00:20:42.360
+nos pasamos un poco
+
+00:20:42.360 --> 00:20:43.560
+muchas gracias
+
+00:20:43.560 --> 00:20:46.340
+no hay problema, muchísimas gracias
+
+00:20:46.340 --> 00:20:50.020
+bien, buen proyecto
+
+00:20:50.020 --> 00:20:51.840
+me parece que se termina
+
+00:20:51.840 --> 00:20:53.700
+encerrando un trabajo
+
+00:20:53.700 --> 00:20:55.720
+que es bien robusto y técnicamente me parece que está bien
+
+00:20:55.720 --> 00:20:57.040
+ejecutado, así que felicitaciones
+
+00:20:57.040 --> 00:20:59.700
+lo único que en términos de forma
+
+00:20:59.700 --> 00:21:01.520
+tendría cuidado, hay varias de las láminas que están
+
+00:21:01.520 --> 00:21:03.880
+media sobrecargadas, incluidas por ejemplo
+
+00:21:03.880 --> 00:21:04.480
+las últimas
+
+00:21:04.480 --> 00:21:07.520
+incluidas las últimas también tienen un poco de eso
+
+00:21:07.520 --> 00:21:09.660
+entonces traten
+
+00:21:09.660 --> 00:21:11.440
+de hacerlas un poco más livianas
+
+00:21:11.440 --> 00:21:13.380
+tengo muy poquitos comentarios
+
+00:21:13.380 --> 00:21:15.180
+así que si es que pueden mostrar la presentación
+
+00:21:15.180 --> 00:21:16.720
+solo para seguir con
+
+00:21:16.720 --> 00:21:18.400
+ah, perdón
+
+00:21:18.400 --> 00:21:19.660
+perdón
+
+00:21:19.660 --> 00:21:28.310
+entonces
+
+00:21:28.310 --> 00:21:34.200
+vamos a la
+
+00:21:34.200 --> 00:21:35.700
+lámina 3
+
+00:21:35.700 --> 00:21:38.460
+por ejemplo, si uno se da cuenta
+
+00:21:38.460 --> 00:21:40.300
+solo en la pasada rápida
+
+00:21:40.300 --> 00:21:41.760
+se da cuenta que hay arte
+
+00:21:41.760 --> 00:21:43.920
+para que tengan cuidado
+
+00:21:43.920 --> 00:21:44.340
+entonces
+
+00:21:44.340 --> 00:21:47.460
+esta es una de las que
+
+00:21:47.460 --> 00:21:49.760
+ustedes destacan, pero destacan varias cosas
+
+00:21:49.760 --> 00:21:51.320
+entonces hacen trampa porque es como
+
+00:21:51.320 --> 00:21:54.340
+qué es lo que debiera mirar todos los que están en rojo
+
+00:21:54.340 --> 00:21:55.860
+pero solo para
+
+00:21:55.860 --> 00:21:56.660
+entiendo que hay
+
+00:21:56.660 --> 00:22:00.120
+quizás más información de la que
+
+00:22:00.120 --> 00:22:01.800
+debiera porque hicieron este tema de
+
+00:22:01.800 --> 00:22:04.320
+hacer explícitos los cambios
+
+00:22:04.320 --> 00:22:06.100
+respecto a la presentación anterior, cosa que
+
+00:22:06.100 --> 00:22:08.000
+no van a tener que hacer la defensa porque la defensa van a
+
+00:22:08.000 --> 00:22:09.840
+presentar la versión final, pero igual
+
+00:22:09.840 --> 00:22:12.220
+en general me parece que las láminas
+
+00:22:12.220 --> 00:22:13.560
+están un poco sobrecargadas
+
+00:22:13.560 --> 00:22:14.940
+vamos a la lámina 5
+
+00:22:14.940 --> 00:22:17.180
+y aquí le sobran objetivos
+
+00:22:17.180 --> 00:22:19.840
+como tuve el problema inverso al grupo anterior
+
+00:22:19.840 --> 00:22:21.180
+aquí le sobran objetivos
+
+00:22:21.180 --> 00:22:24.320
+el objetivo general está bien redactado
+
+00:22:24.320 --> 00:22:25.460
+felicitaciones por eso
+
+00:22:25.460 --> 00:22:27.820
+pero después, el entender el negocio
+
+00:22:27.820 --> 00:22:30.080
+si bien hay que hacerlo, eso en verdad no es un objetivo
+
+00:22:30.080 --> 00:22:32.220
+específico, después integrar
+
+00:22:32.220 --> 00:22:34.100
+y probar los datos, eso también en verdad
+
+00:22:34.100 --> 00:22:36.340
+hay que hacerlo, pero no es un objetivo específico
+
+00:22:36.340 --> 00:22:38.060
+y después mi recomendación es que se queden
+
+00:22:38.060 --> 00:22:39.140
+con los últimos tres
+
+00:22:39.140 --> 00:22:41.600
+pero los últimos tres yo cambiaría el orden
+
+00:22:41.600 --> 00:22:43.960
+porque en estricto rigor, para ustedes
+
+00:22:43.960 --> 00:22:45.860
+poder entender qué variables son las que
+
+00:22:45.860 --> 00:22:48.220
+impactan, tienen que haber hecho los modelos
+
+00:22:48.220 --> 00:22:49.580
+primero, porque de hecho
+
+00:22:49.580 --> 00:22:52.060
+la importancia relativa a las variables
+
+00:22:52.060 --> 00:22:54.060
+viene desde los modelos
+
+00:22:54.060 --> 00:22:56.000
+ustedes dicen, ah, el chat value es este
+
+00:22:56.000 --> 00:22:58.020
+pero para poder construir el chat value necesitan
+
+00:22:58.020 --> 00:22:59.240
+haber construido un modelo primero
+
+00:22:59.240 --> 00:23:01.820
+entonces, mi recomendación es que
+
+00:23:01.820 --> 00:23:04.020
+temporalmente, o sea, en el orden los cambian
+
+00:23:04.020 --> 00:23:05.860
+primero, van a desarrollar y comparar
+
+00:23:05.860 --> 00:23:07.940
+los modelos, una vez que tengan
+
+00:23:07.940 --> 00:23:09.940
+los modelos, van a poder entender cuáles son las variables
+
+00:23:09.940 --> 00:23:12.280
+que aumentan la probabilidad
+
+00:23:12.280 --> 00:23:14.160
+y después van a hacer la evaluación económica
+
+00:23:14.160 --> 00:23:16.000
+entonces, en este tipo de cosas no hay que hacer
+
+00:23:16.000 --> 00:23:17.080
+nada como del
+
+00:23:17.080 --> 00:23:20.000
+del proyecto, solamente que los objetivos
+
+00:23:20.000 --> 00:23:21.920
+sí tienen que reestructurarlos
+
+00:23:21.920 --> 00:23:22.360
+¿ya?
+
+00:23:23.740 --> 00:23:25.940
+vamos con la lámina 7 y aquí solamente
+
+00:23:25.940 --> 00:23:27.740
+una pregunta
+
+00:23:27.740 --> 00:23:30.180
+en la lámina 7
+
+00:23:30.180 --> 00:23:35.850
+entonces, ustedes van a trabajar
+
+00:23:35.850 --> 00:23:37.770
+con esos 14.736
+
+00:23:38.450 --> 00:23:39.890
+que son los que efectivamente
+
+00:23:39.890 --> 00:23:41.690
+fueron inspeccionados, ¿cierto?
+
+00:23:42.150 --> 00:23:43.010
+esa es la base
+
+00:23:43.010 --> 00:23:46.050
+eso es el modelo
+
+00:23:46.050 --> 00:23:47.830
+pero un comentario, eso es lo que
+
+00:23:47.830 --> 00:23:49.630
+al fin de temporada
+
+00:23:49.630 --> 00:23:52.190
+vamos a tener 100%
+
+00:23:52.190 --> 00:23:53.810
+porque se inspecciona todo
+
+00:23:53.810 --> 00:23:55.910
+todo lo que llega se inspecciona
+
+00:23:55.910 --> 00:23:57.710
+y después llega un reporte
+
+00:23:57.710 --> 00:23:59.210
+y eso llega posteriormente
+
+00:23:59.210 --> 00:24:01.090
+y eso, una etiqueta
+
+00:24:01.090 --> 00:24:03.230
+una etiqueta
+
+00:24:03.230 --> 00:24:04.870
+después vamos a la lámina
+
+00:24:04.870 --> 00:24:08.640
+9
+
+00:24:08.640 --> 00:24:10.520
+y aquí ustedes
+
+00:24:10.520 --> 00:24:12.940
+defienden harto este tema
+
+00:24:12.940 --> 00:24:15.300
+de que está bien tener poquitas variables
+
+00:24:15.300 --> 00:24:17.220
+porque
+
+00:24:17.220 --> 00:24:19.440
+hace el módulo interpretable
+
+00:24:19.440 --> 00:24:21.520
+y mencionan
+
+00:24:21.520 --> 00:24:23.300
+que, oye, incluimos otras variables
+
+00:24:23.300 --> 00:24:25.220
+pero esas otras variables no aportaron
+
+00:24:25.220 --> 00:24:27.620
+creo que eso debieran mostrarlo
+
+00:24:27.620 --> 00:24:28.320
+en la defensa
+
+00:24:28.320 --> 00:24:31.020
+porque debieran mostrar que efectivamente
+
+00:24:31.020 --> 00:24:32.480
+ustedes generaron más variables
+
+00:24:32.480 --> 00:24:35.380
+las compararon contra
+
+00:24:35.380 --> 00:24:37.160
+el desempeño del módulo
+
+00:24:37.160 --> 00:24:39.460
+y se dieron cuenta que efectivamente no aumentaba
+
+00:24:39.460 --> 00:24:41.720
+la capacidad
+
+00:24:41.720 --> 00:24:43.040
+predictiva del módulo
+
+00:24:43.040 --> 00:24:45.640
+entonces, porque de lo contrario
+
+00:24:45.640 --> 00:24:47.340
+queda la misma percepción que el grupo
+
+00:24:47.340 --> 00:24:49.800
+un grupo anterior
+
+00:24:49.800 --> 00:24:51.440
+no sé cuál, pero que
+
+00:24:51.440 --> 00:24:53.600
+como que le falta una capa, en el caso
+
+00:24:53.600 --> 00:24:55.580
+de ustedes, no de selección
+
+00:24:55.580 --> 00:24:57.520
+le falta una capa como
+
+00:24:57.520 --> 00:24:59.220
+de Future Engineer, la que ustedes tienen ya
+
+00:24:59.220 --> 00:25:01.720
+se quedaron con nueve variables, pero alguien podría decir
+
+00:25:01.720 --> 00:25:03.180
+ya, pero nueve quizás son muy poquitas
+
+00:25:03.180 --> 00:25:05.860
+¿qué pasa con los ratios? ¿qué pasa con las interacciones
+
+00:25:05.860 --> 00:25:07.480
+entre variables? particularmente
+
+00:25:07.480 --> 00:25:09.140
+las interacciones, cuando hay poquitas variables
+
+00:25:09.140 --> 00:25:11.540
+tienden a generar un poco más de capacidad predictiva
+
+00:25:11.540 --> 00:25:13.480
+entonces lo que ustedes tienen que mostrar
+
+00:25:13.480 --> 00:25:15.280
+es lo que dijeron, yo les creo
+
+00:25:15.280 --> 00:25:17.300
+ustedes dicen, nosotros incluimos más variables
+
+00:25:17.300 --> 00:25:19.380
+pero eso no necesariamente impactó
+
+00:25:19.380 --> 00:25:21.400
+en el desempeño del modelo, eso tienen que
+
+00:25:21.400 --> 00:25:23.320
+mostrarlo, para que no quede como
+
+00:25:23.320 --> 00:25:24.520
+la percepción de que
+
+00:25:24.520 --> 00:25:27.520
+vamos a ocupar esas nueve variables que tenemos ahí
+
+00:25:27.520 --> 00:25:29.400
+porque alguien podría decir, nueve variables son muy
+
+00:25:29.400 --> 00:25:31.320
+poquitos, entonces
+
+00:25:31.320 --> 00:25:33.460
+yo haría el ejercicio de, tienen esas nueve
+
+00:25:33.460 --> 00:25:35.380
+y esas nueve es un conjunto que a ustedes
+
+00:25:35.380 --> 00:25:37.520
+les gustaría utilizar, y son nueve variables
+
+00:25:37.520 --> 00:25:39.280
+que ustedes entienden, que el negocio entiende
+
+00:25:39.280 --> 00:25:40.860
+estamos todos de acuerdo que esas son
+
+00:25:40.860 --> 00:25:43.320
+pero después, la pregunta más técnica es
+
+00:25:43.320 --> 00:25:45.040
+pero si no habrá información
+
+00:25:45.040 --> 00:25:47.520
+en las interacciones, particularmente las interacciones
+
+00:25:47.520 --> 00:25:49.100
+que cuando hacen multiplicación de variables
+
+00:25:49.100 --> 00:25:51.560
+no habrá información que las interacciones
+
+00:25:51.560 --> 00:25:53.300
+permitan al módulo performar mejor
+
+00:25:53.300 --> 00:25:55.440
+y ahí ustedes tienen que decir
+
+00:25:55.440 --> 00:25:57.420
+o sea, hacer el experimento y después decir
+
+00:25:57.420 --> 00:25:58.920
+que efectivamente eso no pasa
+
+00:25:58.920 --> 00:26:01.400
+¿ya? y si pasa, bueno tendrán
+
+00:26:01.400 --> 00:26:03.280
+que incorporar algunas de las interacciones
+
+00:26:03.280 --> 00:26:05.400
+¿ya? no hay ningún problema con eso, la ventaja
+
+00:26:05.400 --> 00:26:07.380
+es que las interacciones como son multiplicaciones de variables
+
+00:26:07.380 --> 00:26:09.360
+tampoco es que sean tan poco interpretables
+
+00:26:09.360 --> 00:26:11.320
+¿ya? pero solo para que
+
+00:26:11.320 --> 00:26:12.700
+para que efectivamente
+
+00:26:12.700 --> 00:26:15.040
+el proyecto quede bien redondo
+
+00:26:15.040 --> 00:26:16.880
+y no que esta duda es
+
+00:26:16.880 --> 00:26:19.160
+oye pero esas nueve variables serán suficientes
+
+00:26:19.160 --> 00:26:21.180
+y ahí ustedes la respuesta la pueden dar
+
+00:26:21.180 --> 00:26:22.520
+cuantitativamente, decir mira
+
+00:26:22.520 --> 00:26:24.420
+probamos incluyendo las interacciones
+
+00:26:24.420 --> 00:26:27.080
+y aún así incluyendo
+
+00:26:27.080 --> 00:26:28.040
+las interacciones en verdad
+
+00:26:28.040 --> 00:26:31.140
+la performance del modelo no
+
+00:26:31.140 --> 00:26:32.580
+aumenta
+
+00:26:32.580 --> 00:26:34.720
+después, la lámina 2
+
+00:26:34.720 --> 00:26:37.020
+son una pregunta
+
+00:26:37.020 --> 00:26:38.620
+porque la idea
+
+00:26:38.620 --> 00:26:40.820
+la pregunta
+
+00:26:40.820 --> 00:26:42.020
+y lo que nos pasó fue
+
+00:26:42.020 --> 00:26:44.440
+el experto dijo, trabaja con 12
+
+00:26:44.440 --> 00:26:45.420
+o mira todas las demás
+
+00:26:45.420 --> 00:26:48.740
+pero nosotros por curiosidad dijimos, metémoslo ahí
+
+00:26:48.740 --> 00:26:51.020
+pero el criterio que hicimos
+
+00:26:51.020 --> 00:26:52.760
+una hora
+
+00:26:52.760 --> 00:26:54.200
+metemos 70
+
+00:26:54.200 --> 00:26:55.300
+después 55
+
+00:26:55.300 --> 00:26:58.520
+¿existe alguna metodología?
+
+00:26:58.620 --> 00:26:59.780
+porque primero hicimos CHAP
+
+00:26:59.780 --> 00:27:01.480
+pero CHAP dijo, todas esas variables
+
+00:27:01.480 --> 00:27:03.240
+que me acuerdan que eran como 15
+
+00:27:03.240 --> 00:27:05.020
+tiene valor al negocio
+
+00:27:05.020 --> 00:27:06.180
+o el árbol de edición
+
+00:27:06.180 --> 00:27:08.560
+y todas las otras puso cero
+
+00:27:08.560 --> 00:27:10.840
+lo que hicimos fue al azar
+
+00:27:10.840 --> 00:27:12.900
+¿existe alguna metodología
+
+00:27:12.900 --> 00:27:15.000
+que podemos seleccionar
+
+00:27:15.000 --> 00:27:16.780
+mejor o más robusta las variables?
+
+00:27:17.620 --> 00:27:18.700
+ya, eso me
+
+00:27:18.700 --> 00:27:20.880
+ya, que bueno que lo mencionaste, pero eso es lo que
+
+00:27:20.880 --> 00:27:22.920
+debieron haber utilizado, lo mismo que le decía al
+
+00:27:22.920 --> 00:27:24.920
+grupo, no sé si era el anterior
+
+00:27:24.920 --> 00:27:27.120
+o alguno, hay métodos que se llaman
+
+00:27:27.120 --> 00:27:29.140
+de feedforward and backward selection
+
+00:27:29.140 --> 00:27:30.600
+que básicamente lo que ustedes hacen
+
+00:27:30.600 --> 00:27:32.420
+voy a explicar el
+
+00:27:32.420 --> 00:27:34.440
+el backward
+
+00:27:34.440 --> 00:27:36.300
+que es más fácil, entonces yo tengo todas las variables
+
+00:27:36.300 --> 00:27:38.440
+tengo 100 variables, construyo
+
+00:27:38.440 --> 00:27:40.780
+un modelo y después quito una de las variables
+
+00:27:40.780 --> 00:27:43.320
+y vuelvo a construir un modelo y veo cuál es la
+
+00:27:43.320 --> 00:27:45.300
+performance del modelo, y así hago
+
+00:27:45.300 --> 00:27:47.360
+secuencialmente para poder ver cuál es la siguiente
+
+00:27:47.360 --> 00:27:49.340
+variable que puedo quitar, el modelo quita
+
+00:27:49.340 --> 00:27:51.480
+una variable y después vuelve a hacer exactamente lo mismo
+
+00:27:51.480 --> 00:27:53.420
+hasta que llega un punto en donde no puede quitar
+
+00:27:53.420 --> 00:27:55.500
+variables sin quitarle desempeño al modelo
+
+00:27:55.500 --> 00:27:57.360
+exactamente lo mismo pero en términos
+
+00:27:57.360 --> 00:27:59.360
+inversos pasa en el forward
+
+00:27:59.360 --> 00:28:00.940
+selection, cuando uno dice, ah en verdad
+
+00:28:00.940 --> 00:28:03.320
+voy a agregar, cuál es la mejor variable que podría
+
+00:28:03.320 --> 00:28:05.420
+agregar sin necesariamente generar
+
+00:28:05.420 --> 00:28:07.380
+ruido, entonces tiene esos dos métodos
+
+00:28:07.380 --> 00:28:08.880
+que se llaman métodos wrapper
+
+00:28:08.880 --> 00:28:11.860
+nosotros hicimos, pero mi duda es
+
+00:28:11.860 --> 00:28:14.040
+cuál sacar y cuál no
+
+00:28:14.040 --> 00:28:15.540
+porque eso es parte del método
+
+00:28:15.540 --> 00:28:17.740
+porque ustedes pueden decir
+
+00:28:17.740 --> 00:28:20.160
+va a haber un nivel de significancia
+
+00:28:20.160 --> 00:28:22.160
+cada vez que introducen o que
+
+00:28:22.160 --> 00:28:24.040
+sacan una variable, el modelo ustedes pueden
+
+00:28:24.040 --> 00:28:26.300
+medir si es que efectivamente es significativamente
+
+00:28:26.300 --> 00:28:28.140
+mejor o peor, y esa es
+
+00:28:28.140 --> 00:28:29.400
+la forma en cómo deberán hacerlo
+
+00:28:29.400 --> 00:28:31.740
+pero eso es como
+
+00:28:31.740 --> 00:28:34.060
+permutación, son muchas combinaciones
+
+00:28:34.060 --> 00:28:36.060
+pero el modelo corre solo, así que no es
+
+00:28:36.060 --> 00:28:38.140
+algo que tengan que programarlo, esos métodos
+
+00:28:38.140 --> 00:28:39.160
+son muy conocidos y no
+
+00:28:39.160 --> 00:28:41.320
+hay problema que lo puedan implementar
+
+00:28:41.320 --> 00:28:44.100
+lo que si ustedes tienen
+
+00:28:44.100 --> 00:28:45.820
+esta defensa de estas variables
+
+00:28:45.820 --> 00:28:47.320
+que son entendibles, lo que está bien
+
+00:28:47.320 --> 00:28:49.040
+lo que yo digo es que tienen que
+
+00:28:49.040 --> 00:28:51.580
+llegar a decir que esas nueve variables
+
+00:28:51.580 --> 00:28:53.820
+son efectivamente las mejores nueve variables
+
+00:28:53.820 --> 00:28:56.220
+y no solamente porque son las más fáciles de entender
+
+00:28:56.220 --> 00:28:59.920
+vamos a la lámina 12
+
+00:28:59.920 --> 00:29:01.980
+es buena, en general hay varias cosas
+
+00:29:01.980 --> 00:29:03.560
+técnicas que están bien desarrolladas
+
+00:29:03.560 --> 00:29:04.900
+y esta es una de ellas
+
+00:29:04.900 --> 00:29:07.260
+cuando efectivamente usted hace los
+
+00:29:07.260 --> 00:29:09.380
+test estadísticos para demostrar que efectivamente
+
+00:29:09.380 --> 00:29:11.360
+se puede utilizar ese test, además
+
+00:29:11.360 --> 00:29:13.300
+tiene la justificación de negocio, es decir
+
+00:29:13.300 --> 00:29:14.860
+obviamente a mí me gustaría
+
+00:29:14.860 --> 00:29:17.400
+tratar de predecir en los lotes que son más
+
+00:29:17.400 --> 00:29:19.300
+recientes, entonces me parece que en general
+
+00:29:19.300 --> 00:29:21.220
+hay varios como detalles técnicos
+
+00:29:21.220 --> 00:29:23.240
+que hacen que la presentación sea muy
+
+00:29:23.240 --> 00:29:24.220
+muy bien, ¿ya?
+
+00:29:24.640 --> 00:29:26.420
+Y lo mismo cuando
+
+00:29:26.420 --> 00:29:29.240
+en la lámina 14, y esto igual
+
+00:29:29.240 --> 00:29:31.180
+es interesante, cuando hacen la hiper
+
+00:29:31.180 --> 00:29:32.560
+parametrización de los modelos
+
+00:29:32.560 --> 00:29:35.910
+dos más, creo
+
+00:29:35.910 --> 00:29:38.310
+o sea, aquí también se explica
+
+00:29:38.310 --> 00:29:40.530
+que es cuando es la hiperparametización de los modelos
+
+00:29:40.530 --> 00:29:42.410
+entiendo, solo para corroborar
+
+00:29:42.410 --> 00:29:43.730
+si mi entendimiento es correcto
+
+00:29:43.730 --> 00:29:46.070
+que no solamente va
+
+00:29:46.070 --> 00:29:48.710
+una variable como de desempeño
+
+00:29:48.710 --> 00:29:50.050
+del modelo, sino que además
+
+00:29:50.050 --> 00:29:52.170
+está el beneficio económico incluido
+
+00:29:52.170 --> 00:29:53.690
+dentro de la selección de hiperparámetros
+
+00:29:53.690 --> 00:29:54.310
+¿es así?
+
+00:29:54.730 --> 00:29:57.610
+eso es bien igual, es interesante
+
+00:29:57.610 --> 00:30:00.750
+eso lo tienen que destacar
+
+00:30:00.750 --> 00:30:01.930
+bien, creo que está mencionado
+
+00:30:01.930 --> 00:30:04.270
+un poco más como
+
+00:30:04.270 --> 00:30:06.210
+tibio
+
+00:30:06.210 --> 00:30:07.410
+como un poco más tibio
+
+00:30:07.410 --> 00:30:09.210
+haría ese énfasis, que es decir
+
+00:30:09.210 --> 00:30:11.230
+como ustedes de alguna manera como que trajeron
+
+00:30:11.230 --> 00:30:13.170
+la evaluación económica a la
+
+00:30:13.170 --> 00:30:15.130
+hiperparametrización, porque usualmente
+
+00:30:15.130 --> 00:30:17.290
+uno hace la hiperparametrización, después encuentra
+
+00:30:17.290 --> 00:30:19.230
+los mejores parámetros del modelo que de alguna
+
+00:30:19.230 --> 00:30:21.510
+manera maximizan algún indicador predictivo
+
+00:30:21.510 --> 00:30:23.310
+y después vaya a hacer
+
+00:30:23.310 --> 00:30:25.070
+la evaluación, y ustedes dijeron, mira en verdad
+
+00:30:25.070 --> 00:30:27.530
+quizás podríamos mezclarlo
+
+00:30:27.530 --> 00:30:29.410
+ambos, y de alguna manera dijeron
+
+00:30:29.410 --> 00:30:30.910
+vamos a incluir el beneficio
+
+00:30:30.910 --> 00:30:33.250
+en la identificación de los
+
+00:30:33.250 --> 00:30:34.530
+hiperparámetros, me parece que eso
+
+00:30:34.530 --> 00:30:35.710
+es interesante
+
+00:30:35.710 --> 00:30:39.570
+después la lámina 18
+
+00:30:39.570 --> 00:30:41.950
+lo que sí cuesta aquí es
+
+00:30:41.950 --> 00:30:45.930
+como tienen tantas métricas
+
+00:30:45.930 --> 00:30:47.950
+dos más, yo me llevo
+
+00:30:47.950 --> 00:30:50.010
+cuando digo 18 es el numerito que está
+
+00:30:50.010 --> 00:30:50.510
+abajito
+
+00:30:50.510 --> 00:30:54.150
+acá tienen que ver como
+
+00:30:54.150 --> 00:30:58.090
+tienen tanto número que no sé cuál es
+
+00:30:58.090 --> 00:30:59.850
+el que efectivamente uno tiene que mirar
+
+00:30:59.850 --> 00:31:01.410
+para poder decidir cuál es el mejor
+
+00:31:01.410 --> 00:31:03.950
+entonces vean
+
+00:31:03.950 --> 00:31:05.470
+si es que son necesarios todos
+
+00:31:05.470 --> 00:31:08.390
+no estoy como completamente de acuerdo
+
+00:31:08.390 --> 00:31:11.730
+que todas las columnas de esa matriz sean todas necesarias
+
+00:31:11.730 --> 00:31:15.110
+igual y precisión
+
+00:31:15.110 --> 00:31:16.590
+y tres vueltas
+
+00:31:16.590 --> 00:31:21.250
+hay algunas que parecen ser que no batillan ninguna decisión
+
+00:31:21.250 --> 00:31:23.990
+o aquella, o sea, tienen dos mundos
+
+00:31:23.990 --> 00:31:25.370
+creo que esa es una buena forma de ver
+
+00:31:25.370 --> 00:31:26.370
+aquellas que
+
+00:31:26.370 --> 00:31:29.570
+no
+
+00:31:29.570 --> 00:31:34.090
+aquellas que sobran un poco porque de alguna manera están incluidas
+
+00:31:34.090 --> 00:31:35.590
+en indicadores previos, esa es una
+
+00:31:35.590 --> 00:31:38.490
+después aquellas en donde todos los modelos
+
+00:31:38.490 --> 00:31:40.990
+parece que son más o menos iguales
+
+00:31:40.990 --> 00:31:42.590
+por más de que la métrica
+
+00:31:42.590 --> 00:31:44.510
+sea importante, si no es la que va a determinar
+
+00:31:44.510 --> 00:31:46.510
+cuál es el ganador, en verdad para qué ponerla
+
+00:31:46.510 --> 00:31:48.630
+pueden dejar esta tabla, no hay ningún problema
+
+00:31:48.630 --> 00:31:50.510
+y la ponen como anexo, y en anexo
+
+00:31:50.510 --> 00:31:52.230
+si alguien quiere ver más métricas, perfecto
+
+00:31:52.230 --> 00:31:54.010
+le va a preguntar y ustedes pueden ir a esa lámina
+
+00:31:54.010 --> 00:31:56.030
+pero traten de que en la comparación final
+
+00:31:56.030 --> 00:31:58.430
+cuando ustedes van a decir, este es el mejor
+
+00:31:58.430 --> 00:31:59.990
+o los mejores
+
+00:31:59.990 --> 00:32:02.590
+quede más claro cuáles son esas que
+
+00:32:02.590 --> 00:32:05.090
+determina eso
+
+00:32:05.090 --> 00:32:07.890
+y finalmente, y esto si hay algo
+
+00:32:07.890 --> 00:32:09.730
+que creo que debieran hacer más
+
+00:32:09.730 --> 00:32:11.670
+adicional, o en la defensa deberían
+
+00:32:11.670 --> 00:32:13.330
+profundizarlo, en la lámina de 19
+
+00:32:13.330 --> 00:32:15.650
+aquí ustedes tienen
+
+00:32:15.650 --> 00:32:17.750
+los valores
+
+00:32:17.750 --> 00:32:19.370
+una más, y tienen los valores
+
+00:32:19.370 --> 00:32:21.050
+ya, entonces
+
+00:32:21.050 --> 00:32:23.870
+mi recomendación es que
+
+00:32:23.870 --> 00:32:25.710
+aquí en la defensa deberían profundizar
+
+00:32:25.710 --> 00:32:27.830
+un poco más, porque aquí, no, una antes
+
+00:32:27.830 --> 00:32:29.270
+vuelven una
+
+00:32:29.270 --> 00:32:31.790
+entonces aquí ustedes dicen, ah, ¿cuáles son las variables
+
+00:32:31.790 --> 00:32:33.570
+es que efectivamente aumentan el riesgo
+
+00:32:33.570 --> 00:32:34.950
+y
+
+00:32:34.950 --> 00:32:37.870
+ese es un objetivo específico
+
+00:32:37.870 --> 00:32:39.650
+el objetivo específico que hoy día es
+
+00:32:39.650 --> 00:32:41.510
+el 3 o el 4
+
+00:32:41.510 --> 00:32:43.330
+que potencialmente va a ser el 2
+
+00:32:43.330 --> 00:32:44.450
+mi recomendación es que sea el 2
+
+00:32:44.450 --> 00:32:47.150
+el estricto record es
+
+00:32:47.150 --> 00:32:49.410
+el único entregable
+
+00:32:49.410 --> 00:32:51.350
+o esta lámina es el único entregable
+
+00:32:51.350 --> 00:32:52.310
+que hace relación a ese
+
+00:32:52.310 --> 00:32:55.290
+mi recomendación es que vuelvan cuando
+
+00:32:55.290 --> 00:32:56.850
+van a hacer todos los modelos
+
+00:32:56.850 --> 00:32:59.110
+y ahora vuelvan a mostrar el árbol
+
+00:32:59.110 --> 00:33:00.710
+que tenían al principio
+
+00:33:00.710 --> 00:33:03.250
+porque el árbol de alguna manera ya identifica
+
+00:33:03.250 --> 00:33:05.530
+cuáles son las variables más relevantes
+
+00:33:05.530 --> 00:33:07.110
+por la forma en cómo se construye el árbol
+
+00:33:07.110 --> 00:33:09.330
+vayan a las notas del curso
+
+00:33:09.330 --> 00:33:11.090
+de Machine Learning, pero el árbol de decisión
+
+00:33:11.090 --> 00:33:12.850
+de la forma en cómo se estructura
+
+00:33:12.850 --> 00:33:15.290
+es que las primeras variables son aquellas
+
+00:33:15.290 --> 00:33:16.270
+que determinan más
+
+00:33:16.270 --> 00:33:19.030
+la probabilidad del evento que estoy
+
+00:33:19.030 --> 00:33:21.130
+tratando de predecir, por lo tanto las variables
+
+00:33:21.130 --> 00:33:23.230
+ya están ordenadas por orden
+
+00:33:23.230 --> 00:33:24.990
+de relevancia, entonces
+
+00:33:24.990 --> 00:33:27.250
+es el entendimiento de ese árbol
+
+00:33:27.250 --> 00:33:28.870
+de decisión, después
+
+00:33:28.870 --> 00:33:30.950
+estos son los tab values
+
+00:33:30.950 --> 00:33:32.250
+de electibus
+
+00:33:32.250 --> 00:33:32.950
+¿sí?
+
+00:33:34.530 --> 00:33:37.310
+¿o no? ¿de cuál son? ¿del electibus o del random?
+
+00:33:37.310 --> 00:33:38.610
+no, no, random
+
+00:33:38.610 --> 00:33:41.010
+estos son del random forest
+
+00:33:41.010 --> 00:33:43.370
+¿ya? porque el random forest es el ganador
+
+00:33:43.370 --> 00:33:44.870
+finalmente, eso no es un problema
+
+00:33:44.870 --> 00:33:46.970
+entonces tienen el random forest
+
+00:33:46.970 --> 00:33:48.970
+pero además el random forest
+
+00:33:48.970 --> 00:33:51.130
+tiene una forma de identificar
+
+00:33:51.130 --> 00:33:53.150
+las variables más relevantes
+
+00:33:53.150 --> 00:33:55.170
+¿sí? entonces vean la forma en cómo está
+
+00:33:55.170 --> 00:33:57.150
+implementado, pero en gran parte de las librerías
+
+00:33:57.150 --> 00:33:59.670
+el random forest por sí solo
+
+00:33:59.670 --> 00:34:01.890
+entrega como un ranking de variables
+
+00:34:01.890 --> 00:34:03.930
+entonces van a tener tres formas
+
+00:34:03.930 --> 00:34:05.790
+de poder identificar variables relevantes
+
+00:34:05.790 --> 00:34:06.790
+lo que viene del árbol
+
+00:34:06.790 --> 00:34:10.050
+y en este orden las ordenarías
+
+00:34:10.050 --> 00:34:11.010
+lo que viene del árbol
+
+00:34:11.010 --> 00:34:14.070
+después lo que viene del random forest propiamente tal
+
+00:34:14.070 --> 00:34:15.810
+y los valores chat
+
+00:34:15.810 --> 00:34:18.050
+y ahí van a tener como tres miradas
+
+00:34:18.050 --> 00:34:19.250
+de cuál es lo relevante
+
+00:34:19.250 --> 00:34:21.550
+y pueden hacer estas discusiones que yo mencionaba antes
+
+00:34:21.550 --> 00:34:23.150
+donde
+
+00:34:23.150 --> 00:34:25.730
+estos tres métodos convergen
+
+00:34:25.730 --> 00:34:27.970
+por decir, hay entonces tres miradas distintas
+
+00:34:27.970 --> 00:34:30.030
+dicen que estas son las variables más relevantes
+
+00:34:30.030 --> 00:34:31.410
+y ciertas diferencias
+
+00:34:31.410 --> 00:34:33.990
+y ahí ustedes pueden justificar por qué podrían existir
+
+00:34:33.990 --> 00:34:34.930
+diferencias en eso
+
+00:34:34.930 --> 00:34:38.010
+creo que ese debería ser el desarrollo
+
+00:34:38.010 --> 00:34:39.970
+metabológico de ese objetivo en específico
+
+00:34:40.610 --> 00:34:41.370
+lo menciono porque
+
+00:34:41.370 --> 00:34:43.650
+no, solo para terminar
+
+00:34:43.650 --> 00:34:46.070
+lo menciono porque el objetivo del modelo
+
+00:34:46.070 --> 00:34:47.950
+está muy bien desarrollado, tiene hartas
+
+00:34:47.950 --> 00:34:50.370
+cosas interesantes, incluida la hiperparametrización
+
+00:34:50.370 --> 00:34:51.950
+incluida la definición temporal
+
+00:34:51.950 --> 00:34:54.050
+o la validación de que se puede hacer un split
+
+00:34:54.050 --> 00:34:56.270
+temporal, hay varias cosas técnicamente importantes
+
+00:34:56.270 --> 00:34:58.070
+después lo mismo en la evaluación económica
+
+00:34:58.070 --> 00:35:00.450
+hay hartas láminas y buen desarrollo metodológico
+
+00:35:00.450 --> 00:35:02.350
+pero el único que queda como medio
+
+00:35:02.350 --> 00:35:04.130
+como cojo es el objetivo
+
+00:35:04.130 --> 00:35:06.090
+del medio, que yo digo, hoy día no está en el medio
+
+00:35:06.090 --> 00:35:07.210
+pero debiera estar en el medio
+
+00:35:07.210 --> 00:35:09.610
+y la forma en cómo le pueden dar mucho más como
+
+00:35:09.610 --> 00:35:11.750
+robustez es tener
+
+00:35:11.750 --> 00:35:13.870
+distintas miradas y después hacer una discusión
+
+00:35:13.870 --> 00:35:15.650
+sobre esas diferencias, es decir
+
+00:35:15.650 --> 00:35:17.970
+todos los métodos convergen en que
+
+00:35:17.970 --> 00:35:19.850
+en verdad los días de almacenamiento
+
+00:35:19.850 --> 00:35:21.770
+es importante, perfecto
+
+00:35:21.770 --> 00:35:23.650
+pero existen diferencias en que
+
+00:35:23.650 --> 00:35:25.030
+el árbol de decisión tiende
+
+00:35:25.030 --> 00:35:26.810
+también
+
+00:35:26.810 --> 00:35:29.630
+decir que estas dos variables son
+
+00:35:29.630 --> 00:35:31.710
+importantes, que ni los chat values
+
+00:35:31.710 --> 00:35:32.090
+ni
+
+00:35:32.090 --> 00:35:35.250
+el método
+
+00:35:35.250 --> 00:35:37.690
+de priorización de variables del random forest
+
+00:35:37.690 --> 00:35:39.670
+dice, y ahí como que pueden hacer ciertas discusiones
+
+00:35:39.670 --> 00:35:41.430
+de por qué eso podría pasar
+
+00:35:41.430 --> 00:35:43.530
+y ahí dejan redondito el segundo y después
+
+00:35:43.530 --> 00:35:45.670
+pasan directamente al tercer objetivo
+
+00:35:45.670 --> 00:35:47.890
+alguien creo que tenía un comentario
+
+00:35:47.890 --> 00:35:49.510
+Sí
+
+00:35:49.510 --> 00:35:51.270
+sobre lo que usted decía
+
+00:35:51.270 --> 00:35:52.590
+sobre el random
+
+00:35:52.590 --> 00:35:55.810
+la formulación
+
+00:35:55.810 --> 00:35:58.370
+se refiere a la importancia
+
+00:35:58.370 --> 00:35:59.510
+y pureza, o sea, Gini
+
+00:35:59.510 --> 00:36:02.070
+hay una forma en la que el modelo
+
+00:36:02.070 --> 00:36:04.250
+en la salida del modelo, por la forma en como
+
+00:36:04.250 --> 00:36:06.050
+se construye, es capaz de identificar como
+
+00:36:06.050 --> 00:36:07.450
+la relevancia de esa variable
+
+00:36:07.450 --> 00:36:09.270
+lo hicimos en un principio
+
+00:36:09.270 --> 00:36:12.310
+lo hicimos en un principio y generamos una opción
+
+00:36:12.310 --> 00:36:13.230
+de eso, así que la tenemos
+
+00:36:13.230 --> 00:36:15.350
+entonces comparan eso con
+
+00:36:15.350 --> 00:36:18.170
+el ranking de variables que viene del árbol de decisión
+
+00:36:18.170 --> 00:36:20.150
+con los tab values y ahí tienen tres
+
+00:36:20.150 --> 00:36:21.210
+miradas complementarias
+
+00:36:21.210 --> 00:36:23.010
+sube, sube, gracias
+
+00:36:23.010 --> 00:36:25.510
+muchas gracias por las recomendaciones
+
+00:36:25.510 --> 00:36:26.130
+profesor
+
+00:36:26.130 --> 00:36:29.130
+una última pregunta súper corta
+
+00:36:29.130 --> 00:36:30.730
+para la defensa
+
+00:36:30.730 --> 00:36:33.170
+porque no quisimos meter más modelos
+
+00:36:33.170 --> 00:36:35.290
+¿tú crees que tendríamos que probar
+
+00:36:35.290 --> 00:36:36.150
+otros modelos?
+
+00:36:36.290 --> 00:36:37.370
+creo que no es necesario
+
+00:36:37.370 --> 00:36:40.830
+ok, gracias
+
+00:36:40.830 --> 00:36:43.070
+bien, muchísimas gracias
+
+00:36:43.070 --> 00:36:45.110
+vamos con el grupo, nos quedan dos
+
+00:36:45.110 --> 00:36:47.090
+grupo uno, creo que va a llegar
+
+00:36:47.090 --> 00:36:48.030
+justo en tiempo
+
+00:36:48.030 --> 00:36:52.520
+voy por acá
+
+00:36:52.520 --> 00:36:55.980
+y no sé si podemos probar
+
+00:36:55.980 --> 00:36:57.060
+todos los micrófonos por si acaso
+
