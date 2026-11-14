@@ -1,0 +1,54 @@
+schema_version: "2.0-draft"
+status: gate0
+owners:
+  models: Luis Araya
+  recommendation: Hernán Medina
+  economics_document: Rodrigo González
+
+unit_of_analysis: record
+group_column: Build_Id
+
+label_audit:
+  analysis_evidence_fields:
+    - p95
+    - rps
+    - errorCount
+  label_evidence_fields:
+    - Estado
+    - errorCount
+    - successCount
+    - p95
+  performance_zero_meaning: not_executed
+  incomplete_evidence_action: abstain_request_evidence
+  execution_error_action: human_review
+
+scope:
+  minimum_defensible: true
+  models:
+    - majority_baseline
+    - decision_tree
+    - logistic_regression
+    - random_forest
+    - hist_gradient_boosting
+  optional_excluded_initially:
+    - stacking
+    - dice
+    - cleanlab
+    - ordinal_model
+    - bayesian_optimization
+
+split:
+  method: grouped_train_dev_test
+  train: 0.70
+  dev: 0.10
+  test: 0.20
+  seed: 42
+  freeze_test_before_training: true
+
+recommendation:
+  require_complete_evidence: true
+  max_parameters_changed: 1
+  max_levels_changed: 1
+  human_approval_required: true
+  online_validation: future_work
+
