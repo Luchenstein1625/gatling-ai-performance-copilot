@@ -1,0 +1,11 @@
+{
+  "comparison_set": "same frozen dev rows and same raw RF scores",
+  "raw_roc_auc": 0.5901233774579103,
+  "isotonic_roc_auc": 0.6243413443002185,
+  "delta_isotonic_minus_raw": 0.034217966842308156,
+  "order_inversions": 0,
+  "new_tied_pairs": 14840,
+  "strictly_ordered_pairs_preserved": 69130,
+  "strict_monotonic_invariance_expected": true,
+  "observed_explanation": "Isotonic is non-decreasing rather than strictly increasing; it creates tied score blocks. With zero inversions, any AUC change is due to ties, not reordered pairs."
+}

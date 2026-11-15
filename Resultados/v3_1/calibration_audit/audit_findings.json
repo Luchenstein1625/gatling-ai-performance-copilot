@@ -1,0 +1,35 @@
+{
+  "schema_version": "3.1",
+  "alert": "A2",
+  "status": "CALIBRATION_AUDIT_COMPLETE",
+  "official_v3_changed": false,
+  "test_used_for_selection": false,
+  "original_design": {
+    "calibrator_fit": "grouped OOF predictions from train",
+    "calibrator_evaluation": "separate frozen dev",
+    "same_sample_leakage_found": false
+  },
+  "invariance_check": {
+    "comparison_set": "same frozen dev rows and same raw RF scores",
+    "raw_roc_auc": 0.5901233774579103,
+    "isotonic_roc_auc": 0.6243413443002185,
+    "delta_isotonic_minus_raw": 0.034217966842308156,
+    "order_inversions": 0,
+    "new_tied_pairs": 14840,
+    "strictly_ordered_pairs_preserved": 69130,
+    "strict_monotonic_invariance_expected": true,
+    "observed_explanation": "Isotonic is non-decreasing rather than strictly increasing; it creates tied score blocks. With zero inversions, any AUC change is due to ties, not reordered pairs."
+  },
+  "crossfit": {
+    "unit": "Build_Id",
+    "folds": 5,
+    "bootstrap_repetitions": 1000,
+    "summary_file": "crossfit_comparison.csv"
+  },
+  "test_diagnostic": {
+    "status": "DESCRIPTIVE_ONLY_PRE_REGISTERED",
+    "rows": 880,
+    "file": "test_ece_descriptive.csv"
+  },
+  "conclusion": "The original calibrators were fitted on grouped OOF train predictions and evaluated on separate dev rows; no same-sample calibration evaluation was found. The isotonic AUC difference is attributable to tied score blocks and must not be described as improved discrimination without the cross-fit evidence."
+}
