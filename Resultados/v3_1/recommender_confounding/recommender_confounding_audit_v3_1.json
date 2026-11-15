@@ -1,0 +1,22 @@
+{
+  "schema_version": "3.1",
+  "alert": "A3b",
+  "status": "CONFOUNDING_DIAGNOSTIC_COMPLETE",
+  "test_status": "NOT_ACCESSED_TRAIN_DEV_ONLY",
+  "context_fields_used_for_diagnosis_only": [
+    "pilar",
+    "Tcomponente"
+  ],
+  "context_fields_added_to_model": false,
+  "minimum_stratum_support": {
+    "rows": 20,
+    "builds": 5
+  },
+  "pooled_weighted_monotonicity": 0.27909133055169216,
+  "stratified_weighted_monotonicity": 0.37108594270486345,
+  "comparable_cell_pairs": 40,
+  "direction_reversal_pairs": 2,
+  "finding": "CONTEXT_CONFOUNDING_COMPATIBLE",
+  "official_recommender_changed": false,
+  "conclusion": "Within-context diagnostics differ materially from the pooled result or show direction reversals. Context may confound the observational relation, but it is not added to the operational model."
+}
