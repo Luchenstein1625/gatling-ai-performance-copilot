@@ -1,0 +1,11 @@
+baseline,population,evaluation,metric,point,bootstrap_mean,lower_95,upper_95,test_accessed
+B0_random,frozen_train_plus_dev,random simulation,roc_auc,0.5,0.5,0.5,0.5,False
+B0_random,frozen_train_plus_dev,random simulation,pr_auc,0.4286121402108863,0.4286121402108863,0.4286121402108863,0.4286121402108863,False
+B0_random,frozen_train_plus_dev,random simulation,recall_at_30,0.3002111037234042,0.3002111037234042,0.2832280585106383,0.3178191489361702,False
+B0_random,frozen_train_plus_dev,random simulation,precision_at_30,0.42879154795821456,0.42879154795821456,0.4045346628679962,0.4539411206077873,False
+B0_random,frozen_train_plus_dev,random simulation,lift_at_30,1.0004185783147441,1.0004185783147441,0.9438245558535896,1.0590953405669719,False
+B3_cell_not_applies_rate_oof,frozen_train_plus_dev,5-fold grouped OOF plus grouped bootstrap,roc_auc,0.6088754178383828,0.6067756729361459,0.5514619542502042,0.6596232461335887,False
+B3_cell_not_applies_rate_oof,frozen_train_plus_dev,5-fold grouped OOF plus grouped bootstrap,pr_auc,0.5211284277851277,0.5211434878557484,0.434457120043726,0.6143616682691374,False
+B3_cell_not_applies_rate_oof,frozen_train_plus_dev,5-fold grouped OOF plus grouped bootstrap,recall_at_30,0.386968085106383,0.3822261686876402,0.33332681782642687,0.4282199845296807,False
+B3_cell_not_applies_rate_oof,frozen_train_plus_dev,5-fold grouped OOF plus grouped bootstrap,precision_at_30,0.5527065527065527,0.5466717784126527,0.44847335097335095,0.6428619474695708,False
+B3_cell_not_applies_rate_oof,frozen_train_plus_dev,5-fold grouped OOF plus grouped bootstrap,lift_at_30,1.289526125962296,1.2741005424443648,1.1106526394740561,1.4276441507214015,False

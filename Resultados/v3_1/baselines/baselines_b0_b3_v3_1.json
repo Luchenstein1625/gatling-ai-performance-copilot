@@ -1,0 +1,103 @@
+{
+  "schema_version": "3.1",
+  "status": "BASELINES_B0_B3_COMPLETE",
+  "population": {
+    "rows": 3509,
+    "builds": 380,
+    "not_applies": 1504,
+    "prevalence_not_applies": 0.4286121402108863,
+    "partitions": [
+      "train",
+      "dev"
+    ]
+  },
+  "test_status": "NOT_ACCESSED_BASELINES_TRAIN_DEV_ONLY",
+  "baseline_protocol": {
+    "path": "..\\Resultados\\v3_1\\governance\\baseline_protocol_b0_b3_v3_1.json",
+    "sha256": "d37db02a33cb4366eaf9b6501ba03fdd49b4a2746d2153436c0c027f0747cfc5",
+    "status": "PRE_SPECIFIED_BEFORE_BASELINE_EXECUTION"
+  },
+  "B0": {
+    "roc_auc": {
+      "mean": 0.5,
+      "median": 0.5,
+      "lower_95": 0.5,
+      "upper_95": 0.5
+    },
+    "pr_auc": {
+      "mean": 0.4286121402108863,
+      "median": 0.4286121402108863,
+      "lower_95": 0.4286121402108863,
+      "upper_95": 0.4286121402108863
+    },
+    "recall_at_30": {
+      "mean": 0.3002111037234042,
+      "median": 0.300531914893617,
+      "lower_95": 0.2832280585106383,
+      "upper_95": 0.3178191489361702
+    },
+    "precision_at_30": {
+      "mean": 0.42879154795821456,
+      "median": 0.42924976258309594,
+      "lower_95": 0.4045346628679962,
+      "upper_95": 0.4539411206077873
+    },
+    "lift_at_30": {
+      "mean": 1.0004185783147441,
+      "median": 1.0014876442181408,
+      "lower_95": 0.9438245558535896,
+      "upper_95": 1.0590953405669719
+    }
+  },
+  "B3": {
+    "point": {
+      "rows": 3509,
+      "not_applies": 1504,
+      "prevalence_not_applies": 0.4286121402108863,
+      "top_fraction": 0.3,
+      "top_rows": 1053,
+      "recall_at_30": 0.386968085106383,
+      "precision_at_30": 0.5527065527065527,
+      "lift_at_30": 1.289526125962296,
+      "roc_auc": 0.6088754178383828,
+      "pr_auc": 0.5211284277851277
+    },
+    "grouped_bootstrap": {
+      "roc_auc": {
+        "mean": 0.6067756729361459,
+        "median": 0.6076888451767715,
+        "lower_95": 0.5514619542502042,
+        "upper_95": 0.6596232461335887
+      },
+      "pr_auc": {
+        "mean": 0.5211434878557484,
+        "median": 0.5213079793485355,
+        "lower_95": 0.434457120043726,
+        "upper_95": 0.6143616682691374
+      },
+      "recall_at_30": {
+        "mean": 0.3822261686876402,
+        "median": 0.38213046270823003,
+        "lower_95": 0.33332681782642687,
+        "upper_95": 0.4282199845296807
+      },
+      "precision_at_30": {
+        "mean": 0.5466717784126527,
+        "median": 0.5478573709632351,
+        "lower_95": 0.44847335097335095,
+        "upper_95": 0.6428619474695708
+      },
+      "lift_at_30": {
+        "mean": 1.2741005424443648,
+        "median": 1.27393507974821,
+        "lower_95": 1.1106526394740561,
+        "upper_95": 1.4276441507214015
+      }
+    },
+    "cells": 32,
+    "unseen_oof_rows": 26
+  },
+  "interpretation": "B0 quantifies chance ranking. B3 tests whether configuration-cell history has out-of-sample ranking signal without fitting the final model.",
+  "decision_effect": "descriptive only; official v3 model, threshold and test metrics remain unchanged",
+  "official_v3_changed": false
+}

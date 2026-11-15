@@ -1,0 +1,33 @@
+{
+  "schema_version": "3.1",
+  "status": "PRE_SPECIFIED_BEFORE_BASELINE_EXECUTION",
+  "created_at_utc": "2026-11-15T12:00:00Z",
+  "analyses": [
+    {
+      "id": "B0",
+      "name": "random ranking baseline",
+      "population": "frozen train plus dev eligible rows",
+      "grouping": "Build_Id",
+      "top_fraction": 0.30,
+      "random_repetitions": 2000,
+      "test_use": "none"
+    },
+    {
+      "id": "B3",
+      "name": "not_applies rate by configuration cell",
+      "population": "frozen train plus dev eligible rows",
+      "features": ["Concurrency", "Iterations", "ResponseTime"],
+      "evaluation": "5-fold GroupKFold out-of-fold by Build_Id",
+      "unseen_cell_policy": "training-fold prevalence",
+      "bootstrap_unit": "Build_Id",
+      "top_fraction": 0.30,
+      "test_use": "none"
+    }
+  ],
+  "decision_effect": "descriptive comparison only; no model, threshold or official v3 result changes",
+  "integrity": {
+    "official_test_must_not_be_accessed": true,
+    "official_v3_must_remain_unchanged": true,
+    "test_build_set_sha256": "f6a9b8ce397f5a1005c17f79f39bfb7d8a5951fe7b352832a9024f5108d25450"
+  }
+}
