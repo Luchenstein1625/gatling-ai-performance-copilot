@@ -1,0 +1,31 @@
+{
+  "schema_version": "3.1",
+  "release_status": "VERIFIED_FOR_DOCUMENTATION",
+  "generated_at_utc": "2026-11-15T16:28:19.034566+00:00",
+  "repository": {
+    "commit": "12fb08b91efc43f115f5460817f736ea25c9549e",
+    "branch": "audit/v3_1",
+    "dirty_files": [
+      "?? Resultados/v3_1/release/",
+      "?? app/scripts/build_release_v3_1.py",
+      "?? app/src/performance_decision_engine/infrastructure/release_audit_v3_1.py",
+      "?? app/tests/test_release_audit_v3_1.py"
+    ]
+  },
+  "runtime": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "numpy": "2.4.6",
+    "pandas": null,
+    "scikit_learn": "1.9.0",
+    "joblib": "1.5.3"
+  },
+  "source_sha256": "3747cc086b1e31857e8f26897dbfedbe663bdd9323dc8c27fb0fca7a10a57567",
+  "test_build_set_sha256": "f6a9b8ce397f5a1005c17f79f39bfb7d8a5951fe7b352832a9024f5108d25450",
+  "frozen_v3_files_verified": 43,
+  "artifact_count": 173,
+  "official_metrics_file": "official_metrics_v3_1.json",
+  "reproducibility_file": "reproducibility_check_v3_1.json",
+  "inventory_file": "artifact_inventory_v3_1.csv",
+  "integrity_file": "frozen_v3_integrity_v3_1.csv"
+}

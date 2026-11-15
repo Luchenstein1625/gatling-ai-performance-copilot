@@ -1,0 +1,182 @@
+{
+  "schema_version": "3.1",
+  "status": "VERIFIED_FOR_DOCUMENTATION",
+  "official_v3_unchanged": true,
+  "dataset": {
+    "source_rows": 6445,
+    "usable_historical_rows": 6444,
+    "eligible_rows": 4389,
+    "eligible_builds": 484,
+    "features": [
+      "Concurrency",
+      "Iterations",
+      "ResponseTime"
+    ]
+  },
+  "independent_test": {
+    "rows": 880,
+    "builds": 104,
+    "roc_auc": 0.668392223910841,
+    "pr_auc": 0.5697427925783094,
+    "prevalence_not_applies": 0.42727272727272725,
+    "recall_at_30": 0.39361702127659576,
+    "precision_at_30": 0.5606060606060606,
+    "lift_at_30": 1.3120567375886525,
+    "grouped_bootstrap_ic95": {
+      "roc_auc": {
+        "mean": 0.65610212129372,
+        "median": 0.6596304995169566,
+        "lower_95": 0.5354801857776967,
+        "upper_95": 0.7644122998922875
+      },
+      "pr_auc": {
+        "mean": 0.5530664820012577,
+        "median": 0.5595677415534168,
+        "lower_95": 0.3342130943007178,
+        "upper_95": 0.7736606937578189
+      },
+      "recall_at_30": {
+        "mean": 0.38104378590570714,
+        "median": 0.3865397222718875,
+        "lower_95": 0.2592558799675588,
+        "upper_95": 0.47286215197822895
+      },
+      "precision_at_30": {
+        "mean": 0.5458154018639484,
+        "median": 0.543859649122807,
+        "lower_95": 0.29471491228070174,
+        "upper_95": 0.812743063541514
+      },
+      "lift_at_30": {
+        "mean": 1.2701671891103012,
+        "median": 1.2885587783500498,
+        "lower_95": 0.8646818139471792,
+        "upper_95": 1.5751002347560485
+      }
+    }
+  },
+  "operational_policy": {
+    "name": "review_all_with_ranking_assistance",
+    "automatic_release_enabled": false,
+    "meaning": "QA reviews every case; score only orders the queue."
+  },
+  "development_baselines": {
+    "B0": {
+      "roc_auc": {
+        "mean": 0.5,
+        "median": 0.5,
+        "lower_95": 0.5,
+        "upper_95": 0.5
+      },
+      "pr_auc": {
+        "mean": 0.4286121402108863,
+        "median": 0.4286121402108863,
+        "lower_95": 0.4286121402108863,
+        "upper_95": 0.4286121402108863
+      },
+      "recall_at_30": {
+        "mean": 0.3002111037234042,
+        "median": 0.300531914893617,
+        "lower_95": 0.2832280585106383,
+        "upper_95": 0.3178191489361702
+      },
+      "precision_at_30": {
+        "mean": 0.42879154795821456,
+        "median": 0.42924976258309594,
+        "lower_95": 0.4045346628679962,
+        "upper_95": 0.4539411206077873
+      },
+      "lift_at_30": {
+        "mean": 1.0004185783147441,
+        "median": 1.0014876442181408,
+        "lower_95": 0.9438245558535896,
+        "upper_95": 1.0590953405669719
+      }
+    },
+    "B3": {
+      "point": {
+        "rows": 3509,
+        "not_applies": 1504,
+        "prevalence_not_applies": 0.4286121402108863,
+        "top_fraction": 0.3,
+        "top_rows": 1053,
+        "recall_at_30": 0.386968085106383,
+        "precision_at_30": 0.5527065527065527,
+        "lift_at_30": 1.289526125962296,
+        "roc_auc": 0.6088754178383828,
+        "pr_auc": 0.5211284277851277
+      },
+      "grouped_bootstrap": {
+        "roc_auc": {
+          "mean": 0.6067756729361459,
+          "median": 0.6076888451767715,
+          "lower_95": 0.5514619542502042,
+          "upper_95": 0.6596232461335887
+        },
+        "pr_auc": {
+          "mean": 0.5211434878557484,
+          "median": 0.5213079793485355,
+          "lower_95": 0.434457120043726,
+          "upper_95": 0.6143616682691374
+        },
+        "recall_at_30": {
+          "mean": 0.3822261686876402,
+          "median": 0.38213046270823003,
+          "lower_95": 0.33332681782642687,
+          "upper_95": 0.4282199845296807
+        },
+        "precision_at_30": {
+          "mean": 0.5466717784126527,
+          "median": 0.5478573709632351,
+          "lower_95": 0.44847335097335095,
+          "upper_95": 0.6428619474695708
+        },
+        "lift_at_30": {
+          "mean": 1.2741005424443648,
+          "median": 1.27393507974821,
+          "lower_95": 1.1106526394740561,
+          "upper_95": 1.4276441507214015
+        }
+      },
+      "cells": 32,
+      "unseen_oof_rows": 26
+    },
+    "B2_status": "NOT_REQUIRED_NOT_EXECUTED"
+  },
+  "recommender": {
+    "published_actions": {
+      "abstain": 27,
+      "maintain": 5
+    },
+    "publishable_upgrades": 0,
+    "weighted_monotonicity": 0.27909133055169216
+  },
+  "economics": {
+    "status": "ANCHORED_ECONOMICS_COMPLETE",
+    "mechanism": "Earlier detection of not_applies cases may reduce rework and QA analysis time.",
+    "break_even_coverage_times_reduction": 0.040186011904761905,
+    "annual_eligible_records_status": "REQUIRES_BCI_MEASUREMENT"
+  },
+  "claims_summary": {
+    "schema_version": "3.1",
+    "alert": "A4",
+    "status": "CLAIMS_REGISTER_COMPLETE",
+    "test_recomputed": false,
+    "frozen_bootstrap_reused": true,
+    "top_30_rows": 264,
+    "additional_cases_point": 35.19999999999999,
+    "additional_cases_bootstrap": {
+      "point_or_mean": 31.673384022190277,
+      "lower_95": -12.54573406139957,
+      "upper_95": 73.6567971983595
+    },
+    "claims": 10,
+    "evidence_levels": {
+      "Demostrado": 1,
+      "Sugerido": 1,
+      "No concluyente": 3,
+      "No demostrado": 5
+    },
+    "official_v3_changed": false
+  }
+}

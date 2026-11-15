@@ -1,0 +1,173 @@
+{
+  "schema_version": "3.1",
+  "generated_at_utc": "2026-11-15T16:28:19.034566+00:00",
+  "release_status": "VERIFIED_FOR_DOCUMENTATION",
+  "checks_expected": 26,
+  "checks_passed": 26,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "number": 1,
+      "check": "model selection kept test locked",
+      "status": "PASS",
+      "evidence": "LOCKED_NOT_EVALUATED"
+    },
+    {
+      "number": 2,
+      "check": "calibration kept test locked",
+      "status": "PASS",
+      "evidence": "LOCKED_NOT_EVALUATED"
+    },
+    {
+      "number": 3,
+      "check": "threshold analysis kept test locked",
+      "status": "PASS",
+      "evidence": "LOCKED_NOT_EVALUATED"
+    },
+    {
+      "number": 4,
+      "check": "independent test opened once",
+      "status": "PASS",
+      "evidence": "report=OPENED_ONCE_EVALUATION_COMPLETE; marker=OPENED_ONCE_EVALUATION_COMPLETE"
+    },
+    {
+      "number": 5,
+      "check": "no selection after test",
+      "status": "PASS",
+      "evidence": "False"
+    },
+    {
+      "number": 6,
+      "check": "test Build_Id hash preserved",
+      "status": "PASS",
+      "evidence": "f6a9b8ce397f5a1005c17f79f39bfb7d8a5951fe7b352832a9024f5108d25450"
+    },
+    {
+      "number": 7,
+      "check": "final feature contract",
+      "status": "PASS",
+      "evidence": "['Concurrency', 'Iterations', 'ResponseTime']"
+    },
+    {
+      "number": 8,
+      "check": "human review policy",
+      "status": "PASS",
+      "evidence": "{'name': 'review_all_with_ranking_assistance', 'automatic_release_enabled': False, 'meaning': 'QA reviews every case; score only orders the queue.'}"
+    },
+    {
+      "number": 9,
+      "check": "fine threshold policy consistent",
+      "status": "PASS",
+      "evidence": "review_all_with_ranking_assistance"
+    },
+    {
+      "number": 10,
+      "check": "recommender did not access test",
+      "status": "PASS",
+      "evidence": "NOT_ACCESSED_RECOMMENDER_TRAIN_DEV_ONLY"
+    },
+    {
+      "number": 11,
+      "check": "recommender guardrail passed",
+      "status": "PASS",
+      "evidence": "gate=PASSED_WITH_CONSERVATIVE_STABILITY_FILTER; upgrades=0"
+    },
+    {
+      "number": 12,
+      "check": "economics remains conditional",
+      "status": "PASS",
+      "evidence": "conditional_projection_not_realized_saving"
+    },
+    {
+      "number": 13,
+      "check": "zero Build_Id overlap",
+      "status": "PASS",
+      "evidence": "duplicates=0; observed={'train': 334, 'dev': 46, 'test': 104}; expected={'train': 334, 'dev': 46, 'test': 104}"
+    },
+    {
+      "number": 14,
+      "check": "partition build counts",
+      "status": "PASS",
+      "evidence": "duplicates=0; observed={'train': 334, 'dev': 46, 'test': 104}; expected={'train': 334, 'dev': 46, 'test': 104}"
+    },
+    {
+      "number": 15,
+      "check": "source dataset exists",
+      "status": "PASS",
+      "evidence": "C:\\Users\\Windows 10 Pro\\Desktop\\PROYECTO CAPSTONE\\gatling-ai-performance-copilot\\datasaet\\resultadoPruebasGatling.txt"
+    },
+    {
+      "number": 16,
+      "check": "source dataset hash",
+      "status": "PASS",
+      "evidence": "observed=3747cc086b1e31857e8f26897dbfedbe663bdd9323dc8c27fb0fca7a10a57567; expected=3747cc086b1e31857e8f26897dbfedbe663bdd9323dc8c27fb0fca7a10a57567"
+    },
+    {
+      "number": 17,
+      "check": "complete pytest suite",
+      "status": "PASS",
+      "evidence": "return_code=0; 205 passed in 26.06s"
+    },
+    {
+      "number": 18,
+      "check": "A2 calibration audit",
+      "status": "PASS",
+      "evidence": "status=CALIBRATION_AUDIT_COMPLETE; same_sample_leakage=False"
+    },
+    {
+      "number": 19,
+      "check": "A3 order and confounding audit",
+      "status": "PASS",
+      "evidence": "order_correct=True; confounding=CONFOUNDING_DIAGNOSTIC_COMPLETE"
+    },
+    {
+      "number": 20,
+      "check": "A3 transition and stability evidence",
+      "status": "PASS",
+      "evidence": "transitions=True; upgrades=0"
+    },
+    {
+      "number": 21,
+      "check": "A4 claims register",
+      "status": "PASS",
+      "evidence": "status=CLAIMS_REGISTER_COMPLETE; claims=10"
+    },
+    {
+      "number": 22,
+      "check": "A5 overlap and information audit",
+      "status": "PASS",
+      "evidence": "status=OVERLAP_AUDIT_COMPLETE; map=True"
+    },
+    {
+      "number": 23,
+      "check": "A6 final model explainability",
+      "status": "PASS",
+      "evidence": "status=FINAL_MODEL_EXPLAINABILITY_COMPLETE; test=NOT_ACCESSED_DEV_EXPLANATION_ONLY"
+    },
+    {
+      "number": 24,
+      "check": "A1 evidence-anchored economics",
+      "status": "PASS",
+      "evidence": "status=ANCHORED_ECONOMICS_COMPLETE; volume=REQUIRES_BCI_MEASUREMENT"
+    },
+    {
+      "number": 25,
+      "check": "B0/B3 baselines and evidence tables; B2 excluded",
+      "status": "PASS",
+      "evidence": "baselines=BASELINES_B0_B3_COMPLETE; flow=True; B2_artifacts=[]"
+    },
+    {
+      "number": 26,
+      "check": "immutable v3 hashes and one-time test marker",
+      "status": "PASS",
+      "evidence": "frozen=43/43; governance=True; marker=True"
+    }
+  ],
+  "test_suite": {
+    "executed": true,
+    "return_code": 0,
+    "stdout": "........................................................................ [ 35%]\n........................................................................ [ 70%]\n.............................................................            [100%]\n205 passed in 26.06s\n",
+    "stderr": ""
+  },
+  "scope_note": "B2 analyst interviews were an optional internal enhancement, not professor feedback; B0 and B3 are the required technical baselines."
+}
