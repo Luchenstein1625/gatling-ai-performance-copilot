@@ -1,0 +1,7 @@
+version_label,model_variant,evaluation_partition,feature,baseline_roc_auc,permutation_repetitions,mean_drop_roc_auc,permutation_std,grouped_bootstrap_repetitions,lower_95,upper_95,importance_supported
+v3_final,final_refit_train_plus_dev_on_dev_descriptive,dev,Concurrency,0.7354131859658142,50,0.29466713790001287,0.1367068491787367,500,-0.00948891874315449,0.547909950730513,False
+v3_final,final_refit_train_plus_dev_on_dev_descriptive,dev,ResponseTime,0.7354131859658142,50,0.2457713233089149,0.117013430153978,500,0.03390238800255446,0.43187644785665896,True
+v3_final,final_refit_train_plus_dev_on_dev_descriptive,dev,Iterations,0.7354131859658142,50,0.17942552371160525,0.03228129481669977,500,-0.000957451777123981,0.3090103743924105,False
+v3_final,train_only_replica_on_dev_oos,dev,ResponseTime,0.6243413443002185,50,0.19619350554770165,0.07827732203480516,500,0.00901986806166885,0.32811949958899095,True
+v3_final,train_only_replica_on_dev_oos,dev,Concurrency,0.6243413443002185,50,0.193583301203787,0.10717158713051442,500,-0.08100714334424444,0.39389656739584894,False
+v3_final,train_only_replica_on_dev_oos,dev,Iterations,0.6243413443002185,50,0.1403266503876965,0.025105946936804277,500,-0.028979007216406893,0.2488196232853882,False

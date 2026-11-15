@@ -1,0 +1,13 @@
+version_label,model_variant,feature,strictness_rank_low_to_high,level,real_value,dev_support,pdp_mean_probability_not_applies,ice_p10,ice_median,ice_p90,interpretation
+v3_final,train_only_replica_on_dev_oos,Concurrency,0,very_low,5,187,0.4485481349407724,0.3595413595413595,0.4698905109489051,0.5126436781609195,associational diagnostic; not causal
+v3_final,train_only_replica_on_dev_oos,Concurrency,1,low,20,108,0.4006015828107389,0.3595413595413595,0.3595413595413595,0.5126706296570287,associational diagnostic; not causal
+v3_final,train_only_replica_on_dev_oos,Concurrency,2,medium,40,47,0.48124788374427147,0.3595413595413595,0.4698905109489051,0.5533980582524272,associational diagnostic; not causal
+v3_final,train_only_replica_on_dev_oos,Concurrency,3,high,60,84,0.4083987519173759,0.0,0.4698905109489051,0.4698905109489051,associational diagnostic; not causal
+v3_final,train_only_replica_on_dev_oos,Concurrency,4,very_high,80,11,0.37986851075845374,0.3595413595413595,0.3595413595413595,0.4698905109489051,associational diagnostic; not causal
+v3_final,train_only_replica_on_dev_oos,Iterations,0,low,5,275,0.453849482154218,0.3595413595413595,0.4698905109489051,0.52671770191823,associational diagnostic; not causal
+v3_final,train_only_replica_on_dev_oos,Iterations,1,medium,7,149,0.4080722922138869,0.3595413595413595,0.4166666666666667,0.5126706296570281,associational diagnostic; not causal
+v3_final,train_only_replica_on_dev_oos,Iterations,2,high,10,13,0.3988232472622369,0.3595413595413595,0.40924143623489306,0.4698905109489051,associational diagnostic; not causal
+v3_final,train_only_replica_on_dev_oos,ResponseTime,0,very_high,15000,256,0.4526141869992475,0.3595413595413595,0.4698905109489051,0.5533980582524272,associational diagnostic; not causal
+v3_final,train_only_replica_on_dev_oos,ResponseTime,1,high,8000,86,0.38671758927565975,0.0,0.4166666666666667,0.5533980582524272,associational diagnostic; not causal
+v3_final,train_only_replica_on_dev_oos,ResponseTime,2,medium,5000,79,0.43362316643307725,0.3595413595413595,0.5126436781609195,0.5126436781609195,associational diagnostic; not causal
+v3_final,train_only_replica_on_dev_oos,ResponseTime,3,low,3000,16,0.40382807185493047,0.3595413595413595,0.3595413595413595,0.5533980582524272,associational diagnostic; not causal

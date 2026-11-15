@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="430" viewBox="0 0 940 430">
+<rect width="100%" height="100%" fill="white"/>
+<text x="35" y="42" font-family="Arial" font-size="24" font-weight="700" fill="#073b66">Importancia agrupada · modelo v3 · dev fuera de muestra</text>
+<text x="25" y="99" font-family="Arial" font-size="20" fill="#17324d">ResponseTime</text>
+<line x1="244.8" y1="90" x2="1123.1" y2="90" stroke="#6b7c8f" stroke-width="4"/>
+<circle cx="760.0" cy="90" r="9" fill="#009e95"/>
+<text x="1135.1" y="97" font-family="Arial" font-size="17" fill="#17324d">0.196 [0.009; 0.328]</text>
+<text x="25" y="191" font-family="Arial" font-size="20" fill="#17324d">Concurrency</text>
+<line x1="-3.0" y1="182" x2="1304.2" y2="182" stroke="#6b7c8f" stroke-width="4"/>
+<circle cx="752.8" cy="182" r="9" fill="#009e95"/>
+<text x="1316.2" y="189" font-family="Arial" font-size="17" fill="#17324d">0.194 [-0.081; 0.394]</text>
+<text x="25" y="283" font-family="Arial" font-size="20" fill="#17324d">Iterations</text>
+<line x1="140.2" y1="274" x2="904.8" y2="274" stroke="#6b7c8f" stroke-width="4"/>
+<circle cx="606.2" cy="274" r="9" fill="#009e95"/>
+<text x="916.8" y="281" font-family="Arial" font-size="17" fill="#17324d">0.140 [-0.029; 0.249]</text>
+<line x1="220" y1="65" x2="220" y2="355" stroke="#d9534f" stroke-dasharray="5 5"/>
+<text x="470" y="405" text-anchor="middle" font-family="Arial" font-size="16" fill="#4a5568">Caída de ROC-AUC al permutar por Build_Id · IC95% bootstrap agrupado</text>
+</svg>

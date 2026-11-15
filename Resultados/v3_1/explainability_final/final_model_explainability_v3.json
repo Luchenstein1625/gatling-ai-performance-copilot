@@ -1,0 +1,41 @@
+{
+  "schema_version": "3.1",
+  "alert": "A6",
+  "status": "FINAL_MODEL_EXPLAINABILITY_COMPLETE",
+  "test_status": "NOT_ACCESSED_DEV_EXPLANATION_ONLY",
+  "features": [
+    "Concurrency",
+    "Iterations",
+    "ResponseTime"
+  ],
+  "rows": {
+    "train": 3072,
+    "train_builds": 334,
+    "dev": 437,
+    "dev_builds": 46
+  },
+  "model": {
+    "name": "random_forest",
+    "parameters": {
+      "max_depth": 8,
+      "min_samples_leaf": 3
+    },
+    "calibration": "isotonic"
+  },
+  "variants": {
+    "final_refit_train_plus_dev_on_dev_descriptive": {
+      "baseline_dev_roc_auc": 0.7354131859658142,
+      "warning": "Dev participated in final refit; use for exact-artifact explanation, not performance estimation."
+    },
+    "train_only_replica_on_dev_oos": {
+      "baseline_dev_roc_auc": 0.6243413443002185,
+      "use": "primary out-of-sample explainability sensitivity with frozen parameters."
+    }
+  },
+  "importance_scoring": "ROC-AUC decrease for not_applies after Build_Id-block permutation",
+  "permutation_repetitions": 50,
+  "grouped_bootstrap_repetitions": 500,
+  "response_time_order": "very_high 15000 -> high 8000 -> medium 5000 -> low 3000; lower milliseconds is stricter",
+  "causal_claim": false,
+  "official_v3_changed": false
+}
