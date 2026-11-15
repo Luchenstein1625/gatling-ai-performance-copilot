@@ -1,0 +1,6 @@
+step,stage,rows_remaining,rows_removed_at_step,description
+1,source_export,6445,0,Filas leídas desde el export histórico
+2,usable_historical_rows,6444,1,Se excluyen filas sin identificador/resultado mínimo utilizable
+3,exclude_not_executed,4853,1591,Performance=0: la prueba no se ejecutó
+4,exclude_incomplete_result_evidence,4796,57,"Falta estado, errorCount o successCount para construir la etiqueta técnica"
+5,exclude_incomplete_configuration,4389,407,"Falta Concurrency, Iterations o ResponseTime"

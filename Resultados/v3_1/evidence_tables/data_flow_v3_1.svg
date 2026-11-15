@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360">
+<rect width="100%" height="100%" fill="white"/>
+<text x="35" y="42" font-family="Arial" font-size="26" font-weight="700" fill="#073b66">Flujo auditable de datos</text>
+<rect x="35" y="90" width="210" height="145" rx="16" fill="#073b66"/>
+<text x="140.0" y="145" text-anchor="middle" font-family="Arial" font-size="30" font-weight="700" fill="white">6,445</text>
+<text x="140.0" y="177" text-anchor="middle" font-family="Arial" font-size="15" fill="white">filas</text>
+<text x="140.0" y="210" text-anchor="middle" font-family="Arial" font-size="14" fill="white">inicio</text>
+<text x="253" y="168" font-family="Arial" font-size="32" fill="#6b7c8f">→</text>
+<rect x="280" y="90" width="210" height="145" rx="16" fill="#087f8c"/>
+<text x="385.0" y="145" text-anchor="middle" font-family="Arial" font-size="30" font-weight="700" fill="white">6,444</text>
+<text x="385.0" y="177" text-anchor="middle" font-family="Arial" font-size="15" fill="white">filas</text>
+<text x="385.0" y="210" text-anchor="middle" font-family="Arial" font-size="14" fill="white">−1 en este paso</text>
+<text x="498" y="168" font-family="Arial" font-size="32" fill="#6b7c8f">→</text>
+<rect x="525" y="90" width="210" height="145" rx="16" fill="#3b8d99"/>
+<text x="630.0" y="145" text-anchor="middle" font-family="Arial" font-size="30" font-weight="700" fill="white">4,853</text>
+<text x="630.0" y="177" text-anchor="middle" font-family="Arial" font-size="15" fill="white">filas</text>
+<text x="630.0" y="210" text-anchor="middle" font-family="Arial" font-size="14" fill="white">−1,591 en este paso</text>
+<text x="743" y="168" font-family="Arial" font-size="32" fill="#6b7c8f">→</text>
+<rect x="770" y="90" width="210" height="145" rx="16" fill="#4d9d91"/>
+<text x="875.0" y="145" text-anchor="middle" font-family="Arial" font-size="30" font-weight="700" fill="white">4,796</text>
+<text x="875.0" y="177" text-anchor="middle" font-family="Arial" font-size="15" fill="white">filas</text>
+<text x="875.0" y="210" text-anchor="middle" font-family="Arial" font-size="14" fill="white">−57 en este paso</text>
+<text x="988" y="168" font-family="Arial" font-size="32" fill="#6b7c8f">→</text>
+<rect x="1015" y="90" width="210" height="145" rx="16" fill="#009e95"/>
+<text x="1120.0" y="145" text-anchor="middle" font-family="Arial" font-size="30" font-weight="700" fill="white">4,389</text>
+<text x="1120.0" y="177" text-anchor="middle" font-family="Arial" font-size="15" fill="white">filas</text>
+<text x="1120.0" y="210" text-anchor="middle" font-family="Arial" font-size="14" fill="white">−407 en este paso</text>
+<text x="35" y="285" font-family="Arial" font-size="17" fill="#17324d">6.444 filas históricas utilizables → se excluyen 1.591 no ejecutadas, 57 con evidencia insuficiente y 407 con configuración incompleta → 4.389 elegibles.</text>
+<text x="35" y="320" font-family="Arial" font-size="15" fill="#56697a">La unidad del modelo es un registro ejecutado; Build_Id se conserva como unidad de agrupación para evitar leakage.</text>
+</svg>

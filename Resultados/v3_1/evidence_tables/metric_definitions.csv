@@ -1,0 +1,5 @@
+term,definition,unit,not_equivalent_to,use_in_project
+p95,Percentil 95 del tiempo de respuesta: el 95% de las solicitudes observadas terminó en un tiempo menor o igual a este valor.,milisegundos cuando el reporte Gatling de origen está expresado en ms,"promedio, máximo, SLA o probabilidad de falla","evidencia posterior a la ejecución; se usa para auditoría/etiqueta, nunca como predictor ex ante"
+RPS,Solicitudes procesadas por segundo durante la prueba.,requests/second,usuarios concurrentes,evidencia posterior a la ejecución; no es feature del modelo v3
+registro,Una configuración ejecutada y registrada en el export histórico.,fila,Build_Id ni atención operativa,unidad de clasificación/ranking
+Build_Id,Identificador que agrupa registros relacionados de una misma build/ejecución.,grupo,fila individual,"unidad de separación, validación y bootstrap para evitar leakage"

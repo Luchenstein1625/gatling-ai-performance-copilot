@@ -1,0 +1,129 @@
+{
+  "schema_version": "3.1",
+  "status": "EVIDENCE_TABLES_COMPLETE",
+  "source_rows": 6445,
+  "usable_historical_rows": 6444,
+  "distinct_builds": 544,
+  "eligible_model_rows": 4389,
+  "eligible_model_builds": 484,
+  "eligibility_distribution": {
+    "incomplete_configuration": 407,
+    "incomplete_result_evidence": 57,
+    "missing_build_id": 1,
+    "not_executed": 1591,
+    "trainable": 4389
+  },
+  "data_flow": [
+    {
+      "step": 1,
+      "stage": "source_export",
+      "rows_remaining": 6445,
+      "rows_removed_at_step": 0,
+      "description": "Filas leídas desde el export histórico"
+    },
+    {
+      "step": 2,
+      "stage": "usable_historical_rows",
+      "rows_remaining": 6444,
+      "rows_removed_at_step": 1,
+      "description": "Se excluyen filas sin identificador/resultado mínimo utilizable"
+    },
+    {
+      "step": 3,
+      "stage": "exclude_not_executed",
+      "rows_remaining": 4853,
+      "rows_removed_at_step": 1591,
+      "description": "Performance=0: la prueba no se ejecutó"
+    },
+    {
+      "step": 4,
+      "stage": "exclude_incomplete_result_evidence",
+      "rows_remaining": 4796,
+      "rows_removed_at_step": 57,
+      "description": "Falta estado, errorCount o successCount para construir la etiqueta técnica"
+    },
+    {
+      "step": 5,
+      "stage": "exclude_incomplete_configuration",
+      "rows_remaining": 4389,
+      "rows_removed_at_step": 407,
+      "description": "Falta Concurrency, Iterations o ResponseTime"
+    }
+  ],
+  "cause_distribution": [
+    {
+      "cause": "applies_complete",
+      "rows": 2663,
+      "builds": 398,
+      "percentage_rows": 0.4132526381129733,
+      "display_name": "Conforme con evidencia completa",
+      "denominator_rows": 6444,
+      "build_count_note": "non_additive_across_causes"
+    },
+    {
+      "cause": "not_applies_execution_error",
+      "rows": 2133,
+      "builds": 244,
+      "percentage_rows": 0.33100558659217877,
+      "display_name": "Ejecutado con error técnico",
+      "denominator_rows": 6444,
+      "build_count_note": "non_additive_across_causes"
+    },
+    {
+      "cause": "not_applies_multiple_causes",
+      "rows": 57,
+      "builds": 7,
+      "percentage_rows": 0.008845437616387336,
+      "display_name": "No aplica por causas múltiples",
+      "denominator_rows": 6444,
+      "build_count_note": "non_additive_across_causes"
+    },
+    {
+      "cause": "not_applies_not_executed",
+      "rows": 1591,
+      "builds": 260,
+      "percentage_rows": 0.2468963376784606,
+      "display_name": "No ejecutado",
+      "denominator_rows": 6444,
+      "build_count_note": "non_additive_across_causes"
+    }
+  ],
+  "definitions": [
+    {
+      "term": "p95",
+      "definition": "Percentil 95 del tiempo de respuesta: el 95% de las solicitudes observadas terminó en un tiempo menor o igual a este valor.",
+      "unit": "milisegundos cuando el reporte Gatling de origen está expresado en ms",
+      "not_equivalent_to": "promedio, máximo, SLA o probabilidad de falla",
+      "use_in_project": "evidencia posterior a la ejecución; se usa para auditoría/etiqueta, nunca como predictor ex ante"
+    },
+    {
+      "term": "RPS",
+      "definition": "Solicitudes procesadas por segundo durante la prueba.",
+      "unit": "requests/second",
+      "not_equivalent_to": "usuarios concurrentes",
+      "use_in_project": "evidencia posterior a la ejecución; no es feature del modelo v3"
+    },
+    {
+      "term": "registro",
+      "definition": "Una configuración ejecutada y registrada en el export histórico.",
+      "unit": "fila",
+      "not_equivalent_to": "Build_Id ni atención operativa",
+      "use_in_project": "unidad de clasificación/ranking"
+    },
+    {
+      "term": "Build_Id",
+      "definition": "Identificador que agrupa registros relacionados de una misma build/ejecución.",
+      "unit": "grupo",
+      "not_equivalent_to": "fila individual",
+      "use_in_project": "unidad de separación, validación y bootstrap para evitar leakage"
+    }
+  ],
+  "integrity": {
+    "flow_reconciled": true,
+    "final_rows_match_frozen_protocol": true,
+    "model_metrics_recomputed": false,
+    "official_v3_changed": false
+  },
+  "allowed_claim": "The historical export contains measurable non-execution, technical-error and conformity workloads.",
+  "prohibited_claim": "These historical proportions are realized savings or causal effects of the model."
+}

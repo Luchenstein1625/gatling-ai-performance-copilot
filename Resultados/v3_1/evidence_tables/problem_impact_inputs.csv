@@ -1,0 +1,6 @@
+indicator,display_name,rows,percentage_of_usable_history,builds_with_at_least_one_record,evidence_type,business_interpretation
+applies_complete,Conforme con evidencia completa,2663,0.4132526381129733,398,measured_historical_composition,Historical workload/problem composition; it is not a realized monetary saving.
+not_applies_execution_error,Ejecutado con error técnico,2133,0.33100558659217877,244,measured_historical_composition,Historical workload/problem composition; it is not a realized monetary saving.
+not_applies_multiple_causes,No aplica por causas múltiples,57,0.008845437616387336,7,measured_historical_composition,Historical workload/problem composition; it is not a realized monetary saving.
+not_applies_not_executed,No ejecutado,1591,0.2468963376784606,260,measured_historical_composition,Historical workload/problem composition; it is not a realized monetary saving.
+executed_with_observed_technical_issue,Ejecutado con evidencia de problema técnico (incluye causas múltiples),2190,0.3398510242085661,not_additive_requires_union,derived_historical_composition,Describes historical review demand; no causal or monetary claim.
