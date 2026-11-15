@@ -1,0 +1,75 @@
+{
+  "schema_version": "3.0",
+  "experiment": "configuration_recommender_train_dev_grouped_cv",
+  "test_status": "NOT_ACCESSED_RECOMMENDER_TRAIN_DEV_ONLY",
+  "rows": 3509,
+  "builds": 380,
+  "cells": 32,
+  "features": [
+    "Concurrency",
+    "Iterations",
+    "ResponseTime"
+  ],
+  "selected_rules": {
+    "p_min": 0.9,
+    "p_review": 0.5,
+    "min_rows": 20,
+    "min_builds": 5
+  },
+  "selection_cv": {
+    "p_min": 0.9,
+    "p_review": 0.5,
+    "min_rows": 20,
+    "min_builds": 5,
+    "folds": 5,
+    "coverage": 0.664861783984041,
+    "evaluated_successes": 1355,
+    "evaluated_total": 2175,
+    "decision_success_rate": 0.6229885057471264,
+    "decision_success_lower_95": 0.602421066751624,
+    "decision_success_upper_95": 0.6431222690583943,
+    "mean_upgrade_cells": 0.6,
+    "mean_abstain_cells": 12.8
+  },
+  "stability_guardrail": {
+    "minimum_action_stability": 0.8,
+    "rule": "Any non-abstain estimated action below 80% bootstrap agreement is published as abstain."
+  },
+  "action_distribution_estimated": {
+    "abstain": 19,
+    "maintain": 8,
+    "review": 4,
+    "upgrade": 1
+  },
+  "action_distribution_published": {
+    "abstain": 27,
+    "maintain": 5
+  },
+  "action_distribution": {
+    "abstain": 27,
+    "maintain": 5
+  },
+  "coverage_non_abstain_cells": 0.15625,
+  "experimental_upgrade_candidates": 1,
+  "publishable_upgrades": 0,
+  "stability": {
+    "bootstrap_repetitions": 500,
+    "cells_agreement_at_least_80_percent": 20,
+    "cells_total": 32,
+    "fraction_stable": 0.625
+  },
+  "monotonicity": {
+    "comparisons": 49,
+    "consistent": 22,
+    "consistency_rate": 0.4489795918367347
+  },
+  "interpretation": "Offline observational recommendation by configuration cell. Every action must pass support, confidence and 80% bootstrap-stability guardrails. The observed upgrade remains an experimental candidate because its 62.4% stability does not pass the 80% publication rule.",
+  "limitations": [
+    "No causal effect is claimed.",
+    "All records in the same configuration cell receive the same recommendation.",
+    "Online Gatling validation remains future work.",
+    "The independent test was not accessed for rule selection or backtesting."
+  ],
+  "gate_status": "PASSED_WITH_CONSERVATIVE_STABILITY_FILTER",
+  "next_gate": "Freeze the offline recommender and continue to economic evaluation; online Gatling validation remains future work."
+}

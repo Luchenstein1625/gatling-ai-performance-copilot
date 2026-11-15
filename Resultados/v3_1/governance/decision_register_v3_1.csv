@@ -1,0 +1,8 @@
+decision_id,registered_at_utc,status,title,decision
+D-001,2026-11-15T10:58:19.690857+00:00,PRE_SPECIFIED,Preserve v3 artifacts,All corrections are written under Resultados/v3_1; v3 remains immutable.
+D-002,2026-11-15T10:58:19.690857+00:00,PRE_SPECIFIED,Do not select using test,Any additional test calculation is descriptive and cannot alter the frozen model.
+D-003,2026-11-15T10:58:19.690857+00:00,PRE_SPECIFIED,Keep guardrails,"Stability 80%, release-risk upper bound 5%, and superiority interval excluding zero remain fixed."
+D-004,2026-11-15T10:58:19.690857+00:00,PRE_SPECIFIED,Audit calibration before reporting,"Compare identical raw scores, cross-fit calibration by Build_Id, and report ties explicitly."
+D-005,2026-11-15T10:58:19.690857+00:00,PRE_SPECIFIED,Audit ResponseTime direction,Concurrency and Iterations increase with load; lower ResponseTime milliseconds are stricter.
+D-006,2026-11-15T10:58:19.690857+00:00,PRE_SPECIFIED,Economics is conditional,Break-even and evidence-anchored scenarios precede any conditioned Monte Carlo result.
+D-007,2026-11-15T10:58:19.690857+00:00,PRE_SPECIFIED,Negative results remain valid,No result is removed or guardrail changed to obtain a positive conclusion.

@@ -1,0 +1,100 @@
+{
+  "schema_version": "3.0",
+  "generated_at_utc": "2026-11-14T10:53:26.929907+00:00",
+  "release_status": "READY_FOR_DOCUMENTATION",
+  "checks_passed": 17,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "check": "model selection kept test locked",
+      "status": "PASS",
+      "evidence": "LOCKED_NOT_EVALUATED"
+    },
+    {
+      "check": "calibration kept test locked",
+      "status": "PASS",
+      "evidence": "LOCKED_NOT_EVALUATED"
+    },
+    {
+      "check": "threshold analysis kept test locked",
+      "status": "PASS",
+      "evidence": "LOCKED_NOT_EVALUATED"
+    },
+    {
+      "check": "independent test opened once",
+      "status": "PASS",
+      "evidence": "OPENED_ONCE_EVALUATION_COMPLETE"
+    },
+    {
+      "check": "no selection after test",
+      "status": "PASS",
+      "evidence": "False"
+    },
+    {
+      "check": "test Build_Id hash preserved",
+      "status": "PASS",
+      "evidence": "expected=f6a9b8ce397f5a1005c17f79f39bfb7d8a5951fe7b352832a9024f5108d25450; final=f6a9b8ce397f5a1005c17f79f39bfb7d8a5951fe7b352832a9024f5108d25450"
+    },
+    {
+      "check": "final feature contract",
+      "status": "PASS",
+      "evidence": "['Concurrency', 'Iterations', 'ResponseTime']"
+    },
+    {
+      "check": "human review policy",
+      "status": "PASS",
+      "evidence": "{'name': 'review_all_with_ranking_assistance', 'automatic_release_enabled': False, 'meaning': 'QA reviews every case; score only orders the queue.'}"
+    },
+    {
+      "check": "fine threshold policy consistent",
+      "status": "PASS",
+      "evidence": "review_all_with_ranking_assistance"
+    },
+    {
+      "check": "recommender did not access test",
+      "status": "PASS",
+      "evidence": "NOT_ACCESSED_RECOMMENDER_TRAIN_DEV_ONLY"
+    },
+    {
+      "check": "recommender guardrail passed",
+      "status": "PASS",
+      "evidence": "PASSED_WITH_CONSERVATIVE_STABILITY_FILTER"
+    },
+    {
+      "check": "economics remains conditional",
+      "status": "PASS",
+      "evidence": "conditional_projection_not_realized_saving"
+    },
+    {
+      "check": "zero Build_Id overlap",
+      "status": "PASS",
+      "evidence": "duplicate hashes=0"
+    },
+    {
+      "check": "partition build counts",
+      "status": "PASS",
+      "evidence": "observed={'train': 334, 'dev': 46, 'test': 104}; expected={'train': 334, 'dev': 46, 'test': 104}"
+    },
+    {
+      "check": "source dataset exists",
+      "status": "PASS",
+      "evidence": "..\\datasaet\\resultadoPruebasGatling.txt"
+    },
+    {
+      "check": "source dataset hash",
+      "status": "PASS",
+      "evidence": "observed=3747cc086b1e31857e8f26897dbfedbe663bdd9323dc8c27fb0fca7a10a57567; expected=3747cc086b1e31857e8f26897dbfedbe663bdd9323dc8c27fb0fca7a10a57567"
+    },
+    {
+      "check": "complete pytest suite",
+      "status": "PASS",
+      "evidence": "return_code=0"
+    }
+  ],
+  "test_suite": {
+    "executed": true,
+    "return_code": 0,
+    "stdout": "........................................................................ [ 45%]\n........................................................................ [ 91%]\n..............                                                           [100%]\n158 passed in 16.10s\n",
+    "stderr": ""
+  }
+}

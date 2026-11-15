@@ -1,0 +1,110 @@
+{
+  "schema_version": "3.0",
+  "experiment": "one_time_independent_test_evaluation",
+  "test_status": "OPENED_ONCE_EVALUATION_COMPLETE",
+  "opened_at_utc": "2026-11-14T02:10:59.487259+00:00",
+  "frozen_tag": "model-final-v3",
+  "frozen_commit": "f59a3f05faa6a30f7b144606dee0554b3afaf0e6",
+  "source_sha256": "3747cc086b1e31857e8f26897dbfedbe663bdd9323dc8c27fb0fca7a10a57567",
+  "test_build_set_sha256": "f6a9b8ce397f5a1005c17f79f39bfb7d8a5951fe7b352832a9024f5108d25450",
+  "rows": {
+    "development_train_plus_dev": 3509,
+    "test": 880,
+    "test_builds": 104
+  },
+  "final_model": {
+    "name": "random_forest",
+    "parameters": {
+      "max_depth": 8,
+      "min_samples_leaf": 3
+    },
+    "features": [
+      "Concurrency",
+      "Iterations",
+      "ResponseTime"
+    ],
+    "calibration": "isotonic"
+  },
+  "selection_changes_after_test": false,
+  "ranking_test_metrics": {
+    "roc_auc": 0.668392223910841,
+    "pr_auc": 0.5697427925783094,
+    "prevalence_not_applies": 0.42727272727272725,
+    "recall_at_30": 0.39361702127659576,
+    "precision_at_30": 0.5606060606060606,
+    "lift_at_30": 1.3120567375886525
+  },
+  "ranking_grouped_bootstrap_ic95": {
+    "roc_auc": {
+      "mean": 0.65610212129372,
+      "median": 0.6596304995169566,
+      "lower_95": 0.5354801857776967,
+      "upper_95": 0.7644122998922875
+    },
+    "pr_auc": {
+      "mean": 0.5530664820012577,
+      "median": 0.5595677415534168,
+      "lower_95": 0.3342130943007178,
+      "upper_95": 0.7736606937578189
+    },
+    "recall_at_30": {
+      "mean": 0.38104378590570714,
+      "median": 0.3865397222718875,
+      "lower_95": 0.2592558799675588,
+      "upper_95": 0.47286215197822895
+    },
+    "precision_at_30": {
+      "mean": 0.5458154018639484,
+      "median": 0.543859649122807,
+      "lower_95": 0.29471491228070174,
+      "upper_95": 0.812743063541514
+    },
+    "lift_at_30": {
+      "mean": 1.2701671891103012,
+      "median": 1.2885587783500498,
+      "lower_95": 0.8646818139471792,
+      "upper_95": 1.5751002347560485
+    }
+  },
+  "calibration_test_metrics": {
+    "brier": 0.22489295890148026,
+    "ece_10_bins": 0.0904479914565475
+  },
+  "operational_policy": {
+    "name": "review_all_with_ranking_assistance",
+    "automatic_release_enabled": false,
+    "meaning": "QA reviews every case; score only orders the queue."
+  },
+  "diagnostic_threshold_not_operational": {
+    "threshold": 0.01,
+    "manual_reviews": 869,
+    "review_coverage": 0.9875,
+    "released_rows": 11,
+    "release_coverage": 0.0125,
+    "false_applies": 2,
+    "applies_reviewed": 495,
+    "total_cost_units": 1879.0,
+    "review_all_cost_units": 1888.0,
+    "delta_vs_review_all": -9.0,
+    "delta_percent_vs_review_all": -0.004766949152542373,
+    "released_error_rate": 0.18181818181818182,
+    "released_error_lower_95": 0.051367689746085105,
+    "released_error_upper_95": 0.47698056196084415,
+    "released_risk_wilson_95": {
+      "successes": 2,
+      "total": 11,
+      "estimate": 0.18181818181818182,
+      "lower": 0.051367689746085105,
+      "upper": 0.47698056196084415
+    }
+  },
+  "baselines": {
+    "random_ranking": {
+      "roc_auc": 0.5,
+      "expected_recall_at_30": 0.3,
+      "expected_precision_at_30": 0.42727272727272725,
+      "expected_lift_at_30": 1.0
+    }
+  },
+  "interpretation_rule": "Report the independent test result exactly as observed. Do not retune or replace the model using test evidence."
+}

@@ -1,0 +1,13 @@
+feature,level,holdout_support,mean_predicted_not_applies_probability,interpretation
+Concurrency,high,55,0.4881632803722885,diagnostic association; not a causal effect
+Concurrency,low,200,0.41056028361138086,diagnostic association; not a causal effect
+Concurrency,medium,108,0.5231369328100286,diagnostic association; not a causal effect
+Concurrency,very_high,4,0.4757843202115514,diagnostic association; not a causal effect
+Concurrency,very_low,493,0.5180023990837896,diagnostic association; not a causal effect
+Iterations,high,17,0.4849477742347463,diagnostic association; not a causal effect
+Iterations,low,703,0.49544322418111564,diagnostic association; not a causal effect
+Iterations,medium,140,0.46554959788913375,diagnostic association; not a causal effect
+ResponseTime,high,133,0.45053324637549846,diagnostic association; not a causal effect
+ResponseTime,low,126,0.448005651867184,diagnostic association; not a causal effect
+ResponseTime,medium,259,0.5186742523491157,diagnostic association; not a causal effect
+ResponseTime,very_high,342,0.5301785198375523,diagnostic association; not a causal effect

@@ -1,0 +1,219 @@
+{
+  "schema_version": "1.0",
+  "experiment": "configuration_v2_grouped_stability",
+  "source": "..\\datasaet\\resultadoPruebasGatling.txt",
+  "training_rows": 4389,
+  "builds": 484,
+  "models": [
+    "logistic_regression",
+    "random_forest"
+  ],
+  "fixed_split": {
+    "random_state": 42,
+    "train_rows": 3529,
+    "holdout_rows": 860,
+    "train_builds": 363,
+    "holdout_builds": 121,
+    "group_overlap": 0,
+    "point_estimates": {
+      "logistic_regression": {
+        "threshold_oof": 0.5,
+        "macro_f1": 0.5696448695468213,
+        "roc_auc": 0.5345891238007421,
+        "pr_auc": 0.46984220704144,
+        "recall_at_30": 0.31216931216931215,
+        "precision_at_30": 0.4573643410852713
+      },
+      "random_forest": {
+        "threshold_oof": 0.45,
+        "macro_f1": 0.5885621756891031,
+        "roc_auc": 0.6035148960460164,
+        "pr_auc": 0.5019530201602547,
+        "recall_at_30": 0.36243386243386244,
+        "precision_at_30": 0.5310077519379846
+      }
+    }
+  },
+  "repeated_group_splits": {
+    "repetitions": 20,
+    "seeds": [
+      42,
+      61
+    ],
+    "summary": {
+      "logistic_regression": {
+        "macro_f1": {
+          "mean": 0.5469796920532873,
+          "median": 0.550421401723125,
+          "lower": 0.45865666491652074,
+          "upper": 0.6086957011331913
+        },
+        "roc_auc": {
+          "mean": 0.5569337862293209,
+          "median": 0.5534237298859241,
+          "lower": 0.4986874179793286,
+          "upper": 0.6172277706753954
+        },
+        "pr_auc": {
+          "mean": 0.4844792760861588,
+          "median": 0.4823247315657496,
+          "lower": 0.4154759662489691,
+          "upper": 0.5870843224392058
+        },
+        "recall_at_30": {
+          "mean": 0.3315896226434583,
+          "median": 0.3267626685183931,
+          "lower": 0.2844187999731237,
+          "upper": 0.40048821599951406
+        },
+        "precision_at_30": {
+          "mean": 0.48301228634263466,
+          "median": 0.4789902757984743,
+          "lower": 0.39318230370355983,
+          "upper": 0.6483435270132516
+        }
+      },
+      "random_forest": {
+        "macro_f1": {
+          "mean": 0.5628080717546556,
+          "median": 0.5666873026251371,
+          "lower": 0.48981712722037374,
+          "upper": 0.6335563162543889
+        },
+        "roc_auc": {
+          "mean": 0.6066962919982983,
+          "median": 0.6048048635704237,
+          "lower": 0.5340784496190579,
+          "upper": 0.6696316808136098
+        },
+        "pr_auc": {
+          "mean": 0.5221018594946368,
+          "median": 0.5201945881935539,
+          "lower": 0.42287348506274325,
+          "upper": 0.633561823878357
+        },
+        "recall_at_30": {
+          "mean": 0.35843686224917143,
+          "median": 0.3536307243203795,
+          "lower": 0.2917090650826446,
+          "upper": 0.42943261055106446
+        },
+        "precision_at_30": {
+          "mean": 0.5212460608536741,
+          "median": 0.5262400722880107,
+          "lower": 0.39194647472136973,
+          "upper": 0.6531818083214022
+        }
+      }
+    }
+  },
+  "grouped_paired_bootstrap": {
+    "requested_repetitions": 1000,
+    "valid_repetitions": 1000,
+    "confidence_level": 0.95,
+    "summary": {
+      "logistic_regression": {
+        "macro_f1": {
+          "mean": 0.5675087635904457,
+          "median": 0.5678628936247376,
+          "lower": 0.5109121818066849,
+          "upper": 0.6241145236017498
+        },
+        "roc_auc": {
+          "mean": 0.5350111265160774,
+          "median": 0.5341680800471224,
+          "lower": 0.4613385977827589,
+          "upper": 0.6111194751587238
+        },
+        "pr_auc": {
+          "mean": 0.4747326711117225,
+          "median": 0.4789484647453487,
+          "lower": 0.3720305403156473,
+          "upper": 0.5702466439260547
+        },
+        "recall_at_30": {
+          "mean": 0.3306709142139223,
+          "median": 0.33129732552501023,
+          "lower": 0.2598969718400412,
+          "upper": 0.4033110827419075
+        },
+        "precision_at_30": {
+          "mean": 0.48239517442192426,
+          "median": 0.4829702906489657,
+          "lower": 0.3574293371203445,
+          "upper": 0.6079407408329391
+        }
+      },
+      "random_forest": {
+        "macro_f1": {
+          "mean": 0.5864573599275748,
+          "median": 0.5864818606946318,
+          "lower": 0.5235937550651394,
+          "upper": 0.6480980346246394
+        },
+        "roc_auc": {
+          "mean": 0.6039002792911912,
+          "median": 0.6023870514143383,
+          "lower": 0.5295322773434368,
+          "upper": 0.6750001786569633
+        },
+        "pr_auc": {
+          "mean": 0.506568947016752,
+          "median": 0.5075791766720439,
+          "lower": 0.3980106833944167,
+          "upper": 0.6087946713840061
+        },
+        "recall_at_30": {
+          "mean": 0.3510830163419815,
+          "median": 0.3504714071724381,
+          "lower": 0.2857047619047619,
+          "upper": 0.41641399841778737
+        },
+        "precision_at_30": {
+          "mean": 0.5124299950529742,
+          "median": 0.5129319955406912,
+          "lower": 0.38190069915547564,
+          "upper": 0.6371246393915552
+        }
+      }
+    },
+    "rf_minus_logistic": {
+      "macro_f1": {
+        "mean": 0.018948596337129232,
+        "median": 0.0186859214536787,
+        "lower": -0.02026449856569019,
+        "upper": 0.06036984929921922
+      },
+      "roc_auc": {
+        "mean": 0.0688891527751137,
+        "median": 0.06834991911849758,
+        "lower": -0.013843718274997634,
+        "upper": 0.16402943154158425
+      },
+      "pr_auc": {
+        "mean": 0.03183627590502953,
+        "median": 0.03111236475961099,
+        "lower": -0.029232549100910634,
+        "upper": 0.10257629030886266
+      },
+      "recall_at_30": {
+        "mean": 0.02041210212805919,
+        "median": 0.021605761536409696,
+        "lower": -0.08048456260720406,
+        "upper": 0.12606060606060596
+      },
+      "precision_at_30": {
+        "mean": 0.030034820631049987,
+        "median": 0.031072796934865893,
+        "lower": -0.10993652137113827,
+        "upper": 0.17895129615082486
+      }
+    },
+    "interpretation": "A paired-difference interval containing zero does not establish that Random Forest outperforms logistic regression on that metric."
+  },
+  "limitations": [
+    "Repeated splits are a stability diagnostic, not new independent data.",
+    "The fixed holdout remains the reported final split and is reused here only for grouped uncertainty estimation.",
+    "Online validation with future builds remains required."
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "schema_version": "3.0",
+  "experiment": "final_model_selection_train_dev_only",
+  "source_sha256": "3747cc086b1e31857e8f26897dbfedbe663bdd9323dc8c27fb0fca7a10a57567",
+  "protocol_version": "3.0",
+  "features": [
+    "Concurrency",
+    "Iterations",
+    "ResponseTime"
+  ],
+  "rows": {
+    "train_used": 3072,
+    "dev_used": 437,
+    "test_reserved_not_evaluated": 880
+  },
+  "test_status": "LOCKED_NOT_EVALUATED",
+  "selection_rule": "highest dev ROC-AUC; dev macro-F1 breaks ties",
+  "search_space": {
+    "logistic_regression": [
+      {
+        "C": 0.1
+      },
+      {
+        "C": 1.0
+      },
+      {
+        "C": 10.0
+      }
+    ],
+    "decision_tree": [
+      {
+        "max_depth": 3,
+        "min_samples_leaf": 3
+      },
+      {
+        "max_depth": 3,
+        "min_samples_leaf": 10
+      },
+      {
+        "max_depth": 5,
+        "min_samples_leaf": 3
+      },
+      {
+        "max_depth": 5,
+        "min_samples_leaf": 10
+      },
+      {
+        "max_depth": 8,
+        "min_samples_leaf": 3
+      },
+      {
+        "max_depth": 8,
+        "min_samples_leaf": 10
+      }
+    ],
+    "random_forest": [
+      {
+        "max_depth": 4,
+        "min_samples_leaf": 3
+      },
+      {
+        "max_depth": 4,
+        "min_samples_leaf": 10
+      },
+      {
+        "max_depth": 8,
+        "min_samples_leaf": 3
+      },
+      {
+        "max_depth": 8,
+        "min_samples_leaf": 10
+      },
+      {
+        "max_depth": null,
+        "min_samples_leaf": 3
+      },
+      {
+        "max_depth": null,
+        "min_samples_leaf": 10
+      }
+    ],
+    "hist_gradient_boosting": [
+      {
+        "learning_rate": 0.03,
+        "max_leaf_nodes": 7,
+        "l2_regularization": 0.0
+      },
+      {
+        "learning_rate": 0.03,
+        "max_leaf_nodes": 7,
+        "l2_regularization": 1.0
+      },
+      {
+        "learning_rate": 0.03,
+        "max_leaf_nodes": 15,
+        "l2_regularization": 0.0
+      },
+      {
+        "learning_rate": 0.03,
+        "max_leaf_nodes": 15,
+        "l2_regularization": 1.0
+      },
+      {
+        "learning_rate": 0.03,
+        "max_leaf_nodes": 31,
+        "l2_regularization": 0.0
+      },
+      {
+        "learning_rate": 0.03,
+        "max_leaf_nodes": 31,
+        "l2_regularization": 1.0
+      },
+      {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 7,
+        "l2_regularization": 0.0
+      },
+      {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 7,
+        "l2_regularization": 1.0
+      },
+      {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "l2_regularization": 0.0
+      },
+      {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "l2_regularization": 1.0
+      },
+      {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 31,
+        "l2_regularization": 0.0
+      },
+      {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 31,
+        "l2_regularization": 1.0
+      }
+    ]
+  },
+  "best_by_model": {
+    "logistic_regression": {
+      "model": "logistic_regression",
+      "configuration_id": 2,
+      "parameters": "{\"C\": 1.0}",
+      "roc_auc": 0.36440260463522256,
+      "pr_auc": 0.3637456823816821,
+      "macro_f1": 0.3973060720706217,
+      "not_applies_f1": 0.3035230352303523,
+      "recall_at_30": 0.1881720430107527,
+      "precision_at_30": 0.26717557251908397,
+      "lift_at_30": 0.6277189526389231
+    },
+    "decision_tree": {
+      "model": "decision_tree",
+      "configuration_id": 5,
+      "parameters": "{\"max_depth\": 8, \"min_samples_leaf\": 3}",
+      "roc_auc": 0.5890523925802168,
+      "pr_auc": 0.5268032948236734,
+      "macro_f1": 0.5851084476382806,
+      "not_applies_f1": 0.6021978021978022,
+      "recall_at_30": 0.3387096774193548,
+      "precision_at_30": 0.48091603053435117,
+      "lift_at_30": 1.1298941147500616
+    },
+    "random_forest": {
+      "model": "random_forest",
+      "configuration_id": 3,
+      "parameters": "{\"max_depth\": 8, \"min_samples_leaf\": 3}",
+      "roc_auc": 0.5901233774579103,
+      "pr_auc": 0.522537544570314,
+      "macro_f1": 0.5948298892119117,
+      "not_applies_f1": 0.6022471910112359,
+      "recall_at_30": 0.3387096774193548,
+      "precision_at_30": 0.48091603053435117,
+      "lift_at_30": 1.1298941147500616
+    },
+    "hist_gradient_boosting": {
+      "model": "hist_gradient_boosting",
+      "configuration_id": 7,
+      "parameters": "{\"l2_regularization\": 0.0, \"learning_rate\": 0.1, \"max_leaf_nodes\": 7}",
+      "roc_auc": 0.5907659683845264,
+      "pr_auc": 0.5201095862296231,
+      "macro_f1": 0.5948298892119117,
+      "not_applies_f1": 0.6022471910112359,
+      "recall_at_30": 0.3387096774193548,
+      "precision_at_30": 0.48091603053435117,
+      "lift_at_30": 1.1298941147500616
+    }
+  },
+  "selected_model": "hist_gradient_boosting",
+  "selected_configuration_id": 7,
+  "selected_parameters": {
+    "learning_rate": 0.1,
+    "max_leaf_nodes": 7,
+    "l2_regularization": 0.0
+  },
+  "selected_threshold_dev_by_cost": 0.2,
+  "selected_threshold_cost_row": {
+    "threshold": 0.2,
+    "manual_reviews": 416,
+    "false_applies": 1,
+    "applies_reviewed": 231,
+    "total_cost_units": 888.0,
+    "macro_f1": 0.3808383818643737,
+    "not_applies_recall": 0.9946236559139785,
+    "not_applies_precision": 0.44471153846153844
+  },
+  "selected_dev_metrics_at_cost_threshold": {
+    "threshold": 0.2,
+    "accuracy": 0.4691075514874142,
+    "macro_f1": 0.3808383818643737,
+    "not_applies_f1": 0.6146179401993356,
+    "not_applies_precision": 0.44471153846153844,
+    "not_applies_recall": 0.9946236559139785,
+    "roc_auc": 0.5907659683845264,
+    "pr_auc": 0.5201095862296231,
+    "prevalence_not_applies": 0.425629290617849,
+    "recall_at_30": 0.3387096774193548,
+    "precision_at_30": 0.48091603053435117,
+    "lift_at_30": 1.1298941147500616,
+    "confusion_matrix_labels": [
+      "not_applies",
+      "applies"
+    ],
+    "confusion_matrix": [
+      [
+        185,
+        1
+      ],
+      [
+        231,
+        20
+      ]
+    ]
+  },
+  "cost_policy": {
+    "false_applies": 10.0,
+    "applies_reviewed": 2.0,
+    "manual_review": 1.0
+  },
+  "baselines": {
+    "B0_random_at_30": {
+      "recall_at_30_expected": 0.3,
+      "precision_at_30_expected": 0.425629290617849,
+      "lift_at_30_expected": 1.0
+    },
+    "B1_majority_applies": {
+      "macro_f1": 0.3648255813953488,
+      "roc_auc": 0.5,
+      "pr_auc": 0.425629290617849
+    },
+    "B2_current_QA_heuristic": {
+      "status": "pending_formalization_with_QA_analysts"
+    },
+    "B3_context_history": {
+      "status": "not_applicable_context_variables_excluded_by_scope"
+    }
+  },
+  "next_gate": "Calibrate selected candidate using train predictions and dev only; do not open test until model-final tag exists."
+}

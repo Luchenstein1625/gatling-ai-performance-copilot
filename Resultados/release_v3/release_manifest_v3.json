@@ -1,0 +1,41 @@
+{
+  "schema_version": "3.0",
+  "release_status": "READY_FOR_DOCUMENTATION",
+  "generated_at_utc": "2026-11-14T10:53:26.929907+00:00",
+  "repository": {
+    "commit": "c47950e4f5f85134de06533b87b7bd705474190c",
+    "branch": "main",
+    "dirty_files": [
+      "?? Resultados/calibration_v3/",
+      "?? Resultados/economics_v3/",
+      "?? Resultados/final_test_v3/",
+      "?? Resultados/fine_threshold_v3/",
+      "?? Resultados/model_selection_v3/",
+      "?? Resultados/protocol_v3/",
+      "?? Resultados/recommender_v3/",
+      "?? Resultados/release_v3/",
+      "?? Resultados/training_v2_explainability/",
+      "?? Resultados/training_v2_stability/",
+      "?? app/scripts/build_release_v3.py",
+      "?? app/src/performance_decision_engine/infrastructure/release_audit_v3.py",
+      "?? app/tests/test_release_audit_v3.py"
+    ]
+  },
+  "runtime": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "numpy": "2.4.6",
+    "pandas": null,
+    "scikit_learn": "1.9.0",
+    "joblib": "1.5.3"
+  },
+  "source": {
+    "path": "..\\datasaet\\resultadoPruebasGatling.txt",
+    "sha256": "3747cc086b1e31857e8f26897dbfedbe663bdd9323dc8c27fb0fca7a10a57567"
+  },
+  "test_build_set_sha256": "f6a9b8ce397f5a1005c17f79f39bfb7d8a5951fe7b352832a9024f5108d25450",
+  "artifact_count": 111,
+  "official_metrics_file": "official_metrics_v3.json",
+  "reproducibility_file": "reproducibility_check_v3.json",
+  "inventory_file": "artifact_inventory_v3.csv"
+}

@@ -1,0 +1,211 @@
+{
+  "schema_version": "1.0",
+  "experiment": "configuration_v2_explainability",
+  "source": "..\\datasaet\\resultadoPruebasGatling.txt",
+  "training_rows": 4389,
+  "features": [
+    "Concurrency",
+    "Iterations",
+    "ResponseTime"
+  ],
+  "split": {
+    "random_state": 42,
+    "train_rows": 3529,
+    "holdout_rows": 860,
+    "holdout_builds": 121,
+    "group_overlap": 0
+  },
+  "random_forest_grouped_permutation_importance": {
+    "scoring": "ROC-AUC for not_applies",
+    "baseline_roc_auc": 0.6035148960460164,
+    "repetitions": 50,
+    "permutation_unit": "Build_Id block",
+    "results": [
+      {
+        "feature": "Concurrency",
+        "baseline_roc_auc": 0.6035148960460164,
+        "repetitions": 50,
+        "mean": 0.10464790664998133,
+        "std": 0.040504939405857525,
+        "lower_95": 0.03032462293354408,
+        "upper_95": 0.18497085556214185
+      },
+      {
+        "feature": "ResponseTime",
+        "baseline_roc_auc": 0.6035148960460164,
+        "repetitions": 50,
+        "mean": 0.056425278271751304,
+        "std": 0.03179062302114366,
+        "lower_95": -0.005193239697907803,
+        "upper_95": 0.10453851895760607
+      },
+      {
+        "feature": "Iterations",
+        "baseline_roc_auc": 0.6035148960460164,
+        "repetitions": 50,
+        "mean": 0.04436206063799425,
+        "std": 0.015106482695798512,
+        "lower_95": 0.022315391117258356,
+        "upper_95": 0.0721766668862105
+      }
+    ],
+    "interpretation": "Positive mean drop indicates predictive contribution. Intervals that include zero indicate uncertain importance."
+  },
+  "risk_profiles": {
+    "method": "replace one configuration level across holdout and average predictions",
+    "warning": "Associational diagnostic only; it does not establish causality.",
+    "results": [
+      {
+        "feature": "Concurrency",
+        "level": "high",
+        "holdout_support": 55,
+        "mean_predicted_not_applies_probability": 0.4881632803722885,
+        "interpretation": "diagnostic association; not a causal effect"
+      },
+      {
+        "feature": "Concurrency",
+        "level": "low",
+        "holdout_support": 200,
+        "mean_predicted_not_applies_probability": 0.41056028361138086,
+        "interpretation": "diagnostic association; not a causal effect"
+      },
+      {
+        "feature": "Concurrency",
+        "level": "medium",
+        "holdout_support": 108,
+        "mean_predicted_not_applies_probability": 0.5231369328100286,
+        "interpretation": "diagnostic association; not a causal effect"
+      },
+      {
+        "feature": "Concurrency",
+        "level": "very_high",
+        "holdout_support": 4,
+        "mean_predicted_not_applies_probability": 0.4757843202115514,
+        "interpretation": "diagnostic association; not a causal effect"
+      },
+      {
+        "feature": "Concurrency",
+        "level": "very_low",
+        "holdout_support": 493,
+        "mean_predicted_not_applies_probability": 0.5180023990837896,
+        "interpretation": "diagnostic association; not a causal effect"
+      },
+      {
+        "feature": "Iterations",
+        "level": "high",
+        "holdout_support": 17,
+        "mean_predicted_not_applies_probability": 0.4849477742347463,
+        "interpretation": "diagnostic association; not a causal effect"
+      },
+      {
+        "feature": "Iterations",
+        "level": "low",
+        "holdout_support": 703,
+        "mean_predicted_not_applies_probability": 0.49544322418111564,
+        "interpretation": "diagnostic association; not a causal effect"
+      },
+      {
+        "feature": "Iterations",
+        "level": "medium",
+        "holdout_support": 140,
+        "mean_predicted_not_applies_probability": 0.46554959788913375,
+        "interpretation": "diagnostic association; not a causal effect"
+      },
+      {
+        "feature": "ResponseTime",
+        "level": "high",
+        "holdout_support": 133,
+        "mean_predicted_not_applies_probability": 0.45053324637549846,
+        "interpretation": "diagnostic association; not a causal effect"
+      },
+      {
+        "feature": "ResponseTime",
+        "level": "low",
+        "holdout_support": 126,
+        "mean_predicted_not_applies_probability": 0.448005651867184,
+        "interpretation": "diagnostic association; not a causal effect"
+      },
+      {
+        "feature": "ResponseTime",
+        "level": "medium",
+        "holdout_support": 259,
+        "mean_predicted_not_applies_probability": 0.5186742523491157,
+        "interpretation": "diagnostic association; not a causal effect"
+      },
+      {
+        "feature": "ResponseTime",
+        "level": "very_high",
+        "holdout_support": 342,
+        "mean_predicted_not_applies_probability": 0.5301785198375523,
+        "interpretation": "diagnostic association; not a causal effect"
+      }
+    ]
+  },
+  "logistic_reference": {
+    "class": "not_applies",
+    "coefficient_interpretation": "Positive coefficient and odds ratio above 1 increase model odds of not_applies relative to the encoded alternatives.",
+    "warning": "One-hot coefficients are conditional on all encoded columns and should not be interpreted as causal effects.",
+    "coefficients": [
+      {
+        "encoded_feature": "Iterations=high",
+        "coefficient_for_not_applies": -0.5768793796774435,
+        "odds_ratio": 0.5616483258457879
+      },
+      {
+        "encoded_feature": "ResponseTime=high",
+        "coefficient_for_not_applies": -0.4520559786655864,
+        "odds_ratio": 0.6363185484648501
+      },
+      {
+        "encoded_feature": "Concurrency=low",
+        "coefficient_for_not_applies": -0.4275741568346622,
+        "odds_ratio": 0.6520890433437269
+      },
+      {
+        "encoded_feature": "Iterations=medium",
+        "coefficient_for_not_applies": 0.42470827671392125,
+        "odds_ratio": 1.5291442675994371
+      },
+      {
+        "encoded_feature": "Concurrency=very_high",
+        "coefficient_for_not_applies": 0.3676724859692929,
+        "odds_ratio": 1.4443689104163093
+      },
+      {
+        "encoded_feature": "ResponseTime=very_high",
+        "coefficient_for_not_applies": 0.287358545717168,
+        "odds_ratio": 1.3329020341260236
+      },
+      {
+        "encoded_feature": "ResponseTime=medium",
+        "coefficient_for_not_applies": 0.205156253878925,
+        "odds_ratio": 1.227716885502017
+      },
+      {
+        "encoded_feature": "Concurrency=medium",
+        "coefficient_for_not_applies": -0.1793075936831078,
+        "odds_ratio": 0.8358487580535257
+      },
+      {
+        "encoded_feature": "Concurrency=high",
+        "coefficient_for_not_applies": 0.14104636655585354,
+        "odds_ratio": 1.1514780368177147
+      },
+      {
+        "encoded_feature": "ResponseTime=low",
+        "coefficient_for_not_applies": -0.12911801177335674,
+        "odds_ratio": 0.8788702423895719
+      },
+      {
+        "encoded_feature": "Iterations=low",
+        "coefficient_for_not_applies": 0.06351191212064936,
+        "odds_ratio": 1.0655721789502217
+      },
+      {
+        "encoded_feature": "Concurrency=very_low",
+        "coefficient_for_not_applies": 0.009503707149756319,
+        "odds_ratio": 1.009549010778289
+      }
+    ]
+  }
+}

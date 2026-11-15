@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="500" viewBox="0 0 980 500">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial;fill:#263746}.title{font-size:20px;font-weight:bold}.label{font-size:14px}.value{font-size:14px;font-weight:bold}</style>
+<text x="100" y="32" class="title">Proyección económica condicionada · no es ahorro realizado</text>
+<line x1="100" y1="400" x2="900" y2="400" stroke="#7c8993"/>
+<line x1="100" y1="369.2" x2="900" y2="369.2" stroke="#d1495b" stroke-width="2" stroke-dasharray="7 6"/>
+<text x="705" y="361.2" class="label">Operación CLP 1.30 MM</text>
+<rect x="190" y="380.9" width="120" height="19.1" rx="8" fill="#a8b5bf"/>
+<text x="250.0" y="370.9" text-anchor="middle" class="value">0.81 MM</text>
+<text x="250.0" y="428" text-anchor="middle" class="label">conservative</text>
+<text x="250.0" y="450" text-anchor="middle" class="label">Neto -0.49 MM</text>
+<rect x="430" y="304.3" width="120" height="95.7" rx="8" fill="#009b8c"/>
+<text x="490.0" y="294.3" text-anchor="middle" class="value">4.03 MM</text>
+<text x="490.0" y="428" text-anchor="middle" class="label">base</text>
+<text x="490.0" y="450" text-anchor="middle" class="label">Neto 2.74 MM</text>
+<rect x="670" y="113.0" width="120" height="287.0" rx="8" fill="#009b8c"/>
+<text x="730.0" y="103.0" text-anchor="middle" class="value">12.10 MM</text>
+<text x="730.0" y="428" text-anchor="middle" class="label">optimistic</text>
+<text x="730.0" y="450" text-anchor="middle" class="label">Neto 10.80 MM</text>
+<text x="100" y="475" class="label">Beneficio bruto = presupuesto anual × cobertura × reducción de esfuerzo. Todos los porcentajes son supuestos a validar.</text>
+</svg>

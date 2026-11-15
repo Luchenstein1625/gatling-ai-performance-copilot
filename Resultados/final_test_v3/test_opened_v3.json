@@ -1,0 +1,10 @@
+{
+  "status": "OPENED_ONCE_EVALUATION_COMPLETE",
+  "opened_at_utc": "2026-11-14T02:10:59.487259+00:00",
+  "required_tag": "model-final-v3",
+  "frozen_commit": "f59a3f05faa6a30f7b144606dee0554b3afaf0e6",
+  "source_sha256": "3747cc086b1e31857e8f26897dbfedbe663bdd9323dc8c27fb0fca7a10a57567",
+  "test_build_set_sha256": "f6a9b8ce397f5a1005c17f79f39bfb7d8a5951fe7b352832a9024f5108d25450",
+  "rule": "No model, calibration, feature, threshold or policy selection is permitted after this point.",
+  "completed_at_utc": "2026-11-14T02:11:35.412673+00:00"
+}

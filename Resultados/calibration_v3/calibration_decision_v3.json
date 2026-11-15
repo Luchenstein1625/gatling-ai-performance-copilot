@@ -1,0 +1,80 @@
+{
+  "schema_version": "3.0",
+  "experiment": "calibration_and_final_candidate_train_dev_only",
+  "rows": {
+    "train": 3072,
+    "dev": 437,
+    "test_reserved_not_evaluated": 880
+  },
+  "test_status": "LOCKED_NOT_EVALUATED",
+  "paired_boosting_minus_rf_dev": {
+    "metric": "ROC-AUC",
+    "bootstrap_unit": "Build_Id",
+    "repetitions": 1000,
+    "interval": {
+      "mean": -0.0005978907749373323,
+      "median": 5.1818302753969814e-05,
+      "lower_95": -0.018978003408957368,
+      "upper_95": 0.014096268636329441
+    },
+    "boosting_superiority_demonstrated": false,
+    "preregistered_rule": "Adopt boosting only if lower IC95% of delta is above zero."
+  },
+  "selected_model": "random_forest",
+  "selected_parameters": {
+    "max_depth": 8,
+    "min_samples_leaf": 3
+  },
+  "calibration_comparison": [
+    {
+      "method": "raw",
+      "roc_auc": 0.5901233774579103,
+      "pr_auc": 0.522537544570314,
+      "brier": 0.23302894522437362,
+      "ece_10_bins": 0.06424631148706095
+    },
+    {
+      "method": "sigmoid",
+      "roc_auc": 0.5901233774579103,
+      "pr_auc": 0.522537544570314,
+      "brier": 0.23354725495464773,
+      "ece_10_bins": 0.039595684848964405
+    },
+    {
+      "method": "isotonic",
+      "roc_auc": 0.6243413443002185,
+      "pr_auc": 0.513606285023466,
+      "brier": 0.2308688144668547,
+      "ece_10_bins": 0.027076587529612065
+    }
+  ],
+  "selected_calibration": "isotonic",
+  "selected_threshold_dev": 0.05,
+  "selected_threshold_result": {
+    "threshold": 0.05,
+    "manual_reviews": 421,
+    "false_applies": 0,
+    "applies_reviewed": 235,
+    "total_cost_units": 891.0,
+    "macro_f1": 0.3663501348191202,
+    "not_applies_recall": 1.0,
+    "not_applies_precision": 0.4418052256532066,
+    "review_all_cost_units": 939.0,
+    "delta_vs_review_all": -48.0,
+    "released_rows": 16,
+    "released_error_rate": 0.0,
+    "released_error_lower_95": 0.0,
+    "released_error_upper_95": 0.19360768053443644
+  },
+  "cost_delta_model_minus_review_all_grouped_bootstrap": {
+    "mean": -48.264,
+    "median": -45.0,
+    "lower_95": -126.0,
+    "upper_95": 0.0
+  },
+  "release_guardrail": {
+    "automatic_release_enabled": false,
+    "reason": "Dev evidence is used for offline selection; independent test remains locked."
+  },
+  "next_gate": "Review evidence, commit and tag model-final; then open test exactly once."
+}

@@ -1,0 +1,117 @@
+{
+  "protocol_version": "3.0",
+  "status": "frozen_before_final_model_selection",
+  "source_sha256": "3747cc086b1e31857e8f26897dbfedbe663bdd9323dc8c27fb0fca7a10a57567",
+  "unit_of_analysis": "one executed Gatling configuration record",
+  "grouping_unit": "Build_Id",
+  "eligible_rows": 4389,
+  "eligible_builds": 484,
+  "target": "applies_vs_not_applies_from_measured_execution_evidence",
+  "allowed_features": [
+    "Concurrency",
+    "Iterations",
+    "ResponseTime"
+  ],
+  "forbidden_features": [
+    "Is_In_Prod",
+    "ambiente",
+    "Performance",
+    "CpruebasCarga",
+    "CpruebasAcep",
+    "pilar",
+    "Tcomponente",
+    "Metodo",
+    "Estado",
+    "errorCount",
+    "successCount",
+    "p95",
+    "rps"
+  ],
+  "abstention": [
+    "Performance is not 1",
+    "configuration is incomplete",
+    "result evidence is incomplete during offline labeling"
+  ],
+  "split_method": {
+    "outer": "first fold of StratifiedGroupKFold(n_splits=5)",
+    "inner": "first fold of StratifiedGroupKFold(n_splits=8) over outer train+dev",
+    "random_state_outer": 42,
+    "random_state_inner": 43,
+    "target_proportions": {
+      "train": 0.7,
+      "dev": 0.1,
+      "test": 0.2
+    },
+    "note": "Exact row proportions vary because complete Build_Id groups stay together."
+  },
+  "partitions": {
+    "train": {
+      "partition": "train",
+      "rows": 3072,
+      "row_fraction": 0.6999316473000684,
+      "builds": 334,
+      "class_distribution": {
+        "applies": 1754,
+        "not_applies": 1318
+      },
+      "not_applies_prevalence": 0.4290364583333333,
+      "build_id_set_sha256": "a8adb5b8477cbce19df6e4f286bd1029dbe4ed831731d58b0b94e80495f86d93"
+    },
+    "dev": {
+      "partition": "dev",
+      "rows": 437,
+      "row_fraction": 0.09956709956709957,
+      "builds": 46,
+      "class_distribution": {
+        "applies": 251,
+        "not_applies": 186
+      },
+      "not_applies_prevalence": 0.425629290617849,
+      "build_id_set_sha256": "fce14a9ee4942b00912a16a9746d189786aaa721c9eb1a7adffd610030f960d5"
+    },
+    "test": {
+      "partition": "test",
+      "rows": 880,
+      "row_fraction": 0.20050125313283207,
+      "builds": 104,
+      "class_distribution": {
+        "applies": 504,
+        "not_applies": 376
+      },
+      "not_applies_prevalence": 0.42727272727272725,
+      "build_id_set_sha256": "f6a9b8ce397f5a1005c17f79f39bfb7d8a5951fe7b352832a9024f5108d25450"
+    }
+  },
+  "model_selection": {
+    "train": "fit candidate models and internal grouped CV",
+    "dev": "select hyperparameters, model, calibration and threshold",
+    "test": "open once after the final model is frozen",
+    "primary_metric": "ROC-AUC",
+    "tie_breaker": "macro-F1",
+    "ranking_metrics": [
+      "recall_at_30",
+      "precision_at_30",
+      "lift_at_30"
+    ],
+    "uncertainty": "bootstrap in Build_Id clusters"
+  },
+  "threshold_policy": {
+    "selection_set": "dev",
+    "costs": {
+      "false_applies": 10,
+      "applies_reviewed": 2,
+      "manual_review": 1
+    },
+    "guardrail": "no automatic release; human approval remains mandatory"
+  },
+  "preregistered_hypotheses": {
+    "H1": "A tuned boosting model improves ROC-AUC over Random Forest; superiority requires a paired 95% interval for the difference excluding zero.",
+    "H2": "The final ranking exceeds random ordering at equal review capacity.",
+    "H3": "The selected policy has lower expected cost than review-all under more than half of the registered economic scenarios."
+  },
+  "test_lock": {
+    "opened_for_model_selection": false,
+    "test_build_set_sha256": "f6a9b8ce397f5a1005c17f79f39bfb7d8a5951fe7b352832a9024f5108d25450",
+    "instruction": "Do not calculate test model metrics until model-final is tagged."
+  }
+}

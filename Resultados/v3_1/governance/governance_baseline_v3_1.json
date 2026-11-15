@@ -1,0 +1,39 @@
+{
+  "schema_version": "3.1",
+  "gate": "GOVERNANCE_BASELINE_FROZEN",
+  "created_at_utc": "2026-11-15T10:58:19.691853+00:00",
+  "repository": {
+    "branch": "audit/v3_1",
+    "commit": "df62a5e9f7010bb2b43abdc115ce2d59dd1f41fd",
+    "dirty_files": [
+      "?? Resultados/calibration_v3/",
+      "?? Resultados/economics_v3/",
+      "?? Resultados/final_test_v3/",
+      "?? Resultados/fine_threshold_v3/",
+      "?? Resultados/model_selection_v3/",
+      "?? Resultados/protocol_v3/",
+      "?? Resultados/recommender_v3/",
+      "?? Resultados/release_v3/",
+      "?? Resultados/training_v2_explainability/",
+      "?? Resultados/training_v2_stability/",
+      "?? Resultados/v3_1/"
+    ]
+  },
+  "source_sha256": "3747cc086b1e31857e8f26897dbfedbe663bdd9323dc8c27fb0fca7a10a57567",
+  "test_build_set_sha256": "f6a9b8ce397f5a1005c17f79f39bfb7d8a5951fe7b352832a9024f5108d25450",
+  "immutable_result_sets": [
+    "protocol_v3",
+    "model_selection_v3",
+    "calibration_v3",
+    "fine_threshold_v3",
+    "final_test_v3",
+    "recommender_v3",
+    "economics_v3",
+    "release_v3"
+  ],
+  "files_frozen": 43,
+  "baseline_manifest_sha256": "f514a1a0ee5e550a73481c9d31283ed39be738ffc5b2b64cd2ef24fe1bba4bc9",
+  "addendum_status": "PRE_SPECIFIED_BEFORE_DIAGNOSTIC_EXECUTION",
+  "registered_decisions": 7,
+  "next_step": "Run A2 calibration audit and A3 order-encoding audit without changing v3 artifacts."
+}

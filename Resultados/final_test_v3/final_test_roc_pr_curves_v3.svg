@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="470" viewBox="0 0 1040 470">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial;fill:#263746}.title{font-size:18px;font-weight:bold}.label{font-size:13px}</style>
+<text x="85" y="30" class="title">ROC · test final · AUC 0.668</text>
+<text x="600" y="30" class="title">Precision–Recall · PR-AUC 0.570</text>
+<rect x="85" y="65" width="390" height="330" fill="#f7fafb" stroke="#a8b5bf"/>
+<text x="80" y="423" class="label">0</text>
+<text x="470" y="423" class="label">1</text>
+<text x="60" y="70" class="label">1</text>
+<text x="60" y="400" class="label">0</text>
+<rect x="600" y="65" width="390" height="330" fill="#f7fafb" stroke="#a8b5bf"/>
+<text x="595" y="423" class="label">0</text>
+<text x="985" y="423" class="label">1</text>
+<text x="575" y="70" class="label">1</text>
+<text x="575" y="400" class="label">0</text>
+<line x1="85" y1="395" x2="475" y2="65" stroke="#8e9ba6" stroke-dasharray="6 6"/>
+<polyline points="85.0,395.0 93.5,352.0 160.1,287.9 189.5,245.8 222.7,216.8 276.1,125.6 276.9,123.8 284.6,119.4 409.2,87.8 455.7,68.5 468.0,66.8 475.0,65.0" fill="none" stroke="#008f83" stroke-width="3"/>
+<line x1="600" y1="254.0" x2="990" y2="254.0" stroke="#8e9ba6" stroke-dasharray="6 6"/>
+<polyline points="990.0,254.0 987.9,253.0 985.9,250.7 963.0,244.8 925.7,213.8 920.5,211.9 918.4,212.1 810.6,219.2 776.3,211.1 726.5,211.2 650.8,125.5 600.0,65.0" fill="none" stroke="#073b66" stroke-width="3"/>
+<text x="210" y="452" class="label">False positive rate</text>
+<text x="765" y="452" class="label">Recall</text>
+<text x="608" y="246.0" class="label">Prevalencia 0.427</text>
+</svg>

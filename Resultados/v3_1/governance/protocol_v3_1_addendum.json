@@ -1,0 +1,83 @@
+{
+  "schema_version": "3.1",
+  "status": "PRE_SPECIFIED_BEFORE_DIAGNOSTIC_EXECUTION",
+  "created_at_utc": "2026-11-15T10:58:19.690857+00:00",
+  "integrity": {
+    "source_sha256": "3747cc086b1e31857e8f26897dbfedbe663bdd9323dc8c27fb0fca7a10a57567",
+    "test_build_set_sha256": "f6a9b8ce397f5a1005c17f79f39bfb7d8a5951fe7b352832a9024f5108d25450",
+    "official_final_test_is_immutable": true,
+    "no_model_or_threshold_selection_using_test": true
+  },
+  "registered_analyses": [
+    {
+      "id": "A2",
+      "name": "calibration audit",
+      "selection_data": "train and dev only",
+      "test_use": "descriptive raw versus frozen calibrated probabilities only",
+      "metrics": [
+        "ROC-AUC",
+        "Brier",
+        "log-loss",
+        "ECE"
+      ],
+      "decision_effect": "none; official final model and test remain unchanged"
+    },
+    {
+      "id": "A3",
+      "name": "recommender order and monotonicity audit",
+      "selection_data": "train and dev only",
+      "test_use": "none",
+      "fixed_guardrails": {
+        "minimum_action_stability": 0.8,
+        "bootstrap_repetitions": 2000
+      },
+      "decision_effect": "publish only actions passing existing fixed guardrails"
+    },
+    {
+      "id": "A4",
+      "name": "claims uncertainty derivation",
+      "selection_data": "none",
+      "test_use": "derive additional cases from existing frozen bootstrap repetitions",
+      "decision_effect": "language classification only"
+    },
+    {
+      "id": "A5",
+      "name": "historical split overlap audit",
+      "selection_data": "none",
+      "test_use": "descriptive sensitivity on test builds not present in previous exploratory holdouts, if any",
+      "decision_effect": "limitation statement only; no retuning"
+    },
+    {
+      "id": "A6",
+      "name": "final model explainability",
+      "selection_data": "dev",
+      "test_use": "none",
+      "metrics": [
+        "grouped permutation ROC-AUC decrease",
+        "PDP",
+        "ICE"
+      ],
+      "decision_effect": "explanation only"
+    },
+    {
+      "id": "A1",
+      "name": "evidence-anchored economics",
+      "selection_data": "existing frozen test bootstrap only",
+      "test_use": "no new model evaluation",
+      "fixed_k_values": [
+        0.5,
+        1.0,
+        2.0
+      ],
+      "benefit_floor": 0.0,
+      "decision_effect": "conditional projection only"
+    }
+  ],
+  "prohibited_actions": [
+    "replace or overwrite any Resultados/v3 artifact",
+    "change model, calibration or threshold after observing test",
+    "relax the 80 percent recommendation stability guardrail",
+    "claim automatic release unless risk upper 95 percent is at most 5 percent",
+    "describe projected economic benefit as realized saving"
+  ]
+}
