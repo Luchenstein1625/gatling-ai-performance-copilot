@@ -1,0 +1,113 @@
+{
+  "correct": true,
+  "rows": [
+    {
+      "parameter": "Concurrency",
+      "strictness_rank_low_to_high": 0,
+      "level": "very_low",
+      "real_value": 5,
+      "expected_real_value": 5,
+      "direction": "higher load is stricter",
+      "order_matches_specification": true
+    },
+    {
+      "parameter": "Concurrency",
+      "strictness_rank_low_to_high": 1,
+      "level": "low",
+      "real_value": 20,
+      "expected_real_value": 20,
+      "direction": "higher load is stricter",
+      "order_matches_specification": true
+    },
+    {
+      "parameter": "Concurrency",
+      "strictness_rank_low_to_high": 2,
+      "level": "medium",
+      "real_value": 40,
+      "expected_real_value": 40,
+      "direction": "higher load is stricter",
+      "order_matches_specification": true
+    },
+    {
+      "parameter": "Concurrency",
+      "strictness_rank_low_to_high": 3,
+      "level": "high",
+      "real_value": 60,
+      "expected_real_value": 60,
+      "direction": "higher load is stricter",
+      "order_matches_specification": true
+    },
+    {
+      "parameter": "Concurrency",
+      "strictness_rank_low_to_high": 4,
+      "level": "very_high",
+      "real_value": 80,
+      "expected_real_value": 80,
+      "direction": "higher load is stricter",
+      "order_matches_specification": true
+    },
+    {
+      "parameter": "Iterations",
+      "strictness_rank_low_to_high": 0,
+      "level": "low",
+      "real_value": 5,
+      "expected_real_value": 5,
+      "direction": "higher load is stricter",
+      "order_matches_specification": true
+    },
+    {
+      "parameter": "Iterations",
+      "strictness_rank_low_to_high": 1,
+      "level": "medium",
+      "real_value": 7,
+      "expected_real_value": 7,
+      "direction": "higher load is stricter",
+      "order_matches_specification": true
+    },
+    {
+      "parameter": "Iterations",
+      "strictness_rank_low_to_high": 2,
+      "level": "high",
+      "real_value": 10,
+      "expected_real_value": 10,
+      "direction": "higher load is stricter",
+      "order_matches_specification": true
+    },
+    {
+      "parameter": "ResponseTime",
+      "strictness_rank_low_to_high": 0,
+      "level": "very_high",
+      "real_value": 15000,
+      "expected_real_value": 15000,
+      "direction": "lower allowed milliseconds is stricter",
+      "order_matches_specification": true
+    },
+    {
+      "parameter": "ResponseTime",
+      "strictness_rank_low_to_high": 1,
+      "level": "high",
+      "real_value": 8000,
+      "expected_real_value": 8000,
+      "direction": "lower allowed milliseconds is stricter",
+      "order_matches_specification": true
+    },
+    {
+      "parameter": "ResponseTime",
+      "strictness_rank_low_to_high": 2,
+      "level": "medium",
+      "real_value": 5000,
+      "expected_real_value": 5000,
+      "direction": "lower allowed milliseconds is stricter",
+      "order_matches_specification": true
+    },
+    {
+      "parameter": "ResponseTime",
+      "strictness_rank_low_to_high": 3,
+      "level": "low",
+      "real_value": 3000,
+      "expected_real_value": 3000,
+      "direction": "lower allowed milliseconds is stricter",
+      "order_matches_specification": true
+    }
+  ]
+}

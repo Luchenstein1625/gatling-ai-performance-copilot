@@ -1,0 +1,31 @@
+{
+  "schema_version": "3.1",
+  "alert": "A3",
+  "status": "RECOMMENDER_AUDIT_COMPLETE",
+  "test_status": "NOT_ACCESSED_RECOMMENDER_AUDIT_TRAIN_DEV_ONLY",
+  "order_encoding_correct": true,
+  "response_time_direction": "very_high 15000 -> high 8000 -> medium 5000 -> low 3000 milliseconds; lower is stricter",
+  "correction_required": false,
+  "guardrails_changed": false,
+  "bootstrap_repetitions": 2000,
+  "monotonicity": {
+    "comparisons": 49,
+    "consistency_rate": 0.4489795918367347,
+    "weighted_consistency_rate": 0.27909133055169216,
+    "lower_95": 0.3829787234042553,
+    "upper_95": 0.5227272727272727
+  },
+  "action_distribution_estimated": {
+    "abstain": 19,
+    "maintain": 8,
+    "review": 4,
+    "upgrade": 1
+  },
+  "action_distribution_published": {
+    "abstain": 27,
+    "maintain": 5
+  },
+  "publishable_upgrades": 0,
+  "conclusion": "The ResponseTime strictness order was already correct; the 44.9% monotonicity result is not caused by inverted latency encoding. The data do not support robust directional recommendations with only the three configuration variables, so unstable actions remain abstentions.",
+  "next_action": "Keep v3 official recommendations unchanged and report the negative directional result."
+}

@@ -1,0 +1,6 @@
+strategy,folds,mean_decision_success,minimum,maximum,mean_coverage,interpretation
+recommender,5,0.6235882207915326,0.5955284552845529,0.679144385026738,0.6648922377881008,descriptive grouped CV; strategies have different operational meanings
+always_maintain,5,0.5713823556904869,0.5384615384615384,0.6182336182336182,1.0,descriptive grouped CV; strategies have different operational meanings
+always_review,5,0.42861764430951305,0.3817663817663818,0.46153846153846156,1.0,descriptive grouped CV; strategies have different operational meanings
+random_binary_action,5,0.5,0.5,0.5,1.0,descriptive grouped CV; strategies have different operational meanings
+analyst_rule,0,,,,,pending two analyst interviews; not invented from data
