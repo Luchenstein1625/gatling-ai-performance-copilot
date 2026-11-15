@@ -1,0 +1,17 @@
+{
+  "schema_version": "3.1",
+  "alert": "A5",
+  "status": "OVERLAP_AUDIT_COMPLETE",
+  "source_rows_eligible": 4389,
+  "source_builds_eligible": 484,
+  "v3_test_builds": 104,
+  "v3_test_builds_seen_in_v2_fixed_holdout": 25,
+  "v3_test_builds_seen_in_v2_fixed_holdout_pct": 0.2403846153846154,
+  "v3_test_builds_not_seen_in_v2_fixed_holdout": 79,
+  "v3_test_builds_never_in_any_v2_holdout": 0,
+  "stability_splits_reconstructed": 20,
+  "test_reused_for_selection_in_v3": false,
+  "historical_exposure_limitation": true,
+  "decision_effect": "limitation_statement_only_no_retuning",
+  "official_v3_changed": false
+}
