@@ -1,0 +1,29 @@
+{
+  "schema_version": "3.1",
+  "status": "CONDITIONED_MONTE_CARLO_NOT_REALIZED_SAVING",
+  "simulations": 10000,
+  "coverage_distribution": "triangular(min=0.10, mode=0.25, max=0.50)",
+  "k_distribution": "triangular(min=0.5, mode=1.0, max=2.0)",
+  "additional_detection_distribution": "frozen grouped test bootstrap",
+  "benefit_floor": 0.0,
+  "effort_reduction": {
+    "mean": 0.1438697897833266,
+    "median": 0.13222245875018884,
+    "lower_95": 0.0,
+    "upper_95": 0.3737873030845831
+  },
+  "net_benefit_clp": {
+    "mean": 17861.03510680663,
+    "median": -181196.66325487767,
+    "lower_95": -1296240.0,
+    "upper_95": 2575459.981644408
+  },
+  "roi": {
+    "mean": 0.013779111203794542,
+    "median": -0.13978635380398513,
+    "lower_95": -1.0,
+    "upper_95": 1.9868697013241436
+  },
+  "probability_net_benefit_above_zero": 0.4285,
+  "interpretation": "Conditioned projection; probability is driven by explicit assumptions and is not an observed saving."
+}

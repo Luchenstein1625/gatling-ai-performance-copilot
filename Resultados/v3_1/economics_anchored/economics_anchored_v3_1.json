@@ -1,0 +1,28 @@
+{
+  "schema_version": "3.1",
+  "alert": "A1",
+  "status": "ANCHORED_ECONOMICS_COMPLETE",
+  "mechanism": "Earlier detection of not_applies cases may reduce rework and QA analysis time.",
+  "evidence": {
+    "additional_detections_per_100_prioritized_point": 13.33333333333333,
+    "additional_detections_grouped_bootstrap": {
+      "mean": 11.997493947799347,
+      "median": 12.143092701972368,
+      "lower_95": -4.752171992954382,
+      "upper_95": 27.90030196907557
+    }
+  },
+  "annual_budget_clp": 32256000.0,
+  "annual_cost_clp": 1296240.0,
+  "break_even_coverage_times_reduction": 0.040186011904761905,
+  "fixed_coverage_for_anchored_scenarios": 0.25,
+  "fixed_k_values": [
+    0.5,
+    1.0,
+    2.0
+  ],
+  "annual_eligible_records_status": "REQUIRES_BCI_MEASUREMENT",
+  "official_v3_changed": false,
+  "allowed_claim": "The projection exceeds break-even only under the stated coverage, k and effort-equivalence assumptions.",
+  "prohibited_claim": "The project has already produced savings or a realized ROI."
+}

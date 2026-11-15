@@ -1,0 +1,9 @@
+row_type,annual_records_assumption,value_per_additional_detection_clp,required_annual_records_point,prioritized_fraction,additional_detections_per_100_prioritized_point,note
+required_annual_records_for_assumed_value,,112000.0,289.3392857142858,0.3,13.33333333333333,Requires measured annual eligible-record volume from BCI.
+required_annual_records_for_assumed_value,,224000.0,144.6696428571429,0.3,13.33333333333333,Requires measured annual eligible-record volume from BCI.
+required_annual_records_for_assumed_value,,448000.0,72.33482142857144,0.3,13.33333333333333,Requires measured annual eligible-record volume from BCI.
+required_annual_records_for_assumed_value,,896000.0,36.16741071428572,0.3,13.33333333333333,Requires measured annual eligible-record volume from BCI.
+minimum_value_per_detection_for_annual_records,100,324060.0000000001,100,0.3,13.33333333333333,Illustrative volume; replace with measured BCI annual eligible records.
+minimum_value_per_detection_for_annual_records,250,129624.00000000003,250,0.3,13.33333333333333,Illustrative volume; replace with measured BCI annual eligible records.
+minimum_value_per_detection_for_annual_records,500,64812.000000000015,500,0.3,13.33333333333333,Illustrative volume; replace with measured BCI annual eligible records.
+minimum_value_per_detection_for_annual_records,1000,32406.000000000007,1000,0.3,13.33333333333333,Illustrative volume; replace with measured BCI annual eligible records.
